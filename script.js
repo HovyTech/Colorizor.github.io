@@ -3,6 +3,8 @@ function highlight() {
   var htmlClean = [/&lt;/ig, /&gt;/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig];
   var htmlReplace = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;'];
   var htmlFix = /<span id="html-tag">&#62;<\/span><\/span>/ig;
+  var htmlTxt = /([\w\d]+)/ig;
+  var htmlRemove = [/<span id="">/ig, //ig];
   //Comment
   var htmlCom = /(&#60;&#33;DOCTYPE|&#60;&#33;&#45;&#45;)([\s\S]*?)(&#45;&#45;&#62;|&#62;)/ig;
   //Tag
@@ -22,8 +24,9 @@ function highlight() {
   htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
   htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
   htmlStr = htmlStr.replace(htmlFix, '&#62;</span>');
+  htmlStr = htmlStr.replace(htmlTxt, '<span id="html-text">$&</span>');
   htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
-  htmlStr = htmlStr.replace(/([\s\S]*?)/ig, '<ol><li>$&</li></ol>');
+  htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
   document.getElementById('html-pre').innerHTML = htmlStr;
 }
 highlight();
