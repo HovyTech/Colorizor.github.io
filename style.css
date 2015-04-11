@@ -19,6 +19,8 @@ code {
 ol {
   counter-reset: item;
   list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
 li:before {
   content: counter(item) " ";
