@@ -21,10 +21,9 @@ ol {
   list-style-type: none;
 }
 li:before {
-  content: counter(item) "| ";
+  content: counter(item) " ";
   counter-increment: item;
   float: left;
-  text-align: right;
 }
 #html-com {
   color: rgb(127, 127, 127);
