@@ -21,7 +21,7 @@ ol {
   padding: 5px;
 }
 li:before {
-  content: counter(item) "";
+  content: counter(item) " ";
   counter-increment: item;
   float: left;
 }
