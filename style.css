@@ -17,13 +17,15 @@ code {
 ol {
   counter-reset: item;
   list-style-type: none;
-  margin: 10px;
-  padding: 5px;
+  margin: 0px;
+  padding: 10px;
 }
 li:before {
   content: counter(item) " ";
   counter-increment: item;
   float: left;
+  position: absolute;
+  text-align: 10px;
 }
 #html-com {
   color: rgb(127, 127, 127);
