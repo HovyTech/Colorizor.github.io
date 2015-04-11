@@ -28,7 +28,7 @@ function highlight() {
   htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
   htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
   htmlStr = htmlStr.replace(htmlFix, '&#62;</span>');
-  htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
+  htmlStr = htmlStr.replace(/>(\n)</ig, '></li><li><');
   htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
   document.getElementById('html-pre').innerHTML = htmlStr;
 }
