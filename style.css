@@ -2,8 +2,6 @@ pre {
   background-color: rgb(89, 87, 86);
   height: auto;
   left: 20%;
-  margin: 10px;
-  padding: 5px;
   position: relative;
   top: 200px;
   white-space: pre-wrap;
@@ -18,16 +16,14 @@ code {
 }
 ol {
   counter-reset: item;
-  list-style-position: inside;
   list-style-type: none;
-  margin: 0px;
-  padding: 0px;
+  margin: 10px;
+  padding: 5px;
 }
 li:before {
-  content: counter(item) "| ";
+  content: counter(item) "";
   counter-increment: item;
   float: left;
-  position: absolute;
 }
 #html-com {
   color: rgb(127, 127, 127);
