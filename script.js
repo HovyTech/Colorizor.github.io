@@ -28,9 +28,11 @@ function highlight() {
   htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
   htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
   htmlStr = htmlStr.replace(htmlFix, '&#62;</span>');
-htmlStr = htmlStr.replace(/([\w\W]+)([\n].*?)</ig, '></li><li$&');
+  htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
+  htmlStr = htmlStr.replace(/&#60;&#33;&#45;&#45;([\s\S]*?)<\/li>/ig, '$&</li>');
+  htmlStr = htmlStr.replace(/<\/li><\/li><li>/ig, '');
   //htmlStr = htmlStr.replace(/>([\n].*?)</ig, '></li><li$&');
-  htmlStr = htmlStr.replace(/<li>\n/ig, '<li>');
+  //htmlStr = htmlStr.replace(/<li>\n/ig, '<li>');
   htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
   document.getElementById('html-pre').innerHTML = htmlStr;
 }
