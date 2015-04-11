@@ -21,7 +21,7 @@ ol {
   padding: 10px;
 }
 li {
-  list-style-position: outside;
+  list-style-position: inside;
 }
 li:before {
   content: counter(item) "| ";
