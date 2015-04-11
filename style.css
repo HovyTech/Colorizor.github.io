@@ -29,6 +29,26 @@ li:before {
   display: inline-block;
   float: left;
 }
+
+pre {
+    counter-reset: line-numbering;
+    font-family: Menlo, Monaco, monospace;
+    background-color: #333;
+    padding: 5px;
+    color: #CCC;
+    border-radius: 3px;
+    word-break: break-word;
+}
+pre:before {
+    content: counter(line-numbering);
+    counter-increment: line-numbering;
+    padding-right: 1em;
+    /* space after numbers */
+    width: 1.5em;
+    text-align: right;
+    opacity: 0.5;
+}
+
 #html-com {
   color: rgb(127, 127, 127);
   font-style: italic;
