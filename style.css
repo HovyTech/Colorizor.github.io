@@ -16,8 +16,12 @@ code {
   font-size: 18px;
   font-style: bold;
 }
+ol li:before {
+  content: ".";
+  color: rgb(89, 87, 86);
+}
 #html-com {
-  color: rgb(163, 255, 163);
+  color: rgb(127, 127, 127);
   font-style: italic;
 }
 #html-tag {
