@@ -16,9 +16,9 @@ code {
   font-size: 18px;
   font-style: bold;
 }
-ol li:before {
-  content: counter(level1) " ";
-  counter-increment: level1;
+li:before {
+  content: counter(item, upper-roman) "|";
+  counter-increment: item;
 }
 #html-com {
   color: rgb(127, 127, 127);
