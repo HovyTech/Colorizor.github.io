@@ -24,6 +24,8 @@ li:before {
   content: counter(item) " ";
   counter-increment: item;
   float: left;
+  margin: 0px;
+  padding: 0px;
 }
 #html-com {
   color: rgb(127, 127, 127);
