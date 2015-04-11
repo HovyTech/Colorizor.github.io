@@ -17,8 +17,8 @@ code {
   font-style: bold;
 }
 ol li:before {
-  content: ".";
-  color: rgb(89, 87, 86);
+  content: counter(level1) " ";
+  counter-increment: level1;
 }
 #html-com {
   color: rgb(127, 127, 127);
