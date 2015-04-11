@@ -21,11 +21,10 @@ ol {
   padding: 10px;
 }
 li:before {
-  content: counter(item) " ";
+  content: counter(item) "| ";
   counter-increment: item;
+  display: table-cell;
   float: left;
-  position: absolute;
-  left: 10px;
 }
 #html-com {
   color: rgb(127, 127, 127);
