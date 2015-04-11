@@ -28,10 +28,10 @@ function highlight() {
   htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
   htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
   htmlStr = htmlStr.replace(htmlFix, '&#62;</span>');
-  htmlStr = htmlStr.replace(/&#60;&#33;&#45;&#45;([\s\S]*?)\n/ig, '$&</span><span id="html-com">');
-  htmlStr = htmlStr.replace(/<\/span><span id="html-com"><span/ig, '<span');
-  htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
-  htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
+  //htmlStr = htmlStr.replace(/&#60;&#33;&#45;&#45;([\s\S]*?)\n/ig, '$&</span><span id="html-com">');
+  //htmlStr = htmlStr.replace(/<\/span><span id="html-com"><span/ig, '<span');
+  //htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
+  //htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
   document.getElementById('html-pre').innerHTML = htmlStr;
 }
 highlight();
