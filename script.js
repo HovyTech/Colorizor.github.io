@@ -9,8 +9,6 @@ function highlight() {
   //at the comments so that the > character
   //at all the comments are the same colour
   var htmlFix = /<span id="html-tag">&#62;<\/span><\/span>/ig;
-  //Text
-  var htmltxt = /&#62;([\s\S]*?)&#60;/ig;
   //Comment
   var htmlCom = /(&#60;&#33;DOCTYPE|&#60;&#33;&#45;&#45;)([\s\S]*?)(&#45;&#45;&#62;|&#62;)/ig;
   //Tag
@@ -25,7 +23,6 @@ function highlight() {
   for (a = 0; a < htmlClean.length; a++) {
     htmlStr = htmlStr.replace(htmlClean[a], htmlReplace[a]);
   }
-  htmlStr = htmlStr.replace(htmlTxt, '<span id="html-txt">$&</span>');
   htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
   htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
   htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
