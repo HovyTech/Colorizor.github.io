@@ -17,7 +17,7 @@ code {
   font-style: bold;
 }
 li:before {
-  content: counter(item, upper-roman) "|";
+  content: counter(item) "|";
   counter-increment: item;
 }
 #html-com {
