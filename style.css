@@ -16,18 +16,16 @@ code {
 }
 ol {
   counter-reset: item;
-  display: table;
   list-style-type: none;
   margin: 0px;
   padding: 10px;
 }
 li {
-  display: table-row;
+  list-style-position: outside;
 }
 li:before {
   content: counter(item) "| ";
   counter-increment: item;
-  display: table-cell;
   float: left;
 }
 #html-com {
