@@ -16,6 +16,10 @@ code {
   font-size: 18px;
   font-style: bold;
 }
+ol {
+  counter-reset: item;
+  list-style-type: none;
+}
 li:before {
   content: counter(item) "|";
   counter-increment: item;
