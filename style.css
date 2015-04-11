@@ -21,11 +21,12 @@ ol {
   padding: 10px;
 }
 li {
-  list-style-position: inside;
+  display: block;
 }
 li:before {
   content: counter(item) "| ";
   counter-increment: item;
+  display: inline-block;
   float: left;
 }
 #html-com {
