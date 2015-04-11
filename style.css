@@ -16,9 +16,13 @@ code {
 }
 ol {
   counter-reset: item;
+  display: table;
   list-style-type: none;
   margin: 0px;
   padding: 10px;
+}
+li {
+  display: table-row;
 }
 li:before {
   content: counter(item) "| ";
