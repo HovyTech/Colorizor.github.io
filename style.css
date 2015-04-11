@@ -18,16 +18,15 @@ code {
 }
 ol {
   counter-reset: item;
+  list-style-position: inside;
   list-style-type: none;
   margin: 0px;
   padding: 0px;
 }
 li:before {
-  content: counter(item) " ";
+  content: counter(item) "| ";
   counter-increment: item;
   float: left;
-  margin-right: 0px;
-  padding-right: 0px;
 }
 #html-com {
   color: rgb(127, 127, 127);
