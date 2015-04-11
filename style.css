@@ -23,6 +23,8 @@ ol {
 li:before {
   content: counter(item) "|";
   counter-increment: item;
+  float: right;
+  left: 5px;
 }
 #html-com {
   color: rgb(127, 127, 127);
