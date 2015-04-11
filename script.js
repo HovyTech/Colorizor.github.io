@@ -30,7 +30,7 @@ function highlight() {
   htmlStr = htmlStr.replace(htmlFix, '&#62;</span>');
   htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
   htmlStr = htmlStr.replace(/&#60;&#33;&#45;&#45;([\s\S]*?)<\/li>/ig, '$&</li>');
-  htmlStr = htmlStr.replace(/<\/li><\/li><li>/ig, '');
+  htmlStr = htmlStr.replace(/<\/li><\/li><li>/ig, '\n');
   //htmlStr = htmlStr.replace(/>([\n].*?)</ig, '></li><li$&');
   //htmlStr = htmlStr.replace(/<li>\n/ig, '<li>');
   htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
