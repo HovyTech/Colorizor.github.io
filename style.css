@@ -18,7 +18,7 @@ code {
 }
 ol {
   counter-reset: item;
-  list-style-position: outside;
+  list-style-position: inside;
   list-style-type: none;
   margin: 0px;
   padding: 0px;
@@ -28,7 +28,6 @@ li:before {
   counter-increment: item;
   float: left;
   position: absolute;
-  text-align: right;
 }
 #html-com {
   color: rgb(127, 127, 127);
