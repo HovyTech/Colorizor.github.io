@@ -45,7 +45,7 @@ var cssVal = /:(.*?)&#59;/ig;
 //-------------------------Unit
 var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/ig;
 //-------------------------Number
-var cssNum = /<span id="css-unt">([\d.]*?)([^\D])/ig;
+var cssNum = /<span id="css-unt">([\d.].*?)([^\D])/ig;
 
 //---------------------------------------------------------------------------Colour Code
 function colourCode() {
