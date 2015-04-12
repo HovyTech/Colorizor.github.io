@@ -19,11 +19,9 @@ function htmlCode() {
   //-------------------------Value
   var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
   //-------------------------Colour Code
-  var total = $('bode').find('#html').length;
-alert(total)
-  for (a = 0; a < total; a++) {
+  $('#html').each(function(index, value) {
     //Replace
-    var htmlStr = document.getElementById('html').innerHTML;
+    var htmlStr = $(this).text();
     //Clean
     for (b = 0; b < htmlClean.length; b++) {
       htmlStr = htmlStr.replace(htmlClean[b], htmlReplace[b]);
@@ -39,7 +37,7 @@ alert(total)
     //htmlStr = htmlStr.replace(/<\/span><span id="html-com"><span/ig, '<span');
     //htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
     //htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
-    document.getElementById('html').innerHTML = htmlStr;
-  }
+    $(this).text(htmlStr);
+  });
 }
 htmlCode();
