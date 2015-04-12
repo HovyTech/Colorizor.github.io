@@ -33,7 +33,7 @@ var cssFixc = /{<\/span><\/span>/ig;
 //-------------------------Comment
 var cssCom = /\/\*([\s\S]*?)\*\//ig;
 //-------------------------Selector
-var cssSel = /^([\s\S]*?){|}/igm;
+var cssSel = /([\w\s.#:_@!\[\]\(\)-]*?){|}/igm;
 //-------------------------Selector Extention
 var cssSelExt = /:(.*?){/ig;
 //-------------------------Property
