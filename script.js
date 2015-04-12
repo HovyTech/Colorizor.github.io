@@ -21,7 +21,7 @@ function htmlCode() {
   //-------------------------Colour Code
   $('#html').each(function(index, value) {
     //Replace
-    var htmlStr = $(this).text();
+    var htmlStr = $(this).html();
     //Clean
     for (b = 0; b < htmlClean.length; b++) {
       htmlStr = htmlStr.replace(htmlClean[b], htmlReplace[b]);
