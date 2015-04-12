@@ -28,7 +28,7 @@ var cssFix = /<span id="css-val">:<\/span>/ig;
 //-------------------------Comment
 var cssCom = /\/\*([\s\S]*?)\*\//ig;
 //-------------------------Selector
-var cssSel = /([\w.#]+)([\s\S]*?){|}/ig;
+var cssSel = /^([\s\S]*?){|}/igm;
 //-------------------------Property
 var cssProp = /([\w\-]+):/ig;
 //-------------------------Value
