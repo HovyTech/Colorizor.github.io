@@ -1,5 +1,5 @@
 pre {
-  background-color: rgb(89, 87, 86);
+  background-color: rgb(88, 88, 88);
   height: auto;
   left: 20%;
   position: relative;
@@ -32,11 +32,11 @@ li:before {
   font-style: italic;
 }
 #html-tag {
-  color: rgb(123, 160, 224);
+  color: rgb(174, 154, 255);
 }
 #html-att {
-  color: rgb(255, 127, 115);
+  color: rgb(249, 108, 100);
 }
 #html-val {
-  color: rgb(255, 222, 149);
+  color: rgb(110, 175, 255);
 }
