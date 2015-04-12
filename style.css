@@ -52,6 +52,9 @@ li:before {
 #css-sel {
   color: rgb(174, 154, 255);
 }
+#css-sel-ext {
+  color: rgb(255, 171, 122);
+}
 #css-prop {
   color: rgb(249, 108, 100);
 }
