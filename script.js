@@ -2,8 +2,8 @@
 //-------------------------Replace Characters
 //By replacing the characters it allowes
 //for not replacing the span tag characters
-var clean = [/&lt;/ig, /&gt;/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[;]/ig, /[\t]/ig];
-var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '&#59;', '\s\s\s\s'];
+var clean = [/&lt;/ig, /&gt;/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[\t]/ig];
+var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
 
 //--------------------------------------------------HTML
 //-------------------------Fix
@@ -75,6 +75,7 @@ function colourCode() {
       cssStr = cssStr.replace(clean[b], rep[b]);
     }
     //-------------------------Wrap Matching Text
+    cssStr = cssStr.replace(/[;]/ig, '&#59;');
     cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
     cssStr = cssStr.replace(cssSel, '<span id="css-sel">$&</span>');
     cssStr = cssStr.replace(cssSelExt, '</span><span id="css-sel-ext">$&</span>');
