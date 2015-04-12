@@ -19,6 +19,20 @@ var htmlTag = /(&#60;|&#60;&#47;)([\w]+)|&#62;/ig;
 var htmlAtt = /([\w]+)&#61;/ig;
 //-------------------------Value
 var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
+//--------------------------------------------------CSS
+//-------------------------Fix
+//Fixes the colouring of all the : characters
+//at the comments so that the : character
+//at all the comments are the same colour
+var cssFix = /<span id="css-val">:<\/span>/ig;
+//-------------------------Comment
+var cssCom = /\/\*([\s\S]*?)\*\//ig;
+//-------------------------Selector
+var cssSel = /([\w.#]+)([\s\S]*?){|}/ig;
+//-------------------------Property
+var cssProp = /([\w\-]+):/ig;
+//-------------------------Value
+var cssVal = /:([\s\S]*?);/ig;
 
 //---------------------------------------------------------------------------Colour Code
 function colourCode() {
