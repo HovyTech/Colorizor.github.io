@@ -46,7 +46,7 @@ var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)
 //---------------------------------------------------------------------------Colour Code
 function preLoad() {
   //--------------------------------------------------HTML
-  $('#html').each(function() {
+  $('#html').each(function(index, value) {
     //-------------------------Get Text
     var htmlStr = $(this).html();
     //-------------------------Replace Characters
@@ -69,7 +69,7 @@ function preLoad() {
     $(this).html(htmlStr);
   });
   //--------------------------------------------------CSS
-  $('#css').each(function() {
+  $('#css').each(function(index, value) {
     //-------------------------Get Text
     var cssStr = $(this).html();
     //-------------------------Replace Characters
