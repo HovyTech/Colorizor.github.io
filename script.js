@@ -31,7 +31,7 @@ var cssFixb = /<span id="css-val">:<\/span>/ig;
 //at all the comments are the same colour
 var cssFixc = /{<\/span><\/span>/ig;
 //Removing tags that are next to each other
-var cssFixd = /{<span id="css-unt"><span id="css-num">/ig;
+var cssFixd = /{<span id="css-num"><span id="css-unt">/ig;
 //-------------------------Comment
 var cssCom = /&#47;\*([\s\S]*?)\*&#47;/ig;
 //-------------------------Selector
