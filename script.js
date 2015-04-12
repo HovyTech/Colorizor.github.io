@@ -48,7 +48,7 @@ function preLoad() {
   //--------------------------------------------------HTML
   $('#html').each(function(index) {
     //-------------------------Get Text
-    var htmlStr = $('#html').eq(index + 1).html();
+    var htmlStr = $(this).eq(index + 1).html();
     //-------------------------Replace Characters
     for (a = 0; a < clean.length; a++) {
       htmlStr = htmlStr.replace(clean[a], rep[a]);
@@ -66,7 +66,7 @@ function preLoad() {
     //htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
     //htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
     //-------------------------Insert Coloured Text
-    $('#html').eq(index + 1).html(htmlStr);
+    $(this).eq(index + 1).html(htmlStr);
   });
   //--------------------------------------------------CSS
   $('#css').each(function(index) {
