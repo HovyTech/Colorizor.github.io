@@ -69,10 +69,10 @@ function colourCode() {
     }
     //-------------------------Wrap Matching Text
     cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
-    cssStr = cssStr.replace(cssSel, '<span id="css-tag">$&</span>');
-    cssStr = cssStr.replace(cssProp, '<span id="css-att">$&</span>');
+    cssStr = cssStr.replace(cssSel, '<span id="css-sel">$&</span>');
+    cssStr = cssStr.replace(cssProp, '<span id="css-prop">$&</span>');
     cssStr = cssStr.replace(cssVal, '<span id="css-val">$&</span>');
-    cssStr = cssStr.replace(cssFix, '&#62;</span>');
+    cssStr = cssStr.replace(cssFix, ':</span><span id="css-val">');
     //-------------------------Insert Coloured Text
     $(this).html(cssStr);
   });
