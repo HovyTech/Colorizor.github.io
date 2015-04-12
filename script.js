@@ -43,9 +43,9 @@ var cssProp = /([\w&#45;]*?):/ig;
 //-------------------------Value
 var cssVal = /:(.*?)&#59;/ig;
 //-------------------------Unit
-var cssUnt = /([^\D])([\d.]+)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/ig;
+var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/ig;
 //-------------------------Number
-var cssNum = /<span id="css-unt">([\d.]+)([^\D])/ig;
+var cssNum = /<span id="css-unt">([\d.]*?)([^\D])/ig;
 
 //---------------------------------------------------------------------------Colour Code
 function colourCode() {
@@ -94,7 +94,7 @@ function colourCode() {
     cssStr = cssStr.replace(cssFixc, '</span><span id="css-sel">{</span>');
     cssStr = cssStr.replace(cssFixd, '<span id="css-num">');
     //-------------------------Insert Coloured Text
-    $(this).html(cssStr);
+    $(this).text(cssStr);
   });
 }
 colourCode();
