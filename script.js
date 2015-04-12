@@ -48,7 +48,7 @@ function preLoad() {
   //--------------------------------------------------HTML
   $('#html').each(function(index, value) {
     //-------------------------Get Text
-    var htmlStr = $(this).html();
+    var htmlStr = $(this).eq(1).html();
     //-------------------------Replace Characters
     for (a = 0; a < clean.length; a++) {
       htmlStr = htmlStr.replace(clean[a], rep[a]);
@@ -71,7 +71,7 @@ function preLoad() {
   //--------------------------------------------------CSS
   $('#css').each(function(index, value) {
     //-------------------------Get Text
-    var cssStr = $(this).html();
+    var cssStr = $(this).eq(1).html();
     //-------------------------Replace Characters
     cssStr = cssStr.replace(/[;]/ig, '&#59;');
     for (b = 0; b < clean.length; b++) {
