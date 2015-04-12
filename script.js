@@ -39,7 +39,7 @@ alert(total)
     //htmlStr = htmlStr.replace(/<\/span><span id="html-com"><span/ig, '<span');
     //htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
     //htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
-    document.getElementById('html')[a].innerHTML = htmlStr;
+    document.getElementById('html').innerHTML = htmlStr;
   }
 }
 htmlCode();
