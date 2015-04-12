@@ -24,11 +24,17 @@ var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
 //Fixes the colouring of all the : characters
 //at the comments so that the : character
 //at all the comments are the same colour
-var cssFix = /<span id="css-val">:<\/span>/ig;
+var cssFixa = /<span id="css-val">:<\/span>/ig;
+//Fixes the colouring of all the { characters
+//at the comments so that the { character
+//at all the comments are the same colour
+var cssFixb = /{<\/span><\/span>/ig;
 //-------------------------Comment
 var cssCom = /\/\*([\s\S]*?)\*\//ig;
 //-------------------------Selector
 var cssSel = /^([\s\S]*?){|}/igm;
+//-------------------------Selector Extention
+var cssSelExt = /:(.*?){/ig;
 //-------------------------Property
 var cssProp = /([\w\-]+):/ig;
 //-------------------------Value
@@ -70,9 +76,11 @@ function colourCode() {
     //-------------------------Wrap Matching Text
     cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
     cssStr = cssStr.replace(cssSel, '<span id="css-sel">$&</span>');
+    cssStr = cssStr.replace(cssSelExt, '</span><span id="css-sel-ext">$&</span>');
     cssStr = cssStr.replace(cssProp, '<span id="css-prop">$&</span>');
     cssStr = cssStr.replace(cssVal, '<span id="css-val">$&</span>');
-    cssStr = cssStr.replace(cssFix, ':</span><span id="css-val">');
+    cssStr = cssStr.replace(cssFixa, ':</span><span id="css-val">');
+    cssStr = cssStr.replace(cssFixb, '</span><span id="css-val">{');
     //-------------------------Insert Coloured Text
     $(this).html(cssStr);
   });
