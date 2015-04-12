@@ -19,10 +19,11 @@ function htmlCode() {
   //-------------------------Value
   var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
   //-------------------------Colour Code
-  var htmlTot = document.getElementById('html').length;
-  for (a = 0; a < htmlTot; a++) {
+  var total = document.getElementByTagName('pre').length;
+alert(total)
+  for (a = 0; a < total; a++) {
     //Replace
-    var htmlStr = document.getElementById('html')[a].innerHTML;
+    var htmlStr = document.getElementById('html').innerHTML;
     //Clean
     for (b = 0; b < htmlClean.length; b++) {
       htmlStr = htmlStr.replace(htmlClean[b], htmlReplace[b]);
