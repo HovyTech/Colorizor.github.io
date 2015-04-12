@@ -21,7 +21,7 @@ function htmlCode() {
   //-------------------------Colour Code
   $('#html').each(function(index, value) {
     //Replace
-    var htmlStr = $(this).html();
+    var htmlStr = $(this).text();
     //Clean
     for (b = 0; b < htmlClean.length; b++) {
       htmlStr = htmlStr.replace(htmlClean[b], htmlReplace[b]);
@@ -37,7 +37,7 @@ function htmlCode() {
     //htmlStr = htmlStr.replace(/<\/span><span id="html-com"><span/ig, '<span');
     //htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
     //htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
-    $(this).html(htmlStr);
+    $(this).text(htmlStr);
   });
 }
 htmlCode();
