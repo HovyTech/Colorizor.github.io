@@ -66,12 +66,12 @@ function preLoad() {
     //htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
     //htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
     //-------------------------Insert Coloured Text
-    $(this).html(htmlStr);
+    $(this).eq(1).html(htmlStr);
   });
   //--------------------------------------------------CSS
   $('#css').each(function(index, value) {
     //-------------------------Get Text
-    var cssStr = $(this).eq(1).html();
+    var cssStr = $(this).eq(0).html();
     //-------------------------Replace Characters
     cssStr = cssStr.replace(/[;]/ig, '&#59;');
     for (b = 0; b < clean.length; b++) {
@@ -88,6 +88,6 @@ function preLoad() {
     cssStr = cssStr.replace(cssFixb, ':</span><span id="css-val">');
     cssStr = cssStr.replace(cssFixc, '</span><span id="css-sel">{</span>');
     //-------------------------Insert Coloured Text
-    $(this).html(cssStr);
+    $(this).eq(0).html(cssStr);
   });
 }
