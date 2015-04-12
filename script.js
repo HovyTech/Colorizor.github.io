@@ -31,7 +31,7 @@ var cssFixb = /<span id="css-val">:<\/span>/ig;
 //at all the comments are the same colour
 var cssFixc = /{<\/span><\/span>/ig;
 //-------------------------Comment
-var cssCom = /\/\*([\s\S]*?)\*\//ig;
+var cssCom = /&#47;\*([\s\S]*?)\*\&#47;/ig;
 //-------------------------Selector
 var cssSel = /([\w\s.#:_@!\[\]\(\)&45;]*?){|}/ig;
 //-------------------------Selector Extention
