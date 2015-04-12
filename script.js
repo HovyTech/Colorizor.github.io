@@ -46,11 +46,9 @@ var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)
 //---------------------------------------------------------------------------Colour Code
 function preLoad() {
   //--------------------------------------------------HTML
-  //$('#html').each(function(index) {
-  var htmlTotal = $.('#html').length;
-  for (htmlIndex = 0; htmlIndex < htmlTotal; htmlIndex++) {
+  $('#html').each(function(index) {
     //-------------------------Get Text
-    var htmlStr = $('#html').eq(htmlIndex).html();
+    var htmlStr = $('#html').eq(index + 1).html();
     //-------------------------Replace Characters
     for (a = 0; a < clean.length; a++) {
       htmlStr = htmlStr.replace(clean[a], rep[a]);
@@ -68,9 +66,8 @@ function preLoad() {
     //htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
     //htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
     //-------------------------Insert Coloured Text
-    $('#html').eq(htmlIndex).html(htmlStr);
-  }
-  //});
+    $('#html').eq(index + 1).html(htmlStr);
+  });
   //--------------------------------------------------CSS
   $('#css').each(function(index) {
     //-------------------------Get Text
