@@ -27,8 +27,8 @@ function colourCode() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
     //-------------------------Replace Characters
-    for (a = 0; a < htmlClean.length; a++) {
-      htmlStr = htmlStr.replace(htmlClean[a], htmlReplace[a]);
+    for (a = 0; a < clean.length; a++) {
+      htmlStr = htmlStr.replace(clean[a], rep[a]);
     }
     //-------------------------Wrap Matching Text
     htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
@@ -50,7 +50,7 @@ function colourCode() {
     //-------------------------Get Text
     var cssStr = $(this).html();
     //-------------------------Replace Characters
-    for (b = 0; b < cssClean.length; b++) {
+    for (b = 0; b < clean.length; b++) {
       cssStr = cssStr.replace(clean[b], rep[b]);
     }
     //-------------------------Wrap Matching Text
