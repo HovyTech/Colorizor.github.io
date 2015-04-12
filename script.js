@@ -37,7 +37,7 @@ var cssSel = /^([\s\S]*?){|}/igm;
 //-------------------------Selector Extention
 var cssSelExt = /:(.*?){/ig;
 //-------------------------Property
-var cssProp = /([\w-]+):/ig;
+var cssProp = /([\w-]*?):/ig;
 //-------------------------Value
 var cssVal = /:(.*?);/ig;
 
