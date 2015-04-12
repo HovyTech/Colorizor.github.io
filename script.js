@@ -44,7 +44,7 @@ var cssVal = /:(.*?)&#59;/ig;
 var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/ig;
 
 //---------------------------------------------------------------------------Colour Code
-function colourCode() {
+function preLoad() {
   //--------------------------------------------------HTML
   $('#html').each(function() {
     //-------------------------Get Text
@@ -91,4 +91,3 @@ function colourCode() {
     $(this).html(cssStr);
   });
 }
-colourCode();
