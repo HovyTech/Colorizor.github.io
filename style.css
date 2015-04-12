@@ -5,14 +5,14 @@ pre {
   font-size: 18px;
   font-style: bold;
   height: auto;
-  left: 20%;
+  left: 0px;
   margin: 5px;
   overflow: auto;
   padding: 10px;
   position: relative;
-  top: 200px;
+  top: 0px;
   white-space: pre-wrap;
-  width: 60%;
+  width: 100%;
   z-index: 100;
 }
 /*
