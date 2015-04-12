@@ -50,14 +50,20 @@ li:before {
   font-style: italic;
 }
 #css-sel {
-  color: rgb(174, 154, 255);
+  color: rgb(249, 108, 100);
 }
 #css-sel-ext {
   color: rgb(255, 171, 122);
 }
 #css-prop {
-  color: rgb(249, 108, 100);
+  color: rgb(174, 154, 255);
 }
 #css-val {
   color: rgb(110, 175, 255);
+}
+#css-unt {
+  color: rgb(255, 251, 145);
+}
+#css-num {
+  color: rgb(144, 255, 180);
 }
