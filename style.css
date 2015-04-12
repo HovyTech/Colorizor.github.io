@@ -59,11 +59,11 @@ li:before {
   color: rgb(174, 154, 255);
 }
 #css-val {
-  color: rgb(110, 175, 255);
+  color: rgb(144, 255, 180);
 }
 #css-unt {
   color: rgb(255, 251, 145);
 }
-#css-num {
-  color: rgb(144, 255, 180);
+#css-txt {
+  color: rgb(110, 175, 255);
 }
