@@ -25,7 +25,7 @@ var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
 //at the comments so that the : character
 //at all the comments are the same colour
 var cssFixa = /<span id="css-sel"><span id="css-prop">/ig;
-var cssFixb = /<span id="css-val">:<\/span><\/span>/ig;
+var cssFixb = /<span id="css-val">:<\/span>/ig;
 //Fixes the colouring of all the { characters
 //at the comments so that the { character
 //at all the comments are the same colour
