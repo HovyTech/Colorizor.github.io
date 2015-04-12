@@ -71,11 +71,11 @@ function colourCode() {
     //-------------------------Get Text
     var cssStr = $(this).html();
     //-------------------------Replace Characters
+    cssStr = cssStr.replace(/[;]/ig, '&#59;');
     for (b = 0; b < clean.length; b++) {
       cssStr = cssStr.replace(clean[b], rep[b]);
     }
     //-------------------------Wrap Matching Text
-    cssStr = cssStr.replace(/[;]/ig, '&#59;');
     cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
     cssStr = cssStr.replace(cssSel, '<span id="css-sel">$&</span>');
     cssStr = cssStr.replace(cssSelExt, '</span><span id="css-sel-ext">$&</span>');
