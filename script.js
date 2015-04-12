@@ -80,7 +80,7 @@ function colourCode() {
     cssStr = cssStr.replace(cssProp, '<span id="css-prop">$&</span>');
     cssStr = cssStr.replace(cssVal, '<span id="css-val">$&</span>');
     cssStr = cssStr.replace(cssFixa, ':</span><span id="css-val">');
-    cssStr = cssStr.replace(cssFixb, '</span><span id="css-val">{');
+    cssStr = cssStr.replace(cssFixb, '</span><span id="css-sel">{</span>');
     //-------------------------Insert Coloured Text
     $(this).html(cssStr);
   });
