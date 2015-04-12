@@ -1,1 +1,0 @@
-# colorizor.github.io
