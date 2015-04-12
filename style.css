@@ -1,21 +1,19 @@
 pre {
   background-color: rgb(88, 88, 88);
+  color: rgb(255, 255, 255);
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 18px;
+  font-style: bold;
   height: auto;
   left: 20%;
   margin: 5px;
+  overflow: auto;
   padding: 10px;
   position: relative;
   top: 200px;
   white-space: pre-wrap;
   width: 60%;
   z-index: 100;
-}
-code {
-  color: rgb(255, 255, 255);
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 18px;
-  font-style: bold;
-  overflow: auto;
 }
 /*
 ol {
