@@ -30,8 +30,6 @@ var cssFixb = /<span id="css-val">:<\/span>/ig;
 //at the comments so that the { character
 //at all the comments are the same colour
 var cssFixc = /{<\/span><\/span>/ig;
-//Removing tags that are next to each other
-var cssFixd = /{<span id="css-num"><span id="css-unt">/ig;
 //-------------------------Comment
 var cssCom = /&#47;\*([\s\S]*?)\*&#47;/ig;
 //-------------------------Selector
@@ -44,8 +42,6 @@ var cssProp = /([\w&#45;]*?):/ig;
 var cssVal = /:(.*?)&#59;/ig;
 //-------------------------Unit
 var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/ig;
-//-------------------------Number
-var cssNum = /<span id="css-unt">([\d.].*?)([^\D])/ig;
 
 //---------------------------------------------------------------------------Colour Code
 function colourCode() {
@@ -88,11 +84,9 @@ function colourCode() {
     cssStr = cssStr.replace(cssProp, '<span id="css-prop">$&</span>');
     cssStr = cssStr.replace(cssVal, '<span id="css-val">$&</span>');
     cssStr = cssStr.replace(cssUnt, '</span><span id="css-unt">$&</span><span id="css-val">');
-    cssStr = cssStr.replace(cssNum, '<span id="css-num">$&</span><span id="css-unt">');
     cssStr = cssStr.replace(cssFixa, '<span id="css-sel-ext">:');
     cssStr = cssStr.replace(cssFixb, ':</span><span id="css-val">');
     cssStr = cssStr.replace(cssFixc, '</span><span id="css-sel">{</span>');
-    cssStr = cssStr.replace(cssFixd, '<span id="css-num">');
     //-------------------------Insert Coloured Text
     $(this).text(cssStr);
   });
