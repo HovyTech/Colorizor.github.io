@@ -32,7 +32,7 @@ var cssSel = /^([\s\S]*?){|}/igm;
 //-------------------------Property
 var cssProp = /([\w\-]+):/ig;
 //-------------------------Value
-var cssVal = /:([\s\S]*?);/ig;
+var cssVal = /:(.*?);/ig;
 
 //---------------------------------------------------------------------------Colour Code
 function colourCode() {
