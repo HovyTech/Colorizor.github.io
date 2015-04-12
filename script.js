@@ -46,9 +46,9 @@ var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)
 //---------------------------------------------------------------------------Colour Code
 function preLoad() {
   //--------------------------------------------------HTML
-  $('#html').each(function(index, value) {
+  $('#html').each(function(index) {
     //-------------------------Get Text
-    var htmlStr = $(this).eq(1).html();
+    var htmlStr = $(this).eq(index).html();
     //-------------------------Replace Characters
     for (a = 0; a < clean.length; a++) {
       htmlStr = htmlStr.replace(clean[a], rep[a]);
@@ -66,12 +66,12 @@ function preLoad() {
     //htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
     //htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
     //-------------------------Insert Coloured Text
-    $(this).eq(1).html(htmlStr);
+    $(this).eq(index).html(htmlStr);
   });
   //--------------------------------------------------CSS
-  $('#css').each(function(index, value) {
+  $('#css').each(function(index) {
     //-------------------------Get Text
-    var cssStr = $(this).eq(0).html();
+    var cssStr = $(this).eq(index).html();
     //-------------------------Replace Characters
     cssStr = cssStr.replace(/[;]/ig, '&#59;');
     for (b = 0; b < clean.length; b++) {
@@ -88,6 +88,6 @@ function preLoad() {
     cssStr = cssStr.replace(cssFixb, ':</span><span id="css-val">');
     cssStr = cssStr.replace(cssFixc, '</span><span id="css-sel">{</span>');
     //-------------------------Insert Coloured Text
-    $(this).eq(0).html(cssStr);
+    $(this).eq(index).html(cssStr);
   });
 }
