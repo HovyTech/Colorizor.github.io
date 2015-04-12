@@ -30,6 +30,7 @@ li:before {
   float: left;
 }
 */
+/*-------------------------HTML-------------------------*/
 #html-com {
   color: rgb(127, 127, 127);
   font-style: italic;
@@ -38,6 +39,20 @@ li:before {
   color: rgb(174, 154, 255);
 }
 #html-att {
+  color: rgb(249, 108, 100);
+}
+#html-val {
+  color: rgb(110, 175, 255);
+}
+/*-------------------------CSS-------------------------*/
+#css-com {
+  color: rgb(127, 127, 127);
+  font-style: italic;
+}
+#css-sel {
+  color: rgb(174, 154, 255);
+}
+#css-prop {
   color: rgb(249, 108, 100);
 }
 #html-val {
