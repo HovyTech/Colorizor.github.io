@@ -19,7 +19,7 @@ function htmlCode() {
   //-------------------------Value
   var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
   //-------------------------Colour Code
-  var total = document.getElementByTagName('pre').length;
+  var total = $('bode').find('#html').length;
 alert(total)
   for (a = 0; a < total; a++) {
     //Replace
