@@ -37,7 +37,7 @@ function htmlCode() {
     //htmlStr = htmlStr.replace(/<\/span><span id="html-com"><span/ig, '<span');
     //htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
     //htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
-    $(this).text(htmlStr);
+    $(this).html(htmlStr);
   });
 }
 htmlCode();
