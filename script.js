@@ -1,31 +1,36 @@
+//--------------------------------------------------Clean Up
+//-------------------------Replace Characters
+//By replacing the characters it allowes
+//for not replacing the span tag characters
+var clean = [/&lt;/ig, /&gt;/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[\t]/ig];
+var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
+
 //--------------------------------------------------HTML
-function htmlCode() {
-  //-------------------------Clean Up
-  //Replace characters
-  //By replacing the characters it allowes
-  //for not replacing the span tag characters
-  var htmlClean = [/&lt;/ig, /&gt;/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[\t]/ig];
-  var htmlReplace = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
-  //Fixes the colouring of all the > characters
-  //at the comments so that the > character
-  //at all the comments are the same colour
-  var htmlFix = /<span id="html-tag">&#62;<\/span><\/span>/ig;
-  //-------------------------Comment
-  var htmlCom = /(&#60;&#33;DOCTYPE|&#60;&#33;&#45;&#45;)([\s\S]*?)(&#45;&#45;&#62;|&#62;)/ig;
-  //-------------------------Tag
-  var htmlTag = /(&#60;|&#60;&#47;)([\w]+)|&#62;/ig;
-  //-------------------------Attribute
-  var htmlAtt = /([\w]+)&#61;/ig;
-  //-------------------------Value
-  var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
-  //-------------------------Colour Code
-  $('#html').each(function(index, value) {
-    //Replace
+//-------------------------Fix
+//Fixes the colouring of all the > characters
+//at the comments so that the > character
+//at all the comments are the same colour
+var htmlFix = /<span id="html-tag">&#62;<\/span><\/span>/ig;
+//-------------------------Comment
+var htmlCom = /(&#60;&#33;DOCTYPE|&#60;&#33;&#45;&#45;)([\s\S]*?)(&#45;&#45;&#62;|&#62;)/ig;
+//-------------------------Tag
+var htmlTag = /(&#60;|&#60;&#47;)([\w]+)|&#62;/ig;
+//-------------------------Attribute
+var htmlAtt = /([\w]+)&#61;/ig;
+//-------------------------Value
+var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
+
+//---------------------------------------------------------------------------Colour Code
+function colourCode() {
+  //--------------------------------------------------HTML
+  $('#html').each(function() {
+    //-------------------------Get Text
     var htmlStr = $(this).html();
-    //Clean
-    for (b = 0; b < htmlClean.length; b++) {
-      htmlStr = htmlStr.replace(htmlClean[b], htmlReplace[b]);
+    //-------------------------Replace Characters
+    for (a = 0; a < htmlClean.length; a++) {
+      htmlStr = htmlStr.replace(htmlClean[a], htmlReplace[a]);
     }
+    //-------------------------Wrap Matching Text
     htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
     htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
     htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
@@ -37,7 +42,25 @@ function htmlCode() {
     //htmlStr = htmlStr.replace(/<\/span><span id="html-com"><span/ig, '<span');
     //htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
     //htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
+    //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
+  //--------------------------------------------------CSS
+  $('#css').each(function() {
+    //-------------------------Get Text
+    var cssStr = $(this).html();
+    //-------------------------Replace Characters
+    for (b = 0; b < cssClean.length; b++) {
+      cssStr = cssStr.replace(clean[b], rep[b]);
+    }
+    //-------------------------Wrap Matching Text
+    cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
+    cssStr = cssStr.replace(cssSel, '<span id="css-tag">$&</span>');
+    cssStr = cssStr.replace(cssProp, '<span id="css-att">$&</span>');
+    cssStr = cssStr.replace(cssVal, '<span id="css-val">$&</span>');
+    cssStr = cssStr.replace(cssFix, '&#62;</span>');
+    //-------------------------Insert Coloured Text
+    $(this).html(cssStr);
+  });
 }
-htmlCode();
+colourCode();
