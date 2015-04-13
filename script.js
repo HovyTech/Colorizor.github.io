@@ -55,6 +55,17 @@ var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)
 
 //---------------------------------------------------------------------------Colour Code
 function preLoad() {
+  //----------------------------------------------TEXT
+  $.each($('pre[id="text"]'), function() {
+    //-------------------------Get Text
+    var textStr = $(this).html();
+    //-------------------------Replace Characters
+    for (a = 0; a < clean.length; a++) {
+      textStr = textStr.replace(clean[a], rep[a]);
+    }
+    //-------------------------Insert Text
+    $(this).html(textStr);
+  });
   //--------------------------------------------------HTML
   $.each($('pre[id="html"]'), function() {
     //-------------------------Get Text
