@@ -101,14 +101,16 @@ function preLoad() {
     $(this).html(cssStr);
   });
   //----------------------------------------------Numbering
-  $.each($('pre'), function() {
+  $.each($('pre'), function(index) {
     //-------------------------Get Number Of Lines
     var numLine = preStr.split(/\n/ig).length;
     var numStr = '';
     for (aa = 0; aa < numLine; aa++) {
       numStr = numStr + '<span id="num-line">' + (aa + 1) + '</span>\n';
     }
-    $(this).wrap('<table><tr><td id="pre-col">' + numStr + '</td><td id="pre-tag"></td></tr></table>');
+    $(this).wrap('<table id="pre-div-colorizor"></table>');
+    var preStr = $('#pre-div-colorizor').html();
+    $('#pre-div-colorizor').eq(index).html('<tr><td>' + numStr + '</td><td>' + preStr + '</td></tr>');
     //-------------------------Get Full Pre Tag
     //$(this).wrap(function() {
       //return '<table><tr><td id="num-col">' + numStr + '</td><td>' + preTag + '</td></tr></table>';
