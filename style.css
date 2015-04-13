@@ -24,6 +24,9 @@
   /*white-space: pre-wrap;*/
   z-index: 100;
 }
+#desc {
+  color: rgb(255, 255, 255);
+}
 /*
 ol {
   counter-reset: item;
