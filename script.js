@@ -102,6 +102,7 @@ function preLoad() {
   });
   //----------------------------------------------Numbering
   $.each($('pre'), function(index) {
+    var preStr = $(this).html();
     //-------------------------Get Number Of Lines
     var numLine = preStr.split(/\n/ig).length;
     var numStr = '';
@@ -109,7 +110,7 @@ function preLoad() {
       numStr = numStr + '<span id="num-line">' + (aa + 1) + '</span>\n';
     }
     $(this).wrap('<table id="pre-div-colorizor"></table>');
-    var preStr = $('#pre-div-colorizor').html();
+    preStr = $('#pre-div-colorizor').html();
     $('#pre-div-colorizor').eq(index).html('<tr><td>' + numStr + '</td><td>' + preStr + '</td></tr>');
     //-------------------------Get Full Pre Tag
     //$(this).wrap(function() {
