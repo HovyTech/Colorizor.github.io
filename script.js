@@ -89,9 +89,9 @@ function preLoad() {
     cssStr = cssStr.replace(cssFixb, ':</span><span id="css-val">');
     cssStr = cssStr.replace(cssFixc, '</span><span id="css-sel">{</span>');
     cssStr = cssStr.replace(cssFixd, '$&</span><span id="css-com">');
-    cssStr = cssStr.replace(cssFixe, '<span');
+    //cssStr = cssStr.replace(cssFixe, '<span');
     //-------------------------Insert Coloured Text
-    $(this).html(cssStr);
+    $(this).text(cssStr);
   });
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
