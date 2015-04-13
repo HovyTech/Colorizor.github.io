@@ -109,9 +109,8 @@ function preLoad() {
     for (aa = 0; aa < numLine; aa++) {
       numStr = numStr + '<span id="num-line">' + (aa + 1) + '</span>\n';
     }
-    $(this).wrap('<table id="pre-div-colorizor"></table>');
-    preStr = $('#pre-div-colorizor').html();
-    $('#pre-div-colorizor').eq(index).html('<tr><td>' + numStr + '</td><td>' + preStr + '</td></tr>');
+    preStr = document.getElementByTagName('pre')[index].outerHTML;
+    document.getElementByTagName('pre')[index].outerHTML = '<table><tr><td>' + numStr + '</td><td>' + preStr + '</td></tr></table>';
     //-------------------------Get Full Pre Tag
     //$(this).wrap(function() {
       //return '<table><tr><td id="num-col">' + numStr + '</td><td>' + preTag + '</td></tr></table>';
