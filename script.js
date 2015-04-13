@@ -34,7 +34,7 @@ var cssFixa = /<span id="css-sel-ext"><span id="css-prop">:<\/span>/ig;
 var cssFixb = /<span id="css-val">:<\/span>/ig;
 var cssFixc = /{<\/span><\/span>/ig;
 var cssFixd = /&#47;*([\s\S]*?)\n/ig;
-var cssFixe = /<\/span><span id="css-com"><span/ig;
+var cssFixe = /<span id="css-sel"><\/span><span id="css-com">/ig;
 //-------------------------Comment
 var cssCom = /&#47;\*([\s\S]*?)\*&#47;/ig;
 //-------------------------Selector
@@ -89,9 +89,9 @@ function preLoad() {
     cssStr = cssStr.replace(cssFixb, ':</span><span id="css-val">');
     cssStr = cssStr.replace(cssFixc, '</span><span id="css-sel">{</span>');
     cssStr = cssStr.replace(cssFixd, '$&</span><span id="css-com">');
-    //cssStr = cssStr.replace(cssFixe, '<span');
+    cssStr = cssStr.replace(cssFixe, '<span id="css-sel">');
     //-------------------------Insert Coloured Text
-    $(this).text(cssStr);
+    $(this).html(cssStr);
   });
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
