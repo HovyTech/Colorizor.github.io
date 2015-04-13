@@ -34,7 +34,7 @@ var cssFixa = /<span id="css-sel-ext"><span id="css-prop">:<\/span>/ig;
 var cssFixb = /<span id="css-val">:<\/span>/ig;
 var cssFixc = /{<\/span><\/span>/ig;
 var cssFixd = /&#47;*([\s\S]*?)\n/ig;
-var cssFixe = /<span id="css-sel"><\/span><span id="css-com">/ig;
+var cssFixe = /<span id="css-sel">([\s\S]*?)<\/span><span id="css-com">/ig;
 //-------------------------Comment
 var cssCom = /&#47;\*([\s\S]*?)\*&#47;/ig;
 //-------------------------Selector
