@@ -2,9 +2,10 @@
 //-------------------------Get Screen Width
 var width = screen.width;
 //-------------------------Create percentage with width
-var percent = ((width - 10) / width) * 100;
+//var percent = ((width - 10) / width) * 100;
 //-------------------------Change all pre tag width
-$('pre').css('width', percent + '%');
+$('pre').css('width', (width - (2 * 5)) + 'px');
+$('pre').css('left', '5px');
 //--------------------------------------------------Clean Up
 //-------------------------Replace Characters
 //By replacing the characters it allowes
