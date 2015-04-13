@@ -20,7 +20,9 @@ var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\
 //Fixes the colouring of all the > characters
 //at the comments so that the > character
 //at all the comments are the same colour
-var htmlFix = /<span id="html-tag">&#62;<\/span><\/span>/ig;
+var htmlFixa = /<span id="html-tag">&#62;<\/span><\/span>/ig;
+var htmlFixb = /&#60;&#33;&#45;&#45;([\s\S]*?)\n/ig;
+var htmlFixc = /<\/span><span id="html-com"><span/ig;
 //-------------------------Comment
 var htmlCom = /(&#60;&#33;DOCTYPE|&#60;&#33;&#45;&#45;)([\s\S]*?)(&#45;&#45;&#62;|&#62;)/ig;
 //-------------------------Tag
@@ -68,13 +70,9 @@ function preLoad() {
     htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
     htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
-    htmlStr = htmlStr.replace(htmlFix, '&#62;</span>');
-    //-------------------------Numbering
-    //Doesn't work that well. Update should fix it. 
-    htmlStr = htmlStr.replace(/&#60;&#33;&#45;&#45;([\s\S]*?)\n/ig, '$&</span><span id="html-com">');
-    htmlStr = htmlStr.replace(/<\/span><span id="html-com"><span/ig, '<span');
-    htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
-    htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
+    htmlStr = htmlStr.replace(htmlFixa, '&#62;</span>');
+    htmlStr = htmlStr.replace(htmlFixb, '$&</span><span id="html-com">');
+    htmlStr = htmlStr.replace(htmlFixc, '<span');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
@@ -101,18 +99,11 @@ function preLoad() {
     $(this).html(cssStr);
   });
   //----------------------------------------------Numbering
-  //$.each($('pre'), function(index) {
-    //var preStr = $(this).html();
-    //-------------------------Get Number Of Lines
-    //var numLine = preStr.split(/\n/ig).length;
-    //var numStr = '';
-    //for (aa = 0; aa < numLine; aa++) {
-      //numStr = numStr + '<span id="num-line">' + (aa + 1) + '</span>\n';
-    //}
-    //$(this).html('<table><tr><td>' + numStr + '</td><td>' + preStr + '</td></tr></table>');
-    //-------------------------Get Full Pre Tag
-    //$(this).wrap(function() {
-      //return '<table><tr><td id="num-col">' + numStr + '</td><td>' + preTag + '</td></tr></table>';
-    //});
-  //});
+  //$.each($('pre'), function() {
+    var preStr = $(this).html();
+    //-------------------------Adding li and ol Tags
+    preStr = preStr.replace(/\n/ig, '</li><li>');
+    preStr = preStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
+    $(this).html(preStr);
+  });
 }
