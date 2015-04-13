@@ -1,3 +1,10 @@
+//--------------------------------------------------Fix Pre Tag Width
+//-------------------------Get Screen Width
+var width = screen.width;
+//-------------------------Create percentage with width
+var percent = ((width - 10) / width) * 100;
+//-------------------------Change all pre tag width
+$('pre').css('width', percent + '%');
 //--------------------------------------------------Clean Up
 //-------------------------Replace Characters
 //By replacing the characters it allowes
