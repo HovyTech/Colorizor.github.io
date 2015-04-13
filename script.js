@@ -7,6 +7,7 @@ var width = screen.width;
 //-------------------------Change all pre tag width
 $('pre').css('width', (width - 40) + 'px');
 $('pre').css('left', '5px');
+$('pre').css('right', '5px');
 //--------------------------------------------------Clean Up
 //-------------------------Replace Characters
 //By replacing the characters it allowes
