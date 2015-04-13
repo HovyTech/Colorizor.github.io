@@ -102,15 +102,15 @@ function preLoad() {
   });
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
-    //-------------------------Get Text
-    var preStr = $(this).html();
+    //-------------------------Get Number Of Lines
     var numLine = preStr.split(/\n/ig).length;
     var numStr = '';
     for (aa = 0; aa < numLine; aa++) {
       numStr = numStr + '<span id="num-line">' + (aa + 1) + '</span>\n';
     }
-    preStr = '<span id="num-col">' + numStr + '</span><span id="pre-str">' + preStr + '</span>';
-    //-------------------------Insert Text
-    $(this).html(preStr);
+    //-------------------------Get Full Pre Tag
+    $(this).wrap(function() {
+      return '<table><tr><td id="num-col">' + numStr + '</td><td>' + preTag + '</td></tr></table>';
+    });
   });
 }
