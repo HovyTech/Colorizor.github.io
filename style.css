@@ -30,7 +30,7 @@
 }
 ol {
   counter-reset: item;
-  list-style-type: none;
+  list-style-type: decimal-leading-zero;
   margin: 0px;
   padding: 5px;
 }
@@ -38,7 +38,6 @@ li:before {
   content: counter(item) "| ";
   counter-increment: item;
   float: left;
-  text-indent: -5px;
 }
 /*-------------------------HTML-------------------------*/
 #html-com {
