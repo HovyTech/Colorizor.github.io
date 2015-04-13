@@ -28,7 +28,6 @@
   color: rgb(255, 255, 255);
   text-align: center;
 }
-/*
 ol {
   counter-reset: item;
   list-style-type: none;
@@ -40,7 +39,6 @@ li:before {
   counter-increment: item;
   float: left;
 }
-*/
 /*-------------------------HTML-------------------------*/
 #html-com {
   color: rgb(127, 127, 127);
