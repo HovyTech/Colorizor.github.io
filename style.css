@@ -30,12 +30,12 @@
 }
 ol {
   counter-reset: item;
-  list-style-type: decimal-leading-zero;
+  list-style-type: none;
   margin: 0px;
   padding: 5px;
 }
 li:before {
-  content: counter(item) "| ";
+  content: counter(item) " ";
   counter-increment: item;
   float: left;
 }
