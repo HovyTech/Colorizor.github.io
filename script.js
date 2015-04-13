@@ -101,18 +101,18 @@ function preLoad() {
     $(this).html(cssStr);
   });
   //----------------------------------------------Numbering
-  $.each($('pre'), function(index) {
-    var preStr = $(this).html();
+  //$.each($('pre'), function(index) {
+    //var preStr = $(this).html();
     //-------------------------Get Number Of Lines
-    var numLine = preStr.split(/\n/ig).length;
-    var numStr = '';
-    for (aa = 0; aa < numLine; aa++) {
-      numStr = numStr + '<span id="num-line">' + (aa + 1) + '</span>\n';
-    }
-    $(this).html('<table><tr><td>' + numStr + '</td><td>' + preStr + '</td></tr></table>');
+    //var numLine = preStr.split(/\n/ig).length;
+    //var numStr = '';
+    //for (aa = 0; aa < numLine; aa++) {
+      //numStr = numStr + '<span id="num-line">' + (aa + 1) + '</span>\n';
+    //}
+    //$(this).html('<table><tr><td>' + numStr + '</td><td>' + preStr + '</td></tr></table>');
     //-------------------------Get Full Pre Tag
     //$(this).wrap(function() {
       //return '<table><tr><td id="num-col">' + numStr + '</td><td>' + preTag + '</td></tr></table>';
     //});
-  });
+  //});
 }
