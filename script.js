@@ -55,17 +55,6 @@ var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)
 
 //---------------------------------------------------------------------------Colour Code
 function preLoad() {
-  //----------------------------------------------TEXT
-  $.each($('pre[id="text"]'), function() {
-    //-------------------------Get Text
-    var textStr = $(this).html();
-    //-------------------------Replace Characters
-    for (a = 0; a < clean.length; a++) {
-      textStr = textStr.replace(clean[a], rep[a]);
-    }
-    //-------------------------Insert Text
-    $(this).html(textStr);
-  });
   //--------------------------------------------------HTML
   $.each($('pre[id="html"]'), function() {
     //-------------------------Get Text
@@ -110,5 +99,18 @@ function preLoad() {
     cssStr = cssStr.replace(cssFixc, '</span><span id="css-sel">{</span>');
     //-------------------------Insert Coloured Text
     $(this).html(cssStr);
+  });
+  //----------------------------------------------Numbering
+  $.each($('pre'), function() {
+    //-------------------------Get Text
+    var preStr = $(this).html();
+    var numLine = preStr.split(/\n/ig).length;
+    var numStr = '';
+    for (aa = 0; aa < numLine; aa++) {
+      numStr = numStr + '<span id="num-line">' + (aa + 1) + '</span>\n';
+    }
+    preStr = '<span id="num-col">' + numStr + '</span><span id="pre-str">' + preStr + '</span>';
+    //-------------------------Insert Text
+    $(this).html(preStr);
   });
 }
