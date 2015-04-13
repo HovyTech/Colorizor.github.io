@@ -95,6 +95,21 @@ li:before {
           </td>
         </tr>
       </table>
+      <table id="box">
+        <th id="title">CSS</th>
+        <tr>
+          <td>
+            <pre id="js">//----------------------------------------------Numbering
+$.each($('pre'), function() {
+  var preStr = $(this).html();
+  //-------------------------Adding li and ol Tags
+  preStr = preStr.replace(/\n/ig, '</li><li>');
+  preStr = preStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
+  $(this).html(preStr);
+});</pre>
+          </td>
+        </tr>
+      </table>
     </main>
     <footer>
       <table id="footer">
