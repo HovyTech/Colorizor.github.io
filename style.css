@@ -32,12 +32,13 @@ ol {
   counter-reset: item;
   list-style-type: none;
   margin: 0px;
-  padding: 10px;
+  padding: 5px;
 }
 li:before {
   content: counter(item) "| ";
   counter-increment: item;
   float: left;
+  text-indent: -5px;
 }
 /*-------------------------HTML-------------------------*/
 #html-com {
