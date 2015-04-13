@@ -99,7 +99,7 @@ function preLoad() {
     $(this).html(cssStr);
   });
   //----------------------------------------------Numbering
-  //$.each($('pre'), function() {
+  $.each($('pre'), function() {
     var preStr = $(this).html();
     //-------------------------Adding li and ol Tags
     preStr = preStr.replace(/\n/ig, '</li><li>');
