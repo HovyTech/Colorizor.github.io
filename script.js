@@ -3,11 +3,11 @@
 var width = screen.width;
 //var width = $(window).width();
 //-------------------------Create percentage with width
-//var percent = ((width - 40) / width) * 100;
+//var percent = ((width - 45) / width) * 100;
 //-------------------------Change all pre tag width
-$('pre').css('width', (width - 40) + 'px');
+$('pre').css('width', (width - 45) + 'px');
 $('pre').css('left', '5px');
-$('pre').css('right', '5px');
+//$('pre').css('right', '5px');
 //--------------------------------------------------Clean Up
 //-------------------------Replace Characters
 //By replacing the characters it allowes
