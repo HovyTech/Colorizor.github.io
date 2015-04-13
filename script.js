@@ -71,10 +71,10 @@ function preLoad() {
     htmlStr = htmlStr.replace(htmlFix, '&#62;</span>');
     //-------------------------Numbering
     //Doesn't work that well. Update should fix it. 
-    //htmlStr = htmlStr.replace(/&#60;&#33;&#45;&#45;([\s\S]*?)\n/ig, '$&</span><span id="html-com">');
-    //htmlStr = htmlStr.replace(/<\/span><span id="html-com"><span/ig, '<span');
-    //htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
-    //htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
+    htmlStr = htmlStr.replace(/&#60;&#33;&#45;&#45;([\s\S]*?)\n/ig, '$&</span><span id="html-com">');
+    htmlStr = htmlStr.replace(/<\/span><span id="html-com"><span/ig, '<span');
+    htmlStr = htmlStr.replace(/\n/ig, '</li><li>');
+    htmlStr = htmlStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
