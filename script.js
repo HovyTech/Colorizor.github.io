@@ -109,7 +109,6 @@ function preLoad() {
     for (aa = 0; aa < numLine; aa++) {
       numStr = numStr + '<span id="num-line">' + (aa + 1) + '</span>\n';
     }
-    preStr = $(this).append($('#html').clone()).html();
     $(this).html('<table><tr><td>' + numStr + '</td><td>' + preStr + '</td></tr></table>');
     //-------------------------Get Full Pre Tag
     //$(this).wrap(function() {
