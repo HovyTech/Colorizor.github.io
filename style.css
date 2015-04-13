@@ -6,11 +6,10 @@
   font-style: bold;
   height: auto;
   margin: 5px;
-  overflow: auto;
   padding: 10px;
   position: relative;
   top: 0px;
-  white-space: pre-wrap;
+  word-break: break-all;
   z-index: 100;
 }
 #html, #css {
