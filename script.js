@@ -17,9 +17,6 @@ var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\
 
 //--------------------------------------------------HTML
 //-------------------------Fix
-//Fixes the colouring of all the > characters
-//at the comments so that the > character
-//at all the comments are the same colour
 var htmlFixa = /<span id="html-tag">&#62;<\/span><\/span>/ig;
 var htmlFixb = /&#60;&#33;&#45;&#45;([\s\S]*?)\n/ig;
 var htmlFixc = /<\/span><span id="html-com"><span/ig;
@@ -33,15 +30,11 @@ var htmlAtt = /([\w]+)&#61;/ig;
 var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
 //--------------------------------------------------CSS
 //-------------------------Fix
-//Fixes the colouring of all the : characters
-//at the comments so that the : character
-//at all the comments are the same colour
 var cssFixa = /<span id="css-sel-ext"><span id="css-prop">:<\/span>/ig;
 var cssFixb = /<span id="css-val">:<\/span>/ig;
-//Fixes the colouring of all the { characters
-//at the comments so that the { character
-//at all the comments are the same colour
 var cssFixc = /{<\/span><\/span>/ig;
+var cssFixd = /&#47;*([\s\S]*?)\n/ig;
+var cssFixe = /<\/span><span id="css-com"><span/ig;
 //-------------------------Comment
 var cssCom = /&#47;\*([\s\S]*?)\*&#47;/ig;
 //-------------------------Selector
@@ -95,6 +88,8 @@ function preLoad() {
     cssStr = cssStr.replace(cssFixa, '<span id="css-sel-ext">:');
     cssStr = cssStr.replace(cssFixb, ':</span><span id="css-val">');
     cssStr = cssStr.replace(cssFixc, '</span><span id="css-sel">{</span>');
+    cssStr = cssStr.replace(cssFixd, '$&</span><span id="css-com">');
+    cssStr = cssStr.replace(cssFixe, '<span');
     //-------------------------Insert Coloured Text
     $(this).html(cssStr);
   });
