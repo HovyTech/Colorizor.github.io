@@ -29,8 +29,8 @@
   text-align: center;
 }
 ol {
-  /*counter-reset: item;
-  list-style-type: none;*/
+  counter-reset: item;
+  /*list-style-type: none;*/
   list-style-type: decimal-leading-zero;
   margin: 0px;
   padding: 0px;
