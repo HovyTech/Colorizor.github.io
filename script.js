@@ -52,6 +52,7 @@ var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)
 
 //-------------------------Set
 var jsSet = /(document|var|function|this|width|height|window|screen|length|if|for|while|return|true|false)/ig;
+var jsCom = /&#47;&#47;([\s\S]*?)\n/ig;
 
 //---------------------------------------------------------------------------Colour Code
 function preLoad() {
@@ -97,6 +98,20 @@ function preLoad() {
     cssStr = cssStr.replace(cssFixe, '$&<span id="css-sel">');
     //-------------------------Insert Coloured Text
     $(this).html(cssStr);
+  });
+  //--------------------------------------------------JS
+  $.each($('pre[id="js"]'), function() {
+    //-------------------------Get Text
+    var jsStr = $(this).html();
+    //-------------------------Replace Characters
+    for (a = 0; a < clean.length; a++) {
+      jsStr = jsStr.replace(clean[a], rep[a]);
+    }
+    //-------------------------Wrap Matching Text
+    jsStr = jsStr.replace(jsSet, '<span id="js-set">$&</span>');
+    jsStr = jsStr.replace(jsCom, '<span id="js-com">$&</span>');
+    //-------------------------Insert Coloured Text
+    $(this).html(jsStr);
   });
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
