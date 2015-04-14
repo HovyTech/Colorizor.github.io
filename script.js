@@ -51,7 +51,6 @@ var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)
 //-------------------------Fix
 var jsFixa = /\(<\/span>/ig;
 var jsFixb = /<span id="js-set"><span id="js-sel">function<\/span>/ig;
-var jsFixc = /<span id="js-sel">\./ig;
 //-------------------------Set
 var jsSet = /(document|var|function|this|width|height|window|screen|length|if|for|while|return|true|false)/ig;
 //-------------------------Comment
@@ -60,8 +59,6 @@ var jsCom = /&#47;&#47;([\s\S]*?)\n/ig;
 var jsSel = /((function|\.)([\s\S]*?)|([\w]+))\(/ig;
 //-------------------------Value
 var jsVal = /(&#34;|')([\s\S]*?)('|&#34;)/ig;
-//-------------------------Character
-var jsChar = /[\$\{\}\(\)\.]/ig;
 
 //---------------------------------------------------------------------------Colour Code
 function preLoad() {
@@ -121,10 +118,8 @@ function preLoad() {
     jsStr = jsStr.replace(jsCom, '<span id="js-com">$&</span>');
     jsStr = jsStr.replace(jsSel, '<span id="js-sel">$&</span>');
     jsStr = jsStr.replace(jsVal, '<span id="js-val">$&</span>');
-    jsStr = jsStr.replace(jsChar, '<span id="js-char">$&</span>');
     jsStr = jsStr.replace(jsFixa, '</span>(');
     jsStr = jsStr.replace(jsFixb, '<span id="js-set">function</span><span id="js-sel">');
-    jsStr = jsStr.replace(jsFixc, '.<span id="js-sel">');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
   });
