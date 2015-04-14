@@ -49,13 +49,13 @@ var cssVal = /:(.*?)&#59;/ig;
 var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/ig;
 //--------------------------------------------------JS
 //-------------------------Fix
-
+var jsFixa = /\(<\/span>/ig;
 //-------------------------Set
 var jsSet = /(document|var|function|this|width|height|window|screen|length|if|for|while|return|true|false)/ig;
 //-------------------------Comment
 var jsCom = /&#47;&#47;([\s\S]*?)\n/ig;
 //-------------------------Selector
-var jsSel = /\.([\s\S]*?)\(|\)([^\/])([\s\S]*?)(,|\.|\{)/ig;
+var jsSel = /(\s|\.)([\s\S]*?)\(/ig;
 //-------------------------Value
 var jsVal = /(&#34;|')([\s\S]*?)('|&#34;)/ig;
 
@@ -117,6 +117,7 @@ function preLoad() {
     jsStr = jsStr.replace(jsCom, '<span id="js-com">$&</span>');
     jsStr = jsStr.replace(jsSel, '<span id="js-sel">$&</span>');
     jsStr = jsStr.replace(jsVal, '<span id="js-val">$&</span>');
+    jsStr = jsStr.replace(jsFixa, '</span>(');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
   });
