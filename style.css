@@ -73,3 +73,23 @@ li:before {
 #css-unt {
   color: rgb(110, 175, 255);
 }
+/*-------------------------JS-------------------------*/
+#js-set {
+  color: rgb(255, 171, 122);
+}
+#js-com {
+  color: rgb(127, 127, 127);
+  font-style: italic;
+}
+#js-sel {
+  color: rgb(249, 108, 100);
+}
+#js-prop {
+  color: rgb(174, 154, 255);
+}
+#js-val {
+  color: rgb(144, 255, 180);
+}
+#js-unt {
+  color: rgb(110, 175, 255);
+}
