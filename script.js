@@ -50,7 +50,7 @@ var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)
 //--------------------------------------------------JS
 //-------------------------Fix
 var jsFixa = /\(<\/span>/ig;
-var jsFixb = /<span id="js-sel"><span id="js-set">function<\/span>/ig;
+var jsFixb = /<span id="js-set"><span id="js-sel">function<\/span>/ig;
 //-------------------------Set
 var jsSet = /(document|var|function|this|width|height|window|screen|length|if|for|while|return|true|false)/ig;
 //-------------------------Comment
@@ -121,7 +121,7 @@ function preLoad() {
     jsStr = jsStr.replace(jsFixa, '</span>(');
     jsStr = jsStr.replace(jsFixb, '<span id="js-set">function</span><span id="js-sel">');
     //-------------------------Insert Coloured Text
-    $(this).text(jsStr);
+    $(this).html(jsStr);
   });
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
