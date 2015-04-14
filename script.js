@@ -55,7 +55,7 @@ var jsSet = /(document|var|function|this|width|height|window|screen|length|if|fo
 //-------------------------Comment
 var jsCom = /&#47;&#47;([\s\S]*?)\n/ig;
 //-------------------------Selector
-var jsSel = /\.([\s\S]*?)\(|\)/ig;
+var jsSel = /\.([\s\S]*?)\(|\)([\s\S]*?)(,|\.|\{)/ig;
 //-------------------------Value
 var jsVal = /(&#34;|')([\s\S]*?)('|&#34;)/ig;
 
