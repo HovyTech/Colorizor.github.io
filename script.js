@@ -55,7 +55,7 @@ var jsSet = /(document|var|function|this|width|height|window|screen|length|if|fo
 //-------------------------Comment
 var jsCom = /&#47;&#47;([\s\S]*?)\n/ig;
 //-------------------------Selector
-var jsSel = /\.([\s\S]*?)\(|\)([\s\S]*?)(,|\.|\{|&#59;)/ig;
+var jsSel = /\.([\s\S]*?)\(|\)([^\/])([\s\S]*?)(,|\.|\{)/ig;
 //-------------------------Value
 var jsVal = /(&#34;|')([\s\S]*?)('|&#34;)/ig;
 
@@ -109,7 +109,6 @@ function preLoad() {
     //-------------------------Get Text
     var jsStr = $(this).html();
     //-------------------------Replace Characters
-    jsStr = jsStr.replace(/[;]/ig, '&#59;');
     for (c = 0; c < clean.length; c++) {
       jsStr = jsStr.replace(clean[c], rep[c]);
     }
