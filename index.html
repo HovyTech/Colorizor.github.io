@@ -103,8 +103,8 @@ li:before {
 $.each($('pre'), function() {
   var preStr = $(this).html();
   //-------------------------Adding li and ol Tags
-  preStr = preStr.replace(/\n/ig, '</li><li>');
-  preStr = preStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
+  preStr = preStr.replace(/\n/ig, '&lt;/li&gt;&lt;li&gt;');
+  preStr = preStr.replace(/([\s\S]+)/ig, '&lt;ol&gt;&lt;li&gt;$&&lt;/li&gt;&lt;/ol&gt;');
   $(this).html(preStr);
 });</pre>
           </td>
