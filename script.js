@@ -47,6 +47,11 @@ var cssProp = /([\w&#45;]*?):/ig;
 var cssVal = /:(.*?)&#59;/ig;
 //-------------------------Unit
 var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/ig;
+//--------------------------------------------------JS
+//-------------------------Fix
+
+//-------------------------Set
+var jsSet = /(document|var|function|this|width|height|window|screen|length|if|for|while|return|true|false)/ig;
 
 //---------------------------------------------------------------------------Colour Code
 function preLoad() {
