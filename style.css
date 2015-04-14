@@ -87,9 +87,9 @@ li:before {
 #js-val {
   color: rgb(174, 154, 255);
 }
+#js-char {
+  color: rgb(249, 108, 100);
+}
 #js-prop {
   color: rgb(144, 255, 180);
-}
-#js-unt {
-  color: rgb(249, 108, 100);
 }
