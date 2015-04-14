@@ -121,7 +121,7 @@ function preLoad() {
     jsStr = jsStr.replace(jsFixa, '</span>(');
     jsStr = jsStr.replace(jsFixb, '<span id="js-set">function</span><span id="js-sel">');
     //-------------------------Insert Coloured Text
-    $(this).html(jsStr);
+    $(this).text(jsStr);
   });
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
