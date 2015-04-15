@@ -29,18 +29,17 @@
   text-align: center;
 }
 ol {
-  counter-reset: item;
-  /*list-style-type: none;*/
+  /*counter-reset: item;
+  list-style-type: none;*/
   list-style-type: decimal-leading-zero;
   margin: 0px;
   padding: 0px;
 }
-/*li:before {
-  content: counter(item) " ";
-  counter-increment: item;
+li:before {
+  /*content: counter(item) " ";
+  counter-increment: item;*/
   float: left;
 }
-*/
 /*-------------------------HTML-------------------------*/
 #html-com {
   color: rgb(127, 127, 127);
