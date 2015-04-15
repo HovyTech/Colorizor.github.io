@@ -35,11 +35,13 @@ ol {
   margin: 0px;
   padding: 0px;
 }
+/*
 li:before {
-  /*content: counter(item) " ";
-  counter-increment: item;*/
+  content: counter(item) " ";
+  counter-increment: item;
   float: left;
 }
+*/
 /*-------------------------HTML-------------------------*/
 #html-com {
   color: rgb(127, 127, 127);
