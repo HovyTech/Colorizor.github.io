@@ -30,13 +30,13 @@
 }
 ol {
   counter-reset: item;
-  /*list-style-type: none;*/
+  list-style-type: none;
   margin: 0px;
   padding: 0px;
 }
 li:before {
-  content: counter(item, decimal-leading-zero) " ";
-  /*counter-increment: item;*/
+  content: counter(item, decimal-leading-zero) "| ";
+  counter-increment: item;
   float: left;
 }
 /*-------------------------HTML-------------------------*/
