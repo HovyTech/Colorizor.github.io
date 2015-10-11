@@ -39,6 +39,10 @@ li:before {
   counter-increment: item;
   float: left;
 }
+#link {
+  color: rgb(211, 139, 255);
+  font-style: underline;
+}
 /*-------------------------HTML-------------------------*/
 #html-com {
   color: rgb(102, 102, 102);
