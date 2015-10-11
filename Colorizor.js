@@ -60,6 +60,8 @@ function preLoad() {
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
+  
+  $('#html-com').css('color', 'rgb(50, 50, 50)');
   //--------------------------------------------------CSS
   $.each($('pre[id="css"]'), function() {
     //-------------------------Get Text
