@@ -40,7 +40,8 @@ function preLoad() {
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
     htmlStr = htmlStr.replace(htmlPar, '<span id="html-par">$&</span>');
     htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
-    htmlStr = htmlStr.replace(link, '<a href="$&"><span id="link">$&</span></a>');
+    //htmlStr = htmlStr.replace(link, '<a href="$&"><span id="link">$&</span></a>');
+    alert(htmlStr.replace(link, '<a href="$&"><span id="link">$&</span></a>'))
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
