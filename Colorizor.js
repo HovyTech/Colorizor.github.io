@@ -49,8 +49,8 @@ function preLoad() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
     //-------------------------Replace Characters
-    for (a = 0; a < clean.length; a++) {
-      htmlStr = htmlStr.replace(clean[a], rep[a]);
+    for (a = 0; a < findChar.length; a++) {
+      htmlStr = htmlStr.replace(findChar[a], replaceChar[a]);
     }
     //-------------------------Wrap Matching Text
     htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
