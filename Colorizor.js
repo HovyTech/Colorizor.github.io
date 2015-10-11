@@ -74,13 +74,13 @@ $(document).ready(function() {
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
   });
+});
   
   //----------------------------------------------Numbering
-  $.each($('pre'), function() {
+  $('pre').each(function() {
     var preStr = $(this).html();
     //-------------------------Adding li and ol Tags
     preStr = preStr.replace(/\n/ig, '</li><li>');
     preStr = preStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
     $(this).html(preStr);
   });
-});
