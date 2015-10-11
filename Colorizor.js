@@ -15,35 +15,12 @@ var htmlTag = /((&#60;&#33;|&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47
 var htmlAtt = /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/ig;
 var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
 //--------------------------------------------------CSS
-//-------------------------Comment
-var cssCom = /&#47;\*([\s\S]*?)\*&#47;/ig;
-//-------------------------Selector
-var cssSel = /([\w\s.#:_@!\[\]\(\)&45;]*?)\{|\}/ig;
-//-------------------------Selector Extention
-var cssSelExt = /:(.*?){/ig;
-//-------------------------Property
-var cssProp = /([\w&#45;]*?):/ig;
-//-------------------------Value
-var cssVal = /:(.*?)&#59;/ig;
-//-------------------------Unit
-var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/ig;
 //--------------------------------------------------JS
-//-------------------------Fix
-var jsFixa = /\(<\/span>/ig;
-var jsFixb = /<span id="js-set"><span id="js-sel">function<\/span>/ig;
-//-------------------------Set
-var jsSet = /(document|var|function|this|width|height|window|screen|length|if|for|while|return|true|false)/ig;
-//-------------------------Comment
-var jsCom = /&#47;&#47;([\s\S]*?)\n/ig;
-//-------------------------Selector
-var jsSel = /((function|\.)([\s\S]*?)|([\w]+))\(/ig;
-//-------------------------Value
-var jsVal = /(&#34;|')([\s\S]*?)('|&#34;)/ig;
 
 //------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------Clean Up--------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
-$(document).ready(function() {
+$(document.body).ready(function() {
   //--------------------------------------------------HTML
   $('pre[id="html"]').each(function() {
     //-------------------------Get Text
@@ -60,7 +37,6 @@ $(document).ready(function() {
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
-  $('#html-com').css('color', 'yellow');
   
   //--------------------------------------------------CSS
   $.each($('pre[id="css"]'), function() {
@@ -72,17 +48,12 @@ $(document).ready(function() {
       cssStr = cssStr.replace(findChar[a], replaceChar[a]);
     }
     //-------------------------Wrap Matching Text
-    cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
-    cssStr = cssStr.replace(cssSel, '<span id="css-sel">$&</span>');
-    cssStr = cssStr.replace(cssSelExt, '</span><span id="css-sel-ext">$&</span>');
-    cssStr = cssStr.replace(cssProp, '<span id="css-prop">$&</span>');
-    cssStr = cssStr.replace(cssVal, '<span id="css-val">$&</span>');
-    cssStr = cssStr.replace(cssUnt, '</span><span id="css-unt">$&</span><span id="css-val">');
-    cssStr = cssStr.replace(cssFixa, '<span id="css-sel-ext">:');
-    cssStr = cssStr.replace(cssFixb, ':</span><span id="css-val">');
-    cssStr = cssStr.replace(cssFixc, '</span><span id="css-sel">{</span>');
-    cssStr = cssStr.replace(cssFixd, '$&</span><span id="css-com">');
-    cssStr = cssStr.replace(cssFixe, '$&<span id="css-sel">');
+    //cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
+    //cssStr = cssStr.replace(cssSel, '<span id="css-sel">$&</span>');
+    //cssStr = cssStr.replace(cssSelExt, '</span><span id="css-sel-ext">$&</span>');
+    //cssStr = cssStr.replace(cssProp, '<span id="css-prop">$&</span>');
+    //cssStr = cssStr.replace(cssVal, '<span id="css-val">$&</span>');
+    //cssStr = cssStr.replace(cssUnt, '</span><span id="css-unt">$&</span><span id="css-val">');
     //-------------------------Insert Coloured Text
     $(this).html(cssStr);
   });
@@ -96,12 +67,10 @@ $(document).ready(function() {
       jsStr = jsStr.replace(findChar[a], replaceChar[a]);
     }
     //-------------------------Wrap Matching Text
-    jsStr = jsStr.replace(jsSet, '<span id="js-set">$&</span>');
-    jsStr = jsStr.replace(jsCom, '<span id="js-com">$&</span>');
-    jsStr = jsStr.replace(jsSel, '<span id="js-sel">$&</span>');
-    jsStr = jsStr.replace(jsVal, '<span id="js-val">$&</span>');
-    jsStr = jsStr.replace(jsFixa, '</span>(');
-    jsStr = jsStr.replace(jsFixb, '<span id="js-set">function</span><span id="js-sel">');
+    //jsStr = jsStr.replace(jsSet, '<span id="js-set">$&</span>');
+    //jsStr = jsStr.replace(jsCom, '<span id="js-com">$&</span>');
+    //jsStr = jsStr.replace(jsSel, '<span id="js-sel">$&</span>');
+    //jsStr = jsStr.replace(jsVal, '<span id="js-val">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
   });
