@@ -45,7 +45,7 @@ var jsVal = /(&#34;|')([\s\S]*?)('|&#34;)/ig;
 //------------------------------------------------------------------------------------------------------------
 function preLoad() {
   //--------------------------------------------------HTML
-  $.each($('pre[id="html"]'), function() {
+  $.each($('pre[#html]'), function() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
     //-------------------------Replace Characters
@@ -62,7 +62,7 @@ function preLoad() {
   });
   $('#html-com').css('color', 'yellow');
   //--------------------------------------------------CSS
-  $.each($('pre[id="css"]'), function() {
+  $.each($('pre[#css]'), function() {
     //-------------------------Get Text
     var cssStr = $(this).html();
     //-------------------------Replace Characters
