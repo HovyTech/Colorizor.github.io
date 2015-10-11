@@ -13,7 +13,7 @@ $('pre').css('left', '5px');
 //By replacing the characters it allowes
 //for not replacing the span tag characters
 //&lt;&gt;
-var clean = [/&lt;/ig, /&gt;/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[\t]/ig];
+var clean = [/</ig, />/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[\t]/ig];
 var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
 
 //--------------------------------------------------HTML
@@ -22,11 +22,11 @@ var htmlFixa = /<span id="html-tag">&#62;<\/span><\/span>/ig;
 var htmlFixb = /&#60;&#33;&#45;&#45;([\s\S]*?)\n/ig;
 var htmlFixc = /<\/span><span id="html-com"><span/ig;
 //-------------------------Comment
-var htmlCom = /(&#60;&#33;DOCTYPE|&#60;&#33;&#45;&#45;)([\s\S]*?)(&#45;&#45;&#62;|&#62;)/ig;
+var htmlCom = /&#60;&#33;&#45;&#45;([\s\S]*?)&#45;&#45;&#62;/ig;
 //-------------------------Tag
-var htmlTag = /(&#60;|&#60;&#47;)([\w]+)|&#62;/ig;
+var htmlTag = /(&#60;|&#60;\/)([\w]+)(&#62;|\S|(\s\/&#62;|\/&#62;))/ig;
 //-------------------------Attribute
-var htmlAtt = /([\w]+)&#61;/ig;
+var htmlAtt = /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/ig;
 //-------------------------Value
 var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
 //--------------------------------------------------CSS
