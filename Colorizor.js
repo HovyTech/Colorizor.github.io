@@ -67,8 +67,8 @@ function preLoad() {
     var cssStr = $(this).html();
     //-------------------------Replace Characters
     cssStr = cssStr.replace(/[;]/ig, '&#59;');
-    for (b = 0; b < clean.length; b++) {
-      cssStr = cssStr.replace(clean[b], rep[b]);
+    for (a = 0; a < findChar.length; a++) {
+      cssStr = cssStr.replace(findChar[a], replaceChar[a]);
     }
     //-------------------------Wrap Matching Text
     cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
@@ -90,8 +90,8 @@ function preLoad() {
     //-------------------------Get Text
     var jsStr = $(this).html();
     //-------------------------Replace Characters
-    for (c = 0; c < clean.length; c++) {
-      jsStr = jsStr.replace(clean[c], rep[c]);
+    for (a = 0; a < findChar.length; a++) {
+      jsStr = jsStr.replace(findChar[a], replaceChar[a]);
     }
     //-------------------------Wrap Matching Text
     jsStr = jsStr.replace(jsSet, '<span id="js-set">$&</span>');
@@ -112,3 +112,4 @@ function preLoad() {
     $(this).html(preStr);
   });
 }
+preLoad();
