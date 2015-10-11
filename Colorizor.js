@@ -76,12 +76,12 @@ function preLoad() {
     htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
     htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
-    //htmlStr = htmlStr.replace(htmlFixa, '&#62;</span>');
-    //htmlStr = htmlStr.replace(htmlFixb, '$&</span><span id="html-com">');
-    //htmlStr = htmlStr.replace(htmlFixc, '<span');
+    htmlStr = htmlStr.replace(htmlFixa, '&#62;</span>');
+    htmlStr = htmlStr.replace(htmlFixb, '$&</span><span id="html-com">');
+    htmlStr = htmlStr.replace(htmlFixc, '<span');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
-  });//
+  });
   //--------------------------------------------------CSS
   $.each($('pre[id="css"]'), function() {
     //-------------------------Get Text
