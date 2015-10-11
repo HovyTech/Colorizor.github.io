@@ -81,7 +81,7 @@ function preLoad() {
     //htmlStr = htmlStr.replace(htmlFixc, '<span');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
-  });
+  });//
   //--------------------------------------------------CSS
   $.each($('pre[id="css"]'), function() {
     //-------------------------Get Text
