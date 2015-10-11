@@ -34,13 +34,13 @@ function preLoad() {
       htmlStr = htmlStr.replace(findChar[a], replaceChar[a]);
     }
     //-------------------------Wrap Matching Text
-    htmlStr = htmlStr.replace(link, '<a href="$&"><span id="link">$&</span></a>');
     htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
     htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
     htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
     htmlStr = htmlStr.replace(htmlPar, '<span id="html-par">$&</span>');
     htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
+    htmlStr = htmlStr.replace(link, '<span id="link"><a href="$&">$&</a></span>');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
