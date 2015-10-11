@@ -21,6 +21,15 @@ var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
 //--------------------------------------------------Clean Up--------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 function preLoad() {
+  //----------------------------------------------Numbering
+  $.each($('pre'), function() {
+    var preStr = $(this).html();
+    //-------------------------Adding li and ol Tags
+    preStr = preStr.replace(/\n/ig, '</li><li>');
+    preStr = preStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
+    $(this).html(preStr);
+  });
+  
   //--------------------------------------------------HTML
   $.each($('pre[id="html"]'), function() {
     //-------------------------Get Text
@@ -73,14 +82,5 @@ function preLoad() {
     //jsStr = jsStr.replace(jsVal, '<span id="js-val">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
-  });
-  
-  //----------------------------------------------Numbering
-  $.each($('pre'), function() {
-    var preStr = $(this).html();
-    //-------------------------Adding li and ol Tags
-    preStr = preStr.replace(/\n/ig, '</li><li>');
-    preStr = preStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
-    $(this).html(preStr);
   });
 }
