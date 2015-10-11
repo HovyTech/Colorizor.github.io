@@ -12,8 +12,8 @@ $('pre').css('left', '5px');
 //-------------------------Replace Characters
 //By replacing the characters it allowes
 //for not replacing the span tag characters
-//&lt;
-var clean = [/</ig, /&gt;/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[\t]/ig];
+//&lt;&gt;
+var clean = [/</ig, />/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[\t]/ig];
 var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
 
 //--------------------------------------------------HTML
