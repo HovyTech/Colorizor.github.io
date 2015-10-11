@@ -10,10 +10,10 @@ var replaceChar = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;'
 //---------------------------------------------------RegEx----------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------HTML
+var htmlCom = /(&#60;&#33;&#45;&#45;(.*?)|(.*?)([\w]+)(?=\n)|(.*?)&#45;&#45;&#62;)/ig;
 var htmlTag = /((&#60;&#33;|&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47;&#62;))|&#62;)/ig;
 var htmlAtt = /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/ig;
 var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
-var htmlCom = /(&#60;&#33;&#45;&#45;(.*?)|(.*?)([\w]+)(?=\n)|(.*?)&#45;&#45;&#62;)/ig;
 //--------------------------------------------------CSS
 //--------------------------------------------------JS
 
@@ -30,10 +30,10 @@ function preLoad() {
       htmlStr = htmlStr.replace(findChar[a], replaceChar[a]);
     }
     //-------------------------Wrap Matching Text
+    htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
     htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
     htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
-    htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
