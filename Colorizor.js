@@ -1,41 +1,20 @@
-//--------------------------------------------------Fix Pre Tag Width
-//-------------------------Get Screen Width
-var width = screen.width;
-//var width = $(window).width();
-//-------------------------Create percentage with width
-//var percent = ((width - 45) / width) * 100;
-//-------------------------Change all pre tag width
-$('pre').css('width', (width - 45) + 'px');
-$('pre').css('left', '5px');
-//$('pre').css('right', '5px');
-//--------------------------------------------------Clean Up
+//------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------Clean Up--------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
 //-------------------------Replace Characters
-//By replacing the characters it allowes
-//for not replacing the span tag characters
-//&lt;&gt;
-var clean = [/&lt;/ig, /&gt;/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[\t]/ig];
-var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
+//Replacing the characters so that the <span> tag characters dont be replaced
+var findChar = [/&lt;/ig, /&gt;/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[\t]/ig];
+var replaceChar = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
 
+//------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------RegEx----------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------HTML
-//-------------------------Fix
-var htmlFixa = /<span id="html-tag">&#62;<\/span><\/span>/ig;
-var htmlFixb = /&#60;&#33;&#45;&#45;([\s\S]*?)\n/ig;
-var htmlFixc = /<\/span><span id="html-com"><span/ig;
-//-------------------------Comment
 var htmlCom = /&#60;&#33;&#45;&#45;([\s\S]*?)&#45;&#45;&#62;/ig;
-//-------------------------Tag
-var htmlTag = /(&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47;&#62;))/ig;
-//-------------------------Attribute
+var htmlTag = /((&#60;&#33;|&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47;&#62;))|&#62;)/ig;
 var htmlAtt = /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/ig;
-//-------------------------Value
 var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
 //--------------------------------------------------CSS
-//-------------------------Fix
-var cssFixa = /<span id="css-sel-ext"><span id="css-prop">:<\/span>/ig;
-var cssFixb = /<span id="css-val">:<\/span>/ig;
-var cssFixc = /{<\/span><\/span>/ig;
-var cssFixd = /&#47;*([\s\S]*?)\n/ig;
-var cssFixe = /<span id="css-sel">([\s\S]*?)<\/span><span id="css-com">/ig;
 //-------------------------Comment
 var cssCom = /&#47;\*([\s\S]*?)\*&#47;/ig;
 //-------------------------Selector
@@ -61,7 +40,9 @@ var jsSel = /((function|\.)([\s\S]*?)|([\w]+))\(/ig;
 //-------------------------Value
 var jsVal = /(&#34;|')([\s\S]*?)('|&#34;)/ig;
 
-//---------------------------------------------------------------------------Colour Code
+//------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------Clean Up--------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
 function preLoad() {
   //--------------------------------------------------HTML
   $.each($('pre[id="html"]'), function() {
@@ -76,9 +57,6 @@ function preLoad() {
     htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
     htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
-    htmlStr = htmlStr.replace(htmlFixa, '&#62;</span>');
-    htmlStr = htmlStr.replace(htmlFixb, '$&</span><span id="html-com">');
-    htmlStr = htmlStr.replace(htmlFixc, '<span');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
