@@ -36,7 +36,7 @@ function preLoad() {
     htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
     htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
-    htmlStr = htmlStr.replace(htmlPar, '<span id="html-val">$&</span>');
+    htmlStr = htmlStr.replace(htmlPar, '<span id="html-par">$&</span>');
     htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
