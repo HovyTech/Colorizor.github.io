@@ -112,4 +112,3 @@ function preLoad() {
     $(this).html(preStr);
   });
 }
-preLoad();
