@@ -43,9 +43,9 @@ var jsVal = /(&#34;|')([\s\S]*?)('|&#34;)/ig;
 //------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------Clean Up--------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
-$(document.body).ready(function() {
+$(document).ready(function() {
   //--------------------------------------------------HTML
-  $('pre').each(function() {
+  $('pre[id="html"]').each(function() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
     //-------------------------Replace Characters
@@ -53,15 +53,12 @@ $(document.body).ready(function() {
       htmlStr = htmlStr.replace(findChar[a], replaceChar[a]);
     }
     //-------------------------Wrap Matching Text
-    if ($(this).is('#html')) {
     htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
     htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
     htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
-    return false;
-    }
   });
   $('#html-com').css('color', 'yellow');
   
