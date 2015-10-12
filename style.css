@@ -45,20 +45,20 @@ li:before {
 }
 /*-------------------------HTML-------------------------*/
 #html-com {
-  color: rgb(102, 102, 102);
+  color: rgb(177, 255, 194);
   font-style: italic;
 }
 #html-tag {
-  color: rgb(140, 183, 255);
+  color: rgb(148, 146, 232);
 }
 #html-att {
-  color: rgb(162, 255, 165);
+  color: rgb(232, 180, 143);
 }
 #html-val {
-  color: rgb(255, 143, 111);
+  color: rgb(176, 208, 255);
 }
 #html-par {
-  color: rgb(255, 254, 138);
+  color: rgb(255, 243, 184);
 }
 /*-------------------------CSS-------------------------*/
 #css-com {
