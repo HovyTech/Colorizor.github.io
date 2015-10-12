@@ -16,8 +16,9 @@ var htmlCom = /(&#60;&#33;&#45;&#45;(.*?)|(.*?)([\w]+)(?=\n)|(.*?)&#45;&#45;&#62
 var htmlTag = /((&#60;&#33;|&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47;&#62;))|&#62;)/ig;
 var htmlAtt = /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/ig;
 var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
-var htmlPar = /\s([\w]+)(?=(\s([\w].+)&#61;&#34;|&#62;&#60;&#47;([\w]+)&#62;|&#62;([\s\S]*?)&#60;&#47;([\w].+)&#62;))/ig;
+var htmlPar = /\s([\w]+)(?=(&#62;|\s))/ig;
 var htmlFixA = /&#45;&#45;<span id="html-tag">&#62;<\/span>/ig;
+var htmlFixB = /(?!(&#61;&#34;))(<span id="html-par">|<\/span>)(?!(&#34;))/ig;
 //--------------------------------------------------CSS
 //--------------------------------------------------JS
 
@@ -41,6 +42,7 @@ function preLoad() {
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
     htmlStr = htmlStr.replace(htmlPar, '<span id="html-par">$&</span>');
     htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
+    htmlStr = htmlStr.replace(htmlFixB, '');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
