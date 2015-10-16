@@ -96,7 +96,7 @@ function preLoad() {
     //-------------------------Adding li and ol Tags
     //preStr = preStr.replace(/\n/ig, '</li><li>');
     //preStr = preStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
-    preStr = preStr.replace(/.+/ig, '<li>$&</li>');
+    preStr = preStr.replace(/^.+$/ig, '<li>$&</li>');
     preStr = preStr.replace(/([\s\S]+)/ig, '<ol>$&</ol>');
     $(this).html(preStr);
   });
