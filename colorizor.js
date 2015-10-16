@@ -36,7 +36,7 @@ function preLoad() {
     //-------------------------Replace Characters
     for (a = 0; a < findChar.length; a++) {
       //htmlStr = htmlStr.replace(findChar[a], replaceChar[a]);
-      htmlStr = htmlStr.replace(/\W/igm, replaceChar[a]);
+      htmlStr = htmlStr.replace(/\W/igm, '\\$&');
     }
     //-------------------------Wrap Matching Text
     //htmlStr = htmlStr.replace(link, '<span id="link"><a href="$&">$&</a></span>');
