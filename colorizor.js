@@ -33,9 +33,8 @@ function preLoad() {
   $.each($('pre[id="html"]'), function() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
-    alert($(this).text())
-    alert($(this).html())
     //-------------------------Replace Characters
+    htmlStr = htmlStr.replace(/</igm, '&lt;');
     htmlStr = htmlStr.replace(/\W/igm, '\\$&');
     for (a = 0; a < findChar.length; a++) {
       //htmlStr = htmlStr.replace(findChar[a], replaceChar[a]);
