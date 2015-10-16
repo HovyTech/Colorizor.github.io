@@ -92,12 +92,13 @@ function preLoad() {
   
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
-    var preStr = $(this).html();
-    alert($(this)[1].length)
+    var preStr = $(this).html(function(index, html) {
+      return html.replace(/.+/igm, '<span id="numbering">$1</span>')
+    });
     //-------------------------Adding li and ol Tags
     //preStr = preStr.replace(/\n/ig, '</li><li>');
     //preStr = preStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
-    preStr = preStr.replace(/.+/igm, '<span id="numbering">$&</span>');
+    //preStr = preStr.replace(/.+/igm, '<span id="numbering">$&</span>');
     //preStr = preStr.replace(/([\s\S]+)/ig, '<ol>$&</ol>');
     $(this).html(preStr);
   });
