@@ -35,6 +35,7 @@ function preLoad() {
     var htmlStr = $(this).html();
     //-------------------------Replace Characters
     htmlStr = htmlStr.replace(/</igm, '&lt;');
+    htmlStr = htmlStr.replace(/>/igm, '&gt;');
     htmlStr = htmlStr.replace(/\W/igm, '\\$&');
     for (a = 0; a < findChar.length; a++) {
       //htmlStr = htmlStr.replace(findChar[a], replaceChar[a]);
