@@ -20,7 +20,7 @@ var htmlPar = /\s([\w]+)(?=<span)/igm;
 var htmlFixA = /&#45;&#45;<span id="html-tag">&#62;<\/span>/igm;
 //--------------------------------------------------CSS
 //--------------------------------------------------JS
-var jsCom = /\/\/.*/igm;
+var jsCom = /&#47;&#47;.*/igm;
 var jsSet = /(\{|\}\)|\})/igm
 var jsSel = /([\w]+)(?=\(.*?\).*?\{)/igm
 var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm
