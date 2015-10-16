@@ -9,8 +9,8 @@
   /*word-break: break-all;*/
   z-index: 100;
 }
-pre {
-  display: inline;
+#numbering {
+  border-right: 1px solid;
 }
 #html, #css, #js {
   background-color: rgb(88, 88, 88);
