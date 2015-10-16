@@ -106,7 +106,7 @@ function preLoad() {
     });
     
     $('#numbering').html(function(index, html) {
-      return html + 1;
+      return html * 1 + 1;
     });
   });
 }
