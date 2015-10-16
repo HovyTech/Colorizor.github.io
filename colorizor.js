@@ -32,7 +32,7 @@ function preLoad() {
   //--------------------------------------------------HTML
   $.each($('pre[id="html"]'), function() {
     //-------------------------Get Text
-    var htmlStr = $(this).html();
+    var htmlStr = $(this).text();
     alert($(this).text())
     alert($(this).html())
     //-------------------------Replace Characters
