@@ -99,9 +99,9 @@ function preLoad() {
     var pl = pre.html().length;
     for (var a = 0; a < pl; a++) {
         pre[a].innerHTML = '<span id="numbering"></span>' + pre[a].innerHTML + '<span class="cl"></span>';
-        var num = pre[i].innerHTML.split(/\n/).length;
+        var num = pre[a].innerHTML.split(/\n/).length;
         for (var j = 0; j < num; j++) {
-            var line_num = pre[i].getElementsByTagName('span')[0];
+            var line_num = pre[a].getElementsByTagName('span')[0];
             line_num.innerHTML += '<span>' + (j + 1) + '</span>';
         }
     }
