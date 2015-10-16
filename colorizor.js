@@ -93,7 +93,7 @@ function preLoad() {
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
     var preStr = $(this).html(function(index, html) {
-      return html.replace(/.+/igm, '<span id="numbering">$1</span>')
+      return html.replace(/.+/igm, '<span id="numbering">$1</span>');
     });
     //-------------------------Adding li and ol Tags
     //preStr = preStr.replace(/\n/ig, '</li><li>');
