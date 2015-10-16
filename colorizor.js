@@ -22,6 +22,8 @@ var htmlFixA = /&#45;&#45;<span id="html-tag">&#62;<\/span>/igm;
 //--------------------------------------------------JS
 var jsCom = /\/\/.*/igm;
 var jsSet = /(\{|\}\)|\})/igm
+var jsSel = /([\w]+)(?=\(.*?\).*?\{)/igm
+var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm
 
 //------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------Clean Up--------------------------------------------------
@@ -78,8 +80,8 @@ function preLoad() {
     //-------------------------Wrap Matching Text
     jsStr = jsStr.replace(jsSet, '<span id="js-set">$&</span>');
     jsStr = jsStr.replace(jsCom, '<span id="js-com">$&</span>');
-    //jsStr = jsStr.replace(jsSel, '<span id="js-sel">$&</span>');
-    //jsStr = jsStr.replace(jsVal, '<span id="js-val">$&</span>');
+    jsStr = jsStr.replace(jsSel, '<span id="js-sel">$&</span>');
+    jsStr = jsStr.replace(jsVal, '<span id="js-val">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
   });
