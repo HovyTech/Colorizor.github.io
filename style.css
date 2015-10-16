@@ -9,6 +9,9 @@
   /*word-break: break-all;*/
   z-index: 100;
 }
+pre {
+  display: inline;
+}
 #html, #css, #js {
   background-color: rgb(88, 88, 88);
   color: rgb(255, 255, 255);
