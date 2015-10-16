@@ -92,12 +92,21 @@ function preLoad() {
   
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
-    var preStr = $(this).html();
+    var pre = $(this)
     //-------------------------Adding li and ol Tags
     //preStr = preStr.replace(/\n/ig, '</li><li>');
     //preStr = preStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
-    preStr = preStr.replace(/.+/ig, '<span id="numbering">$&</span>');
-    //preStr = preStr.replace(/([\s\S]+)/ig, '<ol>$&</ol>');
+    var pl = pre.html().length;
+    for (var a = 0; a < pl; a++) {
+        pre[a].innerHTML = '<span id="numbering"></span>' + pre[a].innerHTML + '<span class="cl"></span>';
+        var num = pre[i].innerHTML.split(/\n/).length;
+        for (var j = 0; j < num; j++) {
+            var line_num = pre[i].getElementsByTagName('span')[0];
+            line_num.innerHTML += '<span>' + (j + 1) + '</span>';
+        }
+    }
+    preStr = preStr.replace(/.+/, '<span id="numbering"></span>');
+    preStr = preStr.replace(/([\s\S]+)/ig, '<ol>$&</ol>');
     $(this).html(preStr);
   });
 }
