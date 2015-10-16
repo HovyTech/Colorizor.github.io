@@ -102,7 +102,7 @@ function preLoad() {
     //preStr = preStr.replace(/([\s\S]+)/ig, '<ol>$&</ol>');
     //$(this).html(preStr);
     $(this).html(function(index, html) {
-      return html.replace(/.+/igm, '<span id="numbering">' + (index + 1) + '</span>$&');
+      return html.replace(/.+/igm, '<span id="numbering">' + (html.index() + 1) + '</span>$&');
     });
   });
 }
