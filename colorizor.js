@@ -104,5 +104,9 @@ function preLoad() {
     $(this).html(function(index, html) {
       return html.replace(/.+/igm, '<span id="numbering">' + index + '</span>$&');
     });
+    
+    $('#numbering').html(function(index, html) {
+      return html.replace(/.+/igm, index + 1);
+    });
   });
 }
