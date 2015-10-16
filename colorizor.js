@@ -35,16 +35,17 @@ function preLoad() {
     var htmlStr = $(this).html();
     //-------------------------Replace Characters
     for (a = 0; a < findChar.length; a++) {
-      htmlStr = htmlStr.replace(findChar[a], replaceChar[a]);
+      //htmlStr = htmlStr.replace(findChar[a], replaceChar[a]);
+      htmlStr = htmlStr.replace(/\W/igm, replaceChar[a]);
     }
     //-------------------------Wrap Matching Text
     //htmlStr = htmlStr.replace(link, '<span id="link"><a href="$&">$&</a></span>');
-    htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
-    htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
-    htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
-    htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
-    htmlStr = htmlStr.replace(htmlPar, '<span id="html-par">$&</span>');
-    htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
+    //htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
+    //htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
+    //htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
+    //htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
+    //htmlStr = htmlStr.replace(htmlPar, '<span id="html-par">$&</span>');
+    //htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
@@ -54,7 +55,7 @@ function preLoad() {
     //-------------------------Get Text
     var cssStr = $(this).html();
     //-------------------------Replace Characters
-    cssStr = cssStr.replace(/[;]/ig, '&#59;');
+    //cssStr = cssStr.replace(/[;]/ig, '&#59;');
     for (a = 0; a < findChar.length; a++) {
       cssStr = cssStr.replace(findChar[a], replaceChar[a]);
     }
