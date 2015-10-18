@@ -104,6 +104,7 @@ function preLoad() {
   });
   
   $.each($('pre').html().match(new RegExp('\n', 'igm')), function() {
+    alert($('pre').html().match(new RegExp('\n', 'igm')))
     if ($(this)) {
       var numberSpan = $('span[id="all-number"]').html();
       $('span[id="all-number"]').html(numberSpan + '\n<span id="number"></span>');
