@@ -102,6 +102,20 @@ function preLoad() {
     preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
     $(this).html(preStr);
     
+    var count = 0;
+
+    $.each($('pre').html().match(new RegExp('\n', 'igm')), function(line) {
+      if ($(this)) {
+        line++;
+        count = line;
+      }
+    });
+    
+    for (a = 0; a < count + 1; a++) {
+      var numberSpan = $('span[id="all-number"]').html();
+      $('span[id="all-number"]').html(numberSpan + '\n<span id="number"></span>');
+    }
+    
     $.each($('span[id="number"]'), function(line) {
       $(this).html(function(index, html) {
         line++;
@@ -109,12 +123,12 @@ function preLoad() {
       });
     });
     
-    $(this).html(function(index, html) {
-      return html.replace(/.+/igm, '<span id="numbering"></span>$&');
-    });
+    //$(this).html(function(index, html) {
+      //return html.replace(/.+/igm, '<span id="numbering"></span>$&');
+    //});
     
-    $('#numbering').html(function(index, html) {
-      return html * 1 + 1;
-    });
+    //$('#numbering').html(function(index, html) {
+      //return html * 1 + 1;
+    //});
   });
 }
