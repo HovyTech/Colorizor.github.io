@@ -1,3 +1,19 @@
+pre {
+  background-color: rgb(88, 88, 88);
+  color: rgb(255, 255, 255);
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 14px;
+  font-style: bold;
+  height: auto;
+  margin: 5px;
+  overflow: auto;
+  padding: 10px;
+  position: relative;
+  top: 0px;
+  white-space: pre-wrap;
+  width: 800px;
+  z-index: 100;
+}
 #text {
   background-color: rgb(88, 88, 88);
   color: rgb(255, 251, 145);
@@ -23,35 +39,9 @@
   padding-right: 4px;
   text-align: right;
 }
-pre {
-  background-color: rgb(88, 88, 88);
-  color: rgb(255, 255, 255);
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 14px;
-  font-style: bold;
-  height: auto;
-  margin: 5px;
-  overflow: auto;
-  padding: 10px;
-  position: relative;
-  top: 0px;
-  white-space: pre-wrap;
-  z-index: 100;
-}
 #desc {
   color: rgb(255, 255, 255);
   text-align: center;
-}
-ol {
-  counter-reset: item;
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-}
-li:before {
-  content: counter(item, decimal-leading-zero) "| ";
-  counter-increment: item;
-  float: left;
 }
 #link {
   color: rgb(211, 139, 255);
