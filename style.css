@@ -47,25 +47,21 @@ pre {
   border-right: 1px solid;
   display: block;
   float: left;
-  margin-right: 8px;
   text-align: right;
 }
 #all-code {
   display: block;
   float: left;
-  margin-left: 8px;
   text-align: left;
 }
 #number {
   float: top;
+  margin-right: 8px;
   padding-right: 4px;
 }
 #code {
   float: top;
-}
-#block {
-  clear: both;
-  display: block;
+  margin-left: 8px;
 }
 #desc {
   color: rgb(255, 255, 255);
