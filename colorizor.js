@@ -104,32 +104,10 @@ function preLoad() {
     
     line = 0;
     
-    $($(this).parent().find('span[id="all-number"]')).html(function(index, html) {
+    $($(this).find('span[id="all-number"]')).html(function(index, html) {
       line++;
-      return '<span id="number">' + line + '</span>\n';
+      var spanParent = $($(this).parent().find('span[id="all-number"]')).html();
+      $($(this).parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
     });
   });
-  
-  //$.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
-    //if ($(this)) {
-      //var numberSpan = $('span[id="all-number"]').html();
-      //$('span[id="all-number"]').html(numberSpan + '<span id="number"></span>\n');
-    //}
-  //});
-  
-  //$.each($('span[id="code"]'), function(line) {
-    //$(this).html(function(index, html) {
-      //line++;
-      //var numberSpan = $('span[id="all-number"]').html();
-      //$('span[id="all-number"]').html(numberSpan + '<span id="number">' + line + '</span>\n');
-      //return
-    //});
-  //});
-  
-  //$.each($('span[id="number"]'), function(line) {
-    //$(this).html(function(index, html) {
-      //line++;
-      //return line;
-    //});
-  //});
 }
