@@ -103,26 +103,26 @@ function preLoad() {
     });
   });
   
-  //$.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
-    //if ($(this)) {
-      //var numberSpan = $('span[id="all-number"]').html();
-      //$('span[id="all-number"]').html(numberSpan + '\n<span id="number"></span>');
-    //}
-  //});
-  
-  $.each($('span[id="all-code"] span[id="code"]'), function(line) {
-    $(this).html(function(index, html) {
-      line++;
+  $.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
+    if ($(this)) {
       var numberSpan = $('span[id="all-number"]').html();
-      $('span[id="all-number"]').html(numberSpan + '<span id="number">' + line + '</span>\n');
-      return
-    });
+      $('span[id="all-number"]').html(numberSpan + '<span id="number"></span>\n');
+    }
   });
   
-  //$.each($('span[id="number"]'), function(line) {
+  //$.each($('span[id="code"]'), function(line) {
     //$(this).html(function(index, html) {
       //line++;
-      //return line;
+      //var numberSpan = $('span[id="all-number"]').html();
+      //$('span[id="all-number"]').html(numberSpan + '<span id="number">' + line + '</span>\n');
+      //return
     //});
   //});
+  
+  $.each($('span[id="number"]'), function(line) {
+    $(this).html(function(index, html) {
+      line++;
+      return line;
+    });
+  });
 }
