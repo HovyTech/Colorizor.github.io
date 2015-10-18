@@ -13,8 +13,6 @@ var htmlAtt = /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/igm;
 var htmlVal = /&#34;([\s\S]*?)&#34;/igm;
 var htmlPar = /\s([\w]+)(?=<span)/igm;
 var htmlFixA = /&#45;&#45;<span id="html-tag">&#62;<\/span>/igm;
-var htmlFixB = /<\/span><\/span>/igm;
-var htmlFixC = /<span id="html-com">(?!&#60;&#33;&#45;&#45;)/igm;
 //--------------------------------------------------CSS
 //--------------------------------------------------JS
 var jsCom = /&#47;&#47;.*/igm;
@@ -54,8 +52,6 @@ function preLoad() {
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
     htmlStr = htmlStr.replace(htmlPar, '<span id="html-par">$&</span>');
     htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
-    htmlStr = htmlStr.replace(htmlFixB, '<\/span>');
-    htmlStr = htmlStr.replace(htmlFixC, '');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
