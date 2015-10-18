@@ -10,7 +10,7 @@ pre {
   padding: 10px;
   position: relative;
   top: 0px;
-  white-space: pre-wrap;
+  /*white-space: pre-wrap;*/
   width: 800px;
   z-index: 100;
 }
