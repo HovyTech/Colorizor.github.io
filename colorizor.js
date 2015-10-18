@@ -66,7 +66,6 @@ function preLoad() {
     }
     
     //-------------------------Wrap Matching Text
-    cssStr = cssStr.replace(/[-[\]{}()*+?.,\\^$|#\s]/igm, '\\$&');
     //cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
     //cssStr = cssStr.replace(cssSel, '<span id="css-sel">$&</span>');
     //cssStr = cssStr.replace(cssSelExt, '</span><span id="css-sel-ext">$&</span>');
