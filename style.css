@@ -5,14 +5,14 @@ pre {
   font-size: 14px;
   font-style: bold;
   height: auto;
-  left: 30%;
+  left: 20%;
   margin: 5px;
   overflow: auto;
   padding: 10px;
   position: relative;
   top: 0px;
   /*white-space: pre-wrap;*/
-  width: 40%;
+  width: 60%;
   z-index: 100;
 }
 pre:hover {
@@ -22,14 +22,14 @@ pre:hover {
   font-size: 14px;
   font-style: bold;
   height: auto;
-  left: 10%;
+  left: 5%;
   margin: 5px;
   overflow: auto;
   padding: 10px;
   position: relative;
   top: 0px;
   /*white-space: pre-wrap;*/
-  width: 80%;
+  width: 90%;
   z-index: 100;
 }
 #text {
@@ -56,6 +56,9 @@ pre:hover {
 #number {
   padding-right: 4px;
   text-align: right;
+}
+#block {
+  display: block;
 }
 #desc {
   color: rgb(255, 255, 255);
