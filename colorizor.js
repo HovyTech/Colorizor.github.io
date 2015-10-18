@@ -113,12 +113,12 @@ function preLoad() {
     line = 0;
   });
   
-  for (a = 0; a < count.length; a++) {
-    for (b = 0; b < count[a]; b++) {
-      var numberSpan = $('span[id="all-number"]')[a].html();
-      $('span[id="all-number"]')[a].html(numberSpan + '<span id="number">' + (b + 1) + '</span>\n');
+  $.each($('pre'), function() {
+    for (a = 0; a < count[a]; a++) {
+      var numberSpan = $(this).find('span[id="all-number"]').html();
+      $(this).find('span[id="all-number"]').html(numberSpan + '<span id="number">' + (a + 1) + '</span>\n');
     }
-  }
+  });
   
   //$.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
     //if ($(this)) {
