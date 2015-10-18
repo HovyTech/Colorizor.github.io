@@ -42,6 +42,8 @@ function preLoad() {
   $.each($('pre[id="html"]'), function() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
+
+    htmlStr = htmlStr.replace(link, '<span id="link"><a href="$&">$&</a></span>');
     
     for (a = 0; a < clean.length; a++) {
       htmlStr = htmlStr.replace(clean[a], rep[a]);
@@ -54,7 +56,6 @@ function preLoad() {
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
     htmlStr = htmlStr.replace(htmlPar, '<span id="html-par">$&</span>');
     htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
-    htmlStr = htmlStr.replace(link, '<span id="link"><a href="$&">$&</a></span>');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
