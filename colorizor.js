@@ -25,20 +25,25 @@ var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm;
 //------------------------------------------------------------------------------------------------------------
 function preLoad() {
   //--------------------------------------------------Clean
-  $.each($('pre'), function() {
-    var cleanStr = $(this).html();
+  //$.each($('pre'), function() {
+    //var cleanStr = $(this).html();
     
-    for (a = 0; a < clean.length; a++) {
-      cleanStr = cleanStr.replace(clean[a], rep[a]);
-    }
+    //for (a = 0; a < clean.length; a++) {
+      //cleanStr = cleanStr.replace(clean[a], rep[a]);
+    //}
     
-    $(this).html(cleanStr);
-  });
+    //$(this).html(cleanStr);
+  //});
   
   //--------------------------------------------------HTML
   $.each($('pre[id="html"]'), function() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
+    
+    for (a = 0; a < clean.length; a++) {
+      htmlStr = htmlStr.replace(clean[a], rep[a]);
+    }
+    
     //-------------------------Wrap Matching Text
     //htmlStr = htmlStr.replace(link, '<span id="link"><a href="$&">$&</a></span>');
     htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
@@ -55,6 +60,11 @@ function preLoad() {
   $.each($('pre[id="css"]'), function() {
     //-------------------------Get Text
     var cssStr = $(this).html();
+    
+    for (a = 0; a < clean.length; a++) {
+      htmlStr = htmlStr.replace(clean[a], rep[a]);
+    }
+    
     //-------------------------Wrap Matching Text
     cssStr = cssStr.replace(/[-[\]{}()*+?.,\\^$|#\s]/igm, '\\$&');
     //cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
@@ -71,6 +81,11 @@ function preLoad() {
   $.each($('pre[id="js"]'), function() {
     //-------------------------Get Text
     var jsStr = $(this).html();
+    
+    for (a = 0; a < clean.length; a++) {
+      htmlStr = htmlStr.replace(clean[a], rep[a]);
+    }
+    
     //-------------------------Wrap Matching Text
     jsStr = jsStr.replace(jsSet, '<span id="js-set">$&</span>');
     jsStr = jsStr.replace(jsCom, '<span id="js-com">$&</span>');
