@@ -101,14 +101,19 @@ function preLoad() {
     $(this).html(function(index, html) {
       return html.replace(/.+/igm, '<span id="code">$&</span>');
     });
-  });
-  
-  $.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
-    if ($(this)) {
+    
+    for (a = 0; a < $(this).html().match(new RegExp('.+', 'igm')).length; a++) {
       var numberSpan = $('span[id="all-number"]').html();
       $('span[id="all-number"]').html(numberSpan + '<span id="number"></span>\n');
     }
   });
+  
+  //$.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
+    //if ($(this)) {
+      //var numberSpan = $('span[id="all-number"]').html();
+      //$('span[id="all-number"]').html(numberSpan + '<span id="number"></span>\n');
+    //}
+  //});
   
   //$.each($('span[id="code"]'), function(line) {
     //$(this).html(function(index, html) {
