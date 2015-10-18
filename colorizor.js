@@ -93,16 +93,16 @@ function preLoad() {
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
     var preStr = $(this).html();
-    preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-code">$&</span>');
+    preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
     $(this).html(preStr);
   });
   
   $.each($('span[id="all-code"]'), function(line) {
     $(this).html(function(index, html) {
-      return html.replace(/.+/igm, '<span id="all-number"></span><span id="code">$&</span>');
+      return html.replace(/.+/igm, '<span id="number"></span><span id="code">$&</span>');
     });
     
-    $($(this).find('span[id="all-number"]')).html(function(index, html) {
+    $($(this).find('span[id="number"]')).html(function(index, html) {
       line++;
       return line;
     });
@@ -126,10 +126,10 @@ function preLoad() {
     //});
   //});
   
-  $.each($('span[id="number"]'), function(line) {
-    $(this).html(function(index, html) {
-      line++;
-      return line;
-    });
-  });
+  //$.each($('span[id="number"]'), function(line) {
+    //$(this).html(function(index, html) {
+      //line++;
+      //return line;
+    //});
+  //});
 }
