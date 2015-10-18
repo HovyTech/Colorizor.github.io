@@ -103,17 +103,24 @@ function preLoad() {
     });
   });
   
-  $.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
-    if ($(this)) {
-      var numberSpan = $('span[id="all-number"]').html();
-      $('span[id="all-number"]').html(numberSpan + '\n<span id="number"></span>');
-    }
-  });
+  //$.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
+    //if ($(this)) {
+      //var numberSpan = $('span[id="all-number"]').html();
+      //$('span[id="all-number"]').html(numberSpan + '\n<span id="number"></span>');
+    //}
+  //});
   
-  $.each($('span[id="number"]'), function(line) {
+  $.each($('span[id="code"]'), function(line) {
     $(this).html(function(index, html) {
       line++;
-      return line;
+      return '<span id="number">' + line + '</span>\n';
     });
   });
+  
+  //$.each($('span[id="number"]'), function(line) {
+    //$(this).html(function(index, html) {
+      //line++;
+      //return line;
+    //});
+  //});
 }
