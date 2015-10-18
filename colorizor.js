@@ -115,6 +115,7 @@ function preLoad() {
   
   $.each($('pre'), function() {
     for (a = 0; a < count[a]; a++) {
+      alert(count[a])
       var numberSpan = $(this).find('span[id="all-number"]').html();
       $(this).find('span[id="all-number"]').html(numberSpan + '<span id="number">' + (a + 1) + '</span>\n');
     }
