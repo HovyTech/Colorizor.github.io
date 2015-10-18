@@ -48,14 +48,19 @@ pre:hover {
   display: block;
   float: left;
   margin-right: 8px;
+  text-align: right;
 }
 #all-code {
   display: block;
   float: left;
+  text-align: left;
 }
 #number {
+  display: block;
   padding-right: 4px;
-  text-align: right;
+}
+#code {
+  display: block;
 }
 #block {
   clear: both;
