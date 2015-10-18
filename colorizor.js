@@ -101,6 +101,14 @@ function preLoad() {
     //preStr = preStr.replace(/.+/igm, '<span id="numbering">$&</span>');
     //preStr = preStr.replace(/([\s\S]+)/ig, '<ol>$&</ol>');
     //$(this).html(preStr);
+    
+    $.each($('span[id="number"]'), function(line) {
+      $(this).html(function(index, html) {
+        line++;
+        return line;
+      });
+    });
+    
     $(this).html(function(index, html) {
       return html.replace(/.+/igm, '<span id="numbering"></span>$&');
     });
