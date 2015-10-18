@@ -12,10 +12,13 @@
 #all-number {
   border-right: 1px solid;
   float: left;
-  padding-right: 5px;
+  padding-right: 10px;
 }
 #all-code {
-  float: right;
+  float: left;
+}
+#number {
+  padding-right: 5px;
 }
 #html, #css, #js {
   background-color: rgb(88, 88, 88);
