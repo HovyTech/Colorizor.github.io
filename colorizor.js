@@ -112,6 +112,8 @@ function preLoad() {
       }
     });
     
+    alert(count)
+    
     for (a = 0; a < count + 1; a++) {
       var numberSpan = $('span[id="all-number"]').html();
       $('span[id="all-number"]').html(numberSpan + '\n<span id="number"></span>');
@@ -123,6 +125,8 @@ function preLoad() {
         return line;
       });
     });
+    
+    
     
     //$(this).html(function(index, html) {
       //return html.replace(/.+/igm, '<span id="numbering"></span>$&');
