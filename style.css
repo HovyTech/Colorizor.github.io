@@ -11,10 +11,12 @@
 }
 #all-number {
   border-right: 1px solid;
+  display: block;
   float: left;
   margin-right: 8px;
 }
 #all-code {
+  display: block;
   float: left;
 }
 #number {
