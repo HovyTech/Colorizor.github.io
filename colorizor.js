@@ -13,9 +13,9 @@ var htmlFixA = /&#45;&#45;<span id="html-tag">&#62;<\/span>/igm;
 //--------------------------------------------------CSS
 //--------------------------------------------------JS
 var jsCom = /&#47;&#47;.*/igm;
-var jsSet = /(\{|\}\)|\})/igm
-var jsSel = /([\w]+)(?=\(.*?\).*?\{)/igm
-var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm
+var jsSet = /(\{|\}\)|\})/igm;
+var jsSel = /([\w]+)(?=\(.*?\).*?\{)/igm;
+var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm;
 
 //------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------Pre Style--------------------------------------------------
@@ -66,11 +66,6 @@ function preLoad() {
   $.each($('pre[id="css"]'), function() {
     //-------------------------Get Text
     var cssStr = $(this).html();
-    //-------------------------Replace Characters
-    //cssStr = cssStr.replace(/[;]/ig, '&#59;');
-    for (a = 0; a < findChar.length; a++) {
-      cssStr = cssStr.replace(findChar[a], replaceChar[a]);
-    }
     //-------------------------Wrap Matching Text
     cssStr = cssStr.replace(/[-[\]{}()*+?.,\\^$|#\s]/igm, '\\$&');
     //cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
@@ -87,10 +82,6 @@ function preLoad() {
   $.each($('pre[id="js"]'), function() {
     //-------------------------Get Text
     var jsStr = $(this).html();
-    //-------------------------Replace Characters
-    for (a = 0; a < findChar.length; a++) {
-      jsStr = jsStr.replace(findChar[a], replaceChar[a]);
-    }
     //-------------------------Wrap Matching Text
     jsStr = jsStr.replace(jsSet, '<span id="js-set">$&</span>');
     jsStr = jsStr.replace(jsCom, '<span id="js-com">$&</span>');
