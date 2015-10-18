@@ -21,6 +21,7 @@
 }
 #number {
   padding-right: 4px;
+  text-align: right;
 }
 #html, #css, #js {
   background-color: rgb(88, 88, 88);
