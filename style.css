@@ -5,14 +5,14 @@ pre {
   font-size: 14px;
   font-style: bold;
   height: auto;
-  left: 50% * 400px;
+  left: 50% * 300px;
   margin: 5px;
   overflow: auto;
   padding: 10px;
   position: relative;
   top: 0px;
   /*white-space: pre-wrap;*/
-  width: 800px;
+  width: 600px;
   z-index: 100;
 }
 /*pre:hover {
