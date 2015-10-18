@@ -73,20 +73,20 @@ pre {
 }
 /*-------------------------HTML-------------------------*/
 #html-com {
-  color: rgb(177, 255, 194);
+  color: rgb(205, 255, 214);
   font-style: italic;
 }
 #html-tag {
-  color: rgb(148, 146, 232);
+  color: rgb(193, 222, 255);
 }
 #html-att {
-  color: rgb(232, 180, 143);
+  color: rgb(255, 248, 207);
 }
 #html-val {
-  color: rgb(176, 208, 255);
+  color: rgb(173, 176, 232);
 }
 #html-par {
-  color: rgb(255, 243, 184);
+  color: rgb(232, 200, 178);
 }
 /*-------------------------CSS-------------------------*/
 #css-com {
