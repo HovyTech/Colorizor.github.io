@@ -54,6 +54,7 @@ pre {
 #all-code {
   display: block;
   float: left;
+  margin-left: 8px;
   text-align: left;
 }
 #number {
