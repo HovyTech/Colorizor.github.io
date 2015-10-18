@@ -106,6 +106,8 @@ function preLoad() {
       line++;
       return line;
     });
+    
+    line = 0;
   });
   
   //$.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
