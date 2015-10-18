@@ -97,16 +97,22 @@ function preLoad() {
     $(this).html(preStr);
   });
   
+  var count = [];
+  
   $.each($('span[id="all-code"]'), function() {
     $(this).html(function(index, html) {
       return html.replace(/.+/igm, '<span id="code">$&</span>');
     });
-    alert($(this).html().match(new RegExp('id="code"', 'igm')).length)
-    for (a = 0; a < $(this).html().match(new RegExp('id="code"', 'igm')).length; a++) {
+    
+    count.push($(this).html().match(new RegExp('id="code"', 'igm')).length);
+  });
+  
+  for (a = 0; a < count.length; a++) {
+    for (b = 0; b < count[a]; b++) {
       var numberSpan = $('span[id="all-number"]').html();
       $('span[id="all-number"]').html(numberSpan + '<span id="number"></span>\n');
     }
-  });
+  }
   
   //$.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
     //if ($(this)) {
