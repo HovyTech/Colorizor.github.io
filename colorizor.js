@@ -102,12 +102,12 @@ function preLoad() {
       return html.replace(/.+/igm, '<span id="number"></span><span id="code">$&</span>');
     });
     
+    line = 0;
+    
     $($(this).find('span[id="number"]')).html(function(index, html) {
       line++;
       return line;
     });
-    
-    line = 0;
   });
   
   //$.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
