@@ -18,30 +18,6 @@ var jsSel = /([\w]+)(?=\(.*?\).*?\{)/igm;
 var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm;
 
 //------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------Pre Style--------------------------------------------------
-//------------------------------------------------------------------------------------------------------------
-//----------------------------------------------Numbering
-  $.each($('pre'), function() {
-    var preStr = $(this).html();
-    preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
-    $(this).html(preStr);
-  });
-  
-  $.each($('span[id="all-code"]'), function(line) {
-    $(this).html(function(index, html) {
-      return html.replace(/.+/igm, '<span id="code">$&</span>');
-    });
-    
-    line = 0;
-    
-    $($(this).find('span[id="code"]')).html(function(index, html) {
-      line++;
-      var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
-      $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
-    });
-  });
-
-//------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------Clean Up--------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 function preLoad() {
@@ -88,5 +64,29 @@ function preLoad() {
     jsStr = jsStr.replace(jsVal, '<span id="js-val">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
+  });
+  
+  //------------------------------------------------------------------------------------------------------------
+  //-------------------------------------------------Pre Style--------------------------------------------------
+  //------------------------------------------------------------------------------------------------------------
+  //----------------------------------------------Numbering
+  $.each($('pre'), function() {
+    var preStr = $(this).html();
+    preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
+    $(this).html(preStr);
+  });
+  
+  $.each($('span[id="all-code"]'), function(line) {
+    $(this).html(function(index, html) {
+      return html.replace(/.+/igm, '<span id="code">$&</span>');
+    });
+    
+    line = 0;
+    
+    $($(this).find('span[id="code"]')).html(function(index, html) {
+      line++;
+      var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
+      $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
+    });
   });
 }
