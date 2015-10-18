@@ -23,7 +23,6 @@ var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm;
 //----------------------------------------------Numbering
   $.each($('pre'), function() {
     var preStr = $(this).html();
-    preStr = preStr.replace(/\W/igm, '\\$&');
     preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
     $(this).html(preStr);
   });
