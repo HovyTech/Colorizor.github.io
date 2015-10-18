@@ -11,9 +11,8 @@ pre {
   padding: 10px;
   position: relative;
   top: 0px;
-  transform: translate(-50%, -50%);
   /*white-space: pre-wrap;*/
-  width: 400px;
+  width: 800px;
   z-index: 100;
 }
 /*pre:hover {
