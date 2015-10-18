@@ -91,7 +91,8 @@ function preLoad() {
   });
   
   //----------------------------------------------Numbering
-  $.each($('pre'), function(preStr) {
+  $.each($('pre'), function() {
+    var preStr = $(this).html();
     //var preStr = $(this).html(function(index, html) {
       //return html.replace(/.+/igm, '<span id="numbering">$1</span>');
     //});
