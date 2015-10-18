@@ -99,8 +99,8 @@ function preLoad() {
     //preStr = preStr.replace(/\n/ig, '</li><li>');
     //preStr = preStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
     //preStr = preStr.replace(/.+/igm, '<span id="numbering">$&</span>');
-    //preStr = preStr.replace(/([\s\S]+)/ig, '<ol>$&</ol>');
-    //$(this).html(preStr);
+    preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
+    $(this).html(preStr);
     
     $.each($('span[id="number"]'), function(line) {
       $(this).html(function(index, html) {
