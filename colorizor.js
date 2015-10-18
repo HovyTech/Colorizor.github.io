@@ -103,8 +103,7 @@ function preLoad() {
     });
   });
   
-  $.each($('span[id="all-code"]').html().match(new RegExp('\n', 'igm')), function() {
-    alert($('pre').html().match(new RegExp('\n', 'igm')))
+  $.each($('span[id="all-code"]').html().match(new RegExp('.+', 'igm')), function() {
     if ($(this)) {
       var numberSpan = $('span[id="all-number"]').html();
       $('span[id="all-number"]').html(numberSpan + '\n<span id="number"></span>');
