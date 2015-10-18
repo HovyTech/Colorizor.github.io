@@ -93,7 +93,7 @@ function preLoad() {
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
     var preStr = $(this).html();
-    preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
+    preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span><span id="block"></span>');
     $(this).html(preStr);
   });
   
