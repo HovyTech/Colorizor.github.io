@@ -1,12 +1,4 @@
 //------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------Clean Up--------------------------------------------------
-//------------------------------------------------------------------------------------------------------------
-//-------------------------Replace Characters
-//Replacing the characters so that the <span> tag characters dont be replaced
-var findChar = [/&lt;/ig, /&gt;/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[\t]/ig];
-var replaceChar = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
-
-//------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------RegEx----------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------General
@@ -26,6 +18,31 @@ var jsSel = /([\w]+)(?=\(.*?\).*?\{)/igm
 var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm
 
 //------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------Pre Style--------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
+//----------------------------------------------Numbering
+  $.each($('pre'), function() {
+    var preStr = $(this).html();
+    preStr = preStr.replace(/\W/igm, '\\$&');
+    preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
+    $(this).html(preStr);
+  });
+  
+  $.each($('span[id="all-code"]'), function(line) {
+    $(this).html(function(index, html) {
+      return html.replace(/.+/igm, '<span id="code">$&</span>');
+    });
+    
+    line = 0;
+    
+    $($(this).find('span[id="code"]')).html(function(index, html) {
+      line++;
+      var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
+      $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
+    });
+  });
+
+//------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------Clean Up--------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 function preLoad() {
@@ -33,13 +50,6 @@ function preLoad() {
   $.each($('pre[id="html"]'), function() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
-    //-------------------------Replace Characters
-    htmlStr = htmlStr.replace(/</igm, '&lt;');
-    htmlStr = htmlStr.replace(/>/igm, '&gt;');
-    //htmlStr = htmlStr.replace(/\W/igm, '\\$&');
-    for (a = 0; a < findChar.length; a++) {
-      //htmlStr = htmlStr.replace(findChar[a], replaceChar[a]);
-    }
     //-------------------------Wrap Matching Text
     //htmlStr = htmlStr.replace(link, '<span id="link"><a href="$&">$&</a></span>');
     //htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
@@ -88,26 +98,5 @@ function preLoad() {
     jsStr = jsStr.replace(jsVal, '<span id="js-val">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
-  });
-  
-  //----------------------------------------------Numbering
-  $.each($('pre'), function() {
-    var preStr = $(this).html();
-    preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
-    $(this).html(preStr);
-  });
-  
-  $.each($('span[id="all-code"]'), function(line) {
-    $(this).html(function(index, html) {
-      return html.replace(/.+/igm, '<span id="code">$&</span>');
-    });
-    
-    line = 0;
-    
-    $($(this).find('span[id="code"]')).html(function(index, html) {
-      line++;
-      var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
-      $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
-    });
   });
 }
