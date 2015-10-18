@@ -13,7 +13,7 @@ pre {
   top: 0px;
   transform: translate(-50%, -50%);
   /*white-space: pre-wrap;*/
-  width: 80%;
+  width: 400px;
   z-index: 100;
 }
 /*pre:hover {
