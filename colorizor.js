@@ -99,14 +99,14 @@ function preLoad() {
   
   $.each($('span[id="all-code"]'), function(line) {
     $(this).html(function(index, html) {
-      return html.replace(/.+/igm, '<span id="number"></span><span id="code">$&</span>');
+      return html.replace(/.+/igm, '<span id="code">$&</span>');
     });
     
     line = 0;
     
-    $($(this).find('span[id="number"]')).html(function(index, html) {
+    $($(this).parent().find('span[id="all-number"]')).html(function(index, html) {
       line++;
-      return line;
+      return '<span id="number">' + line + '</span>\n';
     });
   });
   
