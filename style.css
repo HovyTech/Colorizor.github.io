@@ -58,6 +58,7 @@ pre:hover {
   text-align: right;
 }
 #block {
+  clear: both;
   display: block;
 }
 #desc {
