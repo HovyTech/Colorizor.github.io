@@ -12,6 +12,7 @@
 #all-number {
   border-right: 1px solid;
   float: left;
+  padding-right: 5px;
 }
 #all-code {
   float: right;
