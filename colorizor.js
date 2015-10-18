@@ -62,7 +62,7 @@ function preLoad() {
     var cssStr = $(this).html();
     
     for (a = 0; a < clean.length; a++) {
-      htmlStr = htmlStr.replace(clean[a], rep[a]);
+      cssStr = cssStr.replace(clean[a], rep[a]);
     }
     
     //-------------------------Wrap Matching Text
@@ -83,7 +83,7 @@ function preLoad() {
     var jsStr = $(this).html();
     
     for (a = 0; a < clean.length; a++) {
-      htmlStr = htmlStr.replace(clean[a], rep[a]);
+      jsStr = jsStr.replace(clean[a], rep[a]);
     }
     
     //-------------------------Wrap Matching Text
