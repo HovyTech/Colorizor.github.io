@@ -110,7 +110,7 @@ function preLoad() {
     //}
   //});
   
-  $.each($('span[id="code"]'), function(line) {
+  $.each($('span[id="all-code"] span[id="code"]'), function(line) {
     $(this).html(function(index, html) {
       line++;
       var numberSpan = $('span[id="all-number"]').html();
