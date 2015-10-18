@@ -26,14 +26,13 @@ var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm;
 function preLoad() {
   //--------------------------------------------------Clean
   $.each($('pre'), function() {
+    var cleanStr = $(this).html();
+    
     for (a = 0; a < clean.length; a++) {
-      //-------------------------Get Text
-      var cleanStr = $(this).html();
-      //-------------------------Wrap Matching Text
       cleanStr = cleanStr.replace(clean[a], rep[a]);
-      //-------------------------Insert Clean Text
-      $(this).html(cleanStr);
     }
+    
+    $(this).html(cleanStr);
   });
   
   //--------------------------------------------------HTML
