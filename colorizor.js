@@ -102,7 +102,7 @@ function preLoad() {
       return html.replace(/.+/igm, '<span id="code">$&</span>');
     });
     
-    $($(this).('span[id="all-number"]')).html(function(index, html) {
+    $($(this).find('span[id="all-number"]')).html(function(index, html) {
       line++;
       return '<span id="number">' + line + '</span>\n';
     });
