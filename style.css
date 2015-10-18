@@ -56,7 +56,7 @@ pre {
   text-align: left;
 }
 #number {
-  display: block;
+  float: top;
   padding-right: 4px;
 }
 #code {
