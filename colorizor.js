@@ -108,6 +108,7 @@ function preLoad() {
       line++;
       var spanParent = $($(this).parent().find('span[id="all-number"]')).html();
       $($(this).parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
+      return
     });
   });
 }
