@@ -104,11 +104,10 @@ function preLoad() {
     
     line = 0;
     
-    $($(this).find('span[id="all-number"]')).html(function(index, html) {
+    $($(this).find('span[id="code"]')).html(function(index, html) {
       line++;
       var spanParent = $($(this).parent().find('span[id="all-number"]')).html();
-      $($(this).parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
-      return
+      $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
     });
   });
 }
