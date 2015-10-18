@@ -45,13 +45,13 @@ pre {
 }
 #all-number {
   border-right: 1px solid;
-  display: block;
+  display: inline-block;
   float: left;
   margin-right: 8px;
   text-align: right;
 }
 #all-code {
-  display: block;
+  display: inline-block;
   float: left;
   margin-left: 8px;
   text-align: left;
