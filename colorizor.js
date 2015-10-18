@@ -111,7 +111,7 @@ function preLoad() {
   //});
   
   $.each($('span[id="code"]'), function(line) {
-    $(this).html(function(index, html) {
+    $('span[id="all-number"]').html(function(index, html) {
       line++;
       return '<span id="number">' + line + '</span>\n';
     });
