@@ -101,8 +101,8 @@ function preLoad() {
     $(this).html(function(index, html) {
       return html.replace(/.+/igm, '<span id="code">$&</span>');
     });
-    
-    for (a = 0; a < $(this).html().match(new RegExp('.+', 'igm')).length; a++) {
+    alert($(this).html().match(new RegExp('id="code"', 'igm')).length)
+    for (a = 0; a < $(this).html().match(new RegExp('id="code"', 'igm')).length; a++) {
       var numberSpan = $('span[id="all-number"]').html();
       $('span[id="all-number"]').html(numberSpan + '<span id="number"></span>\n');
     }
