@@ -107,7 +107,7 @@ function preLoad() {
     $($(this).find('span[id="code"]')).html(function(index, html) {
       line++;
       var spanParent = $($(this).parent().find('span[id="all-number"]')).html();
-      $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
+      $($(this).parent().find('span[id="all-code"]').parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
     });
   });
 }
