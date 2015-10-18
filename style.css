@@ -9,8 +9,12 @@
   /*word-break: break-all;*/
   z-index: 100;
 }
-#numbering {
+#all-number {
   border-right: 1px solid;
+  float: left;
+}
+#all-code {
+  float: right;
 }
 #html, #css, #js {
   background-color: rgb(88, 88, 88);
