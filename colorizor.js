@@ -111,9 +111,11 @@ function preLoad() {
   //});
   
   $.each($('span[id="code"]'), function(line) {
-    $('span[id="all-number"]').html(function(index, html) {
+    $(this).html(function(index, html) {
       line++;
-      return '<span id="number">' + line + '</span>\n';
+      var numberSpan = $('span[id="all-number"]').html();
+      $('span[id="all-number"]').html(numberSpan + '<span id="number">' + line + '</span>\n');
+      return
     });
   });
   
