@@ -99,7 +99,7 @@ function preLoad() {
   
   $.each($('span[id="all-code"]'), function() {
     $(this).html(function(index, html) {
-      return html..replace(/.+/igm, '<span id="code">$&</span>');
+      return html.replace(/.+/igm, '<span id="code">$&</span>');
     });
   });
   
