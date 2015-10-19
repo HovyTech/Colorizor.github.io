@@ -35,15 +35,15 @@ function loadiFrames() {
   var content;
   
   //Dark
-  content = $('#Dark').contents()
-  content.find('head').append('<link src="https://colorizor.github.io/Dark.css"></link>' );
+  content = $('#Dark').contents();
+  content.find('head').append('<link rel="stylesheet" type="text/css" href="https://colorizor.github.io/Dark.css"></link>' );
   //Light
-  content = $('#Light').contents()
-  content.find('head').append('<link src="https://colorizor.github.io/Light.css"></link>' );
+  content = $('#Light').contents();
+  content.find('head').append('<link rel="stylesheet" type="text/css" href="https://colorizor.github.io/Light.css"></link>' );
   //Vintage
-  content = $('#Vintage').contents()
-  content.find('head').append('<link src="https://colorizor.github.io/Vintage.css"></link>' );
+  content = $('#Vintage').contents();
+  content.find('head').append('<link rel="stylesheet" type="text/css" href="https://colorizor.github.io/Vintage.css"></link>' );
   //Beach
-  content = $('#Beach').contents()
-  content.find('head').append('<link src="https://colorizor.github.io/Beach.css"></link>' );
+  content = $('#Beach').contents();
+  content.find('head').append('<link rel="stylesheet" type="text/css" href="https://colorizor.github.io/Beach.css"></link>' );
 }
