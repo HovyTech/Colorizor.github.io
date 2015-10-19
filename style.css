@@ -48,7 +48,10 @@ pre {
   color: rgb(150, 150, 150);
   font-style: underline;
 }
-#regex {
+#regx {
+  color: rgb(150, 150, 150);
+}
+#units {
   color: rgb(150, 150, 150);
 }
 #comment {
