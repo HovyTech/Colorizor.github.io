@@ -113,6 +113,8 @@ function preLoad() {
   $('#all-code').click(function() {
     var range, selection;
     
+    alert($(this).index())
+    
     if (window.getSelection && document.createRange) {
       selection = window.getSelection();
       range = document.createRange();
