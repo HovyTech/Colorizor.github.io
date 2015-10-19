@@ -67,20 +67,20 @@ pre {
 }
 /*-------------------------CSS-------------------------*/
 #css-com {
-  color: rgb(127, 127, 127);
+  color: rgb(205, 255, 214);
   font-style: italic;
 }
 #css-sel {
-  color: rgb(249, 108, 100);
+  color: rgb(193, 222, 255);
 }
 #css-sel-ext {
-  color: rgb(255, 171, 122);
+  color: rgb(232, 200, 178);
 }
 #css-prop {
-  color: rgb(174, 154, 255);
+  color: rgb(255, 248, 207);
 }
 #css-val {
-  color: rgb(144, 255, 180);
+  color: rgb(173, 176, 232);
 }
 #css-unt {
   color: rgb(110, 175, 255);
