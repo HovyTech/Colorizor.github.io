@@ -7,6 +7,7 @@ var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\
 //--------------------------------------------------General
 var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;'|\\,.?/`˜]+)/igm;
 var color = /(rgb|rgba|#)([(0-9a-zA-Z,)].+)(?=(.*?);)/igm;
+var regex = /&#47;(.*?)&#47;([igm]+)/igm;
 //--------------------------------------------------HTML
 var htmlCom = /(&#60;&#33;&#45;&#45;(.*?)$|(.*?)([\w]+)(?=\n(.*?)&#45;&#45;&#62;)|(.*?)&#45;&#45;&#62;)/igm;
 var htmlTag = /((&#60;&#33;|&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47;&#62;))|&#62;)/igm;
@@ -91,10 +92,11 @@ function preLoad() {
   
   //----------------------------------------------URL
   $.each($('pre, span'), function() {
-    var urlStr = $(this).html();
-    urlStr = urlStr.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
-    urlStr = urlStr.replace(color, '<span style="color: $&;">$&</span>');
-    $(this).html(urlStr);
+    var extraStr = $(this).html();
+    extraStr = extraStr.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
+    extraStr = extraStr.replace(color, '<span style="color: $&;">$&</span>');
+    extraStr = extraStr.replace(regex, '<span id="regex">$&</span>');
+    $(this).html(extraStr);
   });
   
   //----------------------------------------------Numbering
