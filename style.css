@@ -49,12 +49,14 @@ pre {
   float: left;
   margin-right: 8px;
   text-align: right;
+  vertical-align: top;
 }
 #all-code {
   display: inline-block;
   float: left;
   margin-left: 8px;
   text-align: left;
+  vertical-align: top;
 }
 #number {
   float: top;
