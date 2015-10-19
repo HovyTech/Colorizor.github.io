@@ -7,7 +7,7 @@ var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\
 //--------------------------------------------------General
 var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;'|\\,.?/`˜]+)/igm;
 var color = /(rgb|rgba|#)([(0-9a-zA-Z,)].+)(?=(.*?);)/igm;
-var regex = /&#47;(.+)&#47;([igm]+)/igm;
+var regx = /&#47;(.*?)&#47;([igm]+)/igm;
 var units = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm;
 //--------------------------------------------------HTML
 var htmlCom = /(&#60;&#33;&#45;&#45;(.*?)$|(.*?)([\w]+)(?=\n(.*?)&#45;&#45;&#62;)|(.*?)&#45;&#45;&#62;)/igm;
@@ -96,7 +96,7 @@ function preLoad() {
     var extraStr = $(this).html();
     extraStr = extraStr.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
     extraStr = extraStr.replace(color, '<span style="color: $&;">$&</span>');
-    extraStr = extraStr.replace(regex, '<span id="regex">$&</span>');
+    extraStr = extraStr.replace(regx, '<span id="regex">$&</span>');
     extraStr = extraStr.replace(units, '<span style="color: rgb(150, 150, 150);">$&</span>');
     $(this).html(extraStr);
   });
