@@ -30,20 +30,3 @@ function loadHeader() {
     oldScroll = newScroll;
   }
 }
-
-function loadiFrames() {
-  var content;
-  
-  //Dark
-  content = $('#Dark').contents();
-  content.find('head').append('<link rel="stylesheet" type="text/css" href="https://colorizor.github.io/Dark.css"></link>' );
-  //Light
-  content = $('#Light').contents();
-  content.find('head').append('<link rel="stylesheet" type="text/css" href="https://colorizor.github.io/Light.css"></link>' );
-  //Vintage
-  content = $('#Vintage').contents();
-  content.find('head').append('<link rel="stylesheet" type="text/css" href="https://colorizor.github.io/Vintage.css"></link>' );
-  //Beach
-  content = $('#Beach').contents();
-  content.find('head').append('<link rel="stylesheet" type="text/css" href="https://colorizor.github.io/Beach.css"></link>' );
-}
