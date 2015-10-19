@@ -29,8 +29,6 @@ function preLoad() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
     
-    htmlStr = htmlStr.replace(link, '<span id="link"><a href="$&">$&</a></span>');
-    
     for (a = 0; a < clean.length; a++) {
       htmlStr = htmlStr.replace(clean[a], rep[a]);
     }
@@ -87,6 +85,8 @@ function preLoad() {
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
     var preStr = $(this).html();
+    preStr = preStr.replace(link, '<a id="link" href="$&">$&</a>');
+    preStr = preStr.replace(/""/igm, '"');
     preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
     $(this).html(preStr);
   });
