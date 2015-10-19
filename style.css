@@ -1,5 +1,6 @@
 /*----------------------------------------Dark----------------------------------------*/
 pre#dark{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #dark-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #dark-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #dark-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -16,6 +17,7 @@ pre#dark{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"
 #dark-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Light----------------------------------------*/
 pre#light{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #light-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #light-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #light-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -32,6 +34,7 @@ pre#light{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:
 #light-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Gray----------------------------------------*/
 pre#gray{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #gray-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #gray-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #gray-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -48,6 +51,7 @@ pre#gray{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"
 #gray-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------White----------------------------------------*/
 pre#white{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #white-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #white-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #white-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -64,6 +68,7 @@ pre#white{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:
 #white-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Black----------------------------------------*/
 pre#black{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #black-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #black-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #black-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -80,6 +85,7 @@ pre#black{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:
 #black-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Vintage----------------------------------------*/
 pre#vintage{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #vintage-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #vintage-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #vintage-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -96,6 +102,7 @@ pre#vintage{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-famil
 #vintage-parameter{color:rgb(245, 233, 190);}
 /*----------------------------------------Beach----------------------------------------*/
 pre#beach{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #beach-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #beach-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #beach-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -110,67 +117,37 @@ pre#beach{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:
 #beach-attribute{color:rgb(255, 248, 207);}
 #beach-value{color:rgb(173, 176, 232);}
 #beach-parameter{color:rgb(232, 200, 178);}
-/*----------------------------------------Dark----------------------------------------*/
-pre#dark{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#dark-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
-#dark-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
-#dark-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
-#dark-number{float:top;padding-right:4px;}
-#dark-code{float:top;}
-#dark-desc{color:rgb(255, 255, 255);text-align:center;}
-#dark-link{color:rgb(150, 150, 150);font-style:underline;}
-#dark-regx{color:rgb(150, 150, 150);}
-#dark-units{color:rgb(150, 150, 150);}
-#dark-comment{color:rgb(205, 255, 214);font-style:italic;}
-#dark-selector{color:rgb(193, 222, 255);}
-#dark-attribute{color:rgb(255, 248, 207);}
-#dark-value{color:rgb(173, 176, 232);}
-#dark-parameter{color:rgb(232, 200, 178);}
-/*----------------------------------------Dark----------------------------------------*/
-pre#dark{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#dark-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
-#dark-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
-#dark-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
-#dark-number{float:top;padding-right:4px;}
-#dark-code{float:top;}
-#dark-desc{color:rgb(255, 255, 255);text-align:center;}
-#dark-link{color:rgb(150, 150, 150);font-style:underline;}
-#dark-regx{color:rgb(150, 150, 150);}
-#dark-units{color:rgb(150, 150, 150);}
-#dark-comment{color:rgb(205, 255, 214);font-style:italic;}
-#dark-selector{color:rgb(193, 222, 255);}
-#dark-attribute{color:rgb(255, 248, 207);}
-#dark-value{color:rgb(173, 176, 232);}
-#dark-parameter{color:rgb(232, 200, 178);}
-/*----------------------------------------Dark----------------------------------------*/
-pre#dark{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#dark-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
-#dark-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
-#dark-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
-#dark-number{float:top;padding-right:4px;}
-#dark-code{float:top;}
-#dark-desc{color:rgb(255, 255, 255);text-align:center;}
-#dark-link{color:rgb(150, 150, 150);font-style:underline;}
-#dark-regx{color:rgb(150, 150, 150);}
-#dark-units{color:rgb(150, 150, 150);}
-#dark-comment{color:rgb(205, 255, 214);font-style:italic;}
-#dark-selector{color:rgb(193, 222, 255);}
-#dark-attribute{color:rgb(255, 248, 207);}
-#dark-value{color:rgb(173, 176, 232);}
-#dark-parameter{color:rgb(232, 200, 178);}
-/*----------------------------------------Dark----------------------------------------*/
-pre#dark{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#dark-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
-#dark-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
-#dark-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
-#dark-number{float:top;padding-right:4px;}
-#dark-code{float:top;}
-#dark-desc{color:rgb(255, 255, 255);text-align:center;}
-#dark-link{color:rgb(150, 150, 150);font-style:underline;}
-#dark-regx{color:rgb(150, 150, 150);}
-#dark-units{color:rgb(150, 150, 150);}
-#dark-comment{color:rgb(205, 255, 214);font-style:italic;}
-#dark-selector{color:rgb(193, 222, 255);}
-#dark-attribute{color:rgb(255, 248, 207);}
-#dark-value{color:rgb(173, 176, 232);}
-#dark-parameter{color:rgb(232, 200, 178);}
+/*----------------------------------------Honey----------------------------------------*/
+pre#honey{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#honey-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
+#honey-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
+#honey-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
+#honey-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
+#honey-number{float:top;padding-right:4px;}
+#honey-code{float:top;}
+#honey-desc{color:rgb(255, 255, 255);text-align:center;}
+#honey-link{color:rgb(150, 150, 150);font-style:underline;}
+#honey-regx{color:rgb(150, 150, 150);}
+#honey-units{color:rgb(150, 150, 150);}
+#honey-comment{color:rgb(205, 255, 214);font-style:italic;}
+#honey-selector{color:rgb(193, 222, 255);}
+#honey-attribute{color:rgb(255, 248, 207);}
+#honey-value{color:rgb(173, 176, 232);}
+#honey-parameter{color:rgb(232, 200, 178);}
+/*----------------------------------------Salmon----------------------------------------*/
+pre#salmon{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#salmon-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
+#salmon-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
+#salmon-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
+#salmon-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
+#salmon-number{float:top;padding-right:4px;}
+#salmon-code{float:top;}
+#salmon-desc{color:rgb(255, 255, 255);text-align:center;}
+#salmon-link{color:rgb(150, 150, 150);font-style:underline;}
+#salmon-regx{color:rgb(150, 150, 150);}
+#salmon-units{color:rgb(150, 150, 150);}
+#salmon-comment{color:rgb(205, 255, 214);font-style:italic;}
+#salmon-selector{color:rgb(193, 222, 255);}
+#salmon-attribute{color:rgb(255, 248, 207);}
+#salmon-value{color:rgb(173, 176, 232);}
+#salmon-parameter{color:rgb(232, 200, 178);}
