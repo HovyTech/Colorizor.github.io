@@ -6,6 +6,7 @@ var clean = [/&lt;/igm, /&gt;/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/
 var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
 //--------------------------------------------------General
 var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;'|\\,.?/`˜]+)/igm;
+var color = /(rgb|rgba|#)([(0-9a-zA-Z,)].+)(?=(.*?);)/igm;
 //--------------------------------------------------HTML
 var htmlCom = /(&#60;&#33;&#45;&#45;(.*?)$|(.*?)([\w]+)(?=\n(.*?)&#45;&#45;&#62;)|(.*?)&#45;&#45;&#62;)/igm;
 var htmlTag = /((&#60;&#33;|&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47;&#62;))|&#62;)/igm;
@@ -14,6 +15,11 @@ var htmlVal = /&#34;([\s\S]*?)&#34;/igm;
 var htmlPar = /\s([\w]+)(?=<span)/igm;
 var htmlFixA = /&#45;&#45;<span id="html-tag">&#62;<\/span>/igm;
 //--------------------------------------------------CSS
+var cssCom = /(&#47;\*(.*?)$|(.*?)([\w]+)(?=\n(.*?)\*&#47;)|(.*?)\*&#47;)/igm;
+var cssSel = /(^|,.+)([\w]+)(?=.+{)/igm;
+var cssSelExt = /:([\w]+)(?=.+{)/igm;
+var cssProp = /(?!.+{)([\w-]+)(?=:(.*?);)/igm;
+var cssVal = /:(.*?)([\w]+)(.*?);/igm;
 //--------------------------------------------------JS
 var jsCom = /&#47;&#47;.*/igm;
 var jsSet = /(\{|\}\)|\})/igm;
@@ -54,11 +60,11 @@ function preLoad() {
     }
     
     //-------------------------Wrap Matching Text
-    //cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
-    //cssStr = cssStr.replace(cssSel, '<span id="css-sel">$&</span>');
-    //cssStr = cssStr.replace(cssSelExt, '</span><span id="css-sel-ext">$&</span>');
-    //cssStr = cssStr.replace(cssProp, '<span id="css-prop">$&</span>');
-    //cssStr = cssStr.replace(cssVal, '<span id="css-val">$&</span>');
+    cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
+    cssStr = cssStr.replace(cssSel, '<span id="css-sel">$&</span>');
+    cssStr = cssStr.replace(cssSelExt, '</span><span id="css-sel-ext">$&</span>');
+    cssStr = cssStr.replace(cssProp, '<span id="css-prop">$&</span>');
+    cssStr = cssStr.replace(cssVal, '<span id="css-val">$&</span>');
     //cssStr = cssStr.replace(cssUnt, '</span><span id="css-unt">$&</span><span id="css-val">');
     //-------------------------Insert Coloured Text
     $(this).html(cssStr);
@@ -86,6 +92,7 @@ function preLoad() {
   $.each($('pre, span'), function() {
     var urlStr = $(this).html();
     urlStr = urlStr.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
+    urlStr = urlStr.replace(color, '<span style="color: $&;">$&</span>');
     $(this).html(urlStr);
   });
   
