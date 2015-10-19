@@ -24,8 +24,8 @@ var cssVal = /:([\s\S].+);/igm;
 var jsCom = /&#47;&#47;.*/igm;
 var jsText = /(&#34;(.*?)&#34;|'(.*?)')/igm;
 var jsSel = /(?!\$\()([\w]+)(?=\)\.)/igm;
-var jsChar = /((?!(function)\s)([\w]+)\(\)(?=(.*?){)|((\$|\.([\w]+))(.*?)|([\w]+))\(|(?!(.*?){)\))/igm;
 var jsVal = /([\w]+)\s(?=([\w]+)\(\)(.*?){)/igm;
+var jsChar = /((?!(function)\s)([\w]+)\(\)(?=(.*?){)|((\$|\.([\w]+))(.*?)|([\w]+))\(|(?!(.*?){)\))/igm;
 
 //------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------Clean Up--------------------------------------------------
@@ -83,8 +83,8 @@ function preLoad() {
     jsStr = jsStr.replace(jsCom, '<span id="comment">$&</span>');
     jsStr = jsStr.replace(jsText, '<span id="value">$&</span>');
     jsStr = jsStr.replace(jsSel, '<span id="parameter">$&</span>');
-    jsStr = jsStr.replace(jsChar, '<span id="selector">$&</span>');
     jsStr = jsStr.replace(jsVal, '<span id="attribute">$&</span>');
+    jsStr = jsStr.replace(jsChar, '<span id="selector">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
   });
