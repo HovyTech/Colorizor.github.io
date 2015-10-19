@@ -13,7 +13,7 @@ var htmlTag = /((&#60;&#33;|&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47
 var htmlAtt = /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/igm;
 var htmlVal = /&#34;([\s\S]*?)&#34;/igm;
 var htmlPar = /\s([\w]+)(?=<span)/igm;
-var htmlFixA = /&#45;&#45;<span id="html-tag">&#62;<\/span>/igm;
+var htmlFixA = /&#45;&#45;<span id="selector">&#62;<\/span>/igm;
 //--------------------------------------------------CSS
 var cssCom = /(&#47;\*(.*?)$|(.*?)([\w]+)(?=\n(.*?)\*&#47;)|(.*?)\*&#47;)/igm;
 var cssSel = /(^|,.+)([\w]+)(?=.+{)/igm;
@@ -22,8 +22,9 @@ var cssProp = /(?!.+{)(([\w]|&#45;)+)(?=:(.*?);)/igm;
 var cssVal = /:([\s\S].+);/igm;
 //--------------------------------------------------JS
 var jsCom = /&#47;&#47;.*/igm;
+var jsText = /("(.*?)"|'(.*?)')/igm;
 var jsSet = /(\{|\}\)|\})/igm;
-var jsSel = /([\w]+)(?=\(.*?\).*?\{)/igm;
+var jsSel = /(?!\$\()([\w]+)(?=\)\.)/igm;
 var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm;
 
 //------------------------------------------------------------------------------------------------------------
@@ -40,11 +41,11 @@ function preLoad() {
     }
     
     //-------------------------Wrap Matching Text
-    htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
-    htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
-    htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
-    htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
-    htmlStr = htmlStr.replace(htmlPar, '<span id="html-par">$&</span>');
+    htmlStr = htmlStr.replace(htmlCom, '<span id="comment">$&</span>');
+    htmlStr = htmlStr.replace(htmlTag, '<span id="selector">$&</span>');
+    htmlStr = htmlStr.replace(htmlAtt, '<span id="attribute">$&</span>');
+    htmlStr = htmlStr.replace(htmlVal, '<span id="value">$&</span>');
+    htmlStr = htmlStr.replace(htmlPar, '<span id="parameter">$&</span>');
     htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
@@ -60,12 +61,11 @@ function preLoad() {
     }
     
     //-------------------------Wrap Matching Text
-    cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
-    cssStr = cssStr.replace(cssSel, '<span id="css-sel">$&</span>');
-    cssStr = cssStr.replace(cssSelExt, '</span><span id="css-sel-ext">$&</span>');
-    cssStr = cssStr.replace(cssProp, '<span id="css-prop">$&</span>');
-    cssStr = cssStr.replace(cssVal, '<span id="css-val">$&</span>');
-    //cssStr = cssStr.replace(cssUnt, '</span><span id="css-unt">$&</span><span id="css-val">');
+    cssStr = cssStr.replace(cssCom, '<span id="comment">$&</span>');
+    cssStr = cssStr.replace(cssSel, '<span id="selector">$&</span>');
+    cssStr = cssStr.replace(cssSelExt, '</span><span id="parameter">$&</span>');
+    cssStr = cssStr.replace(cssProp, '<span id="attribute">$&</span>');
+    cssStr = cssStr.replace(cssVal, '<span id="value">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(cssStr);
   });
@@ -80,10 +80,11 @@ function preLoad() {
     }
     
     //-------------------------Wrap Matching Text
+    jsStr = jsStr.replace(jsCom, '<span id="comment">$&</span>');
     jsStr = jsStr.replace(jsSet, '<span id="js-set">$&</span>');
-    jsStr = jsStr.replace(jsCom, '<span id="js-com">$&</span>');
+    jsStr = jsStr.replace(jsText, '<span id="value">$&</span>');
     jsStr = jsStr.replace(jsSel, '<span id="js-sel">$&</span>');
-    jsStr = jsStr.replace(jsVal, '<span id="js-val">$&</span>');
+    jsStr = jsStr.replace(jsVal, '<span id="value">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
   });
