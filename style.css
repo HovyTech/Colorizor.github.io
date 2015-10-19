@@ -8,6 +8,7 @@ pre {
   margin: 5px;
   overflow: auto;
   padding: 10px;
+  text-align: left;
 }
 #text {
   background-color: rgb(88, 88, 88);
