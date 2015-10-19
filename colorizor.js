@@ -85,7 +85,7 @@ function preLoad() {
   //----------------------------------------------URL
   $.each($('pre, span'), function() {
     var urlStr = $(this).html();
-    urlStr = urlStr.replace(link, '<a id="link" href="$&">$&</a>');
+    urlStr = urlStr.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
     $(this).html(urlStr);
   });
   
