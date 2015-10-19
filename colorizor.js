@@ -109,20 +109,20 @@ function preLoad() {
       $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
     });
   });
-}
-
-$('#all-code').click(function() {
-  var range, selection;
+  
+  $('#all-code').click(function() {
+    var range, selection;
     
-  if (window.getSelection && document.createRange) {
-    selection = window.getSelection();
-    range = document.createRange();
-    range.selectNodeContents($(this)[0]);
-    selection.removeAllRanges();
-    selection.addRange(range);
-  } else if (document.selection && document.body.createTextRange) {
-    range = document.body.createTextRange();
-    range.moveToElementText($(this)[0]);
-    range.select();
-  }
-});
+    if (window.getSelection && document.createRange) {
+      selection = window.getSelection();
+      range = document.createRange();
+      range.selectNodeContents($(this)[0]);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    } else if (document.selection && document.body.createTextRange) {
+      range = document.body.createTextRange();
+      range.moveToElementText($(this)[0]);
+      range.select();
+    }
+  });
+}
