@@ -1,136 +1,140 @@
-//--------------------------------------------------Fix Pre Tag Width
-//-------------------------Get Screen Width
-var width = screen.width;
-//var width = $(window).width();
-//-------------------------Create percentage with width
-//var percent = ((width - 45) / width) * 100;
-//-------------------------Change all pre tag width
-$('pre').css('width', (width - 45) + 'px');
-$('pre').css('left', '5px');
-//$('pre').css('right', '5px');
-//--------------------------------------------------Clean Up
-//-------------------------Replace Characters
-//By replacing the characters it allowes
-//for not replacing the span tag characters
-//&lt;&gt;
-var clean = [/&lt;/ig, /&gt;/ig, /[/]/ig, /[=]/ig, /["]/ig, /[!]/ig, /[-]/ig, /[\t]/ig];
+//------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------RegEx----------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------Clean
+var clean = [/&lt;/igm, /&gt;/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
 var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
-
+//--------------------------------------------------General
+var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;'|\\,.?/`˜]+)/igm;
+var color = /(rgb|rgba|#)([(0-9a-zA-Z,)].+)(?=(.*?);)/igm;
+var regx = /&#47;(.*?)&#47;([igm]+)/igm;
+var units = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm;
 //--------------------------------------------------HTML
-//-------------------------Fix
-var htmlFixa = /<span id="html-tag">&#62;<\/span><\/span>/ig;
-var htmlFixb = /&#60;&#33;&#45;&#45;([\s\S]*?)\n/ig;
-var htmlFixc = /<\/span><span id="html-com"><span/ig;
-//-------------------------Comment
-var htmlCom = /(&#60;&#33;DOCTYPE|&#60;&#33;&#45;&#45;)([\s\S]*?)(&#45;&#45;&#62;|&#62;)/ig;
-//-------------------------Tag
-var htmlTag = /(&#60;|&#60;&#47;)([\w]+)|&#62;/ig;
-//-------------------------Attribute
-var htmlAtt = /([\w]+)&#61;/ig;
-//-------------------------Value
-var htmlVal = /&#34;([\s\S]*?)&#34;/ig;
+var htmlCom = /(&#60;&#33;&#45;&#45;(.*?)$|(.*?)([\w]+)(?=\n(.*?)&#45;&#45;&#62;)|(.*?)&#45;&#45;&#62;)/igm;
+var htmlTag = /((&#60;&#33;|&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47;&#62;))|&#62;)/igm;
+var htmlAtt = /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/igm;
+var htmlVal = /&#34;([\s\S]*?)&#34;/igm;
+var htmlPar = /\s([\w]+)(?=<span)/igm;
+var htmlFixA = /&#45;&#45;<span id="selector">&#62;<\/span>/igm;
 //--------------------------------------------------CSS
-//-------------------------Fix
-var cssFixa = /<span id="css-sel-ext"><span id="css-prop">:<\/span>/ig;
-var cssFixb = /<span id="css-val">:<\/span>/ig;
-var cssFixc = /{<\/span><\/span>/ig;
-var cssFixd = /&#47;*([\s\S]*?)\n/ig;
-var cssFixe = /<span id="css-sel">([\s\S]*?)<\/span><span id="css-com">/ig;
-//-------------------------Comment
-var cssCom = /&#47;\*([\s\S]*?)\*&#47;/ig;
-//-------------------------Selector
-var cssSel = /([\w\s.#:_@!\[\]\(\)&45;]*?)\{|\}/ig;
-//-------------------------Selector Extention
-var cssSelExt = /:(.*?){/ig;
-//-------------------------Property
-var cssProp = /([\w&#45;]*?):/ig;
-//-------------------------Value
-var cssVal = /:(.*?)&#59;/ig;
-//-------------------------Unit
-var cssUnt = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/ig;
+var cssCom = /(&#47;\*(.*?)$|(.*?)([\w]+)(?=\n(.*?)\*&#47;)|(.*?)\*&#47;)/igm;
+var cssSel = /(^|,.+)([\w]+)(?=.+{)/igm;
+var cssSelExt = /:([\w]+)(?=.+{)/igm;
+var cssProp = /(?!.+{)(([\w]|&#45;)+)(?=:(.*?);)/igm;
+var cssVal = /:([\s\S].+);/igm;
 //--------------------------------------------------JS
-//-------------------------Fix
-var jsFixa = /\(<\/span>/ig;
-var jsFixb = /<span id="js-set"><span id="js-sel">function<\/span>/ig;
-//-------------------------Set
-var jsSet = /(document|var|function|this|width|height|window|screen|length|if|for|while|return|true|false)/ig;
-//-------------------------Comment
-var jsCom = /&#47;&#47;([\s\S]*?)\n/ig;
-//-------------------------Selector
-var jsSel = /((function|\.)([\s\S]*?)|([\w]+))\(/ig;
-//-------------------------Value
-var jsVal = /(&#34;|')([\s\S]*?)('|&#34;)/ig;
+var jsCom = /&#47;&#47;.*/igm;
+var jsText = /(&#34;(.*?)&#34;|'(.*?)')/igm;
+var jsSel = /(?!\$\()([\w]+)(?=\)\.)/igm;
+var jsVal = /(([\w]+)\s(?=([\w]+)\(\)(.*?){)|var)/igm;
+var jsChar = /((?!(function)\s)([\w]+)\(\)(?=(.*?){)|((\$|\.([\w]+))(.*?)|([\w]+))\(|(?!(.*?){)\)|\)(?=,))/igm;
 
-//---------------------------------------------------------------------------Colour Code
+//------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------Clean Up--------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
 function preLoad() {
   //--------------------------------------------------HTML
   $.each($('pre[id="html"]'), function() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
-    //-------------------------Replace Characters
+    
     for (a = 0; a < clean.length; a++) {
       htmlStr = htmlStr.replace(clean[a], rep[a]);
     }
+    
     //-------------------------Wrap Matching Text
-    htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
-    htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
-    htmlStr = htmlStr.replace(htmlAtt, '<span id="html-att">$&</span>');
-    htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
-    htmlStr = htmlStr.replace(htmlFixa, '&#62;</span>');
-    htmlStr = htmlStr.replace(htmlFixb, '$&</span><span id="html-com">');
-    htmlStr = htmlStr.replace(htmlFixc, '<span');
+    htmlStr = htmlStr.replace(htmlCom, '<span id="comment">$&</span>');
+    htmlStr = htmlStr.replace(htmlTag, '<span id="selector">$&</span>');
+    htmlStr = htmlStr.replace(htmlAtt, '<span id="attribute">$&</span>');
+    htmlStr = htmlStr.replace(htmlVal, '<span id="value">$&</span>');
+    htmlStr = htmlStr.replace(htmlPar, '<span id="parameter">$&</span>');
+    htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
+  
   //--------------------------------------------------CSS
   $.each($('pre[id="css"]'), function() {
     //-------------------------Get Text
     var cssStr = $(this).html();
-    //-------------------------Replace Characters
-    cssStr = cssStr.replace(/[;]/ig, '&#59;');
-    for (b = 0; b < clean.length; b++) {
-      cssStr = cssStr.replace(clean[b], rep[b]);
+    
+    for (a = 0; a < clean.length; a++) {
+      cssStr = cssStr.replace(clean[a], rep[a]);
     }
+    
     //-------------------------Wrap Matching Text
-    cssStr = cssStr.replace(cssCom, '<span id="css-com">$&</span>');
-    cssStr = cssStr.replace(cssSel, '<span id="css-sel">$&</span>');
-    cssStr = cssStr.replace(cssSelExt, '</span><span id="css-sel-ext">$&</span>');
-    cssStr = cssStr.replace(cssProp, '<span id="css-prop">$&</span>');
-    cssStr = cssStr.replace(cssVal, '<span id="css-val">$&</span>');
-    cssStr = cssStr.replace(cssUnt, '</span><span id="css-unt">$&</span><span id="css-val">');
-    cssStr = cssStr.replace(cssFixa, '<span id="css-sel-ext">:');
-    cssStr = cssStr.replace(cssFixb, ':</span><span id="css-val">');
-    cssStr = cssStr.replace(cssFixc, '</span><span id="css-sel">{</span>');
-    cssStr = cssStr.replace(cssFixd, '$&</span><span id="css-com">');
-    cssStr = cssStr.replace(cssFixe, '$&<span id="css-sel">');
+    cssStr = cssStr.replace(cssCom, '<span id="comment">$&</span>');
+    cssStr = cssStr.replace(cssSel, '<span id="selector">$&</span>');
+    cssStr = cssStr.replace(cssSelExt, '</span><span id="parameter">$&</span>');
+    cssStr = cssStr.replace(cssProp, '<span id="attribute">$&</span>');
+    cssStr = cssStr.replace(cssVal, '<span id="value">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(cssStr);
   });
+  
   //--------------------------------------------------JS
   $.each($('pre[id="js"]'), function() {
     //-------------------------Get Text
     var jsStr = $(this).html();
-    //-------------------------Replace Characters
-    for (c = 0; c < clean.length; c++) {
-      jsStr = jsStr.replace(clean[c], rep[c]);
+    
+    for (a = 0; a < clean.length; a++) {
+      jsStr = jsStr.replace(clean[a], rep[a]);
     }
+    
     //-------------------------Wrap Matching Text
-    jsStr = jsStr.replace(jsSet, '<span id="js-set">$&</span>');
-    jsStr = jsStr.replace(jsCom, '<span id="js-com">$&</span>');
-    jsStr = jsStr.replace(jsSel, '<span id="js-sel">$&</span>');
-    jsStr = jsStr.replace(jsVal, '<span id="js-val">$&</span>');
-    jsStr = jsStr.replace(jsFixa, '</span>(');
-    jsStr = jsStr.replace(jsFixb, '<span id="js-set">function</span><span id="js-sel">');
+    jsStr = jsStr.replace(jsCom, '<span id="comment">$&</span>');
+    jsStr = jsStr.replace(jsText, '<span id="value">$&</span>');
+    jsStr = jsStr.replace(jsSel, '<span id="parameter">$&</span>');
+    jsStr = jsStr.replace(jsVal, '<span id="attribute">$&</span>');
+    jsStr = jsStr.replace(jsChar, '<span id="selector">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
   });
+  
+  //----------------------------------------------URL
+  $.each($('pre, span'), function() {
+    var extraStr = $(this).html();
+    extraStr = extraStr.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
+    extraStr = extraStr.replace(color, '<span style="color: $&;">$&</span>');
+    extraStr = extraStr.replace(regx, '<span id="regx">$&</span>');
+    extraStr = extraStr.replace(units, '<span id="units">$&</span>');
+    $(this).html(extraStr);
+  });
+  
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
     var preStr = $(this).html();
-    //-------------------------Adding li and ol Tags
-    preStr = preStr.replace(/\n/ig, '</li><li>');
-    preStr = preStr.replace(/([\s\S]+)/ig, '<ol><li>$&</li></ol>');
+    preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
     $(this).html(preStr);
   });
+  
+  $.each($('span[id="all-code"]'), function(line) {
+    $(this).html(function(index, html) {
+      return html.replace(/.+/igm, '<span id="code">$&</span>');
+    });
+    
+    line = 0;
+    
+    $($(this).find('span[id="code"]')).html(function(index, html) {
+      line++;
+      var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
+      $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
+    });
+  });
+  
+  $('span[id="all-code"]').click(function() {
+    var range, selection;
+    
+    if (window.getSelection && document.createRange) {
+      selection = window.getSelection();
+      range = document.createRange();
+      range.selectNodeContents($(this)[0]);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    } else if (document.selection && document.body.createTextRange) {
+      range = document.body.createTextRange();
+      range.moveToElementText($(this)[0]);
+      range.select();
+    }
+  });
 }
-preLoad();
