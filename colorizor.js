@@ -25,27 +25,23 @@ var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm;
 //------------------------------------------------------------------------------------------------------------
 function preLoad() {
   //--------------------------------------------------Clean
-  //$.each($('pre'), function() {
-    //var cleanStr = $(this).html();
+  $.each($('pre'), function() {
+    //-------------------------Get Text
+    var cleanStr = $(this).html();
     
-    //for (a = 0; a < clean.length; a++) {
-      //cleanStr = cleanStr.replace(clean[a], rep[a]);
-    //}
+    for (a = 0; a < clean.length; a++) {
+      cleanStr = cleanStr.replace(clean[a], rep[a]);
+    }
     
-    //$(this).html(cleanStr);
-  //});
+    cleanStr = cleanStr.replace(link, '<span id="link"><a href="$&">$&</a></span>');
+    
+    $(this).html(cleanStr);
+  });
   
   //--------------------------------------------------HTML
   $.each($('pre[id="html"]'), function() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
-    
-    for (a = 0; a < clean.length; a++) {
-      htmlStr = htmlStr.replace(clean[a], rep[a]);
-    }
-    
-    htmlStr = htmlStr.replace(link, '<a id="link" href="$&">$&</a>');
-    
     //-------------------------Wrap Matching Text
     htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
     htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
