@@ -17,7 +17,7 @@ pre#dark{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"
 #dark-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Light----------------------------------------*/
 pre#light{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
+#light-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #light-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #light-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #light-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -34,7 +34,7 @@ pre#light{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:
 #light-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Gray----------------------------------------*/
 pre#gray{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
+#gray-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #gray-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #gray-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #gray-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -51,7 +51,7 @@ pre#gray{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"
 #gray-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------White----------------------------------------*/
 pre#white{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
+#white-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #white-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #white-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #white-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -68,7 +68,7 @@ pre#white{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:
 #white-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Black----------------------------------------*/
 pre#black{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
+#black-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #black-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #black-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #black-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -85,7 +85,7 @@ pre#black{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:
 #black-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Vintage----------------------------------------*/
 pre#vintage{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
+#vintage-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #vintage-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #vintage-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #vintage-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -102,7 +102,7 @@ pre#vintage{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-famil
 #vintage-parameter{color:rgb(245, 233, 190);}
 /*----------------------------------------Beach----------------------------------------*/
 pre#beach{background-color:rgb(88, 88, 88);color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#dark-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
+#beach-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #beach-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #beach-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #beach-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
