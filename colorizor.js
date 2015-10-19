@@ -96,8 +96,8 @@ function preLoad() {
     var extraStr = $(this).html();
     extraStr = extraStr.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
     extraStr = extraStr.replace(color, '<span style="color: $&;">$&</span>');
-    extraStr = extraStr.replace(regx, '<span id="regex">$&</span>');
-    extraStr = extraStr.replace(units, '<span style="color: rgb(150, 150, 150);">$&</span>');
+    extraStr = extraStr.replace(regx, '<span id="regx">$&</span>');
+    extraStr = extraStr.replace(units, '<span id="units">$&</span>');
     $(this).html(extraStr);
   });
   
