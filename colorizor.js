@@ -81,10 +81,10 @@ function preLoad() {
     
     //-------------------------Wrap Matching Text
     jsStr = jsStr.replace(jsCom, '<span id="comment">$&</span>');
-    jsStr = jsStr.replace(jsChar, '<span id="parameter">$&</span>');
     jsStr = jsStr.replace(jsText, '<span id="value">$&</span>');
     jsStr = jsStr.replace(jsSel, '<span id="selector">$&</span>');
     jsStr = jsStr.replace(jsVal, '<span id="value">$&</span>');
+    jsStr = jsStr.replace(jsChar, '<span id="parameter">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
   });
