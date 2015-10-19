@@ -23,7 +23,7 @@ var cssVal = /:([\s\S].+);/igm;
 //--------------------------------------------------JS
 var jsCom = /&#47;&#47;.*/igm;
 var jsText = /("(.*?)"|'(.*?)')/igm;
-var jsSet = /(\{|\}\)|\})/igm;
+var jsChar = /((?!(function)\s)([\w]+)\(\)(?=(.*?){)|(\$|\.([\w]+))(.*?)\(|(?!(.*?){)\))/igm;
 var jsSel = /(?!\$\()([\w]+)(?=\)\.)/igm;
 var jsVal = /([\w]+)(?=\s(.*?\(.*?\).*?\{))/igm;
 
@@ -81,9 +81,9 @@ function preLoad() {
     
     //-------------------------Wrap Matching Text
     jsStr = jsStr.replace(jsCom, '<span id="comment">$&</span>');
-    jsStr = jsStr.replace(jsSet, '<span id="js-set">$&</span>');
     jsStr = jsStr.replace(jsText, '<span id="value">$&</span>');
-    jsStr = jsStr.replace(jsSel, '<span id="js-sel">$&</span>');
+    jsStr = jsStr.replace(jsChar, '<span id="parameter">$&</span>');
+    jsStr = jsStr.replace(jsSel, '<span id="selector">$&</span>');
     jsStr = jsStr.replace(jsVal, '<span id="value">$&</span>');
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
