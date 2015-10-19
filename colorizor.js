@@ -82,11 +82,16 @@ function preLoad() {
     $(this).html(jsStr);
   });
   
+  //----------------------------------------------URL
+  $.each($('pre, span'), function() {
+    var urlStr = $(this).html();
+    urlStr = urlStr.replace(link, '<a id="link" href="$&">$&</a>');
+    $(this).html(urlStr);
+  });
+  
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
     var preStr = $(this).html();
-    preStr = preStr.replace(link, '<a id="link" href="$&">$&</a>');
-    preStr = preStr.replace(/""/igm, '"');
     preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
     $(this).html(preStr);
   });
