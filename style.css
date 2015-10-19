@@ -48,6 +48,9 @@ pre {
   color: rgb(150, 150, 150);
   font-style: underline;
 }
+#regex {
+  color: rgb(150, 150, 150);
+}
 #comment {
   color: rgb(205, 255, 214);
   font-style: italic;
