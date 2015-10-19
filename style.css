@@ -52,7 +52,7 @@ pre {
 }
 #all-code {
   display: inline-block;
-  float: right;
+  float: top;
   margin-left: 8px;
   text-align: left;
 }
