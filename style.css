@@ -11,26 +11,8 @@ pre {
   padding: 10px;
   position: relative;
   top: 0px;
-  /*white-space: pre-wrap;*/
   width: 600px;
   z-index: 100;
-}
-/*pre:hover {
-  background-color: rgb(88, 88, 88);
-  color: rgb(255, 255, 255);
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 14px;
-  font-style: bold;
-  height: auto;
-  left: 5%;
-  margin: 5px;
-  overflow: auto;
-  padding: 10px;
-  position: relative;
-  top: 0px;
-  white-space: pre-wrap;
-  width: 90%;
-  z-index: 100;*/
 }
 #text {
   background-color: rgb(88, 88, 88);
@@ -40,7 +22,6 @@ pre {
   font-style: bold;
   height: auto;
   width: auto;
-  /*word-break: break-all;*/
   z-index: 100;
 }
 #all-number {
