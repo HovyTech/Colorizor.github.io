@@ -5,10 +5,6 @@
 var clean = [/&lt;/igm, /&gt;/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
 var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
 //--------------------------------------------------General
-//var link = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/igm;
-//var link = /_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS/igm;
-//var link = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/igm;
-//var link = /(http|https):&#47;&#47;([\s\S].+)(([\w\d]+)&#47;|\.([\w]+)|\d)/igm;
 var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;"'|\\<,>.?/`˜]+)/igm;
 //--------------------------------------------------HTML
 var htmlCom = /(&#60;&#33;&#45;&#45;(.*?)$|(.*?)([\w]+)(?=\n(.*?)&#45;&#45;&#62;)|(.*?)&#45;&#45;&#62;)/igm;
@@ -48,6 +44,8 @@ function preLoad() {
       htmlStr = htmlStr.replace(clean[a], rep[a]);
     }
     
+    htmlStr = htmlStr.replace(link, '<a id="link" href="$&">$&</a>');
+    
     //-------------------------Wrap Matching Text
     htmlStr = htmlStr.replace(htmlCom, '<span id="html-com">$&</span>');
     htmlStr = htmlStr.replace(htmlTag, '<span id="html-tag">$&</span>');
@@ -55,7 +53,6 @@ function preLoad() {
     htmlStr = htmlStr.replace(htmlVal, '<span id="html-val">$&</span>');
     htmlStr = htmlStr.replace(htmlPar, '<span id="html-par">$&</span>');
     htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
-    htmlStr = htmlStr.replace(link, '<a id="link" href="$&">$&</a>');
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
