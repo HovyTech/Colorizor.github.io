@@ -32,7 +32,7 @@ function loadHeader() {
 }
 
 function preLoad() {
-  $('span[id="all-code"]').click(function() {
+  $('span[id="dark-all-code", id="light-all-code"]').click(function() {
     var range, selection;
     
     if (window.getSelection && document.createRange) {
