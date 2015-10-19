@@ -1,6 +1,7 @@
 pre {
   background-color: rgb(88, 88, 88);
   color: rgb(255, 255, 255);
+  display: inline;
   font-family: "Lucida Console", Monaco, monospace;
   font-size: 14px;
   font-style: bold;
