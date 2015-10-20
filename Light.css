@@ -1,5 +1,5 @@
 /*----------------------------------------Light----------------------------------------*/
-pre{color:rgb(142, 127, 170);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+pre{background-color:rgb(252, 255, 245);color:rgb(142, 127, 170);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #text{background-color:rgb(219, 186, 162);color:rgb(142, 127, 170);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #all-number{border-right:1px solid rgb(142, 127, 170);display:inline-block;float:left;margin-right:8px;text-align:right;}
 #all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
