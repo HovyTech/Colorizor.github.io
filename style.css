@@ -17,9 +17,9 @@ pre#dark{color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospac
 #dark-value{color:rgb(173, 176, 232);}
 #dark-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Light----------------------------------------*/
-#light-box{background-color:rgb(88, 88, 88);height:auto;width:100%;}
-pre#light{color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#light-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
+#light-box{background-color:rgb(252, 255, 245);height:auto;width:100%;}
+pre#light{color:rgb(209, 219, 189);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#light-title{color:rgb(209, 219, 189);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #light-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #light-all-number{border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #light-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
@@ -29,11 +29,11 @@ pre#light{color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospa
 #light-link{color:rgb(150, 150, 150);font-style:underline;}
 #light-regx{color:rgb(150, 150, 150);}
 #light-units{color:rgb(150, 150, 150);}
-#light-comment{color:rgb(205, 255, 214);font-style:italic;}
-#light-selector{color:rgb(193, 222, 255);}
-#light-attribute{color:rgb(255, 248, 207);}
-#light-value{color:rgb(173, 176, 232);}
-#light-parameter{color:rgb(232, 200, 178);}
+#light-comment{color:rgb(145, 170, 157);font-style:italic;}
+#light-selector{color:rgb(62, 96, 111);}
+#light-attribute{color:rgb(25, 52, 65);}
+#light-value{color:rgb(219, 186, 162);}
+#light-parameter{color:rgb(142, 127, 170);}
 /*----------------------------------------Gray----------------------------------------*/
 #gray-box{background-color:rgb(88, 88, 88);height:auto;width:100%;}
 pre#gray{color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
