@@ -143,20 +143,20 @@ pre#honey{color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospa
 #honey-value{color:rgb(255, 250, 213);}
 #honey-parameter{color:rgb(219, 158, 54);}
 /*----------------------------------------Salmon----------------------------------------*/
-#salmon-box{background-color:rgb(10, 60, 100);height:auto;width:100%;}
+#salmon-box{background-color:rgb(255, 127, 102);height:auto;width:100%;}
 pre#salmon{color:rgb(255, 255, 240);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#salmon-title{background-color:rgb(210, 18, 30);color:rgb(255, 255, 240);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
-#salmon-text{background-color:rgb(210, 18, 30);color:rgb(255, 255, 240);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
-#salmon-all-number{border-color:rgb(39, 10, 100);border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
+#salmon-title{background-color:rgb(62, 69, 76);color:rgb(255, 255, 240);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
+#salmon-text{background-color:rgb(62, 69, 76);color:rgb(255, 255, 240);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
+#salmon-all-number{border-color:rgb(255, 246, 229);border-right:1px solid;display:inline-block;float:left;margin-right:8px;text-align:right;}
 #salmon-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
-#salmon-number{color:rgb(39, 10, 100);float:top;padding-right:4px;}
+#salmon-number{color:rgb(255, 246, 229);float:top;padding-right:4px;}
 #salmon-code{float:top;}
 #salmon-desc{color:rgb(255, 255, 255);text-align:center;}
 #salmon-link{color:rgb(150, 150, 150);font-style:underline;}
 #salmon-regx{color:rgb(150, 150, 150);}
 #salmon-units{color:rgb(150, 150, 150);}
-#salmon-comment{color:rgb(39, 10, 100);font-style:italic;}
-#salmon-selector{color:rgb(202, 50, 99);}
-#salmon-attribute{color:rgb(146, 38, 99);}
-#salmon-value{color:rgb(201, 74, 77);}
-#salmon-parameter{color:rgb(210, 18, 30);}
+#salmon-comment{color:rgb(255, 246, 229);font-style:italic;}
+#salmon-selector{color:rgb(126, 206, 252);}
+#salmon-attribute{color:rgb(157, 253, 198);}
+#salmon-value{color:rgb(51, 146, 197);}
+#salmon-parameter{color:rgb(62, 69, 76);}
