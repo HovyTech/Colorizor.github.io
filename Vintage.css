@@ -1,5 +1,5 @@
 /*----------------------------------------Vintage----------------------------------------*/
-pre{color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+pre{background-color:rgb(126, 130, 122);color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #text{background-color:rgb(47, 52, 59);color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #all-number{border-right:1px solid rgb(227, 205, 164);display:inline-block;float:left;margin-right:8px;text-align:right;}
 #all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
