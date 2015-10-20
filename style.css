@@ -90,22 +90,22 @@ pre#black{color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospa
 #black-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Vintage----------------------------------------*/
 #vintage-box{background-color:rgb(227, 205, 164);height:auto;width:100%;}
-pre#vintage{color:rgb(47, 52, 59);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#vintage-title{background-color:rgb(126, 130, 122);color:rgb(47, 52, 59);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
-#vintage-text{background-color:rgb(126, 130, 122);color:rgb(47, 52, 59);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
-#vintage-all-number{border-right:1px solid rgb(47, 52, 59);display:inline-block;float:left;margin-right:8px;text-align:right;}
+pre#vintage{color:color:rgb(126, 130, 122);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#vintage-title{background-color:rgb(47, 52, 59);color:color:rgb(126, 130, 122);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
+#vintage-text{background-color:rgb(47, 52, 59);color:color:rgb(126, 130, 122);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
+#vintage-all-number{border-right:1px solid color:rgb(126, 130, 122);display:inline-block;float:left;margin-right:8px;text-align:right;}
 #vintage-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
-#vintage-number{color:rgb(47, 52, 59);float:top;padding-right:4px;}
+#vintage-number{color:color:rgb(126, 130, 122);float:top;padding-right:4px;}
 #vintage-code{float:top;}
 #vintage-desc{color:rgb(255, 255, 255);text-align:center;}
 #vintage-link{color:rgb(150, 150, 150);font-style:underline;}
 #vintage-regx{color:rgb(150, 150, 150);}
 #vintage-units{color:rgb(150, 150, 150);}
-#vintage-comment{color:rgb(75, 130, 89);font-style:italic;}
-#vintage-selector{color:rgb(126, 130, 122);}
+#vintage-comment{color:rgb(88, 130, 100);font-style:italic;}
+#vintage-selector{color:rgb(47, 52, 59);}
 #vintage-attribute{color:rgb(112, 48, 48);}
 #vintage-value{color:rgb(199, 121, 102);}
-#vintage-parameter{color:rgb(47, 52, 59);}
+#vintage-parameter{color:rgb(126, 130, 122);}
 /*----------------------------------------Beach----------------------------------------*/
 #beach-box{background-color:rgb(170, 216, 176);;height:auto;width:100%;}
 pre#beach{color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
