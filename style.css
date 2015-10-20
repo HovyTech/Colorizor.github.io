@@ -107,41 +107,41 @@ pre#vintage{color:rgb(47, 52, 59);font-family:"Lucida Console", Monaco, monospac
 #vintage-value{color:rgb(199, 121, 102);}
 #vintage-parameter{color:rgb(47, 52, 59);}
 /*----------------------------------------Beach----------------------------------------*/
-#beach-box{background-color:rgb(98, 156, 120);;height:auto;width:100%;}
-pre#beach{color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#beach-title{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
-#beach-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
-#beach-all-number{border-right:1px solid rgb(39, 10, 100);display:inline-block;float:left;margin-right:8px;text-align:right;}
+#beach-box{background-color:rgb(170, 216, 176);;height:auto;width:100%;}
+pre#beach{color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#beach-title{background-color:rgb(139, 173, 206);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
+#beach-text{background-color:rgb(139, 173, 206);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
+#beach-all-number{border-right:1px solid rgb(255, 132, 127);display:inline-block;float:left;margin-right:8px;text-align:right;}
 #beach-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
-#beach-number{color:rgb(126, 130, 122);float:top;padding-right:4px;}
+#beach-number{color:rgb(255, 132, 127);float:top;padding-right:4px;}
 #beach-code{float:top;}
 #beach-desc{color:rgb(255, 255, 255);text-align:center;}
 #beach-link{color:rgb(150, 150, 150);font-style:underline;}
 #beach-regx{color:rgb(150, 150, 150);}
 #beach-units{color:rgb(150, 150, 150);}
-#beach-comment{color:rgb(0, 47, 47);font-style:italic;}
-#beach-selector{color:rgb(230, 226, 175);}
-#beach-attribute{color:rgb(167, 163, 126);}
-#beach-value{color:rgb(239, 236, 202);}
-#beach-parameter{color:rgb(4, 99, 128);}
+#beach-comment{color:rgb(203, 255, 243);font-style:italic;}
+#beach-selector{color:rgb(139, 173, 206);}
+#beach-attribute{color:rgb(255, 204, 92);}
+#beach-value{color:rgb(255, 238, 173);}
+#beach-parameter{color:rgb(255, 132, 127);}
 /*----------------------------------------Honey----------------------------------------*/
-#honey-box{background-color:rgb(88, 88, 88);height:auto;width:100%;}
-pre#honey{color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#honey-title{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
-#honey-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
-#honey-all-number{border-right:1px solid rgb(39, 10, 100);display:inline-block;float:left;margin-right:8px;text-align:right;}
+#honey-box{background-color:rgb(16, 91, 99);height:auto;width:100%;}
+pre#honey{color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#honey-title{background-color:rgb(219, 158, 54);color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
+#honey-text{background-color:rgb(219, 158, 54);color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
+#honey-all-number{border-right:1px solid rgb(189, 73, 50);display:inline-block;float:left;margin-right:8px;text-align:right;}
 #honey-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
-#honey-number{color:rgb(126, 130, 122);float:top;padding-right:4px;}
+#honey-number{color:rgb(189, 73, 50);float:top;padding-right:4px;}
 #honey-code{float:top;}
 #honey-desc{color:rgb(255, 255, 255);text-align:center;}
 #honey-link{color:rgb(150, 150, 150);font-style:underline;}
 #honey-regx{color:rgb(150, 150, 150);}
 #honey-units{color:rgb(150, 150, 150);}
-#honey-comment{color:rgb(16, 91, 99);font-style:italic;}
-#honey-selector{color:rgb(255, 211, 78);}
-#honey-attribute{color:rgb(189, 73, 50);}
+#honey-comment{color:rgb(154, 204, 255);font-style:italic;}
+#honey-selector{color:rgb(219, 158, 54);}
+#honey-attribute{color:rgb(255, 211, 78);}
 #honey-value{color:rgb(255, 250, 213);}
-#honey-parameter{color:rgb(219, 158, 54);}
+#honey-parameter{color:rgb(189, 73, 50);}
 /*----------------------------------------Salmon----------------------------------------*/
 #salmon-box{background-color:rgb(62, 69, 76);height:auto;width:100%;}
 pre#salmon{color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
