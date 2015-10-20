@@ -89,7 +89,7 @@ pre#black{color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospa
 #black-value{color:rgb(173, 176, 232);}
 #black-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Vintage----------------------------------------*/
-#vintage-box{background-color:rgb(88, 88, 88);height:auto;width:100%;}
+#vintage-box{background-color:rgb(173, 162, 138);height:auto;width:100%;}
 pre#vintage{color:rgb(255, 255, 255);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #vintage-title{color:rgb(255, 255, 255);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 #vintage-text{background-color:rgb(88, 88, 88);color:rgb(255, 251, 145);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
