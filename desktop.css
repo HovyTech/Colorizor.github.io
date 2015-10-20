@@ -1,6 +1,6 @@
 html{background-color:rgb(102, 99, 98);z-index:0;}
-header{background-color:rgba(239, 234, 200,0.2);box-shadow:0px 5px 5px 0px rgb(46, 46, 46);filter:blur(12px);height:150px;left:0px;position:fixed;right:0px;top:0px;width:auto;z-index:30;}
-#logo{height:140px;left:5px;position:absolute;top:5px;width:auto;z-index:31;}
+header{background-color:rgb(239, 234, 200);box-shadow:0px 5px 5px 0px rgb(46, 46, 46);height:150px;left:0px;position:fixed;right:0px;top:0px;width:auto;z-index:30;}
+#logo{height:140px;left:5px;position:absolute;top:5px;width:auto;z-index:31;filter:blur(12px);}
 body{height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:0px;width:auto;z-index:20;}
 main{height:auto;left:0px;position:relative;right:0px;top:180px;width:auto;z-index:21;}
 #box{height:auto;left:20%;margin-bottom:10px;position:relative;top:0px;width:60%;z-index:21;}
