@@ -68,12 +68,12 @@ pre#honey{color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace
 #honey-parameter{color:rgb(189, 73, 50);}
 /*----------------------------------------Vintage----------------------------------------*/
 #vintage-box{background-color:rgb(126, 130, 122);height:auto;width:100%;}
-pre#vintage{color:color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
-#vintage-title{background-color:rgb(47, 52, 59);color:color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
-#vintage-text{background-color:rgb(47, 52, 59);color:color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
-#vintage-all-number{border-right:1px solid color:rgb(227, 205, 164);display:inline-block;float:left;margin-right:8px;text-align:right;}
+pre#vintage{color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+#vintage-title{background-color:rgb(47, 52, 59);color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
+#vintage-text{background-color:rgb(47, 52, 59);color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
+#vintage-all-number{border-right:1px solid rgb(227, 205, 164);display:inline-block;float:left;margin-right:8px;text-align:right;}
 #vintage-all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
-#vintage-number{color:color:rgb(227, 205, 164);float:top;padding-right:4px;}
+#vintage-number{color:rgb(227, 205, 164);float:top;padding-right:4px;}
 #vintage-code{float:top;}
 #vintage-link{color:rgb(150, 150, 150);font-style:underline;}
 #vintage-regx{color:rgb(150, 150, 150);}
