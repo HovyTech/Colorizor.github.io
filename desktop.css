@@ -1,6 +1,7 @@
 html{background-color:rgb(102, 99, 98);background-position:0px 0px;background-repeat:no-repeat;background-size:cover;z-index:0;}
-body{background-color:rgb(102, 99, 98);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:200px;width:auto;z-index:20;}
-main{height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
+body{height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:200px;width:auto;z-index:20;}
+header{height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
+main{background-color:rgb(102, 99, 98);height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
 #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;top:0px;width:100%;z-index:21;}
 #little-box{height:auto;left:20%;margin-bottom:10px;position:relative;top:0px;width:60%;z-index:21;}
 td{color:rgb(255, 255, 240);text-align:center;}
