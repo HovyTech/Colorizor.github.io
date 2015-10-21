@@ -16,7 +16,7 @@ function loadBackground() {
       hasScrolled();
       didScroll = false;
     }
-  }, 20);
+  }, 0);
   function hasScrolled() {
     var newScroll = $(this).scrollTop();
     if (Math.abs(oldScroll - newScroll) <= delta) {
