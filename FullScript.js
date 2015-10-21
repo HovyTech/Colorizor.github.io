@@ -7,7 +7,7 @@ function loadBackground() {
   var didScroll;
   var oldScroll = 0;
   var delta = 5;
-  var headerHeight = $('body').outerHeight();
+  var headerHeight = 80;//$('body').outerHeight();
   $(window).scroll(function(event) {
     didScroll = true;
   });
@@ -21,8 +21,8 @@ function loadBackground() {
     var newScroll = $(this).scrollTop();
     if (Math.abs(oldScroll - newScroll) <= delta) {
       return;
-    }//headerHeight
-    if ((newScroll > oldScroll) && (newScroll > 520)) {
+    }
+    if ((newScroll > oldScroll) && (newScroll > headerHeight)) {
       //Down
       alert('down')
       $('html').removeClass('off').addClass('on');
