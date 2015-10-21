@@ -32,6 +32,10 @@ function loadBackground() {
 }
 //--------------------------------------------------LOAD Colorizor
 function colorizor() {
+  getFacebookCount();
+  getTwitterCount();
+  getYouTubeCount();
+  
   $('span[id$="all-code"]').click(function() {
     var range, selection;
     
@@ -55,18 +59,15 @@ function getFacebookCount() {
     $('#facebook-count').text(facebook);
   });
 }
-getFacebookCount();
 function getTwitterCount() {
   $.getJSON('http://urls.api.twitter.com/1/urls/count.json?url=https://twitter.com/HovyTech&callback=?', function(data) {
     var twitter = data.count;
     $('#twitter-count').text(twitter);
   });
 }
-getTwitterCount();
 function getYouTubeCount() {
   $.getJSON('http://gdata.youtube.com/feeds/api/users/hovytech?alt=json', function(data) {
     var youtube = data.entry.yt$statistics.subscriberCount;
     $('#youtube-count').text(youtube);
   });
 }
-getYouTubeCount();
