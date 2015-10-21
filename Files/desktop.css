@@ -12,6 +12,5 @@ td{color:rgb(255, 237, 204);text-align:center;}
 pre{height:auto;position:relative;top:0px;width:800px;z-index:100;}
 hr{background-color:rgb(35, 49, 56);border:0px solid;height:3px;}
 #social-icon{z-index:23;}
-#social-icon:hover{filter:blur(12px);}
 #social-icon:hover#social-link{visibility:visible;}
 #social-link{border-radius:25px;height:50px;visibility:hidden;width:50px;z-index:23;}
