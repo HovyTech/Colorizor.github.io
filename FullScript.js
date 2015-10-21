@@ -7,7 +7,7 @@ function loadBackground() {
   var didScroll;
   var oldScroll = 0;
   var delta = 5;
-  var headerHeight = $('html').outerHeight();
+  var headerHeight = $('body').outerHeight();
   $(window).scroll(function(event) {
     didScroll = true;
   });
