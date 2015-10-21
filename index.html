@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="on" onLoad="loadBackground();">
+<html class="on">
   <head>
     <title>Colorizor - Syntax Code Highlighter</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -31,7 +31,7 @@
       screen.width<480&&loadCSS("mobile.css"),screen.width>=480&&screen.width<720&&loadCSS("phablet.css"),screen.width>=720&&screen.width<1024&&loadCSS("tablet.css"),screen.width>=1024&&loadCSS("desktop.css");
     </script>
   </head>
-  <body onLoad="colorizor();">
+  <body onLoad="colorizor();loadBackground();">
     <main>
       <!----------------------------------------Dark---------------------------------------->
       <table id="dark-box">
