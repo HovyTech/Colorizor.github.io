@@ -1,12 +1,12 @@
-html{background-color:rgb(255, 255, 240);background-image:url("Images/HomePage.png");background-position:0px 0px;background-repeat:no-repeat;background-size:cover;z-index:0;}
+html{background-color:rgb(76, 100, 107);background-image:url("Images/HomePage.png");background-position:0px 0px;background-repeat:no-repeat;background-size:cover;z-index:0;}
 .on{background-attachment:fixed;}
 .off{background-attachment:scroll;}
 body{height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:500px;width:auto;z-index:20;}
 header{height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
-main{background-color:rgb(255, 255, 240);height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
+main{background-color:rgb(76, 100, 107);height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
+footer{background-color:rgb(35, 49, 56);height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
 #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;top:0px;width:100%;z-index:21;}
 #little-box{height:auto;left:20%;margin-bottom:10px;position:relative;top:0px;width:60%;z-index:21;}
-td{color:rgb(102, 99, 98);text-align:center;}
+td{color:rgb(255, 159, 103);text-align:center;}
 pre{height:auto;position:relative;top:0px;width:800px;z-index:100;}
-#title{color:rgb(102, 99, 98)font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
-/*rgb(102, 99, 98)*/
+#title{color:rgb(255, 247, 245)font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
