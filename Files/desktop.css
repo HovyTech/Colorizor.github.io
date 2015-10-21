@@ -13,4 +13,4 @@ pre{height:auto;position:relative;top:0px;width:800px;z-index:100;}
 hr{background-color:rgb(35, 49, 56);border:0px solid;height:3px;}
 #social-icon{z-index:24;}
 #social-icon:hover#social-link{visibility:visible;}
-#social-link{border-radius:25px;height:50px;visibility:hidden;width:50px;z-index:23;}
+#social-link{border-radius:25px;height:50px;visibility:hidden;width:50px;z-index:25;}
