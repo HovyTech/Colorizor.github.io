@@ -10,4 +10,4 @@ footer{background-color:rgb(35, 49, 56);height:auto;left:0px;position:relative;r
 #title{color:rgb(255, 247, 245);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 td{color:rgb(255, 237, 204);text-align:center;}
 pre{height:auto;position:relative;top:0px;width:800px;z-index:100;}
-hr{color:rgb(35, 49, 56);height:2px;}
+hr{background-color:rgb(35, 49, 56);height:2px;}
