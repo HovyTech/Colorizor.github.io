@@ -16,17 +16,19 @@ function loadBackground() {
       hasScrolled();
       didScroll = false;
     }
-  }, 0);
+  }, 250);
   function hasScrolled() {
     var newScroll = $(this).scrollTop();
     if (Math.abs(oldScroll - newScroll) <= delta) {
       return;
-    }
-    if ((newScroll > oldScroll) && (newScroll > headerHeight)) {
+    }//headerHeight
+    if ((newScroll > oldScroll) && (newScroll > 520)) {
       //Down
+      alert('down')
       $('html').removeClass('off').addClass('on');
     } else if ((newScroll + $(window).height()) < $(document).height()) {
       //Up
+      alert('up')
       $('html').removeClass('on').addClass('off');
     }
     oldScroll = newScroll;
