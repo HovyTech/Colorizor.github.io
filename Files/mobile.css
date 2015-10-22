@@ -9,7 +9,7 @@ footer{background-color:rgb(35, 49, 56);height:auto;left:0px;position:relative;r
 #little-box{height:auto;left:20%;margin-bottom:10px;position:relative;top:0px;width:60%;z-index:21;}
 #title{color:rgb(255, 247, 245);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 td{color:rgb(255, 237, 204);text-align:center;}
-pre{height:auto;position:relative;top:0px;width:100%;z-index:100;}
+pre{height:auto;position:relative;top:0px;width:98%;z-index:100;}
 hr{background-color:rgb(35, 49, 56);border:0px solid;height:3px;}
 #div-container{height:50px;position:relative;width:50px;z-index:25;}
 .social-icon{height:50px;left:0px;position:absolute;top:0px;width:50px;z-index:26;}
