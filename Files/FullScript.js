@@ -73,7 +73,7 @@ function getTwitterCount() {
   });
 }
 function getPinterestCount() {
-  $.getJSON('https://api.pinterest.com/v1/urls/count.jsonp?callback=?&url=https://colorizor.github.io', function(data) {
+  $.getJSON('https://api.pinterest.com/v1/urls/count.json?callback%20&url=https://colorizor.github.io', function(data) {
     var pinterest = data.count;
     $('#pinterest-count').text(pinterest);
   });
