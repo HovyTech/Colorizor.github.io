@@ -34,7 +34,8 @@ function loadBackground() {
 function colorizor() {
   getFacebookCount();
   getTwitterCount();
-  getYouTubeCount();
+  //getYouTubeCount();
+  getGooglePlusCount();
   
   $('span[id$="all-code"]').click(function() {
     var range, selection;
@@ -69,5 +70,26 @@ function getYouTubeCount() {
   $.getJSON('http://gdata.youtube.com/feeds/api/users/hovytech?alt=json', function(data) {
     var youtube = data.entry.yt$statistics.subscriberCount;
     $('#youtube-count').text(youtube);
+  });
+}
+function getGooglePlusCount() {
+  $.getJSON('http://gdata.youtube.com/feeds/api/users/hovytech?alt=json', {
+    "method": "pos.plusones.get",
+      "id": "p",
+      "params": {
+        "nolog": true,
+        "id": 'https://colorizor.github.io',
+        "source": "widget",
+        "userId": "@viewer",
+        "groupId": "@self"
+      },
+      "jsonrpc": "2.0",
+      "key": "AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
+      "apiVersion": "v1",
+    },
+  }
+  function(data) {
+    var googleplus = data.count;
+    $('#googleplus-count').text(googleplus);
   });
 }
