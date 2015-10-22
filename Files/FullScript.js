@@ -84,7 +84,7 @@ function getGooglePlusCount() {
         "groupId": "@self"
       },
       "jsonrpc": "2.0",
-      "key": "p",//"AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ",//"AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
+      "key": "AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ",//"AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
       "apiVersion": "v1",
   },
   function(data) {
