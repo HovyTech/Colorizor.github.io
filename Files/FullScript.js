@@ -73,7 +73,7 @@ function getYouTubeCount() {
   });
 }
 function getGooglePlusCount() {
-  $.getJSON('https://clients6.google.com/rpc?key=AIzaSyB9DTenpVlO1q-a3DTcR-aBkkvLQaw0xxc', [{
+  $.getJSON('https://clients6.google.com/rpc?key=AIzaSyB9DTenpVlO1q-a3DTcR-aBkkvLQaw0xxc', {
     "method": "pos.plusones.get",
       "id": "p",
       "params": {
@@ -86,7 +86,7 @@ function getGooglePlusCount() {
       "jsonrpc": "2.0",
       "key": "p",
       "apiVersion": "v1",
-  }],
+  },
   function(data) {
     var googleplus = data.count;
     $('#googleplus-count').text(googleplus);
