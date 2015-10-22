@@ -80,7 +80,7 @@ function getPinterestCount() {
 }
 function getLinkedInCount() {
   $.getJSON('https://www.linkedin.com/countserv/count/share?url=https://colorizor.github.io&format=json&callback=?', function(data) {
-    var linkedin = data.count;
+    var linkedin = data.share;
     $('#linkedin-count').text(linkedin);
   });
 }
