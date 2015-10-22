@@ -65,35 +65,6 @@ function getFacebookCount() {
     var facebook = data.shares;
     $('#facebook-count').text(facebook);
   });
-  
-  $(window).load(function(){
-    /* Social Share: Google Plus JSON */
-        var data = {
-            "method":"pos.plusones.get",
-            "id":"http://www.website_you_want_share_count_for.com",
-            "params":{
-                "nolog":true,
-                "id":"http://www.website_you_want_share_count_for.com",
-                "source":"widget",
-                "userId":"@viewer",
-                "groupId":"@self"
-            },
-            "jsonrpc":"2.0",
-            "key":"p",
-            "apiVersion":"v1"
-        };
-        $.ajax({
-            type: "POST",
-            url: "https://clients6.google.com/rpc",
-            processData: true,
-            contentType: 'application/json',
-            data: JSON.stringify(data),
-            success: function(r){
-                alert(format(r.result.metadata.globalCounts.count))
-            }
-
-        });
-});
 }
 function getTwitterCount() {
   $.getJSON('https://cdn.api.twitter.com/1/urls/count.json?url=https://colorizor.github.io&callback=?', function(data) {
@@ -102,24 +73,18 @@ function getTwitterCount() {
   });
 }
 function getGooglePlusCount() {
-  $.getJSON('https://clients6.google.com/rpc?', {
-    "method": "pos.plusones.get",
-      "id": "p",
-      "params": {
-        "nolog": true,
-        "id": "https://colorizor.github.io",
-        "source": "widget",
-        "userId": "@viewer",
-        "groupId": "@self"
-      },
-      "jsonrpc": "2.0",
-      "key": "AIzaSyAbkUHdwMWj_xiA8fRk6_jZWQ2ikKVLiW4",
-      "apiVersion": "v1",
-  },
-  function(data) {
-    var googleplus = data.count;
-    $('#googleplus-count').text(googleplus);
-  });
+  var profileid = '103625417724276817464/103625417724276817464';
+var apikey = 'AIzaSyAbkUHdwMWj_xiA8fRk6_jZWQ2ikKVLiW4';
+var url = 'https://www.googleapis.com/plus/v1/people/' + profileid + '?key=' + apikey;
+$.ajax({
+    type: "GET",
+    dataType: "json",
+    url: url,
+    success: function (data) {
+        var googlefollowcount = data.circledByCount;
+        $('#googleplus-count').text(googlefollowcount);
+    }
+});
 }
 //function getGooglePlusCount() {
   //$.getJSON('https://clients6.google.com/rpc?key=AIzaSyAbkUHdwMWj_xiA8fRk6_jZWQ2ikKVLiW4', [{
