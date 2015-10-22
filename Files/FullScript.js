@@ -7,7 +7,7 @@ function loadBackground() {
   var didScroll;
   var oldScroll = 0;
   var delta = 5;
-  var headerHeight = 500;//$('body').outerHeight();
+  var headerHeight = 500;
   $(window).scroll(function(event) {
     didScroll = true;
   });
@@ -73,9 +73,9 @@ function getYouTubeCount() {
   });
 }
 function getGooglePlusCount() {
-  $.getJSON('https://clients6.google.com/rpc', {//'https://clients6.google.com/rpc?callback=?', {
+  $.getJSON('https://clients6.google.com/rpc', {
     "method": "pos.plusones.get",
-      "id": "https://colorizor.github.io",//"p",
+      "id": "https://colorizor.github.io",
       "params": {
         "nolog": true,
         "id": "https://colorizor.github.io",
@@ -84,7 +84,7 @@ function getGooglePlusCount() {
         "groupId": "@self"
       },
       "jsonrpc": "2.0",
-      "key": "AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ",//"AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
+      "key": "AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
       "apiVersion": "v1",
   },
   function(data) {
