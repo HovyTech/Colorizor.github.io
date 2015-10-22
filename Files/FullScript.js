@@ -67,7 +67,7 @@ function getFacebookCount() {
   });
 }
 function getTwitterCount() {
-  $.getJSON('https://cdn.api.twitter.com/1/urls/count.json?url=https://colorizor.github.io', function(data) {
+  $.getJSON('https://cdn.api.twitter.com/1/urls/count.json?url=https://colorizor.github.io&callback=?', function(data) {
     var twitter = data.count;
     $('#twitter-count').text(twitter);
   });
