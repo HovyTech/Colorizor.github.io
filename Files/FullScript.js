@@ -75,7 +75,7 @@ function getYouTubeCount() {
 function getGooglePlusCount() {
   $.getJSON('https://clients6.google.com/rpc?callback=?', {
     "method": "pos.plusones.get",
-      "id": "p",
+      "id": "https://colorizor.github.io",//"p",
       "params": {
         "nolog": true,
         "id": "https://colorizor.github.io",
@@ -84,7 +84,7 @@ function getGooglePlusCount() {
         "groupId": "@self"
       },
       "jsonrpc": "2.0",
-      "key": "AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ",//"AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
+      "key": "p",//"AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ",//"AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
       "apiVersion": "v1",
   },
   function(data) {
