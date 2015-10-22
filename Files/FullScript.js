@@ -34,8 +34,8 @@ function loadBackground() {
 function colorizor() {
   getFacebookCount();
   getTwitterCount();
-  //getYouTubeCount();
-  getGooglePlusCount();
+  getPinterestCount();
+  getLinkedInCount();
   
   $('span[id$="all-code"]').click(function() {
     var range, selection;
@@ -72,40 +72,6 @@ function getTwitterCount() {
     $('#twitter-count').text(twitter);
   });
 }
-function getGooglePlusCount() {
-  var profileid = '103625417724276817464';
-  var apikey = 'AIzaSyAbkUHdwMWj_xiA8fRk6_jZWQ2ikKVLiW4';
-  var url = 'https://www.googleapis.com/plus/v1/people/' + profileid + '?key=' + apikey;
-  $.ajax({
-    type: "GET",
-    dataType: "json",
-    url: url,
-    success: function (data) {
-      var googlefollowcount = data.circledByCount;
-      $('#googleplus-count').text(googlefollowcount);
-    }
-  });
-}
-//function getGooglePlusCount() {
-  //$.getJSON('https://clients6.google.com/rpc?key=AIzaSyAbkUHdwMWj_xiA8fRk6_jZWQ2ikKVLiW4', [{
-    //"method": "pos.plusones.get",
-      //"id": "p",
-      //"params": {
-        //"nolog": true,
-        //"id": "https://colorizor.github.io",
-        //"source": "widget",
-        //"userId": "@viewer",
-        //"groupId": "@self"
-      //},
-      //"jsonrpc": "2.0",
-      //"key": "p",
-      //"apiVersion": "v1",
-  //}],
-  //function(data) {
-    //var googleplus = data.count;
-    //$('#googleplus-count').text(googleplus);
-  //});
-//}
 function getPinterestCount() {
   $.getJSON('https://api.pinterest.com/v1/urls/count.json?callback=&url=https://colorizor.github.io', function(data) {
     var pinterest = data.count;
