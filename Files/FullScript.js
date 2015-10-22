@@ -66,26 +66,34 @@ function getFacebookCount() {
     $('#facebook-count').text(facebook);
   });
   
-  $.getJSON('https://clients6.google.com/rpc?callback=?',
-    {
-       "method":"pos.plusones.get",
-       "id":"p",
-       "params":{
-          "nolog":true,
-          "id":'http://prince-antil.myshopify.com/',
-          "source":"widget",
-          "userId":"@viewer",
-          "groupId":"@self"
-       },
-       "jsonrpc":"2.0",
-       "key":"AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
-       "apiVersion":"v1",         
-    },
-    function(data){          
-       plusones = data.count;
-       alert(data);
-    }
-);
+  $(window).load(function(){
+    /* Social Share: Google Plus JSON */
+        var data = {
+            "method":"pos.plusones.get",
+            "id":"http://www.website_you_want_share_count_for.com",
+            "params":{
+                "nolog":true,
+                "id":"http://www.website_you_want_share_count_for.com",
+                "source":"widget",
+                "userId":"@viewer",
+                "groupId":"@self"
+            },
+            "jsonrpc":"2.0",
+            "key":"p",
+            "apiVersion":"v1"
+        };
+        $.ajax({
+            type: "POST",
+            url: "https://clients6.google.com/rpc",
+            processData: true,
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function(r){
+                alert(format(r.result.metadata.globalCounts.count))
+            }
+
+        });
+});
 }
 function getTwitterCount() {
   $.getJSON('https://cdn.api.twitter.com/1/urls/count.json?url=https://colorizor.github.io&callback=?', function(data) {
