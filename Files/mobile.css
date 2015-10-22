@@ -5,8 +5,8 @@ body{height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:100
 header{height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
 main{background-color:rgb(76, 100, 107);height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
 footer{background-color:rgb(35, 49, 56);height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
-#large-box{height:auto;left:0px;margin-bottom:0px;position:relative;top:0px;width:100%;z-index:21;}
-#little-box{height:auto;left:0px;margin-bottom:10px;position:relative;top:0px;width:100%;z-index:21;}
+#large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
+#little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
 #title{color:rgb(255, 247, 245);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
 td{color:rgb(255, 237, 204);text-align:center;}
 pre{height:auto;left:0px;overflow:auto;position:relative;right:0px;top:0px;width:auto;z-index:100;}
