@@ -73,7 +73,7 @@ function getYouTubeCount() {
   });
 }
 function getGooglePlusCount() {
-  $.getJSON('https://clients6.google.com/rpc?key=AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk', {
+  $.getJSON('https://clients6.google.com/rpc?key=AIzaSyB9DTenpVlO1q-a3DTcR-aBkkvLQaw0xxc', {
     "method": "pos.plusones.get",
       "id": "p",
       "params": {
