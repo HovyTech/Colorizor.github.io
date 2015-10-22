@@ -65,6 +65,27 @@ function getFacebookCount() {
     var facebook = data.shares;
     $('#facebook-count').text(facebook);
   });
+  
+  $.getJSON('https://clients6.google.com/rpc?callback=?',
+    {
+       "method":"pos.plusones.get",
+       "id":"p",
+       "params":{
+          "nolog":true,
+          "id":'http://prince-antil.myshopify.com/',
+          "source":"widget",
+          "userId":"@viewer",
+          "groupId":"@self"
+       },
+       "jsonrpc":"2.0",
+       "key":"AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
+       "apiVersion":"v1",         
+    },
+    function(data){          
+       plusones = data.count;
+       alert(data);
+    }
+);
 }
 function getTwitterCount() {
   $.getJSON('https://cdn.api.twitter.com/1/urls/count.json?url=https://colorizor.github.io&callback=?', function(data) {
