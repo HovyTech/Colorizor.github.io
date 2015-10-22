@@ -78,13 +78,13 @@ function getGooglePlusCount() {
       "id": "p",
       "params": {
         "nolog": true,
-        "id": 'https://colorizor.github.io',
+        "id": "https://colorizor.github.io",
         "source": "widget",
         "userId": "@viewer",
         "groupId": "@self"
       },
       "jsonrpc": "2.0",
-      "key": "AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
+      "key": "AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ",//"AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
       "apiVersion": "v1",
   },
   function(data) {
