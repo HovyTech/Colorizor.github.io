@@ -73,9 +73,9 @@ function getYouTubeCount() {
   });
 }
 function getGooglePlusCount() {
-  $.getJSON('https://clients6.google.com/rpc', {
+  $.getJSON('https://clients6.google.com/rpc?key=AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk', {
     "method": "pos.plusones.get",
-      "id": "https://colorizor.github.io",
+      "id": "p",
       "params": {
         "nolog": true,
         "id": "https://colorizor.github.io",
@@ -84,7 +84,7 @@ function getGooglePlusCount() {
         "groupId": "@self"
       },
       "jsonrpc": "2.0",
-      "key": "AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
+      "key": "p",
       "apiVersion": "v1",
   },
   function(data) {
