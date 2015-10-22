@@ -14,7 +14,7 @@ hr{background-color:rgb(35, 49, 56);border:0px solid;height:3px;}
 #div-container{height:50px;position:relative;width:50px;z-index:25;}
 #social-icon{height:50px;left:0px;position:absolute;top:0px;width:50px;z-index:26;}
 .social-count{color:rgb(35, 49, 56);display:none;font-family:"Arial", Sans-serif;font-size:15px;height:50px;left:0px;position:absolute;text-align:center;top:0px;vertical-align:middle;width:50px;z-index:27;}
-.facebook-icon:hover{src:url("https://colorizor.github.io/Images/FacebookBlur.png");}
+/*.facebook-icon:hover{src:url("https://colorizor.github.io/Images/FacebookBlur.png");}
 .facebook-icon:hover #facebook-count{}
 #facebook-count:hover{}
 .twitter-icon:hover{}
@@ -22,4 +22,4 @@ hr{background-color:rgb(35, 49, 56);border:0px solid;height:3px;}
 #twitter-count:hover{}
 .googleplus-icon:hover{}
 .googleplus-icon:hover #googleplus-count{}
-#googleplus-count:hover{}
+#googleplus-count:hover{}*/
