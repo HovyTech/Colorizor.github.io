@@ -73,7 +73,7 @@ function getTwitterCount() {
   });
 }
 function getGooglePlusCount() {
-  $.getJSON('https://clients6.google.com/rpc?key=AIzaSyAbkUHdwMWj_xiA8fRk6_jZWQ2ikKVLiW4', [{
+  $.getJSON('https://clients6.google.com/rpc?', {
     "method": "pos.plusones.get",
       "id": "p",
       "params": {
@@ -84,14 +84,34 @@ function getGooglePlusCount() {
         "groupId": "@self"
       },
       "jsonrpc": "2.0",
-      "key": "p",
+      "key": "AIzaSyAbkUHdwMWj_xiA8fRk6_jZWQ2ikKVLiW4",
       "apiVersion": "v1",
-  }],
+  },
   function(data) {
     var googleplus = data.count;
     $('#googleplus-count').text(googleplus);
   });
 }
+//function getGooglePlusCount() {
+  //$.getJSON('https://clients6.google.com/rpc?key=AIzaSyAbkUHdwMWj_xiA8fRk6_jZWQ2ikKVLiW4', [{
+    //"method": "pos.plusones.get",
+      //"id": "p",
+      //"params": {
+        //"nolog": true,
+        //"id": "https://colorizor.github.io",
+        //"source": "widget",
+        //"userId": "@viewer",
+        //"groupId": "@self"
+      //},
+      //"jsonrpc": "2.0",
+      //"key": "p",
+      //"apiVersion": "v1",
+  //}],
+  //function(data) {
+    //var googleplus = data.count;
+    //$('#googleplus-count').text(googleplus);
+  //});
+//}
 function getPinterestCount() {
   $.getJSON('https://api.pinterest.com/v1/urls/count.json?callback=&url=https://colorizor.github.io', function(data) {
     var pinterest = data.count;
