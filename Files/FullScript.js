@@ -73,7 +73,7 @@ function getYouTubeCount() {
   });
 }
 function getGooglePlusCount() {
-  $.getJSON('http://gdata.youtube.com/feeds/api/users/hovytech?alt=json', {
+  $.getJSON('https://clients6.google.com/rpc?callback=?', {
     "method": "pos.plusones.get",
       "id": "p",
       "params": {
