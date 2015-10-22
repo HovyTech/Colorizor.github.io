@@ -73,18 +73,18 @@ function getTwitterCount() {
   });
 }
 function getGooglePlusCount() {
-  var profileid = '103625417724276817464/103625417724276817464';
-var apikey = 'AIzaSyAbkUHdwMWj_xiA8fRk6_jZWQ2ikKVLiW4';
-var url = 'https://www.googleapis.com/plus/v1/people/' + profileid + '?key=' + apikey;
-$.ajax({
+  var profileid = '103625417724276817464';
+  var apikey = 'AIzaSyAbkUHdwMWj_xiA8fRk6_jZWQ2ikKVLiW4';
+  var url = 'https://www.googleapis.com/plus/v1/people/' + profileid + '?key=' + apikey;
+  $.ajax({
     type: "GET",
     dataType: "json",
     url: url,
     success: function (data) {
-        var googlefollowcount = data.circledByCount;
-        $('#googleplus-count').text(googlefollowcount);
+      var googlefollowcount = data.circledByCount;
+      $('#googleplus-count').text(googlefollowcount);
     }
-});
+  });
 }
 //function getGooglePlusCount() {
   //$.getJSON('https://clients6.google.com/rpc?key=AIzaSyAbkUHdwMWj_xiA8fRk6_jZWQ2ikKVLiW4', [{
