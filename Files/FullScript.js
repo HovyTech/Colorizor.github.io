@@ -61,7 +61,7 @@ function colorizor() {
   //});
 //}
 function getFacebookCount() {
-  $.getJSON('https://graph.facebook.com/?id=https://colorizor.github.io', function(data) {
+  $.getJSON('https://graph.facebook.com/?id=https://colorizor.github.io&callback=?', function(data) {
     var facebook = data.count;
     $('#facebook-count').text(facebook);
   });
