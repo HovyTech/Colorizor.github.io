@@ -86,8 +86,7 @@ function getGooglePlusCount() {
       "jsonrpc": "2.0",
       "key": "AIzaSyBeAeOUk3BJs9ZXeohJX6Qt2zWXPQsRKRk",
       "apiVersion": "v1",
-    },
-  }
+  },
   function(data) {
     var googleplus = data.count;
     $('#googleplus-count').text(googleplus);
