@@ -47,10 +47,10 @@ function colorizor() {
   getPinterestCount();
   getLinkedInCount();
   
-  alert($('pre').find('span[id$="all-number"]').height())
-  
-  $('pre').css({
-    'line-height': $(this).find('span[id$="all-number"]').height()
+  $.each($('pre'), function() {
+    $(this).find('span[id$="all-code"]').css({
+      'line-height': $(this).parent().find('span[id$="all-number"]').height()
+    });
   });
   
   if (screen.width < 1024) {
