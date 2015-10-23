@@ -41,7 +41,10 @@ function colorizor() {
     //$.each($('pre'), function() {
       //this.style.width = screen.width - 20;
     //});
-    $('pre').width(screen.width - 20);
+    $('pre').css({
+      "font-size": "14px",
+      "width": '"' + screen.width - 40 + 'px"'
+    });
   }
   
   $('span[id$="all-code"]').click(function() {
