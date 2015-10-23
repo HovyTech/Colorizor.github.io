@@ -38,30 +38,32 @@ function colorizor() {
   getLinkedInCount();
   
   if (screen.width <= 1023) {
-    //$.each($('pre'), function() {
-      //this.style.width = screen.width - 20;
-    //});
     $('pre').css({
       "font-size": "14px",
       "width": screen.width - 40
     });
-  }
-  
-  $('span[id$="all-code"]').click(function() {
-    var range, selection;
     
-    if (window.getSelection && document.createRange) {
-      selection = window.getSelection();
-      range = document.createRange();
-      range.selectNodeContents($(this)[0]);
-      selection.removeAllRanges();
-      selection.addRange(range);
-    } else if (document.selection && document.body.createTextRange) {
-      range = document.body.createTextRange();
-      range.moveToElementText($(this)[0]);
-      range.select();
-    }
-  });
+    $('span[id$="all-code"]').click(function() {
+      this.selectionStart = 0;
+      this.selectionEnd = this.value.length;
+    });
+  } else {
+    $('span[id$="all-code"]').click(function() {
+      var range, selection;
+    
+      if (window.getSelection && document.createRange) {
+        selection = window.getSelection();
+        range = document.createRange();
+        range.selectNodeContents($(this)[0]);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      } else if (document.selection && document.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText($(this)[0]);
+        range.select();
+      }
+    });
+  }
 }
 //--------------------------------------------------GET SOCIAL COUNTS  
 //function getFacebookCount() {
