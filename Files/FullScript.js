@@ -33,9 +33,9 @@ function loadBackground() {
       return;
     }
     if ((newScroll > oldScroll) && (newScroll > headerHeight)) {
-      $('html').removeClass('on').addClass('off');
+      $('div[id="background"]').removeClass('on').addClass('off');
     } else if ((newScroll + $(window).height()) < $(document).height()) {
-      $('html').removeClass('off').addClass('on');
+      $('div[id="background"]').removeClass('off').addClass('on');
     }
     oldScroll = newScroll;
   }
