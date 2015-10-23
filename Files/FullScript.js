@@ -27,8 +27,6 @@ function loadBackground() {
       });
     }
   });
-  
-  $('body').scrollTop(0);
 }
 //--------------------------------------------------LOAD Colorizor
 function colorizor() {
@@ -65,6 +63,10 @@ function colorizor() {
       }
     });
   }
+  
+  $(document).ready(function() {
+    $('html').scrollTop(0);
+  });
 }
 //--------------------------------------------------GET SOCIAL COUNTS  
 //function getFacebookCount() {
