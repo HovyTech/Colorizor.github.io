@@ -1,6 +1,6 @@
 /*----------------------------------------Dark----------------------------------------*/
 #dark-box{background-color:rgb(88, 88, 88);height:auto;width:100%;}
-pre#dark{background-color:rgb(88, 88, 88);color:rgb(232, 200, 178);font-family:"Lucida Console", Monaco, monospace;font-size:13px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+pre#dark{background-color:rgb(88, 88, 88);color:rgb(232, 200, 178);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #dark-title{background-color:rgb(255, 248, 207);color:rgb(232, 200, 178);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
 #dark-text{background-color:rgb(255, 248, 207);color:rgb(232, 200, 178);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #dark-all-number{border-right:1px solid rgb(232, 200, 178);display:inline-block;float:left;margin-right:8px;text-align:right;}
@@ -17,7 +17,7 @@ pre#dark{background-color:rgb(88, 88, 88);color:rgb(232, 200, 178);font-family:"
 #dark-parameter{color:rgb(232, 200, 178);}
 /*----------------------------------------Light----------------------------------------*/
 #light-box{background-color:rgb(252, 255, 245);height:auto;width:100%;}
-pre#light{background-color:rgb(252, 255, 245);color:rgb(142, 127, 170);font-family:"Lucida Console", Monaco, monospace;font-size:13px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+pre#light{background-color:rgb(252, 255, 245);color:rgb(142, 127, 170);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #light-title{background-color:rgb(219, 186, 162);color:rgb(142, 127, 170);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
 #light-text{background-color:rgb(219, 186, 162);color:rgb(142, 127, 170);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #light-all-number{border-right:1px solid rgb(142, 127, 170);display:inline-block;float:left;margin-right:8px;text-align:right;}
@@ -34,7 +34,7 @@ pre#light{background-color:rgb(252, 255, 245);color:rgb(142, 127, 170);font-fami
 #light-parameter{color:rgb(142, 127, 170);}
 /*----------------------------------------Salmon----------------------------------------*/
 #salmon-box{background-color:rgb(62, 69, 76);height:auto;width:100%;}
-pre#salmon{background-color:rgb(62, 69, 76);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:13px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+pre#salmon{background-color:rgb(62, 69, 76);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #salmon-title{background-color:rgb(255, 127, 102);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
 #salmon-text{background-color:rgb(255, 127, 102);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #salmon-all-number{border-right:1px solid rgb(255, 246, 229);display:inline-block;float:left;margin-right:8px;text-align:right;}
@@ -51,7 +51,7 @@ pre#salmon{background-color:rgb(62, 69, 76);color:rgb(255, 246, 229);font-family
 #salmon-parameter{color:rgb(255, 246, 229);}
 /*----------------------------------------Honey----------------------------------------*/
 #honey-box{background-color:rgb(16, 91, 99);height:auto;width:100%;}
-pre#honey{background-color:rgb(16, 91, 99);color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:13px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+pre#honey{background-color:rgb(16, 91, 99);color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #honey-title{background-color:rgb(219, 158, 54);color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
 #honey-text{background-color:rgb(219, 158, 54);color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #honey-all-number{border-right:1px solid rgb(189, 73, 50);display:inline-block;float:left;margin-right:8px;text-align:right;}
@@ -68,7 +68,7 @@ pre#honey{background-color:rgb(16, 91, 99);color:rgb(189, 73, 50);font-family:"L
 #honey-parameter{color:rgb(189, 73, 50);}
 /*----------------------------------------Vintage----------------------------------------*/
 #vintage-box{background-color:rgb(126, 130, 122);height:auto;width:100%;}
-pre#vintage{background-color:rgb(126, 130, 122);color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:13px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+pre#vintage{background-color:rgb(126, 130, 122);color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #vintage-title{background-color:rgb(47, 52, 59);color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
 #vintage-text{background-color:rgb(47, 52, 59);color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #vintage-all-number{border-right:1px solid rgb(227, 205, 164);display:inline-block;float:left;margin-right:8px;text-align:right;}
@@ -85,7 +85,7 @@ pre#vintage{background-color:rgb(126, 130, 122);color:rgb(227, 205, 164);font-fa
 #vintage-parameter{color:rgb(227, 205, 164);}
 /*----------------------------------------Beach----------------------------------------*/
 #beach-box{background-color:rgb(170, 216, 176);height:auto;width:100%;}
-pre#beach{background-color:rgb(170, 216, 176);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:13px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+pre#beach{background-color:rgb(170, 216, 176);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #beach-title{background-color:rgb(139, 173, 206);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
 #beach-text{background-color:rgb(139, 173, 206);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #beach-all-number{border-right:1px solid rgb(255, 132, 127);display:inline-block;float:left;margin-right:8px;text-align:right;}
