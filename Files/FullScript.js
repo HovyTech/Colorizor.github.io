@@ -9,7 +9,7 @@ function loadBackground() {
   } else if (screen.width >= 480 && screen.width < 720) {
     headerHeight = 170;
   } else if (screen.width >= 720 && screen.width < 1024) {
-    headerHeight = 200;
+    headerHeight = 250;
   } else {
     headerHeight = 500;
   }
