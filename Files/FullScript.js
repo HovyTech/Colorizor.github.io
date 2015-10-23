@@ -35,20 +35,14 @@ function colorizor() {
   getPinterestCount();
   getLinkedInCount();
   
-  //$.each($('pre'), function() {
-    //var height = $(this).find('span[id$="all-number"]').find('span[id$="number"]').height() + 'px';
-    
-    //$(this).find('span[id$="all-code"]').css({
-      //'line-height': height
-    //});
-  //});
-  
   if (screen.width < 1024) {
     $('pre').width(screen.width - 40);
     
     $('.social-count').css({
-        'display': 'block'
-      });
+      'display': 'block'
+    });
+    
+    $('.social-count').removeAttr('onMouseOut');
     
     $('span[id$="all-code"]').click(function() {
       this.selectionStart = 0;
