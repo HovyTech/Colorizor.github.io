@@ -45,7 +45,7 @@ function colorizor() {
   
   if (screen.width < 1024) {
     $('pre').width(screen.width - 40);
-    $('pre').fontsize(14);
+    //$('pre').fontsize(14);
     
     $('span[id$="all-code"]').click(function() {
       this.selectionStart = 0;
