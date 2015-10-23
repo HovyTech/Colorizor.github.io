@@ -38,7 +38,7 @@ function colorizor() {
   getLinkedInCount();
   
   if (screen.width <= 1023) {
-    &.each($('pre'), function() {
+    $.each($('pre'), function() {
       this.style.width = screen.width - 20;
     });
   }
