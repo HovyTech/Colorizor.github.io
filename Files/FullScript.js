@@ -37,6 +37,10 @@ function colorizor() {
   getPinterestCount();
   getLinkedInCount();
   
+  if (screen.width < 1023) {
+    $('pre').style.width = screen.width - 20;
+  }
+  
   $('span[id$="all-code"]').click(function() {
     var range, selection;
     
