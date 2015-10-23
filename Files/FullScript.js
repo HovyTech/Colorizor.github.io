@@ -40,7 +40,7 @@ function colorizor() {
     
     $('.social-count').mouseover();
     
-    $('.social-count').removeAttr('onMouseOut');
+    $('.social-count').off('onMouseOut');
     
     $('span[id$="all-code"]').click(function() {
       this.selectionStart = 0;
