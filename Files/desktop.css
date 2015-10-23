@@ -1,4 +1,4 @@
-#background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-repeat:no-repeat;background-size:100% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-1;}
+#background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:100% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-1;}
 .on{display:block;}
 .off{display:none;}
 html{width:100%;z-index:0;}
