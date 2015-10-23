@@ -28,7 +28,7 @@ function loadBackground() {
     }
   });
   
-  $('html').scrollTop(0);
+  $('body').scrollTop(0);
 }
 //--------------------------------------------------LOAD Colorizor
 function colorizor() {
