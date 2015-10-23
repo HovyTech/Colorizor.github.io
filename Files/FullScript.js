@@ -47,10 +47,13 @@ function colorizor() {
   getPinterestCount();
   getLinkedInCount();
   
+  $('pre').css({
+    'line-height': $(this).find('span[id$="all-number"]').height()
+  });
+  
   if (screen.width < 1024) {
     $('pre').css({
       'font-size': '14px',
-      'line-height': this.find('span[id$="all-number"]').height(),
       'width': screen.width - 40
     });
     
