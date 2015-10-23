@@ -13,7 +13,7 @@ function loadBackground() {
   } else {
     headerHeight = 500;
   }
-  
+  alert(headerHeight)
   $(window).scroll(function(event) {
     didScroll = true;
   });
