@@ -37,7 +37,7 @@ function colorizor() {
   getPinterestCount();
   getLinkedInCount();
   
-  if (screen.width < 1023) {
+  if (screen.width <= 1023) {
     &.each($('pre'), function() {
       this.style.width = screen.width - 20;
     });
