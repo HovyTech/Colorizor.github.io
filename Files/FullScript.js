@@ -1,24 +1,3 @@
-//--------------------------------------------------PRELOAD IMAGES
-function preloadImages() {
-  var img = new Image();
-  var urls = [
-    'https://colorizor.github.io/Images/HomePage.png',
-    'https://colorizor.github.io/Images/Facebook.png',
-    'https://colorizor.github.io/Images/Twitter.png',
-    'https://colorizor.github.io/Images/GooglePlus.png',
-    'https://colorizor.github.io/Images/Pinterest.png',
-    'https://colorizor.github.io/Images/LinkedIn.png',
-    'https://colorizor.github.io/Images/FacebookBlur.png',
-    'https://colorizor.github.io/Images/TwitterBlur.png',
-    'https://colorizor.github.io/Images/GooglePlusBlur.png',
-    'https://colorizor.github.io/Images/PinterestBlur.png',
-    'https://colorizor.github.io/Images/LinkedInBlur.png'
-  ];
-  
-  for (a = 0; a < urls.length; a++) {
-    img.src = urls[a];
-  }
-}
 //--------------------------------------------------FIXED BACKGROUND ON OFF
 function loadBackground() {
   var headerHeight;
