@@ -1,5 +1,5 @@
 html{background-color:rgb(35, 49, 56);z-index:0;}
-body{background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:0px 0px;background-repeat:no-repeat;background-size:100% 100%;height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:0px;width:auto;z-index:20;}
+body{background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:0px 0px;background-repeat:no-repeat;background-size:100% auto;height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:0px;width:auto;z-index:20;}
 .on{background-attachment:fixed;}
 .off{background-attachment:scroll;}
 header{height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
