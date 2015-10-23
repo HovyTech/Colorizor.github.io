@@ -49,7 +49,7 @@ function colorizor() {
   
   $.each($('pre'), function() {
     $(this).find('span[id$="all-code"]').css({
-      'line-height': $(this).parent().find('span[id$="all-number"]').height()
+      'line-height': $(this).find('span[id$="all-number"]').height()
     });
   });
   
