@@ -5,7 +5,7 @@ function loadBackground() {
   var delta = 5;
   
   if (screen.width < 480) {
-    headerHeight = 200;
+    headerHeight = 160;
   } else if (screen.width >= 480 && screen.width < 720) {
     headerHeight = 300;
   } else if (screen.width >= 720 && screen.width < 1024) {
