@@ -1,8 +1,6 @@
 //--------------------------------------------------FIXED BACKGROUND ON OFF
 function loadBackground() {
-  var didScroll, headerHeight;
-  var oldScroll = 0;
-  var delta = 5;
+  var headerHeight;
   
   if (screen.width < 480) {
     headerHeight = 150;
@@ -17,28 +15,6 @@ function loadBackground() {
   $('body').css({
     'top': headerHeight
   });
-  
-  $(window).scroll(function(event) {
-    didScroll = true;
-  });
-  setInterval(function() {
-    if (didScroll) {
-      hasScrolled();
-      didScroll = false;
-    }
-  }, 60);
-  function hasScrolled() {
-    var newScroll = $(this).scrollTop();
-    if (Math.abs(oldScroll - newScroll) <= delta) {
-      return;
-    }
-    if ((newScroll > oldScroll) && (newScroll > headerHeight)) {
-      $('div[id="background"]').removeClass('on').addClass('off');
-    } else if ((newScroll + $(window).height()) < $(document).height()) {
-      $('div[id="background"]').removeClass('off').addClass('on');
-    }
-    oldScroll = newScroll;
-  }
 }
 //--------------------------------------------------LOAD Colorizor
 function colorizor() {
