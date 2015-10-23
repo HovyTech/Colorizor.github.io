@@ -47,6 +47,8 @@ function colorizor() {
   getPinterestCount();
   getLinkedInCount();
   
+  alert($('pre').find('span[id$="all-number"]').height())
+  
   $('pre').css({
     'line-height': $(this).find('span[id$="all-number"]').height()
   });
