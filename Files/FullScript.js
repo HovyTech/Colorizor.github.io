@@ -34,10 +34,8 @@ function colorizor() {
   getLinkedInCount();
   
   if (screen.width <= 1023) {
-    $('pre').css({
-      "font-size": "14px",
-      "width": screen.width - 40
-    });
+    $('pre').width(screen.width - 40);
+    $('pre').fontsize(14);
     
     $('span[id$="all-code"]').click(function() {
       this.selectionStart = 0;
