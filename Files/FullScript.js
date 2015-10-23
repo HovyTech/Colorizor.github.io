@@ -15,6 +15,18 @@ function loadBackground() {
   $('body').css({
     'top': headerHeight
   });
+  
+  $(window).scroll(function() {
+    if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+      $('#background-cover').css({
+        'display': 'block'
+      });
+    } else if ($(window).scrollTop() + $(window).height() < $(document).height() + headerHeight + 100) {
+      $('#background-cover').css({
+        'display': 'none'
+      });
+    }
+  });
 }
 //--------------------------------------------------LOAD Colorizor
 function colorizor() {
