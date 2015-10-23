@@ -14,8 +14,8 @@ function loadBackground() {
     headerHeight = 500;
   }
   
-  $('body').offset({
-    top: headerHeight
+  $('body').css({
+    'top': headerHeight
   });
   
   $(window).scroll(function(event) {
@@ -48,8 +48,10 @@ function colorizor() {
   getLinkedInCount();
   
   if (screen.width < 1024) {
-    $('pre').width(screen.width - 40);
-    //$('pre').fontsize(14);
+    $('pre').css({
+      'font-size': '14px',
+      'width': screen.width - 40
+    });
     
     $('span[id$="all-code"]').click(function() {
       this.selectionStart = 0;
