@@ -43,7 +43,7 @@ function colorizor() {
   getPinterestCount();
   getLinkedInCount();
   
-  if (screen.width <= 1023) {
+  if (screen.width < 1024) {
     $('pre').width(screen.width - 40);
     $('pre').fontsize(14);
     
