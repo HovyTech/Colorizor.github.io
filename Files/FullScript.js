@@ -43,7 +43,7 @@ function colorizor() {
     //});
     $('pre').css({
       "font-size": "14px",
-      "width": '"' + screen.width - 40 + 'px"'
+      "width": screen.width - 40
     });
   }
   
