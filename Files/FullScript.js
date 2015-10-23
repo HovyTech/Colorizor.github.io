@@ -48,8 +48,10 @@ function colorizor() {
   getLinkedInCount();
   
   $.each($('pre'), function() {
+    var height = $(this).find('span[id$="all-number"]').height() + 'px';
+    
     $(this).find('span[id$="all-code"]').css({
-      'line-height': $(this).find('span[id$="all-number"]').height()
+      'line-height': height
     });
   });
   
