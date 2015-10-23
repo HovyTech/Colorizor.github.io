@@ -47,19 +47,16 @@ function colorizor() {
   getPinterestCount();
   getLinkedInCount();
   
-  $.each($('pre'), function() {
-    var height = $(this).find('span[id$="all-number"]').find('span[id$="number"]').height() + 'px';
+  //$.each($('pre'), function() {
+    //var height = $(this).find('span[id$="all-number"]').find('span[id$="number"]').height() + 'px';
     
-    $(this).find('span[id$="all-code"]').css({
-      'line-height': height
-    });
-  });
+    //$(this).find('span[id$="all-code"]').css({
+      //'line-height': height
+    //});
+  //});
   
   if (screen.width < 1024) {
-    $('pre').css({
-      'font-size': '14px',
-      'width': screen.width - 40
-    });
+    $('pre').width(screen.width - 40);
     
     $('span[id$="all-code"]').click(function() {
       this.selectionStart = 0;
