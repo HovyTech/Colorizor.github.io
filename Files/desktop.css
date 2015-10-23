@@ -1,6 +1,6 @@
-#background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-repeat:no-repeat;background-size:100% auto;display:block;height:100%;left:0px;top:0px;width:100%;z-index:-1;}
-.on{position:fixed;}
-.off{position:relative;}
+#background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-repeat:no-repeat;background-size:100% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-1;}
+.on{display:block;}
+.off{display:none;}
 html{width:100%;z-index:0;}
 body{-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;width:auto;z-index:20;}
 main{background-color:rgb(76, 100, 107);height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
