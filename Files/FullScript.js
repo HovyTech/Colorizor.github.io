@@ -38,9 +38,9 @@ function colorizor() {
   if (screen.width < 1024) {
     $('pre').width(screen.width - 40);
     
-    $('.social-count').trigger('mouseover');
+    $('span[class="social-count"]').trigger('mouseover');
     
-    $('.social-count').off('mouseout');
+    $('span[class="social-count"]').off('mouseout');
     
     $('span[id$="all-code"]').click(function() {
       this.selectionStart = 0;
