@@ -1,17 +1,17 @@
 //--------------------------------------------------FIXED BACKGROUND ON OFF
 function loadBackground() {
-  var didScroll;
+  var didScroll, headerHeight;
   var oldScroll = 0;
   var delta = 5;
   
   if (screen.width < 480) {
-    var headerHeight = 200;
+    headerHeight = 200;
   } else if (screen.width >= 480 && screen.width < 720) {
-    var headerHeight = 300;
+    headerHeight = 300;
   } else if (screen.width >= 720 && screen.width < 1024) {
-    var headerHeight = 400;
+    headerHeight = 400;
   } else {
-    var headerHeight = 500;
+    headerHeight = 500;
   }
   
   $(window).scroll(function(event) {
