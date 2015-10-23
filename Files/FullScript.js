@@ -48,7 +48,7 @@ function colorizor() {
   getLinkedInCount();
   
   $.each($('pre'), function() {
-    var height = $(this).find('span[id$="number"]').height() + 'px';
+    var height = $(this).find('span[id$="all-number"]').find('span[id$="number"]').height() + 'px';
     
     $(this).find('span[id$="all-code"]').css({
       'line-height': height
