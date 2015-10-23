@@ -3,7 +3,17 @@ function loadBackground() {
   var didScroll;
   var oldScroll = 0;
   var delta = 5;
-  var headerHeight = 500;
+  
+  if (screen.width < 480) {
+    var headerHeight = 200;
+  } else if (screen.width >= 480 && screen.width < 720) {
+    var headerHeight = 300;
+  } else if (screen.width >= 720 && screen.width < 1024) {
+    var headerHeight = 400;
+  } else {
+    var headerHeight = 500;
+  }
+  
   $(window).scroll(function(event) {
     didScroll = true;
   });
