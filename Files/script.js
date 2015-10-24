@@ -26,6 +26,7 @@ $(document).ready(function() {
     }
     
     if (index === lastPre - 1) {
+      alert(index)
       lastToLoad();
     }
   });
