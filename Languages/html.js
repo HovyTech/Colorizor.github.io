@@ -15,22 +15,24 @@ $(document).ready(function() {
   var htmlPar = /\s([\w]+)(?=<span)/igm;
   var htmlFixA = /&#45;&#45;<span id="selector">&#62;<\/span>/igm;
   
-  $.each($('pre[language="html"]'), function() {
-    //-------------------------Get Text
-    var htmlStr = $(this).html();
+  $.each($('pre'), function() {
+    if ($(this).attr('language').toLowerCase() = 'html') {
+      //-------------------------Get Text
+      var str = $(this).html();
     
-    for (a = 0; a < clean.length; a++) {
-      htmlStr = htmlStr.replace(clean[a], rep[a]);
+      for (a = 0; a < clean.length; a++) {
+        str = str.replace(clean[a], rep[a]);
+      }
+    
+      //-------------------------Wrap Matching Text
+      str = str.replace(htmlCom, '<span id="comment">$&</span>');
+      str = str.replace(htmlTag, '<span id="selector">$&</span>');
+      str = str.replace(htmlAtt, '<span id="attribute">$&</span>');
+      str = str.replace(htmlVal, '<span id="value">$&</span>');
+      str = str.replace(htmlPar, '<span id="parameter">$&</span>');
+      str = str.replace(htmlFixA, '&#45;&#45;&#62;');
+      //-------------------------Insert Coloured Text
+      $(this).html(str);
     }
-    
-    //-------------------------Wrap Matching Text
-    htmlStr = htmlStr.replace(htmlCom, '<span id="comment">$&</span>');
-    htmlStr = htmlStr.replace(htmlTag, '<span id="selector">$&</span>');
-    htmlStr = htmlStr.replace(htmlAtt, '<span id="attribute">$&</span>');
-    htmlStr = htmlStr.replace(htmlVal, '<span id="value">$&</span>');
-    htmlStr = htmlStr.replace(htmlPar, '<span id="parameter">$&</span>');
-    htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
-    //-------------------------Insert Coloured Text
-    $(this).html(htmlStr);
   });
 });
