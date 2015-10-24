@@ -10,7 +10,8 @@ $(document).ready(function() {
   
   //----------------------------------------------FINDING LANGUAGE
   $.each($('pre'), function() {
-    var language = $(this).attr('language').toString().toLowerCase();
+    var language = $(this).attr('language');
+    alert(language)
     
     findDuplicates.push(language);
     
