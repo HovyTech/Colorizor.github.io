@@ -10,7 +10,9 @@ $(function() {
   var jsChar = /((?!(function)\s)([\w]+)\(\)(?=(.*?){)|((\$|\.([\w]+))(.*?)|([\w]+))\(|(?!(.*?){)\)|\)(?=,))/igm;
   
   $.each($('pre'), function() {
-    if ($(this).attr('language').val() = 'javascript') {
+    var language = $(this).attr('language');
+    
+    if (language = 'javascript') {
       //-------------------------Get Text
       var jsStr = $(this).html();
     
