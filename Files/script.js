@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------------------------------------
 //----------------------------------------------DETECT LANGUAGE-----------------------------------------------
 //------------------------------------------------------------------------------------------------------------
-$(function() {
+$(document).ready(function() {
   var findDuplicates = [];
   
   //----------------------------------------------FINDING LANGUAGE
@@ -11,6 +11,7 @@ $(function() {
     findDuplicates.push(language);
     
     if (findDuplicates.indexOf(language) > -1) {
+      alert(findDuplicates.indexOf(language))
       loadJS('https://colorizor.github.io/Languages/' + language + '.js');
     }
   });
