@@ -17,7 +17,7 @@ $(document).ready(function() {
       }
       
       for (a = 0; a < data.lang.regx.length; a++) {
-        str = str.replace(data.lang.regx[a], data.lang.span[a]);
+        str = str.replace(data.$(lang).regx[a], data.$(lang).span[a]);
       }
       
       $(this).html(str);
