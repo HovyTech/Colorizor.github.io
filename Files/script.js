@@ -14,6 +14,10 @@ $(document).ready(function() {
     }
   });
   
+  if (screen.width < 1024) {
+    $('pre').width(screen.width - 40);
+  }
+  
   $('span[id="all-code"]').click(function() {
     var range, selection;
     
