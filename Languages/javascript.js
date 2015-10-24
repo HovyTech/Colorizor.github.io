@@ -1,8 +1,4 @@
 $(function() {
-  //--------------------------------------------------Clean
-  var clean = [/&lt;/igm, /&gt;/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
-  var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
-  //--------------------------------------------------JS
   var jsCom = /&#47;&#47;.*/igm;
   var jsText = /(&#34;(.*?)&#34;|'(.*?)')/igm;
   var jsSel = /(?!\$\()([\w]+)(?=\)\.)/igm;
@@ -14,20 +10,15 @@ $(function() {
     
     if (language = 'javascript') {
       //-------------------------Get Text
-      var jsStr = $(this).html();
-    
-      for (a = 0; a < clean.length; a++) {
-        jsStr = jsStr.replace(clean[a], rep[a]);
-      }
-    
+      var str = $(this).html();
       //-------------------------Wrap Matching Text
-      jsStr = jsStr.replace(jsCom, '<span id="comment">$&</span>');
-      jsStr = jsStr.replace(jsText, '<span id="value">$&</span>');
-      jsStr = jsStr.replace(jsSel, '<span id="parameter">$&</span>');
-      jsStr = jsStr.replace(jsVal, '<span id="attribute">$&</span>');
-      jsStr = jsStr.replace(jsChar, '<span id="selector">$&</span>');
+      str = str.replace(jsCom, '<span id="comment">$&</span>');
+      str = str.replace(jsText, '<span id="value">$&</span>');
+      str = str.replace(jsSel, '<span id="parameter">$&</span>');
+      str = str.replace(jsVal, '<span id="attribute">$&</span>');
+      str = str.replace(jsChar, '<span id="selector">$&</span>');
       //-------------------------Insert Coloured Text
-      $(this).html(jsStr);
+      $(this).html(str);
     }
   });
 });
