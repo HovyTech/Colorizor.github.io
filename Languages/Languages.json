@@ -1,0 +1,74 @@
+languages({
+  "generalise": {
+    "clean": [{
+      "val1": /&lt;/igm,
+      "val2": /&gt;/igm,
+      "val3": /[/]/igm,
+      "val4": /[=]/igm,
+      "val5": /\[\"\]/igm,
+      "val6": /[!]/igm,
+      "val7": /[-]/igm,
+      "val8": /[\t]/igm
+    }],
+    "replace": [{
+      "val1": "&#60;",
+      "val2": "&#62;",
+      "val3": "&#47;",
+      "val4": "&#61;",
+      "val5": "&#34;",
+      "val6": "&#33;",
+      "val7": "&#45;",
+      "val8": "\s\s\s\s"
+    }]
+  },
+  "html": {
+    "regx": [{
+      "val1": /(&#60;&#33;&#45;&#45;(.*?)$|(.*?)([\w]+)(?=\n(.*?)&#45;&#45;&#62;)|(.*?)&#45;&#45;&#62;)/igm,
+      "val2": /((&#60;&#33;|&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47;&#62;))|&#62;)/igm,
+      "val3": /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/igm,
+      "val4": /&#34;([\s\S]*?)&#34;/igm,
+      "val5": /\s([\w]+)(?=<span)/igm,
+      "val6": /&#45;&#45;<span id=\"selector\"\>&#62;<\/span>/igm
+    }],
+    "span": [{
+      "val1": "<span id=\"comment\">$&</span>",
+      "val2": "<span id=\"selector\">$&</span>",
+      "val3": "<span id=\"attribute\">$&</span>",
+      "val4": "<span id=\"value\">$&</span>",
+      "val5": "<span id=\"parameter\">$&</span>",
+      "val6": "&#45;&#45;&#62;"
+    }]
+  },
+  "css": {
+    "regx": [{
+      "val1": /(&#47;\*(.*?)$|(.*?)([\w]+)(?=\n(.*?)\*&#47;)|(.*?)\*&#47;)/igm,
+      "val2": /(^|,.+)([\w]+)(?=.+{)/igm,
+      "val3": /:([\w]+)(?=.+{)/igm,
+      "val4": /(?!.+{)(([\w]|&#45;)+)(?=:(.*?);)/igm,
+      "val5": /:([\s\S].+);/igm
+    }],
+    "span": [{
+      "val1": "<span id=\"comment\">$&</span>",
+      "val2": "<span id=\"selector\">$&</span>",
+      "val3": "</span><span id=\"parameter\">$&</span>",
+      "val4": "<span id=\"attribute\">$&</span>",
+      "val5": "<span id=\"value\">$&</span>"
+    }]
+  },
+  "javascript": {
+    "regx": [{
+      "val1": /&#47;&#47;.*/igm,
+      "val2": /(&#34;(.*?)&#34;|\'(.*?)\')/igm,
+      "val3": /(?!\$\()([\w]+)(?=\)\.)/igm,
+      "val4": /(([\w]+)\s(?=([\w]+)\(\)(.*?){)|var)/igm,
+      "val5": /((?!(function)\s)([\w]+)\(\)(?=(.*?){)|((\$|\.([\w]+))(.*?)|([\w]+))\(|(?!(.*?){)\)|\)(?=,))/igm
+    }],
+    "span": [{
+      "val1": "<span id=\"comment\">$&</span>",
+      "val2": "<span id=\"value\">$&</span>",
+      "val3": "<span id=\"parameter\">$&</span>",
+      "val4": "<span id=\"attribute\">$&</span>",
+      "val5": "<span id=\"selector\">$&</span>"
+    }]
+  }
+})

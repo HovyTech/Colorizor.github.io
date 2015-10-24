@@ -36,33 +36,17 @@ function colorizor() {
   //--------------------------------------------------DIFFERENT DEVICES
   if (screen.width < 1024) {
     $('pre').width(screen.width - 40);
-  } else {
-    $('span[id$="all-code"]').click(function() {
-      var range, selection;
-    
-      if (window.getSelection && document.createRange) {
-        selection = window.getSelection();
-        range = document.createRange();
-        range.selectNodeContents($(this)[0]);
-        selection.removeAllRanges();
-        selection.addRange(range);
-      } else if (document.selection && document.body.createTextRange) {
-        range = document.body.createTextRange();
-        range.moveToElementText($(this)[0]);
-        range.select();
-      }
-    });
   }
-  
+
   //--------------------------------------------------HTML
   $.each($('pre[id="html"]'), function() {
     //-------------------------Get Text
     var htmlStr = $(this).html();
-    
+
     for (a = 0; a < clean.length; a++) {
       htmlStr = htmlStr.replace(clean[a], rep[a]);
     }
-    
+
     //-------------------------Wrap Matching Text
     htmlStr = htmlStr.replace(htmlCom, '<span id="comment">$&</span>');
     htmlStr = htmlStr.replace(htmlTag, '<span id="selector">$&</span>');
@@ -70,49 +54,52 @@ function colorizor() {
     htmlStr = htmlStr.replace(htmlVal, '<span id="value">$&</span>');
     htmlStr = htmlStr.replace(htmlPar, '<span id="parameter">$&</span>');
     htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
+
     //-------------------------Insert Coloured Text
     $(this).html(htmlStr);
   });
-  
+
   //--------------------------------------------------CSS
   $.each($('pre[id="css"]'), function() {
     //-------------------------Get Text
     var cssStr = $(this).html();
-    
+
     for (a = 0; a < clean.length; a++) {
       cssStr = cssStr.replace(clean[a], rep[a]);
     }
-    
+
     //-------------------------Wrap Matching Text
     cssStr = cssStr.replace(cssCom, '<span id="comment">$&</span>');
     cssStr = cssStr.replace(cssSel, '<span id="selector">$&</span>');
     cssStr = cssStr.replace(cssSelExt, '</span><span id="parameter">$&</span>');
     cssStr = cssStr.replace(cssProp, '<span id="attribute">$&</span>');
     cssStr = cssStr.replace(cssVal, '<span id="value">$&</span>');
+
     //-------------------------Insert Coloured Text
     $(this).html(cssStr);
   });
-  
+
   //--------------------------------------------------JS
   $.each($('pre[id="js"]'), function() {
     //-------------------------Get Text
     var jsStr = $(this).html();
-    
+
     for (a = 0; a < clean.length; a++) {
       jsStr = jsStr.replace(clean[a], rep[a]);
     }
-    
+
     //-------------------------Wrap Matching Text
     jsStr = jsStr.replace(jsCom, '<span id="comment">$&</span>');
     jsStr = jsStr.replace(jsText, '<span id="value">$&</span>');
     jsStr = jsStr.replace(jsSel, '<span id="parameter">$&</span>');
     jsStr = jsStr.replace(jsVal, '<span id="attribute">$&</span>');
     jsStr = jsStr.replace(jsChar, '<span id="selector">$&</span>');
+
     //-------------------------Insert Coloured Text
     $(this).html(jsStr);
   });
-  
-  //----------------------------------------------URL
+
+  //----------------------------------------------Features
   $.each($('pre, span'), function() {
     var extraStr = $(this).html();
     extraStr = extraStr.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
@@ -121,31 +108,31 @@ function colorizor() {
     extraStr = extraStr.replace(units, '<span id="units">$&</span>');
     $(this).html(extraStr);
   });
-  
+
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
     var preStr = $(this).html();
     preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
     $(this).html(preStr);
   });
-  
+
   $.each($('span[id="all-code"]'), function(line) {
     $(this).html(function(index, html) {
       return html.replace(/.+/igm, '<span id="code">$&</span>');
     });
-    
+
     line = 0;
-    
+
     $($(this).find('span[id="code"]')).html(function(index, html) {
       line++;
       var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
       $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
     });
   });
-  
+
   $('span[id="all-code"]').click(function() {
     var range, selection;
-    
+
     if (window.getSelection && document.createRange) {
       selection = window.getSelection();
       range = document.createRange();
@@ -158,4 +145,20 @@ function colorizor() {
       range.select();
     }
   });
+}
+
+//------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------LOAD LANGUAGE------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
+function loadJS(src, cb) {
+  'use strict';
+  var ref = window.document.getElementsByTagName('script')[0];
+  var script = window.document.createElement('script');
+  script.src = src;
+  script.async = true;
+  ref.parentNode.insertBefore(script, ref);
+  if (cb && typeof(cb) === 'function') {
+    script.onload = cb;
+  }
+  return script;
 }
