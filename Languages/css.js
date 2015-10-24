@@ -10,7 +10,7 @@ $(function() {
   var cssVal = /:([\s\S].+);/igm;
   
   $.each($('pre'), function() {
-    if ($(this).attr('language').toLowerCase() = 'css') {
+    if ($(this).attr('language') = 'css') {
       //-------------------------Get Text
       var str = $(this).html();
     
