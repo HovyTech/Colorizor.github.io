@@ -5,7 +5,7 @@ languages({
       "val2": /&gt;/igm,
       "val3": /[/]/igm,
       "val4": /[=]/igm,
-      "val5": /["]/igm,
+      "val5": /\[\"\]/igm,
       "val6": /[!]/igm,
       "val7": /[-]/igm,
       "val8": /[\t]/igm
@@ -28,14 +28,14 @@ languages({
       "val3": /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/igm,
       "val4": /&#34;([\s\S]*?)&#34;/igm,
       "val5": /\s([\w]+)(?=<span)/igm,
-      "val6": /&#45;&#45;<span id="selector">&#62;<\/span>/igm
+      "val6": /&#45;&#45;<span id=\"selector\"\>&#62;<\/span>/igm
     }],
     "span": [{
-      "val1": "<span id="comment">$&</span>",
-      "val2": "<span id="selector">$&</span>",
-      "val3": "<span id="attribute">$&</span>",
-      "val4": "<span id="value">$&</span>",
-      "val5": "<span id="parameter">$&</span>",
+      "val1": "<span id=\"comment\">$&</span>",
+      "val2": "<span id=\"selector\">$&</span>",
+      "val3": "<span id=\"attribute\">$&</span>",
+      "val4": "<span id=\"value\">$&</span>",
+      "val5": "<span id=\"parameter\">$&</span>",
       "val6": "&#45;&#45;&#62;"
     }]
   },
@@ -48,27 +48,27 @@ languages({
       "val5": /:([\s\S].+);/igm
     }],
     "span": [{
-      "val1": "<span id="comment">$&</span>",
-      "val2": "<span id="selector">$&</span>",
-      "val3": "</span><span id="parameter">$&</span>",
-      "val4": "<span id="attribute">$&</span>",
-      "val5": "<span id="value">$&</span>"
+      "val1": "<span id=\"comment\">$&</span>",
+      "val2": "<span id=\"selector\">$&</span>",
+      "val3": "</span><span id=\"parameter\">$&</span>",
+      "val4": "<span id=\"attribute\">$&</span>",
+      "val5": "<span id=\"value\">$&</span>"
     }]
   },
   "javascript": {
     "regx": [{
       "val1": /&#47;&#47;.*/igm,
-      "val2": /(&#34;(.*?)&#34;|'(.*?)')/igm,
+      "val2": /(&#34;(.*?)&#34;|\'(.*?)\')/igm,
       "val3": /(?!\$\()([\w]+)(?=\)\.)/igm,
       "val4": /(([\w]+)\s(?=([\w]+)\(\)(.*?){)|var)/igm,
       "val5": /((?!(function)\s)([\w]+)\(\)(?=(.*?){)|((\$|\.([\w]+))(.*?)|([\w]+))\(|(?!(.*?){)\)|\)(?=,))/igm
     }],
     "span": [{
-      "val1": "<span id="comment">$&</span>",
-      "val2": "<span id="value">$&</span>",
-      "val3": "<span id="parameter">$&</span>",
-      "val4": "<span id="attribute">$&</span>",
-      "val5": "<span id="selector">$&</span>"
+      "val1": "<span id=\"comment\">$&</span>",
+      "val2": "<span id=\"value\">$&</span>",
+      "val3": "<span id=\"parameter\">$&</span>",
+      "val4": "<span id=\"attribute\">$&</span>",
+      "val5": "<span id=\"selector\">$&</span>"
     }]
   }
 })
