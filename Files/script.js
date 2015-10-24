@@ -9,7 +9,7 @@ $(document).ready(function() {
   $.each($('pre'), function(index) {
     var lang = $(this).attr('language');
     
-    $.getJSON('https://colorizor.github.io/Files/Languages.json', function(data) {
+    $.getJSON('https://colorizor.github.io/Languages/Languages.json', function(data) {
       var str = $(this).html();
       
       for (a = 0; a < data.generalise.clean.length; a++) {
