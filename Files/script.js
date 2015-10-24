@@ -9,24 +9,27 @@ $(document).ready(function() {
   var findDuplicates = [];
   
   //----------------------------------------------FINDING LANGUAGE
-  var lastPre = $('pre').length;
-  
-  $.each($('pre'), function(index) {
+  $.each($('pre'), function() {
     var str = $(this).html();
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
     $(this).html(str);
-    
+  });
+  
+  $.each($('pre'), function() {
     var language = $(this).attr('language');
     
     if (findDuplicates.indexOf(language) < 0 && language != 'undefined') {
       loadJS('https://colorizor.github.io/Languages/' + language + '.js');
       findDuplicates.push(language);
     }
-    
+  });
+  
+  var lastPre = $('pre').length;
+  
+  $.each($('pre'), function(index) {
     if (index === lastPre - 1) {
-      alert(index)
       lastToLoad();
     }
   });
