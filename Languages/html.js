@@ -11,7 +11,9 @@ $(function() {
   var htmlFixA = /&#45;&#45;<span id="selector">&#62;<\/span>/igm;
   
   $.each($('pre'), function() {
-    if ($(this).attr('language') = 'html') {
+    var language = $(this).attr('language');
+    
+    if (language = 'html') {
       //-------------------------Get Text
       var str = $(this).html();
     
