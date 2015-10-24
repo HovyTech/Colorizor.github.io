@@ -14,7 +14,7 @@ $(document).ready(function() {
     
     findDuplicates.push(language);
     
-    if (!(findDuplicates.indexOf(language) > -1)) {
+    if (findDuplicates.indexOf(language) > -1) {
       loadJS('https://colorizor.github.io/Languages/' + language + '.js');
     }
   });
