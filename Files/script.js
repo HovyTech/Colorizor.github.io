@@ -2,22 +2,10 @@
 //----------------------------------------------DETECT LANGUAGE-----------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 $(document).ready(function() {
-  //--------------------------------------------------Clean
-  var clean = [/&lt;/igm, /&gt;/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
-  var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
-  //--------------------------------------------------HTML
   var findDuplicates = [];
   var lastPre = $('pre').length;
   
   //----------------------------------------------FINDING LANGUAGE
-  $.each($('pre'), function() {
-    var str = $(this).html();
-    for (a = 0; a < clean.length; a++) {
-      str = str.replace(clean[a], rep[a]);
-    }
-    $(this).html(str);
-  });
-  
   $.each($('pre'), function(index) {
     var language = $(this).attr('language');
     
