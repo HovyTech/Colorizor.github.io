@@ -9,7 +9,9 @@ $(document).ready(function() {
   var findDuplicates = [];
   
   //----------------------------------------------FINDING LANGUAGE
-  $.each($('pre'), function() {
+  var lastPre = $('pre').length;
+  
+  $.each($('pre'), function(index) {
     var str = $(this).html();
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
@@ -22,13 +24,17 @@ $(document).ready(function() {
       loadJS('https://colorizor.github.io/Languages/' + language + '.js');
       findDuplicates.push(language);
     }
+    
+    if (index === lastPre - 1) {
+      lastToLoad();
+    }
   });
 });
 
 //------------------------------------------------------------------------------------------------------------
 //------------------------------------------------PAGE LOADED-------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
-$(window).load(function() {
+function lastToLoad() {
   var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;|\\,.?/`˜]+)/igm;
   var color = /(rgb|rgba|#)([(0-9a-zA-Z,)].+)(?=(.*?);)/igm;
   var regx = /&#47;(.*?)&#47;([igm]+)/igm;
@@ -86,7 +92,7 @@ $(window).load(function() {
       range.select();
     }
   });
-});
+}
 
 //------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------LOAD LANGUAGE------------------------------------------------
