@@ -15,7 +15,7 @@
     <meta name="author" content="Alexander Hovy">
     <link rel="shortcut icon" href="Images/favicon.ico">
     <link rel="apple-touch-icon" href="Images/apple-touch-icon.png">
-    <link rel="stylesheet" type="text/css" href="https://colorizor.github.io/Files/style.css">
+    <noscript><link rel="stylesheet" type="text/css" href="Files/style.css"></noscript>
     <noscript><link rel="stylesheet" type="text/css" media="screen and (max-device-width: 479px)" href="Files/mobile.css"></noscript>
     <noscript><link rel="stylesheet" type="text/css" media="screen and (min-device-width: 480px) and (max-device-width: 719px)" href="Files/phablet.css"></noscript>
     <noscript><link rel="stylesheet" type="text/css" media="screen and (min-device-width: 720px) and (max-device-width: 1023px)" href="Files/tablet.css"></noscript>
@@ -30,6 +30,7 @@
       //--------------------------------------------------LOAD CSS
       function loadCSS(e,n,o,t){"use strict";var d=window.document.createElement("link"),i=n||window.document.getElementsByTagName("script")[0],s=window.document.styleSheets;return d.rel="stylesheet",d.href=e,d.media="only x",t&&(d.onload=t),i.parentNode.insertBefore(d,i),d.onloadcssdefined=function(n){for(var o,t=0;t<s.length;t++)s[t].href&&s[t].href.indexOf(e)>-1&&(o=!0);o?n():setTimeout(function(){d.onloadcssdefined(n)})},d.onloadcssdefined(function(){d.media=o||"all"}),d}
       screen.width<480&&loadCSS("Files/mobile.css"),screen.width>=480&&screen.width<720&&loadCSS("Files/phablet.css"),screen.width>=720&&screen.width<1024&&loadCSS("Files/tablet.css"),screen.width>=1024&&loadCSS("Files/desktop.css");
+      loadCSS("Files/style.css");
     </script>
     <!--<script type="text/javascript" src="https://colorizor.github.io/Files/script.js" async></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" async></script>-->
