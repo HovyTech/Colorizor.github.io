@@ -12,6 +12,7 @@ $(function() {
     if (language = 'html') {
       //-------------------------Get Text
       var str = $(this).html();
+      alert(str)
       //-------------------------Wrap Matching Text
       str = str.replace(htmlCom, '<span id="comment">$&</span>');
       str = str.replace(htmlTag, '<span id="selector">$&</span>');
