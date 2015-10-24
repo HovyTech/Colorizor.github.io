@@ -1,7 +1,7 @@
 //--------------------------------------------------DETECT LANGUAGE
 $(document).ready(function() {
   //--------------------------------------------------VARIABLES
-  var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;'|\\,.?/`˜]+)/igm;
+  var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;|\\,.?/`˜]+)/igm;
   var color = /(rgb|rgba|#)([(0-9a-zA-Z,)].+)(?=(.*?);)/igm;
   var regx = /&#47;(.*?)&#47;([igm]+)/igm;
   var units = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm;
@@ -14,10 +14,8 @@ $(document).ready(function() {
     
     findDuplicates.push(language);
     
-    for (a = 0; a < findDuplicates.length; a++) {
-      if (!(findDuplicates.indexOf(language) > -1)) {
-        loadJS('https://colorizor.github.io/Languages/' + language + '.js');
-      }
+    if (!(findDuplicates.indexOf(language) > -1)) {
+      loadJS('https://colorizor.github.io/Languages/' + language + '.js');
     }
   });
   
