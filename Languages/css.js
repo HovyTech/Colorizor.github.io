@@ -7,16 +7,15 @@ $(document).ready(function() {
   var color = /(rgb|rgba|#)([(0-9a-zA-Z,)].+)(?=(.*?);)/igm;
   var regx = /&#47;(.*?)&#47;([igm]+)/igm;
   var units = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm;
-  //--------------------------------------------------HTML
-  var htmlCom = /(&#60;&#33;&#45;&#45;(.*?)$|(.*?)([\w]+)(?=\n(.*?)&#45;&#45;&#62;)|(.*?)&#45;&#45;&#62;)/igm;
-  var htmlTag = /((&#60;&#33;|&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47;&#62;))|&#62;)/igm;
-  var htmlAtt = /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/igm;
-  var htmlVal = /&#34;([\s\S]*?)&#34;/igm;
-  var htmlPar = /\s([\w]+)(?=<span)/igm;
-  var htmlFixA = /&#45;&#45;<span id="selector">&#62;<\/span>/igm;
+  //--------------------------------------------------CSS
+  var cssCom = /(&#47;\*(.*?)$|(.*?)([\w]+)(?=\n(.*?)\*&#47;)|(.*?)\*&#47;)/igm;
+  var cssSel = /(^|,.+)([\w]+)(?=.+{)/igm;
+  var cssSelExt = /:([\w]+)(?=.+{)/igm;
+  var cssProp = /(?!.+{)(([\w]|&#45;)+)(?=:(.*?);)/igm;
+  var cssVal = /:([\s\S].+);/igm;
   
   $.each($('pre'), function() {
-    if ($(this).attr('language').toLowerCase() = 'html') {
+    if ($(this).attr('language').toLowerCase() = 'css') {
       //-------------------------Get Text
       var str = $(this).html();
     
@@ -25,12 +24,11 @@ $(document).ready(function() {
       }
     
       //-------------------------Wrap Matching Text
-      str = str.replace(htmlCom, '<span id="comment">$&</span>');
-      str = str.replace(htmlTag, '<span id="selector">$&</span>');
-      str = str.replace(htmlAtt, '<span id="attribute">$&</span>');
-      str = str.replace(htmlVal, '<span id="value">$&</span>');
-      str = str.replace(htmlPar, '<span id="parameter">$&</span>');
-      str = str.replace(htmlFixA, '&#45;&#45;&#62;');
+      str = str.replace(cssCom, '<span id="comment">$&</span>');
+      str = str.replace(cssSel, '<span id="selector">$&</span>');
+      str = str.replace(cssSelExt, '</span><span id="parameter">$&</span>');
+      str = str.replace(cssProp, '<span id="attribute">$&</span>');
+      str = str.replace(cssVal, '<span id="value">$&</span>');
       //-------------------------Insert Coloured Text
       $(this).html(str);
     }
