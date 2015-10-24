@@ -8,7 +8,7 @@ $(document).ready(function() {
   $.each($('pre'), function() {
     var language = $(this).attr('language');
     
-    if (findDuplicates.indexOf(language) > -1) {
+    if (findDuplicates.indexOf(language) > 0) {
       alert(findDuplicates.indexOf(language))
       loadJS('https://colorizor.github.io/Languages/' + language + '.js');
     }
