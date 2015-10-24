@@ -9,7 +9,7 @@ $(document).ready(function() {
     
     for (a = 0; a < findDuplicates.length; a++) {
       if (!(findDuplicates.indexOf(language) > -1)) {
-        loadJS('https://colorizor.github.io/Languages/' + language);
+        loadJS('https://colorizor.github.io/Languages/' + language + '.js');
       }
     }
   });
