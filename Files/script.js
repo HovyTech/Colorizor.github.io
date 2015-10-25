@@ -150,13 +150,18 @@ $(document).ready(function() {
 
   $.each($('span[id="all-code"]'), function(line) {
     line = 0;
-
-    $($(this).find('span[id="code"]')).html(function() {
+    
+    $.each($(this).find('span[id="code"]'), function() {
       line++;
-      alert(line)
       var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
       $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
     });
+
+    //$($(this).find('span[id="code"]')).html(function() {
+      //line++;
+      //var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
+      //$($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
+    //});
   });
 
   $('span[id="all-code"]').click(function() {
