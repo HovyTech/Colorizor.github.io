@@ -85,7 +85,7 @@ pre#vintage{background-color:rgb(126, 130, 122);color:rgb(227, 205, 164);font-fa
 #vintage-parameter{color:rgb(227, 205, 164);}
 /*----------------------------------------Beach----------------------------------------*/
 #beach-box{background-color:rgb(170, 216, 176);height:auto;width:100%;}
-pre#beach{background-color:rgb(170, 216, 176);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+pre#beach{background-color:rgb(170, 216, 176);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin-left:5px;margin-right:5px;margin-top:5px;overflow:auto;padding:10px;text-align:left;}
 #beach-title{background-color:rgb(139, 173, 206);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
 #beach-text{background-color:rgb(139, 173, 206);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #beach-all-number{border-right:1px solid rgb(255, 132, 127);display:inline-block;float:left;margin-right:8px;text-align:right;}
