@@ -3,7 +3,7 @@ $(document).ready(function() {
   //---------------------------------------------------RegEx----------------------------------------------------
   //------------------------------------------------------------------------------------------------------------
   //--------------------------------------------------Clean
-  var clean = [/</igm, />/igm, /#/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
+  var clean = [/[<]/igm, /[>]/igm, /[#]/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
   var rep = ['&lt;', '&gt;', '&#35;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
   //--------------------------------------------------General
   var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;'|\\,.?/`˜]+)/igm;
@@ -17,11 +17,18 @@ $(document).ready(function() {
   var cssProp = /(?!.+{)(([\w]|&#45;)+)(?=:(.*?);)/igm;
   var cssVal = /:([\s\S].+);/igm;
   //--------------------------------------------------C++
-  var cPPCom = /((&#47;\*).*|(\*\*.*)(?=.*\n(\*\*|.*\*&#47;))|.*(\*&#47;))/igm;
-  var cPPVal = /(?!.*(&#34;|'))([\w]+)(?=\.([\w]+).*\(.*\))/igm;
-  var cPPSel = /(([\w]+)(\s|\S)\(|\))(?!(.*?)\n\*(\*|&#47;))/igm;
-  var cPPAtt = /&#35;([\w]+).*/igm;
-  var cPPText = /(&#34;(.*?)&#34;|'(.*?)')(?!(.*?)\n\*(\*|&#47;))/igm;
+  var cPP = [
+    ['comment', /((\\\/\*).*|(\*\*.*)(?=.*\n(\*\*|.*\*\\\/))|.*(\*\\\/))/igm],
+    ['value', /(?!.*(\\"|'))([\w]+)(?=\.([\w]+).*\(.*\))/igm],
+    ['selector', /(([\w]+)(\s|\S)\(|\))(?!(.*?)\n\*(\*|\\\/))/igm],
+    ['attribute', /\\#([\w]+).*/igm],
+    ['parameter', /(\\"(.*?)\\"|'(.*?)')(?!(.*?)\n\*(\*|\\\/))/igm]
+  ];
+  //var cPPCom = /((&#47;\*).*|(\*\*.*)(?=.*\n(\*\*|.*\*&#47;))|.*(\*&#47;))/igm;
+  //var cPPVal = /(?!.*(&#34;|'))([\w]+)(?=\.([\w]+).*\(.*\))/igm;
+  //var cPPSel = /(([\w]+)(\s|\S)\(|\))(?!(.*?)\n\*(\*|&#47;))/igm;
+  //var cPPAtt = /&#35;([\w]+).*/igm;
+  //var cPPText = /(&#34;(.*?)&#34;|'(.*?)')(?!(.*?)\n\*(\*|&#47;))/igm;
   //--------------------------------------------------Delphi
   var delphiCom = /(({|&#47;).*|(.*?)([\w]+)(?=\n([\s\S]*?)})|(.*?)})/igm;
   var delphiSel = /(([\w]+)\(|\))/igm;
@@ -45,6 +52,17 @@ $(document).ready(function() {
   //------------------------------------------------------------------------------------------------------------
   //--------------------------------------------------Clean Up--------------------------------------------------
   //------------------------------------------------------------------------------------------------------------
+  //--------------------------------------------------REPLACE CHARACTERS
+  $.each($('pre'), function() {
+    var str = $(this).html();
+    
+    for (a = 0; a < clean.length; a++) {
+      str = str.replace(clean[a], '\\$&');
+    }
+    
+    $(this).html(str);
+  });
+  
   //--------------------------------------------------DIFFERENT DEVICES
   if (screen.width < 1024) {
     $('pre').width(screen.width - 40);
@@ -75,16 +93,19 @@ $(document).ready(function() {
     //-------------------------Get Text
     var str = $(this).html();
     
-    for (a = 0; a < clean.length; a++) {
-      str = str.replace(clean[a], rep[a]);
-    }
+    //for (a = 0; a < clean.length; a++) {
+      //str = str.replace(clean[a], rep[a]);
+    //}
     
     //-------------------------Wrap Matching Text
-    str = str.replace(cPPCom, '<span id="comment">$&</span>');
-    str = str.replace(cPPVal, '<span id="value">$&</span>');
-    str = str.replace(cPPSel, '<span id="selector">$&</span>');
-    str = str.replace(cPPAtt, '<span id="attribute">$&</span>');
-    str = str.replace(cPPText, '<span id="parameter">$&</span>');
+    for (a = 0; a < cPP.length; a++) {
+      str = str.replace(cPP[a][1], '<span id="' + cPP[a][0] + '">$&</span>');
+    }
+    //str = str.replace(cPPCom, '<span id="comment">$&</span>');
+    //str = str.replace(cPPVal, '<span id="value">$&</span>');
+    //str = str.replace(cPPSel, '<span id="selector">$&</span>');
+    //str = str.replace(cPPAtt, '<span id="attribute">$&</span>');
+    //str = str.replace(cPPText, '<span id="parameter">$&</span>');
 
     //-------------------------Insert Coloured Text
     $(this).html(str);
@@ -113,7 +134,7 @@ $(document).ready(function() {
   //--------------------------------------------------HTML
   $.each($('pre[language="html"]'), function() {
     //-------------------------Get Text
-    var str = $(this).html();//contenteditable="false"
+    var str = $(this).html();
     
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
