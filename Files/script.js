@@ -11,24 +11,30 @@ $(document).ready(function() {
   var regx = /&#47;(.*?)&#47;([igm]+)/igm;
   var units = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm;
   //--------------------------------------------------HTML
-  var htmlCom = /(&#60;&#33;&#45;&#45;(.*?)$|(.*?)([\w]+)(?=\n(.*?)&#45;&#45;&#62;)|(.*?)&#45;&#45;&#62;)/igm;
+  var htmlCom = /(&#60;&#33;&#45;&#45;.*|(.*?)([\w]+)(?=\n([\s\S]*?)&#45;&#45;&#62;)|(.*?)&#45;&#45;&#62;)/igm;
   var htmlTag = /((&#60;&#33;|&#60;|&#60;&#47;)([\w]+)(&#62;|\S|(\s&#47;&#62;|&#47;&#62;))|&#62;)/igm;
   var htmlAtt = /([\S]+)&#61;(?=&#34;([\s\S]*?)&#34;)/igm;
   var htmlVal = /&#34;([\s\S]*?)&#34;/igm;
   var htmlPar = /\s([\w]+)(?=<span)/igm;
   var htmlFixA = /&#45;&#45;<span id="selector">&#62;<\/span>/igm;
   //--------------------------------------------------CSS
-  var cssCom = /(&#47;\*(.*?)$|(.*?)([\w]+)(?=\n(.*?)\*&#47;)|(.*?)\*&#47;)/igm;
+  var cssCom = /(&#47;\*.*|(.*?)([\w]+)(?=\n([\s\S]*?)\*&#47;)|(.*?)\*&#47;)/igm;
   var cssSel = /(^|,.+)([\w]+)(?=.+{)/igm;
   var cssSelExt = /:([\w]+)(?=.+{)/igm;
   var cssProp = /(?!.+{)(([\w]|&#45;)+)(?=:(.*?);)/igm;
   var cssVal = /:([\s\S].+);/igm;
-  //--------------------------------------------------JS
+  //--------------------------------------------------JavaScript
   var jsCom = /&#47;&#47;.*/igm;
   var jsText = /(&#34;(.*?)&#34;|'(.*?)')/igm;
   var jsSel = /(?!\$\()([\w]+)(?=\)\.)/igm;
   var jsVal = /(([\w]+)\s(?=([\w]+)\(\)(.*?){)|var)/igm;
   var jsChar = /((?!(function)\s)([\w]+)\(\)(?=(.*?){)|((\$|\.([\w]+))(.*?)|([\w]+))\(|(?!(.*?){)\)|\)(?=,))/igm;
+  //--------------------------------------------------Delphi
+  var delphiCom = /([{/].*|(.*?)([\w]+)(?=\n([\s\S]*?)})|(.*?)})/igm;
+  var delphiSel = /(([\w]+)\(|\))/igm;
+  var delphiAtt = /([\w]+)(?=\.)/igm;
+  var delphiVal = /([:](\s|\S))([\w]+)(?=[;)])/igm;
+  var delphiText = /'(.*?)'/igm;
 
   //------------------------------------------------------------------------------------------------------------
   //--------------------------------------------------Clean Up--------------------------------------------------
@@ -39,64 +45,84 @@ $(document).ready(function() {
   }
 
   //--------------------------------------------------HTML
-  $.each($('pre[id="html"]'), function() {
+  $.each($('pre[language="html"]'), function() {
     //-------------------------Get Text
-    var htmlStr = $(this).html();
+    var str = $(this).html();
 
     for (a = 0; a < clean.length; a++) {
-      htmlStr = htmlStr.replace(clean[a], rep[a]);
+      str = str.replace(clean[a], rep[a]);
     }
 
     //-------------------------Wrap Matching Text
-    htmlStr = htmlStr.replace(htmlCom, '<span id="comment">$&</span>');
-    htmlStr = htmlStr.replace(htmlTag, '<span id="selector">$&</span>');
-    htmlStr = htmlStr.replace(htmlAtt, '<span id="attribute">$&</span>');
-    htmlStr = htmlStr.replace(htmlVal, '<span id="value">$&</span>');
-    htmlStr = htmlStr.replace(htmlPar, '<span id="parameter">$&</span>');
-    htmlStr = htmlStr.replace(htmlFixA, '&#45;&#45;&#62;');
+    str = str.replace(htmlCom, '<span id="comment">$&</span>');
+    str = str.replace(htmlTag, '<span id="selector">$&</span>');
+    str = str.replace(htmlAtt, '<span id="attribute">$&</span>');
+    str = str.replace(htmlVal, '<span id="value">$&</span>');
+    str = str.replace(htmlPar, '<span id="parameter">$&</span>');
+    str = str.replace(htmlFixA, '&#45;&#45;&#62;');
 
     //-------------------------Insert Coloured Text
-    $(this).html(htmlStr);
+    $(this).html(str);
   });
 
   //--------------------------------------------------CSS
-  $.each($('pre[id="css"]'), function() {
+  $.each($('pre[language="css"]'), function() {
     //-------------------------Get Text
-    var cssStr = $(this).html();
+    var str = $(this).html();
 
     for (a = 0; a < clean.length; a++) {
-      cssStr = cssStr.replace(clean[a], rep[a]);
+      str = str.replace(clean[a], rep[a]);
     }
 
     //-------------------------Wrap Matching Text
-    cssStr = cssStr.replace(cssCom, '<span id="comment">$&</span>');
-    cssStr = cssStr.replace(cssSel, '<span id="selector">$&</span>');
-    cssStr = cssStr.replace(cssSelExt, '</span><span id="parameter">$&</span>');
-    cssStr = cssStr.replace(cssProp, '<span id="attribute">$&</span>');
-    cssStr = cssStr.replace(cssVal, '<span id="value">$&</span>');
+    str = str.replace(cssCom, '<span id="comment">$&</span>');
+    str = str.replace(cssSel, '<span id="selector">$&</span>');
+    str = str.replace(cssSelExt, '</span><span id="parameter">$&</span>');
+    str = str.replace(cssProp, '<span id="attribute">$&</span>');
+    str = str.replace(cssVal, '<span id="value">$&</span>');
 
     //-------------------------Insert Coloured Text
-    $(this).html(cssStr);
+    $(this).html(str);
   });
 
-  //--------------------------------------------------JS
-  $.each($('pre[id="js"]'), function() {
+  //--------------------------------------------------JavaScript
+  $.each($('pre[language="javascript"]'), function() {
     //-------------------------Get Text
-    var jsStr = $(this).html();
+    var str = $(this).html();
 
     for (a = 0; a < clean.length; a++) {
-      jsStr = jsStr.replace(clean[a], rep[a]);
+      str = str.replace(clean[a], rep[a]);
     }
 
     //-------------------------Wrap Matching Text
-    jsStr = jsStr.replace(jsCom, '<span id="comment">$&</span>');
-    jsStr = jsStr.replace(jsText, '<span id="value">$&</span>');
-    jsStr = jsStr.replace(jsSel, '<span id="parameter">$&</span>');
-    jsStr = jsStr.replace(jsVal, '<span id="attribute">$&</span>');
-    jsStr = jsStr.replace(jsChar, '<span id="selector">$&</span>');
+    str = str.replace(jsCom, '<span id="comment">$&</span>');
+    str = str.replace(jsText, '<span id="value">$&</span>');
+    str = str.replace(jsSel, '<span id="parameter">$&</span>');
+    str = str.replace(jsVal, '<span id="attribute">$&</span>');
+    str = str.replace(jsChar, '<span id="selector">$&</span>');
 
     //-------------------------Insert Coloured Text
-    $(this).html(jsStr);
+    $(this).html(str);
+  });
+  
+  //--------------------------------------------------Delphi
+  $.each($('pre[language="delphi"]'), function() {
+    //-------------------------Get Text
+    var str = $(this).html();
+
+    for (a = 0; a < clean.length; a++) {
+      str = str.replace(clean[a], rep[a]);
+    }
+
+    //-------------------------Wrap Matching Text
+    str = str.replace(delphiCom, '<span id="comment">$&</span>');
+    str = str.replace(delphiSel, '<span id="selector">$&</span>');
+    str = str.replace(delphiAtt, '<span id="attribute">$&</span>');
+    str = str.replace(delphiVal, '<span id="value">$&</span>');
+    str = str.replace(delphiText, '<span id="parameter">$&</span>');
+
+    //-------------------------Insert Coloured Text
+    $(this).html(str);
   });
 
   //----------------------------------------------Features
