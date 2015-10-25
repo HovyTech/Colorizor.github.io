@@ -23,7 +23,7 @@ $(document).ready(function() {
       $('#background-cover').css({
         'display': 'block'
       });
-    } else if ($(window).scrollTop() + $(window).height() < $(document).height() - 100) {
+    } else if ($(document).height() - 100 > $(window).scrollTop() + $(window).height()) {
       $('#background-cover').css({
         'display': 'none'
       });
