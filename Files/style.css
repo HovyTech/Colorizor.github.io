@@ -1,4 +1,58 @@
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------All Devices-------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+#background-cover{background-color:rgb(35, 49, 56);bottom:0px;display:none;height:auto;left:0px;position:fixed;right:0px;top:0px;width:auto;z-index:-1;}
+html{width:100%;z-index:0;}
+main{background-color:rgb(76, 100, 107);height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
+footer{background-color:rgb(35, 49, 56);height:auto;left:0px;position:relative;right:0px;top:0px;width:auto;z-index:21;}
+#title{color:rgb(255, 247, 245);font-family:"Arial", Sans-serif;font-size:25px;z-index:23;}
+td{color:rgb(255, 237, 204);text-align:center;}
+pre{height:auto;left:0px;overflow:auto;position:relative;right:0px;top:0px;width:auto;z-index:100;}
+hr{background-color:rgb(35, 49, 56);border:0px solid;height:3px;}
+#div-container{height:50px;position:relative;width:50px;z-index:25;}
+.social-icon{height:50px;left:0px;position:absolute;top:0px;width:50px;z-index:26;}
+.social-count{background-color:rgba(35, 49, 56, 0.6);color:rgb(255, 247, 245);display:none;font-family:"Arial", Sans-serif;font-size:15px;font-style:bold;height:50px;left:0px;line-height:50px;position:absolute;text-align:center;top:0px;vertical-align:middle;width:50px;z-index:27;}
+#mail-link{color:rgb(255, 247, 245);font-family:"Arial", Sans-serif;font-size:20px;z-index:25;}
+#copyright{color:rgb(76, 100, 107);font-family:"Arial", Sans-serif;font-size:6px;z-index:25;}
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------------Desktop---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+@media (min-device-width: 1024px) {
+  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:100% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
+  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:400px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
+  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:auto;z-index:22;}
+  #little-box{height:auto;left:20%;margin-bottom:10px;position:relative;top:0px;width:60%;z-index:22;}
+}
+/*------------------------------------------------------------------------------------*/
+/*---------------------------------------Tablet---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+@media (min-device-width: 720px) and (max-device-width: 1023px) {
+  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:120% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
+  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:250px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
+  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
+  #little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
+}
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------------Phablet---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+@media (min-device-width: 480px) and (max-device-width: 719px) {
+  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:140% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
+  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:250px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
+  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
+  #little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
+}
+/*------------------------------------------------------------------------------------*/
+/*---------------------------------------Mobile---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+@media (min-device-width: 479px) {
+  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:170% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
+  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:150px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
+  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
+  #little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:100%;z-index:22;
+}
+/*------------------------------------------------------------------------------------*/
 /*----------------------------------------Dark----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
 #dark-box{background-color:rgb(88, 88, 88);height:auto;width:100%;}
 pre#dark{background-color:rgb(88, 88, 88);color:rgb(232, 200, 178);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #dark-title{background-color:rgb(255, 248, 207);color:rgb(232, 200, 178);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
@@ -15,7 +69,9 @@ pre#dark{background-color:rgb(88, 88, 88);color:rgb(232, 200, 178);font-family:"
 #dark-attribute{color:rgb(173, 176, 232);}
 #dark-value{color:rgb(193, 222, 255);}
 #dark-parameter{color:rgb(232, 200, 178);}
-/*----------------------------------------Light----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*----------------------------------------Light---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
 #light-box{background-color:rgb(252, 255, 245);height:auto;width:100%;}
 pre#light{background-color:rgb(252, 255, 245);color:rgb(142, 127, 170);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #light-title{background-color:rgb(219, 186, 162);color:rgb(142, 127, 170);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
@@ -32,7 +88,9 @@ pre#light{background-color:rgb(252, 255, 245);color:rgb(142, 127, 170);font-fami
 #light-attribute{color:rgb(25, 52, 65);}
 #light-value{color:rgb(62, 96, 111);}
 #light-parameter{color:rgb(142, 127, 170);}
-/*----------------------------------------Salmon----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*---------------------------------------Salmon---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
 #salmon-box{background-color:rgb(62, 69, 76);height:auto;width:100%;}
 pre#salmon{background-color:rgb(62, 69, 76);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #salmon-title{background-color:rgb(255, 127, 102);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
@@ -49,7 +107,9 @@ pre#salmon{background-color:rgb(62, 69, 76);color:rgb(255, 246, 229);font-family
 #salmon-attribute{color:rgb(33, 133, 197);}
 #salmon-value{color:rgb(126, 206, 253);}
 #salmon-parameter{color:rgb(255, 246, 229);}
-/*----------------------------------------Honey----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*----------------------------------------Honey---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
 #honey-box{background-color:rgb(16, 91, 99);height:auto;width:100%;}
 pre#honey{background-color:rgb(16, 91, 99);color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #honey-title{background-color:rgb(219, 158, 54);color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
@@ -66,7 +126,9 @@ pre#honey{background-color:rgb(16, 91, 99);color:rgb(189, 73, 50);font-family:"L
 #honey-attribute{color:rgb(255, 211, 78);}
 #honey-value{color:rgb(255, 250, 213);}
 #honey-parameter{color:rgb(189, 73, 50);}
-/*----------------------------------------Vintage----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------------Vintage---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
 #vintage-box{background-color:rgb(126, 130, 122);height:auto;width:100%;}
 pre#vintage{background-color:rgb(126, 130, 122);color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #vintage-title{background-color:rgb(47, 52, 59);color:rgb(227, 205, 164);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
@@ -83,7 +145,9 @@ pre#vintage{background-color:rgb(126, 130, 122);color:rgb(227, 205, 164);font-fa
 #vintage-attribute{color:rgb(112, 48, 48);}
 #vintage-value{color:rgb(199, 121, 102);}
 #vintage-parameter{color:rgb(227, 205, 164);}
-/*----------------------------------------Beach----------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*----------------------------------------Beach---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
 #beach-box{background-color:rgb(170, 216, 176);height:auto;width:100%;}
 pre#beach{background-color:rgb(170, 216, 176);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin-left:5px;margin-right:5px;margin-top:5px;overflow:auto;padding:10px;text-align:left;}
 #beach-title{background-color:rgb(139, 173, 206);color:rgb(255, 132, 127);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
