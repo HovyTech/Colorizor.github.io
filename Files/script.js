@@ -3,8 +3,11 @@ $(document).ready(function() {
   //---------------------------------------------------RegEx----------------------------------------------------
   //------------------------------------------------------------------------------------------------------------
   //--------------------------------------------------Clean
-  var clean = [/[<]/igm, /[>]/igm, /[#]/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
-  var rep = ['&lt;', '&gt;', '&#35;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
+  //var clean = [/[<]/igm, /[>]/igm, /[#]/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
+  //var rep = ['&lt;', '&gt;', '&#35;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
+  var findChar = [/[<]/igm, /[>]/igm, /[#]/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm];
+  var cleanChar = [/[<]/igm, /[>]/igm, /[\t]/igm];
+  var replaceChar = ['&lt;', '&gt;', '\s\s\s\s'];
   //--------------------------------------------------General
   var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;'|\\,.?/`˜]+)/igm;
   var color = /((rgba|rgb)\((([\d\s,.]+){1,3})\)|#([\w\d]){6}$)/igm;
@@ -56,8 +59,8 @@ $(document).ready(function() {
   $.each($('pre'), function() {
     var str = $(this).html();
     
-    for (a = 0; a < clean.length; a++) {
-      str = str.replace(clean[a], '\\$&');
+    for (a = 0; a < findChar.length; a++) {
+      str = str.replace(findChar[a], '\\$&');
     }
     
     $(this).html(str);
@@ -169,6 +172,19 @@ $(document).ready(function() {
     str = str.replace(jsChar, '<span id="selector">$&</span>');
 
     //-------------------------Insert Coloured Text
+    $(this).html(str);
+  });
+  
+  //--------------------------------------------------CLEAN CHARACTERS
+  $.each($('pre'), function() {
+    var str = $(this).html();
+    
+    str = str.replace(/\\/igm, '');
+    
+    for (a = 0; a < cleanChar.length; a++) {
+      str = str.replace(cleanChar[a], replaceChar[a]);
+    }
+    
     $(this).html(str);
   });
 
