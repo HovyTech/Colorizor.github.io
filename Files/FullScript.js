@@ -9,7 +9,7 @@ $(document).ready(function() {
   } else if (screen.width >= 720 && screen.width < 1024) {
     headerHeight = 250;
   } else {
-    headerHeight = 350;
+    headerHeight = 400;
   }
 
   $('body').css({
