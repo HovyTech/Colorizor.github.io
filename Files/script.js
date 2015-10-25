@@ -3,11 +3,11 @@ $(document).ready(function() {
   //---------------------------------------------------RegEx----------------------------------------------------
   //------------------------------------------------------------------------------------------------------------
   //--------------------------------------------------Clean
-  var clean = [/</igm, />/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
-  var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
+  var clean = [/</igm, />/igm, /#/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
+  var rep = ['&#60;', '&#62;', '&#35;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
   //--------------------------------------------------General
-  var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;'|\\,.?/`˜]+)/igm;
-  var color = /(rgb|rgba|#)([(0-9a-zA-Z,)].+)(?=(.*?);)/igm;
+  var link = /(ftp|http|https):(\/\/|&#47;&#47;)(([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;'|\\,.?/`˜]|&#61;|&#33;|&#45;|&#35;)+)/igm;
+  var color = /(rgb|rgba|(#|&#35;))([(0-9a-zA-Z,)].+)(?=(.*?);)/igm;
   var regx = /&#47;(.*?)&#47;([igm]+)/igm;
   var units = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm;
   //--------------------------------------------------HTML
@@ -36,9 +36,9 @@ $(document).ready(function() {
   var delphiVal = /([:](\s|\S))([\w]+)(?=[;)])/igm;
   var delphiText = /'(.*?)'/igm;
   //--------------------------------------------------C++
-  var cPPAtt = /#([\w]+).*/igm;
   var cPPCom = /((&#47;\*).*|(\*\*.*)(?=.*\n(\*\*|.*\*&#47;))|.*(\*&#47;))/igm;
   var cPPSel = /(([\w]+)(\s|\S)\(|\))/igm;
+  var cPPAtt = /&#35;([\w]+).*/igm;
   var cPPVal = /(?!.*(&#34;|'))([\w]+)(?=\.([\w]+).*\(.*\))/igm;
   var cPPText = /(&#34;(.*?)&#34;|'(.*?)')/igm;
 
@@ -88,9 +88,9 @@ $(document).ready(function() {
     $(this).attr('contenteditable', false);
 
     //-------------------------Wrap Matching Text
-    str = str.replace(cPPAtt, '<span id="attribute">$&</span>');
     str = str.replace(cPPCom, '<span id="comment">$&</span>');
     str = str.replace(cPPSel, '<span id="selector">$&</span>');
+    str = str.replace(cPPAtt, '<span id="attribute">$&</span>');
     str = str.replace(cPPVal, '<span id="value">$&</span>');
     str = str.replace(cPPText, '<span id="parameter">$&</span>');
 
