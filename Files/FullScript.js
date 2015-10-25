@@ -13,7 +13,7 @@ $(document).ready(function() {
   }
 
   $('header').css({
-    'height': headerHeight
+    'height': headerHeight + 'px'
   });
 
   $('body').scrollTop(0);
