@@ -32,9 +32,15 @@ $(document).ready(function() {
   //--------------------------------------------------Delphi
   var delphiCom = /(({|&#47;).*|(.*?)([\w]+)(?=\n([\s\S]*?)})|(.*?)})/igm;
   var delphiSel = /(([\w]+)\(|\))/igm;
-  var delphiAtt = /([\w]+)(?=\.)/igm;
+  var delphiAtt = /(?!.*')([\w]+)(?=\.)/igm;
   var delphiVal = /([:](\s|\S))([\w]+)(?=[;)])/igm;
   var delphiText = /'(.*?)'/igm;
+  //--------------------------------------------------C++
+  var cPPCom = /((\/\*).*|(\*\*.*)(?=.*\n(\*\*|.*\*\/))|.*(\*\/))/igm;
+  var cPPSel = /(([\w]+)(\s|\S)\(|\))/igm;
+  var cPPAtt = /#([\w]+).*/igm;
+  var cPPVal = /(?!.*(&#34;|'))([\w]+)(?=\.([\w]+).*\(.*\))/igm;
+  var cPPText = /(&#34;(.*?)&#34;|'(.*?)')/igm;
 
   //------------------------------------------------------------------------------------------------------------
   //--------------------------------------------------Clean Up--------------------------------------------------
@@ -120,6 +126,26 @@ $(document).ready(function() {
     str = str.replace(delphiAtt, '<span id="attribute">$&</span>');
     str = str.replace(delphiVal, '<span id="value">$&</span>');
     str = str.replace(delphiText, '<span id="parameter">$&</span>');
+
+    //-------------------------Insert Coloured Text
+    $(this).html(str);
+  });
+  
+  //--------------------------------------------------C++
+  $.each($('pre[language="c++"]'), function() {
+    //-------------------------Get Text
+    var str = $(this).html();
+
+    for (a = 0; a < clean.length; a++) {
+      str = str.replace(clean[a], rep[a]);
+    }
+
+    //-------------------------Wrap Matching Text
+    str = str.replace(cPPCom, '<span id="comment">$&</span>');
+    str = str.replace(cPPSel, '<span id="selector">$&</span>');
+    str = str.replace(cPPAtt, '<span id="attribute">$&</span>');
+    str = str.replace(cPPVal, '<span id="value">$&</span>');
+    str = str.replace(cPPText, '<span id="parameter">$&</span>');
 
     //-------------------------Insert Coloured Text
     $(this).html(str);
