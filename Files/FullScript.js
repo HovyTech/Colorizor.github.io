@@ -19,11 +19,11 @@ $(document).ready(function() {
   $(window).scrollTop(0);
 
   $(window).scroll(function() {
-    if($(window).scrollTop() > $('body').offset().top + 100) {
+    if($(window).scrollTop() > headerHeight + 100) {
       $('#background-cover').css({
         'display': 'block'
       });
-    } else if ($(window).scrollTop() < $('body').offset().top + 100) {
+    } else if ($(window).scrollTop() < headerHeight + 100) {
       $('#background-cover').css({
         'display': 'none'
       });
