@@ -34,7 +34,6 @@
   #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
   #little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:100%;z-index:22;
 }
-@media all {
 /*------------------------------------------------------------------------------------*/
 /*------------------------------------All Devices-------------------------------------*/
 /*------------------------------------------------------------------------------------*/
@@ -165,4 +164,3 @@ pre#beach{background-color:rgb(170, 216, 176);color:rgb(255, 132, 127);font-fami
 #beach-attribute{color:rgb(255, 204, 92);}
 #beach-value{color:rgb(255, 238, 173);}
 #beach-parameter{color:rgb(255, 132, 127);}
-}
