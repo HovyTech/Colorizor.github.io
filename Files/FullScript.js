@@ -12,8 +12,8 @@ $(document).ready(function() {
     headerHeight = 400;
   }
 
-  $('body').css({
-    'top': headerHeight
+  $('header').css({
+    'height': headerHeight
   });
 
   $('body').scrollTop(0);
