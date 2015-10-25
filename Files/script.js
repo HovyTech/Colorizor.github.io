@@ -36,9 +36,9 @@ $(document).ready(function() {
   var delphiVal = /([:](\s|\S))([\w]+)(?=[;)])/igm;
   var delphiText = /'(.*?)'/igm;
   //--------------------------------------------------C++
+  var cPPAtt = /#([\w]+).*/igm;
   var cPPCom = /((&#47;\*).*|(\*\*.*)(?=.*\n(\*\*|.*\*&#47;))|.*(\*&#47;))/igm;
   var cPPSel = /(([\w]+)(\s|\S)\(|\))/igm;
-  var cPPAtt = /#([\w]+).*/igm;
   var cPPVal = /(?!.*(&#34;|'))([\w]+)(?=\.([\w]+).*\(.*\))/igm;
   var cPPText = /(&#34;(.*?)&#34;|'(.*?)')/igm;
 
@@ -49,31 +49,6 @@ $(document).ready(function() {
   if (screen.width < 1024) {
     $('pre').width(screen.width - 40);
   }
-
-  //--------------------------------------------------HTML
-  $.each($('pre[language="html"]'), function() {
-    //-------------------------Get Text
-    var str = $(this).html();//contenteditable="false"
-    
-    $(this).attr('contenteditable', true);
-
-    for (a = 0; a < clean.length; a++) {
-      str = str.replace(clean[a], rep[a]);
-    }
-    
-    $(this).attr('contenteditable', false);
-
-    //-------------------------Wrap Matching Text
-    str = str.replace(htmlCom, '<span id="comment">$&</span>');
-    str = str.replace(htmlTag, '<span id="selector">$&</span>');
-    str = str.replace(htmlAtt, '<span id="attribute">$&</span>');
-    str = str.replace(htmlVal, '<span id="value">$&</span>');
-    str = str.replace(htmlPar, '<span id="parameter">$&</span>');
-    str = str.replace(htmlFixA, '&#45;&#45;&#62;');
-
-    //-------------------------Insert Coloured Text
-    $(this).html(str);
-  });
 
   //--------------------------------------------------CSS
   $.each($('pre[language="css"]'), function() {
@@ -98,9 +73,9 @@ $(document).ready(function() {
     //-------------------------Insert Coloured Text
     $(this).html(str);
   });
-
-  //--------------------------------------------------JavaScript
-  $.each($('pre[language="javascript"]'), function() {
+  
+  //--------------------------------------------------C++
+  $.each($('pre[language="c++"]'), function() {
     //-------------------------Get Text
     var str = $(this).html();
 
@@ -113,11 +88,11 @@ $(document).ready(function() {
     $(this).attr('contenteditable', false);
 
     //-------------------------Wrap Matching Text
-    str = str.replace(jsCom, '<span id="comment">$&</span>');
-    str = str.replace(jsText, '<span id="value">$&</span>');
-    str = str.replace(jsSel, '<span id="parameter">$&</span>');
-    str = str.replace(jsVal, '<span id="attribute">$&</span>');
-    str = str.replace(jsChar, '<span id="selector">$&</span>');
+    str = str.replace(cPPAtt, '<span id="attribute">$&</span>');
+    str = str.replace(cPPCom, '<span id="comment">$&</span>');
+    str = str.replace(cPPSel, '<span id="selector">$&</span>');
+    str = str.replace(cPPVal, '<span id="value">$&</span>');
+    str = str.replace(cPPText, '<span id="parameter">$&</span>');
 
     //-------------------------Insert Coloured Text
     $(this).html(str);
@@ -147,8 +122,33 @@ $(document).ready(function() {
     $(this).html(str);
   });
   
-  //--------------------------------------------------C++
-  $.each($('pre[language="c++"]'), function() {
+  //--------------------------------------------------HTML
+  $.each($('pre[language="html"]'), function() {
+    //-------------------------Get Text
+    var str = $(this).html();//contenteditable="false"
+    
+    $(this).attr('contenteditable', true);
+
+    for (a = 0; a < clean.length; a++) {
+      str = str.replace(clean[a], rep[a]);
+    }
+    
+    $(this).attr('contenteditable', false);
+
+    //-------------------------Wrap Matching Text
+    str = str.replace(htmlCom, '<span id="comment">$&</span>');
+    str = str.replace(htmlTag, '<span id="selector">$&</span>');
+    str = str.replace(htmlAtt, '<span id="attribute">$&</span>');
+    str = str.replace(htmlVal, '<span id="value">$&</span>');
+    str = str.replace(htmlPar, '<span id="parameter">$&</span>');
+    str = str.replace(htmlFixA, '&#45;&#45;&#62;');
+
+    //-------------------------Insert Coloured Text
+    $(this).html(str);
+  });
+
+  //--------------------------------------------------JavaScript
+  $.each($('pre[language="javascript"]'), function() {
     //-------------------------Get Text
     var str = $(this).html();
 
@@ -161,11 +161,11 @@ $(document).ready(function() {
     $(this).attr('contenteditable', false);
 
     //-------------------------Wrap Matching Text
-    str = str.replace(cPPCom, '<span id="comment">$&</span>');
-    str = str.replace(cPPSel, '<span id="selector">$&</span>');
-    str = str.replace(cPPAtt, '<span id="attribute">$&</span>');
-    str = str.replace(cPPVal, '<span id="value">$&</span>');
-    str = str.replace(cPPText, '<span id="parameter">$&</span>');
+    str = str.replace(jsCom, '<span id="comment">$&</span>');
+    str = str.replace(jsText, '<span id="value">$&</span>');
+    str = str.replace(jsSel, '<span id="parameter">$&</span>');
+    str = str.replace(jsVal, '<span id="attribute">$&</span>');
+    str = str.replace(jsChar, '<span id="selector">$&</span>');
 
     //-------------------------Insert Coloured Text
     $(this).html(str);
