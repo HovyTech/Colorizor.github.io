@@ -3,7 +3,7 @@ $(document).ready(function() {
   //---------------------------------------------------RegEx----------------------------------------------------
   //------------------------------------------------------------------------------------------------------------
   //--------------------------------------------------Clean
-  var clean = [/&lt;/igm, /&gt;/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
+  var clean = [/</igm, />/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
   var rep = ['&#60;', '&#62;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
   //--------------------------------------------------General
   var link = /(ftp|http|https):\/\/([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;'|\\,.?/`˜]+)/igm;
@@ -53,11 +53,15 @@ $(document).ready(function() {
   //--------------------------------------------------HTML
   $.each($('pre[language="html"]'), function() {
     //-------------------------Get Text
-    var str = $(this).html();
+    var str = $(this).html();//contenteditable="false"
+    
+    $(this).attr('contenteditable', true);
 
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
+    
+    $(this).attr('contenteditable', false);
 
     //-------------------------Wrap Matching Text
     str = str.replace(htmlCom, '<span id="comment">$&</span>');
@@ -76,9 +80,13 @@ $(document).ready(function() {
     //-------------------------Get Text
     var str = $(this).html();
 
+    $(this).attr('contenteditable', true);
+
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
+    
+    $(this).attr('contenteditable', false);
 
     //-------------------------Wrap Matching Text
     str = str.replace(cssCom, '<span id="comment">$&</span>');
@@ -96,9 +104,13 @@ $(document).ready(function() {
     //-------------------------Get Text
     var str = $(this).html();
 
+    $(this).attr('contenteditable', true);
+
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
+    
+    $(this).attr('contenteditable', false);
 
     //-------------------------Wrap Matching Text
     str = str.replace(jsCom, '<span id="comment">$&</span>');
@@ -116,9 +128,13 @@ $(document).ready(function() {
     //-------------------------Get Text
     var str = $(this).html();
 
+    $(this).attr('contenteditable', true);
+
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
+    
+    $(this).attr('contenteditable', false);
 
     //-------------------------Wrap Matching Text
     str = str.replace(delphiCom, '<span id="comment">$&</span>');
@@ -136,9 +152,13 @@ $(document).ready(function() {
     //-------------------------Get Text
     var str = $(this).html();
 
+    $(this).attr('contenteditable', true);
+
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
+    
+    $(this).attr('contenteditable', false);
 
     //-------------------------Wrap Matching Text
     str = str.replace(cPPCom, '<span id="comment">$&</span>');
