@@ -3,8 +3,6 @@ $(document).ready(function() {
   //---------------------------------------------------RegEx----------------------------------------------------
   //------------------------------------------------------------------------------------------------------------
   //--------------------------------------------------Clean
-  //var clean = [/[<]/igm, /[>]/igm, /[#]/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
-  //var rep = ['&lt;', '&gt;', '&#35;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
   var findChar = [/[#]/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm];
   var cleanChar = [/[<]/igm, /[>]/igm, /[\t]/igm];
   var replaceChar = ['&lt;', '&gt;', '\s\s\s\s'];
@@ -21,17 +19,12 @@ $(document).ready(function() {
   var cssVal = /:([\s\S].+);/igm;
   //--------------------------------------------------C++
   var cPP = [
-    ['comment', /((\\\/\*).*|(\*\*.*)(?=.*\n(\*\*|.*\*\\\/))|.*(\*\\\/))/igm],
-    ['value', /(?!.*(\\"|'))([\w]+)(?=\.([\w]+).*\(.*\))/igm],
-    ['selector', /(([\w]+)(\s|\S)\(|\))(?!(.*?)\n\*(\*|\\\/))/igm],
-    ['attribute', /\\#([\w]+).*/igm],
-    ['parameter', /(\\"(.*?)\\"|'(.*?)')(?!(.*?)\n\*(\*|\\\/))/igm]
+    ['<span id="comment">$&</span>', /((\\\/\*).*|(\*\*.*)(?=.*\n(\*\*|.*\*\\\/))|.*(\*\\\/))/igm],
+    ['<span id="value">$&</span>', /(?!.*(\\"|'))([\w]+)(?=\.([\w]+).*\(.*\))/igm],
+    ['<span id="selector">$&</span>', /(([\w]+)(\s|\S)\(|\))(?!(.*?)\n\*(\*|\\\/))/igm],
+    ['<span id="attribute">$&</span>', /\\#([\w]+).*/igm],
+    ['<span id="parameter">$&</span>', /(\\"(.*?)\\"|'(.*?)')(?!(.*?)\n\*(\*|\\\/))/igm]
   ];
-  //var cPPCom = /((&#47;\*).*|(\*\*.*)(?=.*\n(\*\*|.*\*&#47;))|.*(\*&#47;))/igm;
-  //var cPPVal = /(?!.*(&#34;|'))([\w]+)(?=\.([\w]+).*\(.*\))/igm;
-  //var cPPSel = /(([\w]+)(\s|\S)\(|\))(?!(.*?)\n\*(\*|&#47;))/igm;
-  //var cPPAtt = /&#35;([\w]+).*/igm;
-  //var cPPText = /(&#34;(.*?)&#34;|'(.*?)')(?!(.*?)\n\*(\*|&#47;))/igm;
   //--------------------------------------------------Delphi
   var delphiCom = /(({|&#47;).*|(.*?)([\w]+)(?=\n([\s\S]*?)})|(.*?)})/igm;
   var delphiSel = /(([\w]+)\(|\))/igm;
@@ -53,12 +46,19 @@ $(document).ready(function() {
   var jsChar = /((?!(function)\s)([\w]+)\(\)(?=(.*?){)|((\$|\.([\w]+))(.*?)|([\w]+))\(|(?!(.*?){)\)|\)(?=,))/igm;
 
   //------------------------------------------------------------------------------------------------------------
-  //--------------------------------------------------Clean Up--------------------------------------------------
+  //---------------------------------------------------Colour---------------------------------------------------
   //------------------------------------------------------------------------------------------------------------
-  //--------------------------------------------------REPLACE CHARACTERS
   $.each($('pre'), function() {
-    var str = $(this).html();
+    //--------------------------------------------------SCREEN
+    if (screen.width < 1024) {
+      $(this).width(screen.width - 40);
+    }
     
+    //--------------------------------------------------VARIABLES
+    var str = $(this).html();
+    var lang = $(this).attr('language');
+    
+    //--------------------------------------------------REPLACE
     str = str.replace(cleanChar[0], replaceChar[0]);
     str = str.replace(cleanChar[1], replaceChar[1]);
     str = str.replace(cleanChar[2], replaceChar[2]);
@@ -67,148 +67,49 @@ $(document).ready(function() {
       str = str.replace(findChar[a], '\\$&');
     }
     
-    $(this).html(str);
-  });
-  
-  //--------------------------------------------------DIFFERENT DEVICES
-  if (screen.width < 1024) {
-    $('pre').width(screen.width - 40);
-  }
-
-  //--------------------------------------------------CSS
-  $.each($('pre[language="css"]'), function() {
-    //-------------------------Get Text
-    var str = $(this).html();
-    
-    for (a = 0; a < clean.length; a++) {
-      str = str.replace(clean[a], rep[a]);
+    //--------------------------------------------------FIND
+    //CSS
+    if (lang = 'css') {
+      for (a = 0; a < css.length; a++) {
+        str = str.replace(css[a][1], '<span id="' + css[a][0] + '">$&</span>');
+      }
+    }
+    //C++
+    if (lang = 'c++') {
+      for (a = 0; a < cPP.length; a++) {
+        str = str.replace(cPP[a][1], '<span id="' + cPP[a][0] + '">$&</span>');
+      }
+    }
+    //Delphi
+    if (lang = 'delphi') {
+      for (a = 0; a < delphi.length; a++) {
+        str = str.replace(delphi[a][1], '<span id="' + delphi[a][0] + '">$&</span>');
+      }
+    }
+    //HTML
+    if (lang = 'html') {
+      for (a = 0; a < html.length; a++) {
+        str = str.replace(html[a][1], '<span id="' + html[a][0] + '">$&</span>');
+      }
+    }
+    //JavaScript
+    if (lang = 'javascript') {
+      for (a = 0; a < javascript.length; a++) {
+        str = str.replace(javascript[a][1], javascript[a][0]);
+      }
     }
     
-    //-------------------------Wrap Matching Text
-    str = str.replace(cssCom, '<span id="comment">$&</span>');
-    str = str.replace(cssSel, '<span id="selector">$&</span>');
-    str = str.replace(cssSelExt, '</span><span id="parameter">$&</span>');
-    str = str.replace(cssProp, '<span id="attribute">$&</span>');
-    str = str.replace(cssVal, '<span id="value">$&</span>');
-
-    //-------------------------Insert Coloured Text
-    $(this).html(str);
-  });
-  
-  //--------------------------------------------------C++
-  $.each($('pre[language="c++"]'), function() {
-    //-------------------------Get Text
-    var str = $(this).html();
-    
-    //for (a = 0; a < clean.length; a++) {
-      //str = str.replace(clean[a], rep[a]);
-    //}
-    
-    //-------------------------Wrap Matching Text
-    for (a = 0; a < cPP.length; a++) {
-      str = str.replace(cPP[a][1], '<span id="' + cPP[a][0] + '">$&</span>');
-    }
-    //str = str.replace(cPPCom, '<span id="comment">$&</span>');
-    //str = str.replace(cPPVal, '<span id="value">$&</span>');
-    //str = str.replace(cPPSel, '<span id="selector">$&</span>');
-    //str = str.replace(cPPAtt, '<span id="attribute">$&</span>');
-    //str = str.replace(cPPText, '<span id="parameter">$&</span>');
-
-    //-------------------------Insert Coloured Text
-    $(this).html(str);
-  });
-  
-  //--------------------------------------------------Delphi
-  $.each($('pre[language="delphi"]'), function() {
-    //-------------------------Get Text
-    var str = $(this).html();
-    
-    for (a = 0; a < clean.length; a++) {
-      str = str.replace(clean[a], rep[a]);
-    }
-    
-    //-------------------------Wrap Matching Text
-    str = str.replace(delphiCom, '<span id="comment">$&</span>');
-    str = str.replace(delphiSel, '<span id="selector">$&</span>');
-    str = str.replace(delphiAtt, '<span id="attribute">$&</span>');
-    str = str.replace(delphiVal, '<span id="value">$&</span>');
-    str = str.replace(delphiText, '<span id="parameter">$&</span>');
-
-    //-------------------------Insert Coloured Text
-    $(this).html(str);
-  });
-  
-  //--------------------------------------------------HTML
-  $.each($('pre[language="html"]'), function() {
-    //-------------------------Get Text
-    var str = $(this).html();
-    
-    for (a = 0; a < clean.length; a++) {
-      str = str.replace(clean[a], rep[a]);
-    }
-    
-    //-------------------------Wrap Matching Text
-    str = str.replace(htmlCom, '<span id="comment">$&</span>');
-    str = str.replace(htmlTag, '<span id="selector">$&</span>');
-    str = str.replace(htmlAtt, '<span id="attribute">$&</span>');
-    str = str.replace(htmlVal, '<span id="value">$&</span>');
-    str = str.replace(htmlPar, '<span id="parameter">$&</span>');
-    str = str.replace(htmlFixA, '&#45;&#45;&#62;');
-
-    //-------------------------Insert Coloured Text
-    $(this).html(str);
-  });
-
-  //--------------------------------------------------JavaScript
-  $.each($('pre[language="javascript"]'), function() {
-    //-------------------------Get Text
-    var str = $(this).html();
-    
-    for (a = 0; a < clean.length; a++) {
-      str = str.replace(clean[a], rep[a]);
-    }
-    
-    //-------------------------Wrap Matching Text
-    str = str.replace(jsCom, '<span id="comment">$&</span>');
-    str = str.replace(jsText, '<span id="value">$&</span>');
-    str = str.replace(jsSel, '<span id="parameter">$&</span>');
-    str = str.replace(jsVal, '<span id="attribute">$&</span>');
-    str = str.replace(jsChar, '<span id="selector">$&</span>');
-
-    //-------------------------Insert Coloured Text
-    $(this).html(str);
-  });
-  
-  //--------------------------------------------------CLEAN CHARACTERS
-  $.each($('pre'), function() {
-    var str = $(this).html();
-    
+    //--------------------------------------------------CLEAN
     str = str.replace(/\\/igm, '');
     
-    $(this).html(str);
-  });
-
-  //----------------------------------------------Features
-  $.each($('pre, span'), function() {
-    var str = $(this).html();
-    
-    str = str.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
-    str = str.replace(color, '<span style="color: $&;">$&</span>');
-    str = str.replace(regx, '<span id="regx">$&</span>');
-    str = str.replace(units, '<span id="units">$&</span>');
-    
-    $(this).html(str);
-  });
-
-  //----------------------------------------------Numbering
-  $.each($('pre'), function() {
-    var str = $(this).html();
-    
+    //--------------------------------------------------SPLIT
     str = str.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
     
+    //--------------------------------------------------SAVE
     $(this).html(str);
   });
-
+  
+  //----------------------------------------------NUMBERING
   $.each($('span[id="all-code"]'), function(line) {
     $(this).html(function(index, html) {
       return html.replace(/(^\n|.+)/igm, '<span id="code">$&</span>');
@@ -222,6 +123,18 @@ $(document).ready(function() {
       var str = $($(this).parent().parent().find('span[id="all-number"]')).html();
       $($(this).parent().parent().find('span[id="all-number"]')).html(str + '<span id="number">' + line + '</span>\n');
     });
+  });
+
+  //----------------------------------------------FEATURES
+  $.each($('pre, span'), function() {
+    var str = $(this).html();
+    
+    str = str.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
+    str = str.replace(color, '<span style="color: $&;">$&</span>');
+    str = str.replace(regx, '<span id="regx">$&</span>');
+    str = str.replace(units, '<span id="units">$&</span>');
+    
+    $(this).html(str);
   });
 
   $('span[id="all-code"]').click(function() {
