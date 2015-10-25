@@ -79,13 +79,13 @@ $(document).ready(function() {
     //-------------------------Get Text
     var str = $(this).html();
 
-    $(this).attr('contenteditable', true);
+    //$(this).attr('contenteditable', true);
 
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
     
-    $(this).attr('contenteditable', false);
+    //$(this).attr('contenteditable', false);
 
     //-------------------------Wrap Matching Text
     str = str.replace(cPPCom, '<span id="comment">$&</span>');
