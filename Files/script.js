@@ -141,16 +141,12 @@ $(document).ready(function() {
     preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
     $(this).html(preStr);
   });
-  
-  $.each($('span[id="all-code"]'), function() {
-    $(this).html(function(index, html) {
-      return html.replace(/.+/igm, '<span id="code">$&</span>');
-    });
-    
-    alert($(this).find('span[id="code"]').length)
-  });
 
   $.each($('span[id="all-code"]'), function(line) {
+    $(this).html(function(index, html) {
+      return html.replace(/(^\n|.+)/igm, '<span id="code">$&</span>');
+    });
+    
     line = 0;
     
     $.each($(this).find('span[id="code"]'), function() {
@@ -158,12 +154,6 @@ $(document).ready(function() {
       var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
       $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
     });
-
-    //$($(this).find('span[id="code"]')).html(function() {
-      //line++;
-      //var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
-      //$($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
-    //});
   });
 
   $('span[id="all-code"]').click(function() {
