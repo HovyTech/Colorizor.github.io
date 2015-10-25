@@ -16,7 +16,7 @@ $(document).ready(function() {
     'height': headerHeight + 'px'
   });
 
-  $('body').scrollTop(0);
+  $(window).scrollTop(0);
 
   $(window).scroll(function() {
     if($(window).scrollTop() > $('body').offset().top + 100) {
