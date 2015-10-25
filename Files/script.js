@@ -18,9 +18,9 @@ $(document).ready(function() {
   var cssVal = /:([\s\S].+);/igm;
   //--------------------------------------------------C++
   var cPPCom = /((&#47;\*).*|(\*\*.*)(?=.*\n(\*\*|.*\*&#47;))|.*(\*&#47;))/igm;
+  var cPPVal = /(?!.*(&#34;|'))([\w]+)(?=\.([\w]+).*\(.*\))/igm;
   var cPPSel = /(([\w]+)(\s|\S)\(|\))/igm;
   var cPPAtt = /&#35;([\w]+).*/igm;
-  var cPPVal = /(?!.*(&#34;|'))([\w]+)(?=\.([\w]+).*\(.*\))/igm;
   var cPPText = /(&#34;(.*?)&#34;|'(.*?)')/igm;
   //--------------------------------------------------Delphi
   var delphiCom = /(({|&#47;).*|(.*?)([\w]+)(?=\n([\s\S]*?)})|(.*?)})/igm;
@@ -81,9 +81,9 @@ $(document).ready(function() {
     
     //-------------------------Wrap Matching Text
     str = str.replace(cPPCom, '<span id="comment">$&</span>');
+    str = str.replace(cPPVal, '<span id="value">$&</span>');
     str = str.replace(cPPSel, '<span id="selector">$&</span>');
     str = str.replace(cPPAtt, '<span id="attribute">$&</span>');
-    str = str.replace(cPPVal, '<span id="value">$&</span>');
     str = str.replace(cPPText, '<span id="parameter">$&</span>');
 
     //-------------------------Insert Coloured Text
