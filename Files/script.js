@@ -7,7 +7,7 @@ $(document).ready(function() {
   var rep = ['&#60;', '&#62;', '&#35;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
   //--------------------------------------------------General
   var link = /(ftp|http|https):(\/\/|&#47;&#47;)(([\w0-9±!@#$%ˆ&*()_+§\-=[\]{}:;'|\\,.?/`˜]|&#61;|&#33;|&#45;|&#35;)+)/igm;
-  var color = /(rgb|rgba|&#35;)([(0-9a-zA-Z,)].+)(?=(.*?);)/igm;
+  var color = /((rgba|rgb)\((([\d\s,.]+){1,3})\)|#([\w\d]){6}$)/igm;
   var regx = /&#47;(.*?)&#47;([igm]+)/igm;
   var units = /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm;
   //--------------------------------------------------HTML
@@ -173,19 +173,23 @@ $(document).ready(function() {
 
   //----------------------------------------------Features
   $.each($('pre, span'), function() {
-    var extraStr = $(this).html();
-    extraStr = extraStr.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
-    extraStr = extraStr.replace(color, '<span style="color: $&;">$&</span>');
-    extraStr = extraStr.replace(regx, '<span id="regx">$&</span>');
-    extraStr = extraStr.replace(units, '<span id="units">$&</span>');
-    $(this).html(extraStr);
+    var str = $(this).html();
+    
+    str = str.replace(link, '<a id="link" href="$&" target="_blank">$&</a>');
+    str = str.replace(color, '<span style="color: $&;">$&</span>');
+    str = str.replace(regx, '<span id="regx">$&</span>');
+    str = str.replace(units, '<span id="units">$&</span>');
+    
+    $(this).html(str);
   });
 
   //----------------------------------------------Numbering
   $.each($('pre'), function() {
-    var preStr = $(this).html();
-    preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
-    $(this).html(preStr);
+    var str = $(this).html();
+    
+    str = str.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
+    
+    $(this).html(str);
   });
 
   $.each($('span[id="all-code"]'), function(line) {
@@ -197,8 +201,9 @@ $(document).ready(function() {
     
     $.each($(this).find('span[id="code"]'), function() {
       line++;
-      var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
-      $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
+      
+      var str = $($(this).parent().parent().find('span[id="all-number"]')).html();
+      $($(this).parent().parent().find('span[id="all-number"]')).html(str + '<span id="number">' + line + '</span>\n');
     });
   });
 
