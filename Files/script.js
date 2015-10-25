@@ -54,15 +54,11 @@ $(document).ready(function() {
   $.each($('pre[language="css"]'), function() {
     //-------------------------Get Text
     var str = $(this).html();
-
-    $(this).attr('contenteditable', true);
-
+    
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
     
-    $(this).attr('contenteditable', false);
-
     //-------------------------Wrap Matching Text
     str = str.replace(cssCom, '<span id="comment">$&</span>');
     str = str.replace(cssSel, '<span id="selector">$&</span>');
@@ -78,15 +74,11 @@ $(document).ready(function() {
   $.each($('pre[language="c++"]'), function() {
     //-------------------------Get Text
     var str = $(this).html();
-
-    //$(this).attr('contenteditable', true);
-
+    
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
     
-    //$(this).attr('contenteditable', false);
-
     //-------------------------Wrap Matching Text
     str = str.replace(cPPCom, '<span id="comment">$&</span>');
     str = str.replace(cPPSel, '<span id="selector">$&</span>');
@@ -102,15 +94,11 @@ $(document).ready(function() {
   $.each($('pre[language="delphi"]'), function() {
     //-------------------------Get Text
     var str = $(this).html();
-
-    $(this).attr('contenteditable', true);
-
+    
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
     
-    $(this).attr('contenteditable', false);
-
     //-------------------------Wrap Matching Text
     str = str.replace(delphiCom, '<span id="comment">$&</span>');
     str = str.replace(delphiSel, '<span id="selector">$&</span>');
@@ -127,14 +115,10 @@ $(document).ready(function() {
     //-------------------------Get Text
     var str = $(this).html();//contenteditable="false"
     
-    $(this).attr('contenteditable', true);
-
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
     
-    $(this).attr('contenteditable', false);
-
     //-------------------------Wrap Matching Text
     str = str.replace(htmlCom, '<span id="comment">$&</span>');
     str = str.replace(htmlTag, '<span id="selector">$&</span>');
@@ -151,15 +135,11 @@ $(document).ready(function() {
   $.each($('pre[language="javascript"]'), function() {
     //-------------------------Get Text
     var str = $(this).html();
-
-    $(this).attr('contenteditable', true);
-
+    
     for (a = 0; a < clean.length; a++) {
       str = str.replace(clean[a], rep[a]);
     }
     
-    $(this).attr('contenteditable', false);
-
     //-------------------------Wrap Matching Text
     str = str.replace(jsCom, '<span id="comment">$&</span>');
     str = str.replace(jsText, '<span id="value">$&</span>');
