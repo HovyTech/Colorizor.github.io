@@ -146,6 +146,8 @@ $(document).ready(function() {
     $(this).html(function(index, html) {
       return html.replace(/.+/igm, '<span id="code">$&</span>');
     });
+    
+    alert($(this).find('span[id="code"]').length)
   });
 
   $.each($('span[id="all-code"]'), function(line) {
