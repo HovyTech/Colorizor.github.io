@@ -10,7 +10,6 @@ $(document).ready(function() {
   var features = [
     ['<a id="link" href="$&" target="_blank">$&</a>', /(ftp|http|https)\:\/\/([0-9\w\±\!\@\#\$\%\ˆ\&\*\(\)\_\+\§\-\=\[\]\{\}\:\;\'\|\\\,\.\?\/\`\˜]+)/igm],
     ['<span style="color: $&;">$&</span>', /((rgba|rgb)\((([\d\s\,\.]+){1,3})\)|\#([\w\d]){6}$)/igm],
-    ['<span id="regx">$&</span>', /\/(.*?)\/([igm]+)/igm],
     ['<span id="units">$&</span>', /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm]
   ];
   //CSS
