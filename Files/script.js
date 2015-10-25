@@ -153,6 +153,7 @@ $(document).ready(function() {
 
     $($(this).find('span[id="code"]')).html(function() {
       line++;
+      alert(line)
       var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
       $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
     });
