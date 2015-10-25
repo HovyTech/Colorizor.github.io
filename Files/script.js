@@ -30,7 +30,7 @@ $(document).ready(function() {
   var jsVal = /(([\w]+)\s(?=([\w]+)\(\)(.*?){)|var)/igm;
   var jsChar = /((?!(function)\s)([\w]+)\(\)(?=(.*?){)|((\$|\.([\w]+))(.*?)|([\w]+))\(|(?!(.*?){)\)|\)(?=,))/igm;
   //--------------------------------------------------Delphi
-  var delphiCom = /([{/].*|(.*?)([\w]+)(?=\n([\s\S]*?)})|(.*?)})/igm;
+  var delphiCom = /(({|&#47;).*|(.*?)([\w]+)(?=\n([\s\S]*?)})|(.*?)})/igm;
   var delphiSel = /(([\w]+)\(|\))/igm;
   var delphiAtt = /([\w]+)(?=\.)/igm;
   var delphiVal = /([:](\s|\S))([\w]+)(?=[;)])/igm;
