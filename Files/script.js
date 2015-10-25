@@ -141,15 +141,17 @@ $(document).ready(function() {
     preStr = preStr.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
     $(this).html(preStr);
   });
-
-  $.each($('span[id="all-code"]'), function(line) {
+  
+  $.each($('span[id="all-code"]'), function() {
     $(this).html(function(index, html) {
       return html.replace(/.+/igm, '<span id="code">$&</span>');
     });
+  });
 
+  $.each($('span[id="all-code"]'), function(line) {
     line = 0;
 
-    $($(this).find('span[id="code"]')).html(function(index, html) {
+    $($(this).find('span[id="code"]')).html(function() {
       line++;
       var spanParent = $($(this).parent().parent().find('span[id="all-number"]')).html();
       $($(this).parent().parent().find('span[id="all-number"]')).html(spanParent + '<span id="number">' + line + '</span>\n');
