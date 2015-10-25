@@ -41,6 +41,7 @@ pre#light{background-color:rgb(252, 255, 245);color:rgb(142, 127, 170);font-fami
 /*------------------------------------------------------------------------------------*/
 #salmon-box{background-color:rgb(62, 69, 76);height:auto;width:100%;}
 pre#salmon{background-color:rgb(62, 69, 76);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+pre#salmon-center{background-color:rgb(62, 69, 76);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:auto;overflow:auto;padding:10px;text-align:left;}
 #salmon-title{background-color:rgb(255, 127, 102);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:25px;font-style:bold;height:auto;text-align:left;width:auto;z-index:23;}
 #salmon-text{background-color:rgb(255, 127, 102);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #salmon-all-number{border-right:1px solid rgb(255, 246, 229);display:inline-block;float:left;margin-right:8px;text-align:right;}
