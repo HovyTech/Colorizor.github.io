@@ -5,7 +5,7 @@ $(document).ready(function() {
   //--------------------------------------------------Clean
   //var clean = [/[<]/igm, /[>]/igm, /[#]/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm, /[\t]/igm];
   //var rep = ['&lt;', '&gt;', '&#35;', '&#47;', '&#61;', '&#34;', '&#33;', '&#45;', '\s\s\s\s'];
-  var findChar = [/[<]/igm, /[>]/igm, /[#]/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm];
+  var findChar = [/[#]/igm, /[/]/igm, /[=]/igm, /["]/igm, /[!]/igm, /[-]/igm];
   var cleanChar = [/[<]/igm, /[>]/igm, /[\t]/igm];
   var replaceChar = ['&lt;', '&gt;', '\s\s\s\s'];
   //--------------------------------------------------General
@@ -58,6 +58,10 @@ $(document).ready(function() {
   //--------------------------------------------------REPLACE CHARACTERS
   $.each($('pre'), function() {
     var str = $(this).html();
+    
+    str = str.replace(cleanChar[0], replaceChar[0]);
+    str = str.replace(cleanChar[1], replaceChar[1]);
+    str = str.replace(cleanChar[2], replaceChar[2]);
     
     for (a = 0; a < findChar.length; a++) {
       str = str.replace(findChar[a], '\\$&');
@@ -180,10 +184,6 @@ $(document).ready(function() {
     var str = $(this).html();
     
     str = str.replace(/\\/igm, '');
-    
-    for (a = 0; a < cleanChar.length; a++) {
-      str = str.replace(cleanChar[a], replaceChar[a]);
-    }
     
     $(this).html(str);
   });
