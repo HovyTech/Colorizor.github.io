@@ -1,4 +1,41 @@
 /*------------------------------------------------------------------------------------*/
+/*--------------------------------------Desktop---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+@media (min-device-width: 1024px) {
+  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:100% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
+  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:400px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
+  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:auto;z-index:22;}
+  #little-box{height:auto;left:20%;margin-bottom:10px;position:relative;top:0px;width:60%;z-index:22;}
+}
+/*------------------------------------------------------------------------------------*/
+/*---------------------------------------Tablet---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+@media (min-device-width: 720px) and (max-device-width: 1023px) {
+  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:120% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
+  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:250px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
+  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
+  #little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
+}
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------------Phablet---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+@media (min-device-width: 480px) and (max-device-width: 719px) {
+  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:140% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
+  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:250px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
+  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
+  #little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
+}
+/*------------------------------------------------------------------------------------*/
+/*---------------------------------------Mobile---------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+@media (min-device-width: 479px) {
+  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:170% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
+  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:150px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
+  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
+  #little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:100%;z-index:22;
+}
+@media all {
+  /*------------------------------------------------------------------------------------*/
 /*------------------------------------All Devices-------------------------------------*/
 /*------------------------------------------------------------------------------------*/
 #background-cover{background-color:rgb(35, 49, 56);bottom:0px;display:none;height:auto;left:0px;position:fixed;right:0px;top:0px;width:auto;z-index:-1;}
@@ -14,42 +51,6 @@ hr{background-color:rgb(35, 49, 56);border:0px solid;height:3px;}
 .social-count{background-color:rgba(35, 49, 56, 0.6);color:rgb(255, 247, 245);display:none;font-family:"Arial", Sans-serif;font-size:15px;font-style:bold;height:50px;left:0px;line-height:50px;position:absolute;text-align:center;top:0px;vertical-align:middle;width:50px;z-index:27;}
 #mail-link{color:rgb(255, 247, 245);font-family:"Arial", Sans-serif;font-size:20px;z-index:25;}
 #copyright{color:rgb(76, 100, 107);font-family:"Arial", Sans-serif;font-size:6px;z-index:25;}
-/*------------------------------------------------------------------------------------*/
-/*--------------------------------------Desktop---------------------------------------*/
-/*------------------------------------------------------------------------------------*/
-@media only screen and (min-device-width: 1024px) {
-  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:100% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
-  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:400px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
-  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:auto;z-index:22;}
-  #little-box{height:auto;left:20%;margin-bottom:10px;position:relative;top:0px;width:60%;z-index:22;}
-}
-/*------------------------------------------------------------------------------------*/
-/*---------------------------------------Tablet---------------------------------------*/
-/*------------------------------------------------------------------------------------*/
-@media only screen and (min-device-width: 720px) and (max-device-width: 1023px) {
-  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:120% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
-  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:250px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
-  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
-  #little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
-}
-/*------------------------------------------------------------------------------------*/
-/*--------------------------------------Phablet---------------------------------------*/
-/*------------------------------------------------------------------------------------*/
-@media only screen and (min-device-width: 480px) and (max-device-width: 719px) {
-  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:140% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
-  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:250px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
-  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
-  #little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
-}
-/*------------------------------------------------------------------------------------*/
-/*---------------------------------------Mobile---------------------------------------*/
-/*------------------------------------------------------------------------------------*/
-@media only screen and (min-device-width: 479px) {
-  #background{background-color:rgb(35, 49, 56);background-image:url("https://colorizor.github.io/Images/HomePage.png");background-position:center 0px;background-repeat:no-repeat;background-size:170% auto;height:100%;left:0px;position:fixed;top:0px;width:100%;z-index:-2;}
-  body{background-color:rgb(35, 49, 56);height:auto;left:0px;margin:0;padding:0;position:absolute;right:0px;top:150px;width:auto;z-index:20;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
-  #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
-  #little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:100%;z-index:22;
-}
 /*------------------------------------------------------------------------------------*/
 /*----------------------------------------Dark----------------------------------------*/
 /*------------------------------------------------------------------------------------*/
@@ -164,3 +165,4 @@ pre#beach{background-color:rgb(170, 216, 176);color:rgb(255, 132, 127);font-fami
 #beach-attribute{color:rgb(255, 204, 92);}
 #beach-value{color:rgb(255, 238, 173);}
 #beach-parameter{color:rgb(255, 132, 127);}
+}
