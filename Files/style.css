@@ -34,7 +34,7 @@
   #large-box{height:auto;left:0px;margin-bottom:0px;position:relative;right:0px;top:0px;width:100%;z-index:22;}
   #little-box{height:auto;left:0px;margin-bottom:10px;position:relative;right:0px;top:0px;width:100%;z-index:22;
 }
-@media screen and all {
+@media screen {
 /*------------------------------------------------------------------------------------*/
 /*------------------------------------All Devices-------------------------------------*/
 /*------------------------------------------------------------------------------------*/
