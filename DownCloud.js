@@ -39,13 +39,8 @@ javascript:(function(page, client, stream, url, json, index, name, count) {
 
          $(document).on('dblclick', 'li', function() {
             index = $(this).index();
-            if (index / 10 == 0) {
-               stream = json[(((index / 10).toString().split('.')[0]) * 1) - 1][0].stream_url;
-               name = json[(((index / 10).toString().split('.')[0]) * 1) - 1][0].title;
-            } else {
-               stream = json[(((index / 10).toString().split('.')[0]) * 1) - 1][((index / 10).toString().split('.')[1]) * 1].stream_url;
-               name = json[(((index / 10).toString().split('.')[0]) * 1) - 1][((index / 10).toString().split('.')[1]) * 1].title;
-            }
+            stream = json[(index / 10) | 0][index % 10].stream_url;
+            name = json[(index / 10) | 0][index % 10].title;
             url = stream + '?client_id=' + client;
             downloadMP3(url, name);
          });
@@ -60,7 +55,7 @@ javascript:(function(page, client, stream, url, json, index, name, count) {
       if (link.download != 'undefined') {
          link.download = title;
       } else {
-
+         link.innerHTML = title;
       }
       link.href = href;
       link.target = '_blank';
