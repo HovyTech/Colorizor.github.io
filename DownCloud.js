@@ -54,8 +54,6 @@ javascript:(function(page, client, stream, url, json, index, name, count) {
       var link = document.createElement('a');
       if (link.download != 'undefined') {
          link.download = title;
-      } else {
-         link.innerHTML = title;
       }
       link.href = href;
       link.target = '_blank';
