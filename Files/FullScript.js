@@ -31,7 +31,7 @@ $(document).ready(function(headerHeight, curScroll, imgPos, imgSize, factor) {
     } else if ($(window).scrollTop() < curScroll) {
       //Up
       curScroll = $(window).scrollTop();
-      if ($(window).scrollTop() < 0) {
+      if ($(window).scrollTop() > 0) {
         imgPos = (curScroll / factor);
         $('#background').css({
           'background-position': 'center ' + imgPos + 'px'
