@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   $(window).scroll(function() {
     //Up or Down
-    if ($(window).scrollTop() > curScroll && $(window).scrollTop() < 0) {
+    if ($(window).scrollTop() > curScroll && $(window).scrollTop() > 0) {
       //Down
       curScroll = $(window).scrollTop();
       
