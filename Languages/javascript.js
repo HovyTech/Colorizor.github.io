@@ -66,24 +66,24 @@ $(function() {
   //------------------------------------------------------------------------------------------------------------
   $.each($('pre[language="javascript"]'), function() {
     var str = $(this).html();
-    str = str.replace(/([\s\S]+)/igm, '<span id="all-number-javascript"></span><span id="all-code-javascript">$&</span>');
+    str = str.replace(/([\s\S]+)/igm, '<span id="all-number"></span><span id="all-code">$&</span>');
     $(this).html(str);
   });
   
   //------------------------------------------------------------------------------------------------------------
   //--------------------------------------------------NUMBERING-------------------------------------------------
   //------------------------------------------------------------------------------------------------------------
-  $.each($('span[id="all-code-javascript"]'), function(line) {
+  $.each($('pre[language="javascript"]').find('span[id="all-code"]'), function(line) {
     $(this).html(function(index, html) {
-      return html.replace(/(^\n|.+)/igm, '<span id="code-javascript">$&</span>');
+      return html.replace(/(^\n|.+)/igm, '<span id="code">$&</span>');
     });
     
     line = 0;
     
-    $.each($(this).find('span[id="code-javascript"]'), function() {
+    $.each($(this).find('span[id="code"]'), function() {
       line++;
-      var str = $($(this).parent().parent().find('span[id="all-number-javascript"]')).html();
-      $($(this).parent().parent().find('span[id="all-number-javascript"]')).html(str + '<span id="number-javascript">' + line + '</span>\n');
+      var str = $($(this).parent().parent().find('span[id="all-number"]')).html();
+      $($(this).parent().parent().find('span[id="all-number"]')).html(str + '<span id="number">' + line + '</span>\n');
     });
   });
   
@@ -99,7 +99,7 @@ $(function() {
     $(this).html(str);
   });
   //CLICK
-  $('span[id="all-code-javascript"]').click(function() {
+  $('pre[language="javascript"]').find('span[id="all-code"]').click(function() {
     var range, selection;
 
     if (window.getSelection && document.createRange) {
