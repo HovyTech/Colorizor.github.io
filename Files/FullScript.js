@@ -1,6 +1,6 @@
 //--------------------------------------------------LOADING MAIN
 $(document).ready(function() {
-  var headerHeight;
+  var headerHeight, curScroll, imgPos, factor;
 
   if (screen.width < 480) {
     headerHeight = 150;
@@ -15,11 +15,35 @@ $(document).ready(function() {
   $('header').css({
     'height': headerHeight + 'px'
   });
+  
+  curScroll = 0;
+  factor = 2;
 
   $(window).scrollTop(0);
 
   $(window).scroll(function() {
-    if($(window).scrollTop() > headerHeight + 100) {
+    //Up or Down
+    if ($(window).scrollTop() > curScroll) {
+      //Down
+      curScroll = $(window).scrollTop();
+      
+      imgPos = (imgPos++ / factor) * -1;
+      
+      $('#background').css({
+        'background-position': 'center ' + imgPos + 'px'
+      });
+    } else if ($(window).scrollTop() < curScroll) {
+      //Up
+      curScroll = $(window).scrollTop();
+      
+      imgPos = (imgPos++ / factor);
+      
+      $('#background').css({
+        'background-position': 'center ' + imgPos + 'px'
+      });
+    }
+    //Hide image at bottom
+    if ($(window).scrollTop() > headerHeight + 100) {
       $('#background-cover').css({
         'display': 'block'
       });
