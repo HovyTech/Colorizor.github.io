@@ -27,7 +27,7 @@ $(document).ready(function() {
       //Down
       curScroll = $(window).scrollTop();
       
-      imgPos = (imgPos++ / factor) * -1;
+      imgPos = (curScroll / factor) * -1;
       
       $('#background').css({
         'background-position': 'center ' + imgPos + 'px'
@@ -36,7 +36,7 @@ $(document).ready(function() {
       //Up
       curScroll = $(window).scrollTop();
       
-      imgPos = (imgPos++ / factor);
+      imgPos = (curScroll / factor);
       
       $('#background').css({
         'background-position': 'center ' + imgPos + 'px'
