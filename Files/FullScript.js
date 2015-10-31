@@ -44,7 +44,7 @@ $(document).ready(function(headerHeight, curScroll, imgPos, imgSize, factor) {
           'background-position': 'center ' + imgPos + 'px'
         });
       } else {
-        imgSize = (curScroll / factor);
+        imgSize = 100 + (curScroll / factor);
         $('#background').css({
           'background-size': imgPos + '%'
         });
