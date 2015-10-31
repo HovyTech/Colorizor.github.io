@@ -13,6 +13,8 @@ $(document).ready(function(headerHeight, curScroll, imgPerc, imgPos, imgSize, fa
     headerHeight = 400;
     imgPerc = 170;
   }
+  
+  alert(imgPerc)
 
   $('header').css({
     'height': headerHeight + 'px'
@@ -35,6 +37,7 @@ $(document).ready(function(headerHeight, curScroll, imgPerc, imgPos, imgSize, fa
       $('#background').css({
         'background-size': imgSize + '%'
       });
+      alert(imgPerc)
     }
     //Hide image at bottom
     if ($(window).scrollTop() > headerHeight + 100) {
