@@ -8,7 +8,7 @@ $(document).ready(function() {
   var replaceChar = ['&lt;', '&gt;', '\s\s\s\s'];
   //FEATURES
   var features = [
-    ['<a id="link" href="$&" target="_blank">$&</a>', /(ftp|http|https)\:\/\/([0-9\w\±\!\@\#\$\%\ˆ\&\*\(\)\_\+\§\-\=\[\]\{\}\:\;\'\|\\\,\.\?\/\`\˜]+)/igm],
+    ['<a id="link" href="$&" target="_blank">$&</a>', /(ftp|http|https)\:\/\/([\w\d\W]*?)(?=(\s|\"|\'))/igm],
     ['<span style="color: $&;">$&</span>', /((rgba|rgb)\((([\d\s\,\.]+){1,3})\)|\#([\w\d]){6}$)/igm],
     ['<span id="units">$&</span>', /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm]
   ];
