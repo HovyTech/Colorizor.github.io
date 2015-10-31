@@ -1,10 +1,10 @@
 /*----------------------------------------Salmon----------------------------------------*/
 pre{background-color:rgb(62, 69, 76);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
 #text{background-color:rgb(255, 127, 102);color:rgb(255, 246, 229);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
-#all-number-*{border-right:1px solid rgb(255, 246, 229);display:inline-block;float:left;margin-right:8px;text-align:right;}
-#all-code-*{display:inline-block;float:top;margin-left:8px;text-align:left;}
-#number-*{color:rgb(255, 246, 229);float:top;padding-right:4px;}
-#code-*{float:top;}
+#all-number{border-right:1px solid rgb(255, 246, 229);display:inline-block;float:left;margin-right:8px;text-align:right;}
+#all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
+#number{color:rgb(255, 246, 229);float:top;padding-right:4px;}
+#code{float:top;}
 #link{color:rgb(150, 150, 150);font-style:underline;}
 #regx{color:rgb(150, 150, 150);}
 #units{color:rgb(150, 150, 150);}
