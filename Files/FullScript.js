@@ -1,7 +1,5 @@
 //--------------------------------------------------LOADING MAIN
-$(document).ready(function() {
-  var headerHeight, curScroll, factor;
-
+$(document).ready(function(headerHeight, curScroll, imgPos, imgSize, factor) {
   if (screen.width < 480) {
     headerHeight = 150;
   } else if (screen.width >= 480 && screen.width < 720) {
@@ -26,19 +24,27 @@ $(document).ready(function() {
     if ($(window).scrollTop() > curScroll) {
       //Down
       curScroll = $(window).scrollTop();
-      var imgPos = (curScroll / factor) * -1;
-      $('#background').css({
-        'background-position': 'center ' + imgPos + 'px'
-      });
-    } else if ($(window).scrollTop() < curScroll) {
-      //Up
-      curScroll = $(window).scrollTop();
-      var imgPos = (curScroll / factor);
-      if ($(window).scrollTop() < 0) {
+      if ($(window).scrollTop() > 0) {
+        imgPos = (curScroll / factor) * -1;
         $('#background').css({
           'background-position': 'center ' + imgPos + 'px'
         });
       } else {
+        imgSize = (curScroll / factor) * -1;
+        $('#background').css({
+          'background-size': imgPos + '%'
+        });
+      }
+    } else if ($(window).scrollTop() < curScroll) {
+      //Up
+      curScroll = $(window).scrollTop();
+      if ($(window).scrollTop() < 0) {
+        imgPos = (curScroll / factor);
+        $('#background').css({
+          'background-position': 'center ' + imgPos + 'px'
+        });
+      } else {
+        imgSize = (curScroll / factor);
         $('#background').css({
           'background-size': imgPos + '%'
         });
