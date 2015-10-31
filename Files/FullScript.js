@@ -24,17 +24,10 @@ $(document).ready(function(headerHeight, curScroll, imgPos, imgSize, factor) {
     if ($(window).scrollTop() > curScroll) {
       //Down
       curScroll = $(window).scrollTop();
-      if ($(window).scrollTop() > 0) {
-        imgPos = (curScroll / factor) * -1;
-        $('#background').css({
-          'background-position': 'center ' + imgPos + 'px'
-        });
-      } else {
-        imgSize = 100 - (curScroll / factor);
-        $('#background').css({
-          'background-size': imgSize + '%'
-        });
-      }
+      imgPos = (curScroll / factor) * -1;
+      $('#background').css({
+        'background-position': 'center ' + imgPos + 'px'
+      });
     } else if ($(window).scrollTop() < curScroll) {
       //Up
       curScroll = $(window).scrollTop();
