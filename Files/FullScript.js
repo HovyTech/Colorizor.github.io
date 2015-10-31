@@ -26,7 +26,7 @@ $(document).ready(function(headerHeight, curScroll, imgPos, imgSize, factor) {
     });
       
     if ($(window).scrollTop() < 0) {
-      imgSize = 100 + ($(window).scrollTop() / factor);
+      imgSize = 100 - ($(window).scrollTop() / factor);
       $('#background').css({
         'background-size': imgSize + '%'
       });
