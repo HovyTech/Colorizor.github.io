@@ -1,6 +1,6 @@
 //--------------------------------------------------LOADING MAIN
 $(document).ready(function() {
-  var headerHeight, curScroll, imgPos, factor;
+  var headerHeight, curScroll, factor;
 
   if (screen.width < 480) {
     headerHeight = 150;
@@ -17,30 +17,32 @@ $(document).ready(function() {
   });
   
   curScroll = 0;
-  factor = 2;
+  factor = 3;
 
   $(window).scrollTop(0);
 
   $(window).scroll(function() {
     //Up or Down
-    if ($(window).scrollTop() > curScroll && $(window).scrollTop() > 0) {
+    if ($(window).scrollTop() > curScroll) {
       //Down
       curScroll = $(window).scrollTop();
-      
-      imgPos = (curScroll / factor) * -1;
-      
+      var imgPos = (curScroll / factor) * -1;
       $('#background').css({
         'background-position': 'center ' + imgPos + 'px'
       });
-    } else if ($(window).scrollTop() < curScroll && $(window).scrollTop() < 0) {
+    } else if ($(window).scrollTop() < curScroll) {
       //Up
       curScroll = $(window).scrollTop();
-      
-      imgPos = (curScroll / factor);
-      
-      $('#background').css({
-        'background-position': 'center ' + imgPos + 'px'
-      });
+      var imgPos = (curScroll / factor);
+      if ($(window).scrollTop() < 0) {
+        $('#background').css({
+          'background-position': 'center ' + imgPos + 'px'
+        });
+      } else {
+        $('#background').css({
+          'background-size': imgPos + '%'
+        });
+      }
     }
     //Hide image at bottom
     if ($(window).scrollTop() > headerHeight + 100) {
