@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   $(window).scroll(function() {
     //Up or Down
-    if ($(window).scrollTop() > curScroll) {
+    if ($(window).scrollTop() > curScroll && $(window).scrollTop() < 0) {
       //Down
       curScroll = $(window).scrollTop();
       
@@ -32,7 +32,7 @@ $(document).ready(function() {
       $('#background').css({
         'background-position': 'center ' + imgPos + 'px'
       });
-    } else if ($(window).scrollTop() < curScroll) {
+    } else if ($(window).scrollTop() < curScroll && $(window).scrollTop() < 0) {
       //Up
       curScroll = $(window).scrollTop();
       
