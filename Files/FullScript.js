@@ -2,20 +2,18 @@
 $(document).ready(function(headerHeight, curScroll, imgPerc, imgPos, imgSize, factor) {
   if (screen.width < 480) {
     headerHeight = 150;
-    imgPerc = 100;
+    imgPerc = 170;
   } else if (screen.width >= 480 && screen.width < 720) {
     headerHeight = 250;
-    imgPerc = 120;
+    imgPerc = 140;
   } else if (screen.width >= 720 && screen.width < 1024) {
     headerHeight = 250;
-    imgPerc = 140;
+    imgPerc = 120;
   } else {
     headerHeight = 400;
-    imgPerc = 170;
+    imgPerc = 100;
   }
   
-  alert(imgPerc)
-
   $('header').css({
     'height': headerHeight + 'px'
   });
@@ -37,7 +35,6 @@ $(document).ready(function(headerHeight, curScroll, imgPerc, imgPos, imgSize, fa
       $('#background').css({
         'background-size': imgSize + '%'
       });
-      alert(imgPerc)
     }
     //Hide image at bottom
     if ($(window).scrollTop() > headerHeight + 100) {
