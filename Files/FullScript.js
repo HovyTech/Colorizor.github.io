@@ -20,12 +20,12 @@ $(document).ready(function(headerHeight, curScroll, imgPos, imgSize, factor) {
   $(window).scrollTop(0);
 
   $(window).scroll(function() {
-    imgPos = ($(window).scrollTop() / factor) * -1;
-    $('#background').css({
-      'background-position': 'center ' + imgPos + 'px'
-    });
-      
-    if ($(window).scrollTop() < 0) {
+    if ($(window).scrollTop() >= 0) {
+      imgPos = ($(window).scrollTop() / factor) * -1;
+      $('#background').css({
+        'background-position': 'center ' + imgPos + 'px'
+      });
+    } else {
       imgSize = 100 - ($(window).scrollTop() / factor);
       $('#background').css({
         'background-size': imgSize + '%'
