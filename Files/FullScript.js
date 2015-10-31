@@ -32,7 +32,7 @@ $(document).ready(function(headerHeight, curScroll, imgPos, imgSize, factor) {
       } else {
         imgSize = 100 - (curScroll / factor);
         $('#background').css({
-          'background-size': imgPos + '%'
+          'background-size': imgSize + '%'
         });
       }
     } else if ($(window).scrollTop() < curScroll) {
@@ -46,7 +46,7 @@ $(document).ready(function(headerHeight, curScroll, imgPos, imgSize, factor) {
       } else {
         imgSize = 100 + (curScroll / factor);
         $('#background').css({
-          'background-size': imgPos + '%'
+          'background-size': imgSize + '%'
         });
       }
     }
