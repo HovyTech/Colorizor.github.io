@@ -20,29 +20,40 @@ $(document).ready(function(headerHeight, curScroll, imgPos, imgSize, factor) {
   $(window).scrollTop(0);
 
   $(window).scroll(function() {
-    //Up or Down
-    if ($(window).scrollTop() > curScroll) {
-      //Down
-      curScroll = $(window).scrollTop();
-      imgPos = (curScroll / factor) * -1;
+    imgPos = ($(window).scrollTop() / factor) * -1;
+    $('#background').css({
+      'background-position': 'center ' + imgPos + 'px'
+    });
+      
+    if ($(window).scrollTop() < 0) {
+      imgSize = 100 + ($(window).scrollTop() / factor);
       $('#background').css({
-        'background-position': 'center ' + imgPos + 'px'
+        'background-size': imgSize + '%'
       });
-    } else if ($(window).scrollTop() < curScroll) {
-      //Up
-      curScroll = $(window).scrollTop();
-      if ($(window).scrollTop() > 0) {
-        imgPos = (curScroll / factor);
-        $('#background').css({
-          'background-position': 'center ' + imgPos + 'px'
-        });
-      } else {
-        imgSize = 100 + (curScroll / factor);
-        $('#background').css({
-          'background-size': imgSize + '%'
-        });
-      }
     }
+    // //Up or Down
+    // if ($(window).scrollTop() > curScroll) {
+    //   //Down
+    //   curScroll = $(window).scrollTop();
+    //   imgPos = (curScroll / factor) * -1;
+    //   $('#background').css({
+    //     'background-position': 'center ' + imgPos + 'px'
+    //   });
+    // } else if ($(window).scrollTop() < curScroll) {
+    //   //Up
+    //   curScroll = $(window).scrollTop();
+    //   if ($(window).scrollTop() > 0) {
+    //     imgPos = (curScroll / factor);
+    //     $('#background').css({
+    //       'background-position': 'center ' + imgPos + 'px'
+    //     });
+    //   } else {
+    //     imgSize = 100 + (curScroll / factor);
+    //     $('#background').css({
+    //       'background-size': imgSize + '%'
+    //     });
+    //   }
+    // }
     //Hide image at bottom
     if ($(window).scrollTop() > headerHeight + 100) {
       $('#background-cover').css({
