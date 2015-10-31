@@ -12,6 +12,6 @@ $(document).ready(function(language) {
   }
   $.each($('pre'), function() {
     language = $(this).attr('language');
-    loadJS('https://colorizor.github.io/Language/' + language + '.js');
+    loadJS('https://colorizor.github.io/Languages/' + language + '.js');
   });
 });
