@@ -114,4 +114,4 @@
     }
     return output + str.slice(lastEnd);
   };
-}(XRegExp));
+})(XRegExp);
