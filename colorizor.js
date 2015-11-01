@@ -70,7 +70,8 @@
       //----------------------------------------------------------------------------------------------------------
       $.each($('script'), function() {
         var url = $(this).attr('src');
-        if (url.match('colorizor.github.io/colorizor.js?theme=')) {
+        var path = /colorizor\.github\.io\/colorizor\.js\?theme\=/igm;
+        if (path.test(url)) {
           var theme = url.split('theme=')[1];
           loadCSS('https://colorizor.github.io/Themes/' + theme.toLowerCase() + '.css');
         }
