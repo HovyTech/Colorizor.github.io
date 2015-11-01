@@ -1,3 +1,6 @@
+//----------------------------------------------------------------------------------------------------------
+//-------------------------------------------------Colorizor------------------------------------------------
+//----------------------------------------------------------------------------------------------------------
 (function() {
   //----------------------------------------------------------------------------------------------------------
   //--------------------------------------------------LoadJS--------------------------------------------------
@@ -81,4 +84,34 @@
     }
   };
   window.setTimeout(waitForLoad, 60);
-})();
+});
+//----------------------------------------------------------------------------------------------------------
+//----------------------------------------------Regex Lookbehind--------------------------------------------
+//----------------------------------------------------------------------------------------------------------
+(function(XRegExp) {
+  function prepareLb(lb) {
+    var parts = /^((?:\(\?[\w$]+\))?)\(\?<([=!])([\s\S]*)\)$/.exec(lb);
+    return {
+      lb: XRegExp(parts ? parts[1] + "(?:" + parts[3] + ")$(?!\\s)" : lb),
+      type: parts ? parts[2] === "=" : !parts
+    };
+  }
+  XRegExp.replaceLb = function(str, lb, regex, replacement) {
+    var output = "", pos = 0, lastEnd = 0, match, leftContext;
+    lb = prepareLb(lb);
+    while (match = XRegExp.exec(str, regex, pos)) {
+      leftContext = str.slice(0, match.index);
+      if (lb.type === lb.lb.test(leftContext)) {
+        output += str.slice(lastEnd, match.index) + XRegExp.replace(match[0], regex, replacement);
+        lastEnd = match.index + match[0].length;
+        if (!regex.global) {
+          break;
+        }
+        pos = match.index + (match[0].length || 1);
+      } else {
+        pos = match.index + 1;
+      }
+    }
+    return output + str.slice(lastEnd);
+  };
+});
