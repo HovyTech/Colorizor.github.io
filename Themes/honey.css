@@ -1,5 +1,5 @@
 /*----------------------------------------Honey----------------------------------------*/
-pre{background-color:rgb(16, 91, 99);color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;}
+pre{background-color:rgb(16, 91, 99);color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:14px;font-style:bold;height:auto;margin:5px;overflow:auto;padding:10px;text-align:left;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;}
 #text{background-color:rgb(219, 158, 54);color:rgb(189, 73, 50);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
 #all-number{border-right:1px solid rgb(189, 73, 50);display:inline-block;float:left;margin-right:8px;text-align:right;}
 #all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
