@@ -3,8 +3,7 @@
   //---------------------------------------------------RegEx----------------------------------------------------
   //------------------------------------------------------------------------------------------------------------
   //CLEAN
-  var findChar = [/[\#]/igm, /[\/]/igm, /[\=]/igm, /[\"]/igm, /[\!]/igm, /[\-]/igm];
-  var cleanChar = [/[\<]/igm, /[\>]/igm, /[\t]/igm];
+  var cleanChar = [/[\\\<]/igm, /[\\\>]/igm, /[\t]/igm];
   var replaceChar = ['&lt;', '&gt;', '\s\s\s\s'];
   //FEATURES
   var features = [
@@ -15,9 +14,9 @@
   var javascript = [
     ['<span id="comment">$&</span>', /\\\/\\\/.*/igm],
     ['<span id="value">$&</span>', /(\\\"(.*?)\\\"|\\\'(.*?)\\\')/igm],
-    ['<span id="parameter">$&</span>', /(?!\$\()([\w]+)(?=\)\.)/igm],
-    ['<span id="attribute">$&</span>', /(([\w]+)\s(?=([\w]+)\(\)(.*?)\{)|var)/igm],
-    ['<span id="selector">$&</span>', /((?!(function)\s)([\w]+)\(\)(?=(.*?)\{)|((\$|\.([\w]+))(.*?)|([\w]+))\(|(?!(.*?)\{)\)|\)(?=\,))/igm]
+    ['<span id="parameter">$&</span>', /(?!\\\$\\\()([\w]+)(?=\\\)\\\.)/igm],
+    ['<span id="attribute">$&</span>', /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/igm],
+    ['<span id="selector">$&</span>', /((?!(function)\s)([\w]+)\\\(\\\)(?=(.*?)\\\{)|((\\\$|\\\.([\w]+))(.*?)|([\w]+))\\\(|(?!(.*?)\\\{)\\\)|\\\)(?=\\\,))/igm]
   ];
   
   //------------------------------------------------------------------------------------------------------------
@@ -37,9 +36,7 @@
     str = str.replace(cleanChar[0], replaceChar[0]);
     str = str.replace(cleanChar[1], replaceChar[1]);
     str = str.replace(cleanChar[2], replaceChar[2]);
-    for (a = 0; a < findChar.length; a++) {
-      str = str.replace(findChar[a], '\\$&');
-    }
+    str = str.replace(/\W/igm, '\\$&');
     //CODE
     for (a = 0; a < javascript.length; a++) {
       str = str.replace(javascript[a][1], javascript[a][0]);
