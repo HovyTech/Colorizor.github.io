@@ -55,7 +55,7 @@
     //REMOVE
     str = str.replace(/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, function(rep) {
       alert(rep);
-      return rep.replace(/(\\\<span(.*?)\\\>|\\\<\\\/span\\\>)/igm, '');
+      return rep.replace(/(\<span(.*?)\>|\<\/span\>)/igm, '');
     });
     //REPLACE
     for (a = 0; a < characters.length; a++) {
