@@ -4,9 +4,9 @@
   //------------------------------------------------------------------------------------------------------------
   //CLEAN
   var characters = [
-    [/\\\&/igm, '&amp;'],
-    [/\\\</igm, '&lt;'],
-    [/\\\>/igm, '&gt;'],
+    [/\&/igm, '&amp;'],
+    [/\</igm, '&lt;'],
+    [/\>/igm, '&gt;'],
     [/\t/igm, '\s\s\s\s']
   ];
   //FEATURES
@@ -24,7 +24,7 @@
     ['<span id="reserved">$&</span>', /\b(Array|Date|eval|function|hasOwnProperty|Infinity|isFinite|isNaN|isPrototypeOf|length|Math|NaN|name|Number|Object|prototype|String|toString|undefined|valueOf)\b/igm],
     ['<span id="reserved">$&</span>', /\b(alert|all|anchor|anchors|area|assign|blur|button|checkbox|clearInterval|clearTimeout|clientInformation|close|closed|confirm|constructor|crypto|decodeURI|decodeURIComponent|defaultStatus|document|element|elements|embed|embeds|encodeURI|encodeURIComponent|escape|event|fileUpload|focus|form|forms|frame|innerHeight|innerWidth|layer|layers|link|location|mimeTypes|navigate|navigator|frames|frameRate|hidden|history|image|images|offscreenBuffering|open|opener|option|outerHeight|outerWidth|packages|pageXOffset|pageYOffset|parent|parseFloat|parseInt|password|plugin|prompt|propertyIsEnum|radio|reset|screenX|screenY|scroll|secure|select|self|setInterval|setTimeout|status|submit|taint|text|textarea|top|unescape|untaint|window)\b/igm],
     ['<span id="reserved">$&</span>', /\b(onblur|onclick|onerror|onfocus|onkeydown|onkeypress|onkeyup|onmouseover|onload|onmouseup|onmousedown|onsubmit)\b/igm],
-    ['<span id="selector">$&</span>', /(\\\.([\w]+)|\\[^\w\s\d\'\"\<\>\&]|\\&amp;|\\&lt;|\\&gt;)+/igm]
+    ['<span id="selector">$&</span>', /(\\\.([\w]+)|\\[^\w\s\d\'\"\<\>\&]|\\&amp\\;|\\&lt\\;|\\&gt\\;)+/igm]
   ];
   
   //------------------------------------------------------------------------------------------------------------
@@ -48,10 +48,10 @@
     //---------------------------------------------------FINDING--------------------------------------------------
     //------------------------------------------------------------------------------------------------------------
     //REPLACE
-    str = str.replace(/\W/igm, '\\$&');
     for (a = 0; a < characters.length; a++) {
       str = str.replace(characters[a][0], characters[a][1]);
     }
+    str = str.replace(/\W/igm, '\\$&');
     //CODE
     for (a = 0; a < javascript.length; a++) {
       str = str.replace(javascript[a][1], javascript[a][0]);
