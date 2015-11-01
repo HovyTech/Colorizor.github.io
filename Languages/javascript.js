@@ -3,14 +3,19 @@
   //---------------------------------------------------RegEx----------------------------------------------------
   //------------------------------------------------------------------------------------------------------------
   //CLEAN
-  var cleanChar = [/[\\\<]/igm, /[\\\>]/igm, /[\t]/igm];
-  var replaceChar = ['&lt;', '&gt;', '\s\s\s\s'];
+  var characters = [
+    [/\\\</igm, '&lt;'],
+    [/\\\>/igm, '&gt;'],
+    [/\\\&/igm, '&amp;'],
+    [/\t/igm, '\s\s\s\s']
+  ];
   //FEATURES
   var features = [
     ['<a id="link" href="$&" target="_blank">$&</a>', /(ftp|http|https)\:\/\/([\w\d\W]*?)(?=(\s|\"|\'))/igm],
     ['<span style="color: $&;">$&</span>', /((rgba|rgb)\((([\d\s\,\.]+){1,3})\)|\#([\w\d]){6}$)/igm],
     ['<span id="units">$&</span>', /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm]
   ];
+  //JAVASCRIPT
   var javascript = [
     ['<span id="comment">$&</span>', /\\\/\\\/.*/igm],
     ['<span id="value">$&</span>', /(\\\"(.*?)\\\"|\\\'(.*?)\\\')/igm],
@@ -19,7 +24,7 @@
     ['<span id="reserved">$&</span>', /\b(Array|Date|eval|function|hasOwnProperty|Infinity|isFinite|isNaN|isPrototypeOf|length|Math|NaN|name|Number|Object|prototype|String|toString|undefined|valueOf)\b/igm],
     ['<span id="reserved">$&</span>', /\b(alert|all|anchor|anchors|area|assign|blur|button|checkbox|clearInterval|clearTimeout|clientInformation|close|closed|confirm|constructor|crypto|decodeURI|decodeURIComponent|defaultStatus|document|element|elements|embed|embeds|encodeURI|encodeURIComponent|escape|event|fileUpload|focus|form|forms|frame|innerHeight|innerWidth|layer|layers|link|location|mimeTypes|navigate|navigator|frames|frameRate|hidden|history|image|images|offscreenBuffering|open|opener|option|outerHeight|outerWidth|packages|pageXOffset|pageYOffset|parent|parseFloat|parseInt|password|plugin|prompt|propertyIsEnum|radio|reset|screenX|screenY|scroll|secure|select|self|setInterval|setTimeout|status|submit|taint|text|textarea|top|unescape|untaint|window)\b/igm],
     ['<span id="reserved">$&</span>', /\b(onblur|onclick|onerror|onfocus|onkeydown|onkeypress|onkeyup|onmouseover|onload|onmouseup|onmousedown|onsubmit)\b/igm],
-    ['<span id="selector">$&</span>', /(\\\.([\w]+)|\\[^\w\s\d\'\"\<\>]|&lt;|&gt;)+/igm]///((?!(function)\s)([\w]+)\\\(\\\)(?=(.*?)\\\{)|((\\\$|\\\.([\w]+))(.*?)|([\w]+))\\\(|(?!(.*?)\\\{)\\\)|\\\)(?=\\\,))/igm]
+    ['<span id="selector">$&</span>', /(\\\.([\w]+)|\\[^\w\s\d\'\"\<\>\&]|&lt;|&gt;|&amp;)+/igm]///((?!(function)\s)([\w]+)\\\(\\\)(?=(.*?)\\\{)|((\\\$|\\\.([\w]+))(.*?)|([\w]+))\\\(|(?!(.*?)\\\{)\\\)|\\\)(?=\\\,))/igm]
   ];
   
   //------------------------------------------------------------------------------------------------------------
@@ -43,10 +48,10 @@
     //---------------------------------------------------FINDING--------------------------------------------------
     //------------------------------------------------------------------------------------------------------------
     //REPLACE
-    str = str.replace(cleanChar[0], replaceChar[0]);
-    str = str.replace(cleanChar[1], replaceChar[1]);
-    str = str.replace(cleanChar[2], replaceChar[2]);
     str = str.replace(/\W/igm, '\\$&');
+    for (a = 0; a < characters.length; a++) {
+      str = str.replace(characters[a][0], characters[a][1]);
+    }
     //CODE
     for (a = 0; a < javascript.length; a++) {
       str = str.replace(javascript[a][1], javascript[a][0]);
