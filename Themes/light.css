@@ -11,5 +11,6 @@ pre{background-color:rgb(252, 255, 245);color:rgb(142, 127, 170);font-family:"Lu
 #comment{color:rgb(145, 170, 157);font-style:italic;}
 #selector{color:rgb(219, 186, 162);}
 #attribute{color:rgb(25, 52, 65);}
+#reserved{color:rgb(25, 52, 65);}
 #value{color:rgb(62, 96, 111);}
 #parameter{color:rgb(142, 127, 170);}
