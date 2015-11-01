@@ -10,6 +10,7 @@ $(document).ready(function(language) {
     }
     return script;
   }
+  alert(window.location);
   $.each($('pre'), function() {
     language = $(this).attr('language');
     loadJS('https://colorizor.github.io/Languages/' + language + '.js');
