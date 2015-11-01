@@ -54,6 +54,7 @@
     }
     //REMOVE
     str = str.replace(/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, function(rep) {
+      alert(rep);
       return rep.replace(/(\\\<span(.*?)\\\>|\\\<\\\/span\\\>)/igm, '');
     });
     //REPLACE
