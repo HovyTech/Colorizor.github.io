@@ -16,8 +16,8 @@
   ];
   //----------------------------------------------------JAVASCRIPT
   var javascript = [
-    ['<span id="comment">$&</span>', /\\\/\\\/.+/igm],
-    ['<span id="value">$&</span>', /(\\\'|\\\")(.*?)(\\\'|\\\")/igm],
+    ['<span id="comment">$&</span>', /\\\/\\\/([\s\S]*?)$/igm],
+    ['<span id="value">$&</span>', /(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm],
     ['<span id="parameter">$&</span>', /(?!\\\$\\\()([\w]+)(?=\\\)\\\.)/igm],
     ['<span id="reserved">$&</span>', /\b(abstract|arguments|boolean|break|byte|case|catch|char|class|const|continue|debugger|default|delete|do|double|else|enum|eval|export|extends|false|final|finally|float|for|function|goto|if|implements|import|in|instanceof|int|interface|let|long|native|new|null|package|private|protected|public|return|short|static|super|switch|synchronized|this|throw|throws|transient|true|try|typeof|var|void|volatile|while|with|yield)\b/igm],
     ['<span id="reserved">$&</span>', /\b(Array|Date|eval|function|hasOwnProperty|Infinity|isFinite|isNaN|isPrototypeOf|length|Math|NaN|name|Number|Object|prototype|String|toString|undefined|valueOf)\b/igm],
@@ -46,25 +46,25 @@
     //------------------------------------------------------------------------------------------------------------
     //---------------------------------------------------FINDING--------------------------------------------------
     //------------------------------------------------------------------------------------------------------------
-    //----------------------------------------------------DETECTION
+    //----------------------------------------------------DETECTION 
     str = str.replace(/\W/igm, '\\$&');
+    //----------------------------------------------------REPLACE
+    for (a = 0; a < characters.length; a++) {
+      str = str.replace(characters[a][0], characters[a][1]);
+    }
     //----------------------------------------------------CODE
     for (a = 0; a < javascript.length; a++) {
       str = str.replace(javascript[a][1], javascript[a][0]);
     }
     //----------------------------------------------------REMOVE
     //Comment
-    str = str.replace(/\\\/\\\/.+(?=\<\/span\>)/igm, function(rep) {
-      return rep.replace(/(\<span(.*?)\>|\<\/span\>)/igm, '');
+    str = str.replace(/\\\/\\\/([\s\S]*?)$/igm, function(rep) {
+      return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
     });
     //String
-    str = str.replace(/(\\\'|\\\")(.*?)(\\\'|\\\")/igm, function(rep) {
-      return rep.replace(/(\<span(.*?)\>|\<\/span\>)/igm, '');
+    str = str.replace(/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, function(rep) {
+      return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
     });
-    //----------------------------------------------------REPLACE
-    for (a = 0; a < characters.length; a++) {
-      str = str.replace(characters[a][0], characters[a][1]);
-    }
     //------------------------------------------------------------------------------------------------------------
     //----------------------------------------------------SAVE----------------------------------------------------
     //------------------------------------------------------------------------------------------------------------
