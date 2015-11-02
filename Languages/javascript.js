@@ -11,13 +11,13 @@
   ];
   //----------------------------------------------------FEATURES
   var features = [
-    ['<a id="link" href="$&" target="_blank">$&</a>', /(ftp|http|https)\:\/\/([\w\d\W]*?)(?=(\s|\"|\'))/igm],
+    ['<a id="link" href="$&" target="_blank">$&</a>', /(ftp|http|https)\:\/\/([\w\d\W]*?)(?=(\]\((\'|\")([\s\S]*?)(\'|\")\)|\]|\s|\"|\'))/igm],
     ['<span style="color: $&;">$&</span>', /((rgba|rgb)\((([\d\s\,\.]+){1,3})\)|\#([\w\d]){6}$)/igm],
     ['<span id="units">$&</span>', /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm]
   ];
   //----------------------------------------------------JAVASCRIPT
   var javascript = [
-    ['<span id="comment">$&</span>', /\\\/\\\/([\s\S]*?)$/igm],
+    ['<span id="comment">$&</span>', /\b(\\\/\\\/([\s\S]*?)$)\b/igm],
     ['<span id="value">$&</span>', /(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm],
     ['<span id="parameter">$&</span>', /(?!\\\$\\\()([\w]+)(?=\\\)\\\.)/igm],
     ['<span id="reserved">$&</span>', /\b(abstract|arguments|boolean|break|byte|case|catch|char|class|const|continue|debugger|default|delete|do|double|else|enum|eval|export|extends|false|final|finally|float|for|function|goto|if|implements|import|in|instanceof|int|interface|let|long|native|new|null|package|private|protected|public|return|short|static|super|switch|synchronized|this|throw|throws|transient|true|try|typeof|var|void|volatile|while|with|yield)\b/igm],
