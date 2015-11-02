@@ -13,7 +13,7 @@
   var fixChar = [
     [/\<span([\s\S]*?)\>\\\&\<\/span\>lt\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&lt;</span>'],
     [/\<span([\s\S]*?)\>\\\&\<\/span\>gt\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&gt;</span>'],
-    [/\<span([\s\S]*?)\>\\\&\<\/span\>amp\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&</span>'],
+    [/\<span([\s\S]*?)\>\\\&\<\/span\>amp\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&amp;</span>'],
     [/ftp\\\_\\\_URLFIXFTP\\\_\\\_/igm, 'ftp\\\:\\\/\\\/'],
     [/https\\\_\\\_URLFIXHTTPS\\\_\\\_/igm, 'https\\\:\\\/\\\/'],
     [/http\\\_\\\_URLFIXHTTP\\\_\\\_/igm, 'http\\\:\\\/\\\/']
