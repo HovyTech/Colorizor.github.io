@@ -11,7 +11,9 @@
   ]; 
   //----------------------------------------------------FIX CHARACTERS
   var fixChar = [
-    [/\;\;/igm, ';'],
+    [/\&lt\;/igm, '&lt;'],
+    [/\&gt\;/igm, '&gt;'],
+    [/\&amp\;/igm, '&amp;'],
     [/ftp\\\_\\\_URLFIXFTP\\\_\\\_/igm, 'ftp\\\:\\\/\\\/'],
     [/https\\\_\\\_URLFIXHTTPS\\\_\\\_/igm, 'https\\\:\\\/\\\/'],
     [/http\\\_\\\_URLFIXHTTP\\\_\\\_/igm, 'http\\\:\\\/\\\/']
