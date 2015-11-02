@@ -69,6 +69,8 @@
       return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
     });
     str = str.replace(/((.*?)\\\*\\\/\<\/span\>|(?!([\s\S]+)\<span(.*?)\>\\\/\\\*)(.*?)\n(?=([\s\S]*?)\\\*\\\/))/igm, '<span id="comment">$&</span>');
+    str = str.replace(/\<span\sid\=\"\comment"\>\<span\sid\=\"\comment"\>/igm, '');
+    str = str.replace(/\\\*\\\/\<\/span\>\<\/span\>/igm, '\*\/</span>');
     //String
     str = str.replace(/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, function(rep) {
       return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
