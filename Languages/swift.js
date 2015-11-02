@@ -65,7 +65,7 @@
     }
     //----------------------------------------------------REMOVE
     //Comment
-    str = str.replace(/((\\\/\\\/)([\s\S]*?)|\<span\sid\=\"comment\"\>)(?=\<\/span\>$)/igm, function(rep) {
+    str = str.replace(/(\<span\sid\=\"comment\"\>)(?=\<\/span\>$)/igm, function(rep) {
       return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
     });
     //String
