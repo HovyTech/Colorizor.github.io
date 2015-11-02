@@ -133,4 +133,5 @@
       range.select();
     }
   });
+alert($('#all-code').html())
 })();
