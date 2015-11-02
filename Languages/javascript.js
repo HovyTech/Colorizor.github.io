@@ -64,13 +64,11 @@ alert(str)
     for (a = 0; a < javascript.length; a++) {
       str = str.replace(javascript[a][1], javascript[a][0]);
     }
-alert(str)
     //----------------------------------------------------REMOVE
     //Comment
     str = str.replace(/\\\/\\\/([\s\S]*?)$/igm, function(rep) {
       return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
     });
-alert(str)
     //String
     str = str.replace(/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, function(rep) {
       return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
