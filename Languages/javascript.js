@@ -33,7 +33,7 @@
     ['<span id="parameter">$&</span>', /\b(Array|Date|eval|function|hasOwnProperty|Infinity|isFinite|isNaN|isPrototypeOf|length|Math|NaN|name|Number|Object|prototype|String|toString|undefined|valueOf)\b/igm],
     ['<span id="parameter">$&</span>', /\b(onblur|onclick|onerror|onfocus|onkeydown|onkeypress|onkeyup|onmouseover|onload|onmouseup|onmousedown|onsubmit)\b/igm],
     ['<span id="selector">$&</span>', /\\\.([\w]+)/igm],
-    ['<span id="character">$&</span>', /(\\[^\w\s\n\'\"\&\_\;\<\>])+/igm]
+    ['<span id="character">$&</span>', /(\\[^\w\s\n\'\"\&\_\;\<\>\/])+/igm]
   ];
   
   //------------------------------------------------------------------------------------------------------------
