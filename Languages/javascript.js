@@ -11,9 +11,9 @@
   ]; 
   //----------------------------------------------------FIX CHARACTERS
   var fixChar = [
-    [/\<span([\s\S]*?)\>\\\&\<\/span\>lt\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&lt;</span>'],
-    [/\<span([\s\S]*?)\>\\\&\<\/span\>gt\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&gt;</span>'],
-    [/\<span([\s\S]*?)\>\\\&\<\/span\>amp\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&amp;</span>'],
+    //[/\<span([\s\S]*?)\>\\\&\<\/span\>lt\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&lt;</span>'],
+    //[/\<span([\s\S]*?)\>\\\&\<\/span\>gt\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&gt;</span>'],
+    //[/\<span([\s\S]*?)\>\\\&\<\/span\>amp\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&amp;</span>'],
     [/ftp\\\_\\\_URLFIXFTP\\\_\\\_/igm, 'ftp\\\:\\\/\\\/'],
     [/https\\\_\\\_URLFIXHTTPS\\\_\\\_/igm, 'https\\\:\\\/\\\/'],
     [/http\\\_\\\_URLFIXHTTP\\\_\\\_/igm, 'http\\\:\\\/\\\/']
@@ -33,7 +33,7 @@
     ['<span id="parameter">$&</span>', /\b(Array|Date|eval|function|hasOwnProperty|Infinity|isFinite|isNaN|isPrototypeOf|length|Math|NaN|name|Number|Object|prototype|String|toString|undefined|valueOf)\b/igm],
     ['<span id="parameter">$&</span>', /\b(onblur|onclick|onerror|onfocus|onkeydown|onkeypress|onkeyup|onmouseover|onload|onmouseup|onmousedown|onsubmit)\b/igm],
     ['<span id="selector">$&</span>', /\\\.([\w]+)/igm],
-    ['<span id="character">$&</span>', /(\\[\[\]\{\}\+\=\-\;\$\(\)\&\!\?\,\.\d])+/igm]
+    ['<span id="character">$&</span>', /(\\[\[\]\{\}\+\=\-\$\(\)\!\?\,\.\d])+/igm]
   ];
   
   //------------------------------------------------------------------------------------------------------------
