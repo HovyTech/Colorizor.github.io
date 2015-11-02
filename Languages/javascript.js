@@ -5,16 +5,15 @@
   //----------------------------------------------------CLEAN
   var findChar = [ 
     [/\W/igm, '\\$&'],
-    [/\\\t/igm, '\\\s\\\s\\\s\\\s'],
     [/ftp\\\:\\\/\\\//igm, 'ftp\\\_\\\_URLFIXFTP\\\_\\\_'],
     [/https\\\:\\\/\\\//igm, 'https\\\_\\\_URLFIXHTTPS\\\_\\\_'], 
     [/http\\\:\\\/\\\//igm, 'http\\\_\\\_URLFIXHTTP\\\_\\\_']
   ]; 
   //----------------------------------------------------FIX CHARACTERS
   var fixChar = [
-    [/\<span(.*?)\>\\\&\<\/span\>lt\<span(.*?)\>\\\;\<\/span\>/igm, '<span id="character">&lt;</span>'],
-    [/\<span(.*?)\>\\\&\<\/span\>gt\<span(.*?)\>\\\;\<\/span\>/igm, '<span id="character">&gt;</span>'],
-    [/\<span(.*?)\>\\\&\<\/span\>amp\<span(.*?)\>\\\;\<\/span\>/igm, '<span id="character">&amp;</span>'],
+    [/\<span([\s\S]*?)\>\\\&\<\/span\>lt\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&lt;</span>'],
+    [/\<span([\s\S]*?)\>\\\&\<\/span\>gt\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&gt;</span>'],
+    [/\<span([\s\S]*?)\>\\\&\<\/span\>amp\<span([\s\S]*?)\>\\\;\<\/span\>/igm, '<span id="character">&</span>'],
     [/ftp\\\_\\\_URLFIXFTP\\\_\\\_/igm, 'ftp\\\:\\\/\\\/'],
     [/https\\\_\\\_URLFIXHTTPS\\\_\\\_/igm, 'https\\\:\\\/\\\/'],
     [/http\\\_\\\_URLFIXHTTP\\\_\\\_/igm, 'http\\\:\\\/\\\/']
