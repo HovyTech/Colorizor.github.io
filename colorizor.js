@@ -63,7 +63,7 @@
       //----------------------------------------------------------------------------------------------------------
       $.each($('pre'), function() {
         var language = $(this).attr('language');
-        loadJS('https://colorizor.github.io/Languages/' + language + '.js');
+        loadJS('https://colorizor.github.io/Languages/' + language.toLowerCase() + '.js');
       });
       //----------------------------------------------------------------------------------------------------------
       //------------------------------------------Checking URL Parameters-----------------------------------------
