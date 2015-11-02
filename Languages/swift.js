@@ -26,7 +26,7 @@
   ];
   //----------------------------------------------------SWIFT
   var swift = [
-    ['<span id="comment">$&</span>', /((\/\/)([\s\S]*?)$|(\/\*.*|(.*?)([\w].+)(?=\n([\s\S]*?)\*\/)|(.*?)\*\/))/igm],
+    ['<span id="comment">$&</span>', /((\\\/\\\/)([\s\S]*?)$|(\\\/\\\*.*|(.*?)([\w].+)(?=\n([\s\S]*?)\\\*\\\/)|(.*?)\\\*\\\/))/igm],
     ['<span id="value">$&</span>', /(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm],
     ['<span id="reserved">$&</span>', /\b(as|associativity|break|case|catch|class|continue|convenience|default|defer|deinit|didSet|do|dynamic(?:Type)?|else|enum|extension|fallthrough|final|for|func|get|guard|if|import|in|infix|init|inout|internal|is|lazy|left|let|mutating|new|none|nonmutating|operator|optional|override|postfix|precedence|prefix|private|Protocol|public|repeat|required|rethrows|return|right|safe|self|Self|set|static|struct|subscript|super|switch|throws?|try|Type|typealias|unowned|unsafe|var|weak|where|while|willSet|__(?:COLUMN__|FILE__|FUNCTION__|LINE__))\b/igm],
     ['<span id="reserved">$&</span>', /@\b(IB(?:Outlet|Designable|Action|Inspectable)|class_protocol|exported|noreturn|NS(?:Copying|Managed)|objc|UIApplicationMain|auto_closure)\b/igm],
@@ -65,7 +65,7 @@
     }
     //----------------------------------------------------REMOVE
     //Comment
-    str = str.replace(/((\/\/)([\s\S]*?)|(\/\*.*|(.*?)([\w].+)(?=\n([\s\S]*?)\*\/)|(.*?)\*\/))(?=\<\/span\>$)/igm, function(rep) {
+    str = str.replace(/((\\\/\\\/)([\s\S]*?)|(\\\/\\\*.*|(.*?)([\w].+)(?=\n([\s\S]*?)\\\*\\\/)|(.*?)\\\*\\\/))(?=\<\/span\>$)/igm, function(rep) {
       return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
     });
     //String
