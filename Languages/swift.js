@@ -69,9 +69,9 @@
     });
     //----------------------------------------------------FIX
     //Comment
-    str = str.replace(/(\\\/\\\/([\s\S]*?)(?=\<\/span\>$)|\<span\sid\=\"comment\"\>([\s\S]*?)(?=\\\*\\\/\<\/span\>)|\<span\sid\=\"comment\"\>(?!\\\/\\\*)([\s\S]*?)(?=\<\/span\>$))/igm, function(rep) {
-      return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
-    });
+    //str = str.replace(/(\\\/\\\/([\s\S]*?)(?=\<\/span\>$)|\<span\sid\=\"comment\"\>([\s\S]*?)(?=\\\*\\\/\<\/span\>)|\<span\sid\=\"comment\"\>(?!\\\/\\\*)([\s\S]*?)(?=\<\/span\>$))/igm, function(rep) {
+      //return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
+    //});
     //str = str.replace(/((.*?)\\\*\\\/\<\/span\>|(?!([\s\S]+)\<span(.*?)\>\\\/\\\*)(.*?)\n(?=([\s\S]*?)\\\*\\\/))/igm, '<span id="comment">$&</span>');
     //str = str.replace(/\<span\sid\=\"comment\"\>\<span\sid\=\"comment\"\>/igm, '');
     //String
