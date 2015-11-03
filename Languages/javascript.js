@@ -8,7 +8,13 @@
     [/ftp\\\:\\\/\\\//igm, 'ftp\\\_\\\_URLFIXFTP\\\_\\\_'],
     [/https\\\:\\\/\\\//igm, 'https\\\_\\\_URLFIXHTTPS\\\_\\\_'], 
     [/http\\\:\\\/\\\//igm, 'http\\\_\\\_URLFIXHTTP\\\_\\\_']
-  ]; 
+  ];
+  //----------------------------------------------------REMOVE
+  var removeChar = [ 
+    [/\\\/\\\/([\s\S]*?)(?=\<\/span\>$)/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
+    [/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
+    [/\<span\sid\=\"digit\"\>([\s\S]*?)\<\/span\>/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, '']
+  ];
   //----------------------------------------------------FIX CHARACTERS
   var fixChar = [
     [/\\\&lt\\\;/igm, '<span id="character">&lt;</span>'],
@@ -21,8 +27,7 @@
   //----------------------------------------------------FEATURES
   var features = [
     ['<a id="link" href="$&" target="_blank">$&</a>', /(ftp|http|https)\:\/\/([\w\d\W]*?)(?=(\s|\"|\'))/igm],
-    ['<span style="color: $&;">$&</span>', /((rgba|rgb)\((([\d\s\,\.]+){1,3})\)|\#([\w\d]){6}$)/igm],
-    ['<span id="units">$&</span>', /(([^\D])([\d\.]*?)(em|ex|\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|([\d\.]+)(?=\W)/igm]
+    ['<span style="color: $&;">$&</span>', /((rgba|rgb)\((([\d\s\,\.]+){1,3})\)|\#([\w\d]){6}$)/igm]
   ];
   //----------------------------------------------------JAVASCRIPT
   var javascript = [
@@ -33,7 +38,8 @@
     ['<span id="parameter">$&</span>', /\b(Array|Date|eval|function|hasOwnProperty|Infinity|isFinite|isNaN|isPrototypeOf|length|Math|NaN|name|Number|Object|prototype|String|toString|undefined|valueOf)\b/igm],
     ['<span id="parameter">$&</span>', /\b(onblur|onclick|onerror|onfocus|onkeydown|onkeypress|onkeyup|onmouseover|onload|onmouseup|onmousedown|onsubmit)\b/igm],
     ['<span id="selector">$&</span>', /\\\.([^\W\d]+)/igm],
-    ['<span id="character">$&</span>', /(\\[^\w\s\n\'\"\&\_\;\<\>\/])+/igm]
+    ['<span id="character">$&</span>', /(\\[^\w\s\n\'\"\&\_\;\<\>\/])+/igm],
+    ['<span id="digit">$&</span>', /(([^\D])([\d\.]*?)(em|ex|\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|([\d\.]+)(?=\W)/igm]
   ];
   
   //------------------------------------------------------------------------------------------------------------
@@ -65,15 +71,12 @@
       str = str.replace(javascript[a][1], javascript[a][0]);
     }
     //----------------------------------------------------REMOVE
-    //Comment
-    str = str.replace(/\\\/\\\/([\s\S]*?)(?=\<\/span\>$)/igm, function(rep) {
-      return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
-    });
-    //String
-    str = str.replace(/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, function(rep) {
-      return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
-    });
-    //Fix Characters
+    for (a = 0; a < removeChar.length; a++) {
+      str = str.replace(removeChar[a][0], function(rep) {
+        return rep.replace(removeChar[a][1], removeChar[a][2]);
+      });
+    }
+    //----------------------------------------------------FIX
     for (a = 0; a < fixChar.length; a++) {
       str = str.replace(fixChar[a][0], fixChar[a][1]);
     }
