@@ -63,17 +63,15 @@
     for (a = 0; a < swift.length; a++) {
       str = str.replace(swift[a][1], swift[a][0]);
     }
-    //----------------------------------------------------MULTILINE COMMENT
+    //----------------------------------------------------FIX
+    //Comment
+    str = str.replace(/(\\\/\\\/([\s\S]*?)(?=\<\/span\>$)|\\\/\\\*([\s\S]*?)\\\*\\\/)/igm, function(rep) {
+      return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
+    });
+    //Multi Line Comment
     str = str.replace(/\\\/\\\*([\s\S]*?)\\\*\\\//igm, function(rep) {
       return rep.replace(/\n/igm, '</span>\n<span id="comment">');
     });
-    //----------------------------------------------------FIX
-    //Comment
-    str = str.replace(/\\\/\\\/([\s\S]*?)(?=\<\/span\>$)/igm, function(rep) {
-      return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
-    });
-    //str = str.replace(/((.*?)\\\*\\\/\<\/span\>|(?!([\s\S]+)\<span(.*?)\>\\\/\\\*)(.*?)\n(?=([\s\S]*?)\\\*\\\/))/igm, '<span id="comment">$&</span>');
-    //str = str.replace(/\<span\sid\=\"comment\"\>\<span\sid\=\"comment\"\>/igm, '');
     //String
     str = str.replace(/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, function(rep) {
       return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
