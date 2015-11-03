@@ -8,7 +8,14 @@
     [/ftp\\\:\\\/\\\//igm, 'ftp\\\_\\\_URLFIXFTP\\\_\\\_'],
     [/https\\\:\\\/\\\//igm, 'https\\\_\\\_URLFIXHTTPS\\\_\\\_'], 
     [/http\\\:\\\/\\\//igm, 'http\\\_\\\_URLFIXHTTP\\\_\\\_']
-  ]; 
+  ];
+  //----------------------------------------------------REMOVE
+  var removeChar = [
+    [/(\\\/\\\/([\s\S]*?)(?=\<\/span\>$)|\\\/\\\*([\s\S]*?)\\\*\\\/)/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
+    [/\\\/\\\*([\s\S]*?)\\\*\\\//igm, /\n/igm, '</span>\n<span id="comment">'],
+    [/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
+    [/\<span\sid\=\"digit\"\>([\s\S]*?)\<\/span\>/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, '']
+  ];
   //----------------------------------------------------FIX CHARACTERS
   var fixChar = [
     [/\\\&lt\\\;/igm, '<span id="character">&lt;</span>'],
@@ -21,8 +28,7 @@
   //----------------------------------------------------FEATURES
   var features = [
     ['<a id="link" href="$&" target="_blank">$&</a>', /(ftp|http|https)\:\/\/([\w\d\W]*?)(?=(\s|\"|\'))/igm],
-    ['<span style="color: $&;">$&</span>', /((rgba|rgb)\((([\d\s\,\.]+){1,3})\)|\#([\w\d]){6}$)/igm],
-    ['<span id="units">$&</span>', /([^\D])([\d.]*?)(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/igm]
+    ['<span style="color: $&;">$&</span>', /((rgba|rgb)\((([\d\s\,\.]+){1,3})\)|\#([\w\d]){6}$)/igm]
   ];
   //----------------------------------------------------SWIFT
   var swift = [
@@ -33,7 +39,8 @@
     ['<span id="parameter">$&</span>', /\b(abs|advance|alignof(?:Value)?|assert|contains|count(?:Elements)?|debugPrint(?:ln)?|distance|drop(?:First|Last)|dump|enumerate|equal|filter|find|first|getVaList|indices|isEmpty|join|last|lexicographicalCompare|map|max(?:Element)?|min(?:Element)?|numericCast|overlaps|partition|print(?:ln)?|reduce|reflect|reverse|sizeof(?:Value)?|sort(?:ed)?|split|startsWith|stride(?:of(?:Value)?)?|suffix|swap|toDebugString|toString|transcode|underestimateCount|unsafeBitCast|with(?:ExtendedLifetime|Unsafe(?:MutablePointers?|Pointers?)|VaList))\b/igm],
     ['<span id="parameter">$&</span>', /\b(UI([\w]+))\b/igm],
     ['<span id="selector">$&</span>', /\\\.([^\W\d]+)/igm],
-    ['<span id="character">$&</span>', /(\\[^\w\s\n\'\"\&\_\;\<\>\/\@\*])+/igm]
+    ['<span id="character">$&</span>', /(\\[^\w\s\n\'\"\&\_\;\<\>\/\@\*])+/igm],
+    ['<span id="digit">$&</span>', /(([^\D])([\d\.]*?)(em|ex|\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|([\d\.]+)(?=\W))/igm]
   ];
   
   //------------------------------------------------------------------------------------------------------------
@@ -64,20 +71,13 @@
     for (a = 0; a < swift.length; a++) {
       str = str.replace(swift[a][1], swift[a][0]);
     }
+    //----------------------------------------------------REMOVE
+    for (a = 0; a < removeChar.length; a++) {
+      str = str.replace(removeChar[a][0], function(rep) {
+        return rep.replace(removeChar[a][1], removeChar[a][2]);
+      });
+    }
     //----------------------------------------------------FIX
-    //Comment
-    str = str.replace(/(\\\/\\\/([\s\S]*?)(?=\<\/span\>$)|\\\/\\\*([\s\S]*?)\\\*\\\/)/igm, function(rep) {
-      return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
-    });
-    //Multi Line Comment
-    str = str.replace(/\\\/\\\*([\s\S]*?)\\\*\\\//igm, function(rep) {
-      return rep.replace(/\n/igm, '</span>\n<span id="comment">');
-    });
-    //String
-    str = str.replace(/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, function(rep) {
-      return rep.replace(/(\<span([\s\S]*?)\>|\<\/span\>)/igm, '');
-    });
-    //Fix Characters
     for (a = 0; a < fixChar.length; a++) {
       str = str.replace(fixChar[a][0], fixChar[a][1]);
     }
