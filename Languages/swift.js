@@ -39,8 +39,8 @@
     ['<span id="parameter">$&</span>', /\b(abs|advance|alignof(?:Value)?|assert|contains|count(?:Elements)?|debugPrint(?:ln)?|distance|drop(?:First|Last)|dump|enumerate|equal|filter|find|first|getVaList|indices|isEmpty|join|last|lexicographicalCompare|map|max(?:Element)?|min(?:Element)?|numericCast|overlaps|partition|print(?:ln)?|reduce|reflect|reverse|sizeof(?:Value)?|sort(?:ed)?|split|startsWith|stride(?:of(?:Value)?)?|suffix|swap|toDebugString|toString|transcode|underestimateCount|unsafeBitCast|with(?:ExtendedLifetime|Unsafe(?:MutablePointers?|Pointers?)|VaList))\b/igm],
     ['<span id="parameter">$&</span>', /\b(UI([\w]+))\b/igm],
     ['<span id="selector">$&</span>', /\\\.([^\W\d]+)/igm],
-    ['<span id="character">$&</span>', /(\\[^\w\s\n\'\"\&\_\;\<\>\/\@\*])+/igm],
-    ['<span id="digit">$&</span>', /(([^\D])([\d\.]*?)(em|ex|\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|([\d\.]+)(?=\W))/igm]
+    ['<span id="digit">$&</span>', /(([^\D])([\d\.]*?)(em|ex|\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|([\d\.]+)(?=\W))/igm],
+    ['<span id="character">$&</span>', /(\\[^\w\s\n\'\"\&\_\;\<\>\/\@\*])+/igm]
   ];
   
   //------------------------------------------------------------------------------------------------------------
