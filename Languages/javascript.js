@@ -39,7 +39,7 @@
     ['<span id="parameter">$&</span>', /\b(onblur|onclick|onerror|onfocus|onkeydown|onkeypress|onkeyup|onmouseover|onload|onmouseup|onmousedown|onsubmit)\b/igm],
     ['<span id="selector">$&</span>', /\\\.([^\W\d]+)/igm],
     ['<span id="character">$&</span>', /(\\[^\w\s\n\'\"\&\_\;\<\>\/])+/igm],
-    ['<span id="digit">$&</span>', /(([^\D])([\d\.]*?)(em|ex|\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|([\d\.]+)(?=\W)/igm]
+    ['<span id="digit">$&</span>', /(([^\D])([\d\.]*?)(em|ex|\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|([\d\.]+)(?=\W))/igm]
   ];
   
   //------------------------------------------------------------------------------------------------------------
