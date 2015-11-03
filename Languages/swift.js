@@ -34,12 +34,13 @@
   var swift = [
     ['<span id="comment">$&</span>', /((\\\/\\\/)([\s\S]*?)$|\\\/\\\*([\s\S]*?)\\\*\\\/)/igm],
     ['<span id="value">$&</span>', /(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm],
-    ['<span id="reserved">$&</span>', /\b(as|associativity|break|case|catch|class|continue|convenience|default|defer|deinit|didSet|do|dynamic(?:Type)?|else|enum|extension|fallthrough|final|for|func|get|guard|if|import|in|infix|init|inout|internal|is|lazy|left|let|mutating|new|none|nonmutating|operator|optional|override|postfix|precedence|prefix|private|Protocol|public|repeat|required|rethrows|return|right|safe|self|Self|set|static|struct|subscript|super|switch|throws?|try|Type|typealias|unowned|unsafe|var|weak|where|while|willSet|__(?:COLUMN__|FILE__|FUNCTION__|LINE__))\b/igm],
-    ['<span id="reserved">$&</span>', /@\b(IB(?:Outlet|Designable|Action|Inspectable)|class_protocol|exported|noreturn|NS(?:Copying|Managed)|objc|UIApplicationMain|auto_closure)\b/igm],
+    ['<span id="reserved">$&</span>', /\b(as|associativity|break|case|catch|class|continue|convenience|default|defer|deinit|didSet|do|dynamic(?:Type)?|else|enum|extension|fallthrough|final|for|func|get|guard|if|import|in|infix|init|inout|internal|is|lazy|left|let|mutating|new|none|nonmutating|operator|optional|override|postfix|precedence|prefix|private|Protocol|public|repeat|required|rethrows|return|right|safe|self|Self|set|static|struct|subscript|super|switch|throws?|try|Type|typealias|unowned|unsafe|var|weak|where|while|willSet|\\\_\\\_(?:COLUMN\\\_\\\_|FILE\\\_\\\_|FUNCTION\\\_\\\_|LINE\\\_\\\_))\b/igm],
+    ['<span id="reserved">$&</span>', /\\\@\b(IB(?:Outlet|Designable|Action|Inspectable)|class\\\_protocol|exported|noreturn|NS(?:Copying|Managed)|objc|UIApplicationMain|auto\\\_closure)\b/igm],
     ['<span id="parameter">$&</span>', /\b(abs|advance|alignof(?:Value)?|assert|contains|count(?:Elements)?|debugPrint(?:ln)?|distance|drop(?:First|Last)|dump|enumerate|equal|filter|find|first|getVaList|indices|isEmpty|join|last|lexicographicalCompare|map|max(?:Element)?|min(?:Element)?|numericCast|overlaps|partition|print(?:ln)?|reduce|reflect|reverse|sizeof(?:Value)?|sort(?:ed)?|split|startsWith|stride(?:of(?:Value)?)?|suffix|swap|toDebugString|toString|transcode|underestimateCount|unsafeBitCast|with(?:ExtendedLifetime|Unsafe(?:MutablePointers?|Pointers?)|VaList))\b/igm],
     ['<span id="parameter">$&</span>', /\b(UI([\w]+))\b/igm],
     ['<span id="selector">$&</span>', /\\\.([^\W\d]+)/igm],
-    ['<span id="digit">$&</span>', /(([^\D])([\d\.]*?)(em|ex|\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|([\d\.]+)(?=\W))/igm],
+    ['<span id="attribute">$&</span>', /([\w]+)(?=\:)/igm],
+    ['<span id="digit">$&</span>', /(([^\D])\\([\d\.]*?)(em|ex|\\\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|\\([\d\.]+)(?=\W))/igm],
     ['<span id="character">$&</span>', /(\\[^\w\s\n\'\"\&\_\;\<\>\/\@\*])+/igm]
   ];
   
