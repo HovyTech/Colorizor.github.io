@@ -26,8 +26,8 @@
   ];
   //----------------------------------------------------FEATURES
   var features = [
-    ['<a id="link" href="$&" target="_blank">$&</a>', /(ftp|http|https)\:\/\/([\w\d\W]*?)(?=(\s|\"|\'))/igm],
-    ['<span style="color: $&;">$&</span>', /((rgba|rgb)\((([\d\s\,\.]+){1,3})\)|\#([\w\d]){6}$)/igm]
+    ['<a id="link" href="$&" target="_blank">$&</a>', /(ftp|http|https)\:\/\/([\w\d\W]*?)(?=[\s\'\"\(\)\{\}\[\]])/igm],
+    ['<span style="color: $&;">$&</span>', /((rgba|rgb|hsla|hsl)\((([\d\s\,\.\%]+){1,3})\)|\#([\w\d]){6})/igm]
   ];
   //----------------------------------------------------JAVASCRIPT
   var javascript = [
