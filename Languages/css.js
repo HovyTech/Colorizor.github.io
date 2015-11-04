@@ -15,7 +15,8 @@
     [/\\\/\\\*([\s\S]*?)\\\*\\\//igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
     [/\\\/\\\*([\s\S]*?)\\\*\\\//igm, /\n/igm, '</span>\n<span id="comment">'],
     [/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
-    [/([\d]+)(\<span([\s\S]*?)\>([\W]+)\<\/span\>)([\d]+)/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, '']
+    [/([\d]+)(\<span([\s\S]*?)\>([\W]+)\<\/span\>)([\d]+)/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
+    [/((rgba|rgb|hsla|hsl)\\\(([\s\S]*?)\\\)|\\\#([\w\d]+))\<colouring\>/igm, /\<colouring\>/igm, '']
   ];
   //----------------------------------------------------FIX CHARACTERS
   var fixChar = [
