@@ -5,6 +5,7 @@
   //----------------------------------------------------FIND
   var findChar = [ 
     [/\W/igm, '\\$&'],
+    [/\t/igm, '\s\s\s\s'],
     [/ftp\\\:\\\/\\\//igm, 'ftp\\\_\\\_URLFIXFTP\\\_\\\_'],
     [/https\\\:\\\/\\\//igm, 'https\\\_\\\_URLFIXHTTPS\\\_\\\_'], 
     [/http\\\:\\\/\\\//igm, 'http\\\_\\\_URLFIXHTTP\\\_\\\_'],
