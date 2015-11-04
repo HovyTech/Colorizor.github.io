@@ -7,15 +7,15 @@
     [/\W/igm, '\\$&'],
     [/ftp\\\:\\\/\\\//igm, 'ftp\\\_\\\_URLFIXFTP\\\_\\\_'],
     [/https\\\:\\\/\\\//igm, 'https\\\_\\\_URLFIXHTTPS\\\_\\\_'], 
-    [/http\\\:\\\/\\\//igm, 'http\\\_\\\_URLFIXHTTP\\\_\\\_']
+    [/http\\\:\\\/\\\//igm, 'http\\\_\\\_URLFIXHTTP\\\_\\\_'],
+    [/((rgba|rgb|hsla|hsl)\\\(([\s\S]*?)\\\)|\\\#([\w\d]+))/igm, '$&<colouring>']
   ];
   //----------------------------------------------------REMOVE
   var removeChar = [
     [/\\\/\\\*([\s\S]*?)\\\*\\\//igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
     [/\\\/\\\*([\s\S]*?)\\\*\\\//igm, /\n/igm, '</span>\n<span id="comment">'],
     [/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
-    [/([\d]+)(\<span([\s\S]*?)\>([\W]+)\<\/span\>)([\d]+)/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
-    [/((rgba|rgb|hsla|hsl)([\s\S]*?)(([\d\s\\\,\.\%]+){1,3})(.*?)(\\\)\<\/span\>|\\\))|\\\#([\w\d\<\s\=\"\>\/\:]+)(?=\<span(.*?)\>))/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, '']
+    [/([\d]+)(\<span([\s\S]*?)\>([\W]+)\<\/span\>)([\d]+)/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, '']
   ];
   //----------------------------------------------------FIX CHARACTERS
   var fixChar = [
@@ -42,7 +42,7 @@
     //['<span id="parameter">$&</span>', /\b(AliceBlue|AntiqueWhite|Aqua|Aquamarine|Azure|Beige|Bisque|Black|BlanchedAlmond|Blue|BlueViolet|Brown|BurlyWood|CadetBlue|Chartreuse|Chocolate|Coral|CornflowerBlue|Cornsilk|Crimson|Cyan|DarkBlue|DarkCyan|DarkGoldenRod|DarkGray|DarkGreen|DarkKhaki|DarkMagenta|DarkOliveGreen|DarkOrange|DarkOrchid|DarkRed|DarkSalmon|DarkSeaGreen|DarkSlateBlue|DarkSlateGray|DarkTurquoise|DarkViolet|DeepPink|DeepSkyBlue|DimGray|DodgerBlue|FireBrick|FloralWhite|ForestGreen|Fuchsia|Gainsboro|GhostWhite|Gold|GoldenRod|Gray|Green|GreenYellow|HoneyDew|HotPink|IndianRed |Indigo |Ivory|Khaki|Lavender|LavenderBlush|LawnGreen|LemonChiffon|LightBlue|LightCoral|LightCyan|LightGoldenRodYellow|LightGray|LightGreen|LightPink|LightSalmon|LightSeaGreen|LightSkyBlue|LightSlateGray|LightSteelBlue|LightYellow|Lime|LimeGreen|Linen|Magenta|Maroon|MediumAquaMarine|MediumBlue|MediumOrchid|MediumPurple|MediumSeaGreen|MediumSlateBlue|MediumSpringGreen|MediumTurquoise|MediumVioletRed|MidnightBlue|MintCream|MistyRose|Moccasin|NavajoWhite|Navy|OldLace|Olive|OliveDrab|Orange|OrangeRed|Orchid|PaleGoldenRod|PaleGreen|PaleTurquoise|PaleVioletRed|PapayaWhip|PeachPuff|Peru|Pink|Plum|PowderBlue|Purple|RebeccaPurple|Red|RosyBrown|RoyalBlue|SaddleBrown|Salmon|SandyBrown|SeaGreen|SeaShell|Sienna|Silver|SkyBlue|SlateBlue|SlateGray|Snow|SpringGreen|SteelBlue|Tan|Teal|Thistle|Tomato|Turquoise|Violet|Wheat|White|WhiteSmoke|Yellow|YellowGreen)\b/igm],
     //['<span id="selector">$&</span>', /([^\{\}\s][^\{\}\;]*?)(?=\s*\{)/igm],
     ['<span id="attribute">$&</span>', /([\w].+)(?=\:(.*?)(\;|([\s\S])\}))/igm],
-    ['<span id="digit">$&</span>', /(([^\D])(([\d\.]*?))(em|ex|\\\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|([\d\.]+)(?=\W))/igm],
+    ['<span id="digit">$&</span>', /(?!\<colouring\>)(([^\D])(([\d\.]*?))(em|ex|\\\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|([\d\.]+)(?=\W))/igm],
     ['<span id="character">$&</span>', /(\\[^\w\s\n\'\"\&\_\;\<\>\/\@\*])+/igm]
   ];
   
