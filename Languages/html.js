@@ -18,12 +18,14 @@
   ];
   //----------------------------------------------------FIX CHARACTERS
   var fixChar = [
+    [/(\\\<pre(.*?)\\\>|\\\<\\\/pre\\\>)/igm, '<span id="selector">&lt;</span>'],
     [/\\\&lt\\\;/igm, '<span id="character">&lt;</span>'],
     [/\\\&gt\\\;/igm, '<span id="character">&gt;</span>'],
     [/\\\&amp\\\;/igm, '<span id="character">&amp;</span>'],
     [/ftp\\\_\\\_URLFIXFTP\\\_\\\_/igm, 'ftp\\\:\\\/\\\/'],
     [/https\\\_\\\_URLFIXHTTPS\\\_\\\_/igm, 'https\\\:\\\/\\\/'],
     [/http\\\_\\\_URLFIXHTTP\\\_\\\_/igm, 'http\\\:\\\/\\\/']
+    (\\\<pre(.*?)\\\>|\\\<\\\/pre\\\>)
   ];
   //----------------------------------------------------FEATURES
   var features = [
