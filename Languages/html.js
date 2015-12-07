@@ -69,8 +69,8 @@
       str = str.replace(findChar[a][0], findChar[a][1]);
     }
     //----------------------------------------------------CODE
-    for (a = 0; a < javascript.length; a++) {
-      str = str.replace(javascript[a][1], javascript[a][0]);
+    for (a = 0; a < html.length; a++) {
+      str = str.replace(html[a][1], html[a][0]);
     }
     //----------------------------------------------------FIX
     //Comment
