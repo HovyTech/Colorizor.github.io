@@ -5,8 +5,8 @@
   //----------------------------------------------------FIND
   var findChar = [ 
     [/\W/igm, '\\$&'],
-    [/(\<span(.*?)\>\\\<pre\<\/span\>(.*?)\\\>\<\/span\>)/igm, '\-PRESTART\-'],
-    [/(\<span(.*?)\>\\\<\\\/pre\<\/span\>\<span(.*?)\>\\\>\<\/span\>)/igm, '\-PREEND\-'],
+    [/(\<span(.*?)\>\\\<pre\<\/span\>(.*?)\\\>\<\/span\>)/igm, '$&\-PRESTART\-'],
+    [/(\<span(.*?)\>\\\<\\\/pre\<\/span\>\<span(.*?)\>\\\>\<\/span\>)/igm, '\-PREEND\-$&'],
     [/ftp\\\:\\\/\\\//igm, 'ftp\\\_\\\_URLFIXFTP\\\_\\\_'],
     [/https\\\:\\\/\\\//igm, 'https\\\_\\\_URLFIXHTTPS\\\_\\\_'], 
     [/http\\\:\\\/\\\//igm, 'http\\\_\\\_URLFIXHTTP\\\_\\\_']
