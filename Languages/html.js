@@ -5,6 +5,8 @@
   //----------------------------------------------------FIND
   var findChar = [ 
     [/\W/igm, '\\$&'],
+    [/(\<span(.*?)\>\\\<pre\<\/span\>(.*?)\\\>\<\/span\>)/igm, '\-PRESTART\-'],
+    [/(\<span(.*?)\>\\\<\\\/pre\<\/span\>\<span(.*?)\>\\\>\<\/span\>)/igm, '\-PREEND\-'],
     [/ftp\\\:\\\/\\\//igm, 'ftp\\\_\\\_URLFIXFTP\\\_\\\_'],
     [/https\\\:\\\/\\\//igm, 'https\\\_\\\_URLFIXHTTPS\\\_\\\_'], 
     [/http\\\:\\\/\\\//igm, 'http\\\_\\\_URLFIXHTTP\\\_\\\_']
@@ -13,15 +15,16 @@
   var removeChar = [
     [/(\\\<\\\!\\\-\\\-|\\\<\\\!)([\s\S]*?)(\\\>|\\\-\\\-\\\>)/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
     [/(\\\<\\\!\\\-\\\-|\\\<\\\!)([\s\S]*?)(\\\>|\\\-\\\-\\\>)/igm, /\n/igm, '</span>\n<span id="comment">'],
-    [/(\<span(.*?)\>\\\<pre\<\/span\>(.*?)\\\>\<\/span\>)([\s\S]*?)(\<span(.*?)\>\\\<\\\/pre\<\/span\>\<span(.*?)\>\\\>\<\/span\>)/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
+    [/\-PRESTART\-([\s\S]*?)\-PREEND\-/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, ''],
     [/(\\\'|\\\")([\s\S]*?)(\\\'|\\\")/igm, /(\<span([\s\S]*?)\>|\<\/span\>)/igm, '']
   ];
   //----------------------------------------------------FIX CHARACTERS
   var fixChar = [
-    [/(\\\<pre(.*?)\\\>|\\\<\\\/pre\\\>)/igm, '<span id="selector">&lt;</span>'],
     [/\\\&lt\\\;/igm, '<span id="character">&lt;</span>'],
     [/\\\&gt\\\;/igm, '<span id="character">&gt;</span>'],
     [/\\\&amp\\\;/igm, '<span id="character">&amp;</span>'],
+    [/'\-PRESTART\-'/igm, ''],
+    [/'\-PREEND\-'/igm, ''],
     [/ftp\\\_\\\_URLFIXFTP\\\_\\\_/igm, 'ftp\\\:\\\/\\\/'],
     [/https\\\_\\\_URLFIXHTTPS\\\_\\\_/igm, 'https\\\:\\\/\\\/'],
     [/http\\\_\\\_URLFIXHTTP\\\_\\\_/igm, 'http\\\:\\\/\\\/']
@@ -62,29 +65,24 @@
     //----------------------------------------------------FIND
     for (a = 0; a < findChar.length; a++) {
       str = str.replace(findChar[a][0], findChar[a][1]);
-      console.log(str);
     }
     //----------------------------------------------------CODE
     for (a = 0; a < html.length; a++) {
       str = str.replace(html[a][1], html[a][0]);
-      console.log(str);
     }
     //----------------------------------------------------REMOVE
     for (a = 0; a < removeChar.length; a++) {
       str = str.replace(removeChar[a][0], function(rep) {
         return rep.replace(removeChar[a][1], removeChar[a][2]);
       });
-      console.log(str);
     }
     //----------------------------------------------------FIX
     for (a = 0; a < fixChar.length; a++) {
       str = str.replace(fixChar[a][0], fixChar[a][1]);
-      console.log(str);
     }
     //------------------------------------------------------------------------------------------------------------
     //----------------------------------------------------SAVE----------------------------------------------------
     //------------------------------------------------------------------------------------------------------------
-    console.log(str);
     $(this).html(str);
   });
   
