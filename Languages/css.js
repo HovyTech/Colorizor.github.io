@@ -75,7 +75,7 @@
     //----------------------------------------------------CODE
     for (a = 0; a < css.length; a++) {
       str = str.replace(css[a][1], css[a][0]);
-      if (a = 3) {
+      if (a == 3) {
         alert(str);
       }
     }
