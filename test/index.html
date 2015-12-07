@@ -6,143 +6,285 @@
   </head>
   <body>
     <main>
-      <pre language="css">/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: black;
-	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-@media print {
-	code[class*="language-"],
-	pre[class*="language-"] {
-		text-shadow: none;
-	}
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #f5f2f0;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: slategray;
-}
-
-.token.punctuation {
-	color: #999;
-}
-
-.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #905;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #690;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-	color: #a67f59;
-	background: hsla(0, 0%, 100%, .5);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-	color: #07a;
-}
-
-.token.function {
-	color: #DD4A68;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-	color: #e90;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}</pre>
+      <pre language="html"><!DOCTYPE html>
+<html>
+  <head>
+    <title>Colorizor - Syntax Code Highlighter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Free syntax code highlighter that has tons of themes to choose from and supports a mouth full of languages... Salmon, Dark, Light are just some of the most beautiful themes... HTML, CSS, JavaScript, ..." />
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="google-site-verification" content="oO7krF0I_mrtp0tuIss9S8yVPHiJ-9-X79pB3INdp2c" />
+    <meta name="p:domain_verify" content="c62048664a76ca4a111d9fe812085c9c" />
+    <meta name="author" content="Alexander Hovy" />
+    <link rel="shortcut icon" href="Images/favicon.ico" />
+    <link rel="apple-touch-icon" href="Images/apple-touch-icon.png" />
+    <noscript><link rel="stylesheet" type="text/css" href="Files/style.css" /></noscript>
+    <script type="text/javascript">
+      //--------------------------------------------------LOAD GOOGLE ANALYTICS
+      !function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-61804299-1","auto"),ga("send","pageview");
+      //--------------------------------------------------LOAD JS
+      function loadJS(e,t){"use strict";var n=window.document.getElementsByTagName("script")[0],o=window.document.createElement("script");return o.src=e,o.async=!0,n.parentNode.insertBefore(o,n),t&&"function"==typeof t&&(o.onload=t),o}
+      loadJS("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js");
+      loadJS("Files/FullScript.js");
+      //--------------------------------------------------LOAD CSS
+      function loadCSS(e,n,o,t){"use strict";var d=window.document.createElement("link"),i=n||window.document.getElementsByTagName("script")[0],s=window.document.styleSheets;return d.rel="stylesheet",d.href=e,d.media="only x",t&&(d.onload=t),i.parentNode.insertBefore(d,i),d.onloadcssdefined=function(n){for(var o,t=0;t<s.length;t++)s[t].href&&s[t].href.indexOf(e)>-1&&(o=!0);o?n():setTimeout(function(){d.onloadcssdefined(n)})},d.onloadcssdefined(function(){d.media=o||"all"}),d}
+      loadCSS("Files/style.css");
+    </script>
+    <!--<script type="text/javascript" src="https://colorizor.github.io/Files/script.js" async></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" async></script>-->
+  </head>
+  <body>
+    <div id="background"></div>
+    <div id="background-cover"></div>
+    <header></header>
+    <main>
+      <!--Dark-->
+      <table id="dark-box">
+        <tbody>
+          <tr>
+            <th><span id="dark-title">&lt;Dark&gt;</span></th>
+          </tr>
+          <tr>
+            <td>
+              <pre id="dark"><span id="dark-all-number"><span id="dark-number">1</span><br /><span id="dark-number">2</span><br /><span id="dark-number">3</span><br /></span><span id="dark-all-code"><span id="dark-code"><span id="dark-comment">&lt;!--Place this in the &lt;head&gt;--&gt;</span>
+<span id="dark-selector">&lt;link</span> <span id="dark-attribute">rel=</span><span id="dark-value">"stylesheet"</span> <span id="dark-attribute">type=</span><span id="dark-value">"text/css"</span> <span id="dark-attribute">href=</span><span id="dark-value">"<a id="dark-link" href="https://colorizor.github.io/Themes/Dark.css" target="_blank">https://colorizor.github.io/Themes/Dark.css</a>"</span><span id="dark-selector">&gt;</span></span>
+<span id="dark-code"><span id="dark-selector">&lt;script</span> <span id="dark-attribute">type=</span><span id="dark-value">"text/javascript"</span> <span id="dark-attribute">src=</span><span id="dark-value">"<a id="dark-link" href="https://colorizor.github.io/Files/script.js" target="_blank">https://colorizor.github.io/Files/script.js</a>"</span> <span id="dark-parameter">async</span><span id="dark-selector">&gt;</span><span id="dark-selector">&lt;/script&gt;</span></span></span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--Light-->
+      <table id="light-box">
+        <tbody>
+          <tr>
+            <th><span id="light-title">&lt;Light&gt;</span></th>
+          </tr>
+          <tr>
+            <td>
+              <pre id="light"><span id="light-all-number"><span id="light-number">1</span><br /><span id="light-number">2</span><br /><span id="light-number">3</span><br /></span><span id="light-all-code"><span id="light-code"><span id="light-comment">&lt;!--Place this in the &lt;head&gt;--&gt;</span>
+<span id="light-selector">&lt;link</span> <span id="light-attribute">rel=</span><span id="light-value">"stylesheet"</span> <span id="light-attribute">type=</span><span id="light-value">"text/css"</span> <span id="light-attribute">href=</span><span id="light-value">"<a id="light-link" href="https://colorizor.github.io/Themes/Light.css" target="_blank">https://colorizor.github.io/Themes/Light.css</a>"</span><span id="light-selector">&gt;</span></span>
+<span id="light-code"><span id="light-selector">&lt;script</span> <span id="light-attribute">type=</span><span id="light-value">"text/javascript"</span> <span id="light-attribute">src=</span><span id="light-value">"<a id="light-link" href="https://colorizor.github.io/Files/script.js" target="_blank">https://colorizor.github.io/Files/script.js</a>"</span> <span id="light-parameter">async</span><span id="light-selector">&gt;</span><span id="light-selector">&lt;/script&gt;</span></span></span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--Salmon-->
+      <table id="salmon-box">
+        <tbody>
+          <tr>
+            <th><span id="salmon-title">&lt;Salmon&gt;</span></th>
+          </tr>
+          <tr>
+            <td>
+              <pre id="salmon"><span id="salmon-all-number"><span id="salmon-number">1</span><br /><span id="salmon-number">2</span><br /><span id="salmon-number">3</span><br /></span><span id="salmon-all-code"><span id="salmon-code"><span id="salmon-comment">&lt;!--Place this in the &lt;head&gt;--&gt;</span>
+<span id="salmon-selector">&lt;link</span> <span id="salmon-attribute">rel=</span><span id="salmon-value">"stylesheet"</span> <span id="salmon-attribute">type=</span><span id="salmon-value">"text/css"</span> <span id="salmon-attribute">href=</span><span id="salmon-value">"<a id="salmon-link" href="https://colorizor.github.io/Themes/Salmon.css" target="_blank">https://colorizor.github.io/Themes/Salmon.css</a>"</span><span id="salmon-selector">&gt;</span></span>
+<span id="salmon-code"><span id="salmon-selector">&lt;script</span> <span id="salmon-attribute">type=</span><span id="salmon-value">"text/javascript"</span> <span id="salmon-attribute">src=</span><span id="salmon-value">"<a id="salmon-link" href="https://colorizor.github.io/Files/script.js" target="_blank">https://colorizor.github.io/Files/script.js</a>"</span> <span id="salmon-parameter">async</span><span id="salmon-selector">&gt;</span><span id="salmon-selector">&lt;/script&gt;</span></span></span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--Honey-->
+      <table id="honey-box">
+        <tbody>
+          <tr>
+            <th><span id="honey-title">&lt;Honey&gt;</span></th>
+          </tr>
+          <tr>
+            <td>
+              <pre id="honey"><span id="honey-all-number"><span id="honey-number">1</span><br /><span id="honey-number">2</span><br /><span id="honey-number">3</span><br /></span><span id="honey-all-code"><span id="honey-code"><span id="honey-comment">&lt;!--Place this in the &lt;head&gt;--&gt;</span>
+<span id="honey-selector">&lt;link</span> <span id="honey-attribute">rel=</span><span id="honey-value">"stylesheet"</span> <span id="honey-attribute">type=</span><span id="honey-value">"text/css"</span> <span id="honey-attribute">href=</span><span id="honey-value">"<a id="honey-link" href="https://colorizor.github.io/Themes/Honey.css" target="_blank">https://colorizor.github.io/Themes/Honey.css</a>"</span><span id="honey-selector">&gt;</span></span>
+<span id="honey-code"><span id="honey-selector">&lt;script</span> <span id="honey-attribute">type=</span><span id="honey-value">"text/javascript"</span> <span id="honey-attribute">src=</span><span id="honey-value">"<a id="honey-link" href="https://colorizor.github.io/Files/script.js" target="_blank">https://colorizor.github.io/Files/script.js</a>"</span> <span id="honey-parameter">async</span><span id="honey-selector">&gt;</span><span id="honey-selector">&lt;/script&gt;</span></span></span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--Vintage-->
+      <table id="vintage-box">
+        <tbody>
+          <tr>
+            <th><span id="vintage-title">&lt;Vintage&gt;</span></th>
+          </tr>
+          <tr>
+            <td>
+              <pre id="vintage"><span id="vintage-all-number"><span id="vintage-number">1</span><br /><span id="vintage-number">2</span><br /><span id="vintage-number">3</span><br /></span><span id="vintage-all-code"><span id="vintage-code"><span id="vintage-comment">&lt;!--Place this in the &lt;head&gt;--&gt;</span>
+<span id="vintage-selector">&lt;link</span> <span id="vintage-attribute">rel=</span><span id="vintage-value">"stylesheet"</span> <span id="vintage-attribute">type=</span><span id="vintage-value">"text/css"</span> <span id="vintage-attribute">href=</span><span id="vintage-value">"<a id="vintage-link" href="https://colorizor.github.io/Themes/Vintage.css" target="_blank">https://colorizor.github.io/Themes/Vintage.css</a>"</span><span id="vintage-selector">&gt;</span></span>
+<span id="vintage-code"><span id="vintage-selector">&lt;script</span> <span id="vintage-attribute">type=</span><span id="vintage-value">"text/javascript"</span> <span id="vintage-attribute">src=</span><span id="vintage-value">"<a id="vintage-link" href="https://colorizor.github.io/Files/script.js" target="_blank">https://colorizor.github.io/Files/script.js</a>"</span> <span id="vintage-parameter">async</span><span id="vintage-selector">&gt;</span><span id="vintage-selector">&lt;/script&gt;</span></span></span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--Beach-->
+      <table id="beach-box">
+        <tbody>
+          <tr>
+            <th><span id="beach-title">&lt;Beach&gt;</span></th>
+          </tr>
+          <tr>
+            <td>
+              <pre id="beach"><span id="beach-all-number"><span id="beach-number">1</span><br /><span id="beach-number">2</span><br /><span id="beach-number">3</span><br /></span><span id="beach-all-code"><span id="beach-code"><span id="beach-comment">&lt;!--Place this in the &lt;head&gt;--&gt;</span>
+<span id="beach-selector">&lt;link</span> <span id="beach-attribute">rel=</span><span id="beach-value">"stylesheet"</span> <span id="beach-attribute">type=</span><span id="beach-value">"text/css"</span> <span id="beach-attribute">href=</span><span id="beach-value">"<a id="beach-link" href="https://colorizor.github.io/Themes/Beach.css" target="_blank">https://colorizor.github.io/Themes/Beach.css</a>"</span><span id="beach-selector">&gt;</span></span>
+<span id="beach-code"><span id="beach-selector">&lt;script</span> <span id="beach-attribute">type=</span><span id="beach-value">"text/javascript"</span> <span id="beach-attribute">src=</span><span id="beach-value">"<a id="beach-link" href="https://colorizor.github.io/Files/script.js" target="_blank">https://colorizor.github.io/Files/script.js</a>"</span> <span id="beach-parameter">async</span><span id="beach-selector">&gt;</span><span id="beach-selector">&lt;/script&gt;</span></span></span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <!--Usage-->
+      <table id="little-box">
+        <tbody>
+          <tr>
+            <th id="title">Usage</th>
+          </tr>
+          <tr>
+            <td>
+              <pre id="salmon-center"><span id="salmon-all-number"><span id="salmon-number">1</span><br /><span id="salmon-number">2</span><br /><span id="salmon-number">3</span><br /></span><span id="salmon-all-code"><span id="salmon-code"><span id="salmon-selector">&lt;pre</span> <span id="salmon-attribute">language=</span><span id="salmon-value">"javascript"</span><span id="salmon-selector">&gt;</span></span>
+<span id="salmon-code">...</span>
+<span id="salmon-code"><span id="salmon-selector">&lt;/pre&gt;</span></span></span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <hr />
+      <!--Languages-->
+      <table id="little-box">
+        <tbody>
+          <tr>
+            <th id="title" colspan="6">Languages</th>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>C++</td>
+            <td>Delphi</td>
+            <td>HTML</td>
+            <td>JavaScript</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <hr />
+      <!--Themes-->
+      <table id="little-box">
+        <tbody>
+          <tr>
+            <th id="title" colspan="6">More Themes</th>
+          </tr>
+          <tr>
+            <td>Dark</td>
+            <td>Light</td>
+            <td>Salmon</td>
+            <td>Honey</td>
+            <td>Vintage</td>
+            <td>Beach</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <hr />
+      <!--Features-->
+      <table id="little-box">
+        <tbody>
+          <tr>
+            <th id="title">Features</th>
+          </tr>
+          <tr>
+            <td>
+              Hightlight code outside of the <span id="salmon-text">&lt;pre&gt;</span> tag!<br />
+              Simply add the following to your text:
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre id="salmon-center"><span id="salmon-all-number"><span id="salmon-number">1</span><br /></span><span id="salmon-all-code"><span id="salmon-code"><span id="salmon-selector">&lt;span</span> <span id="salmon-attribute">id=</span><span id="salmon-value">"text"</span><span id="salmon-selector">&gt;</span>Your Text<span id="salmon-selector">&lt;/span&gt;</span></span></span></pre>
+            </td>
+          </tr>
+          <tr><td><br /></td></tr>
+          <tr>
+            <td>
+              Automatically highlight <span id="salmon-text">links</span> inside or outside of coding blocks!
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre id="salmon-center"><span id="salmon-all-number"><span id="salmon-number">1</span><br /><span id="salmon-number">2</span><br /><span id="salmon-number">3</span><br /><span id="salmon-number">4</span><br /><span id="salmon-number">5</span><br /></span><span id="salmon-all-code"><span id="salmon-code"><span id="salmon-comment">// ADD THE ONE OR THE OTHER OR BOTH</span></span>
+<span id="salmon-code"><span id="salmon-comment">// Inside of coding blocks</span></span>
+<span id="salmon-code"><a id="salmon-link" href="https://colorizor.github.io" target="_blank">http://colorizor.github.io</a></span>
+<span id="salmon-code"><span id="salmon-comment">// AND/OR</span></span>
+<span id="salmon-code"><span id="salmon-selector">&lt;span&gt;</span><a id="salmon-link" href="https://colorizor.github.io" target="_blank">http://colorizor.github.io</a><span id="salmon-selector">&lt;/span&gt;</span></span></span></pre>
+            </td>
+          </tr>
+          <tr><td><br /></td></tr>
+          <tr>
+            <td>
+              Automatically colour any code that contains RGB/Hex/... in it!
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre id="salmon-center"><span id="salmon-all-number"><span id="salmon-number">1</span><br /><span id="salmon-number">2</span><br /><span id="salmon-number">3</span><br /></span><span id="salmon-all-code"><span id="salmon-code"><span id="salmon-selector">#colour</span><span id="salmon-parameter">:hover</span> {</span>
+  <span id="salmon-code"><span id="salmon-attribute">color</span><span id="salmon-value">: <span style="color: rgb(100, 200, 100);">rgb(100, 200, 100)</span>;</span></span>
+<span id="salmon-code">}</span></span></pre>
+            </td>
+          </tr>
+          <tr><td><br /></td></tr>
+          <tr>
+            <td>
+              Select all the text in a <span id="salmon-text">&lt;pre&gt;</span> tag automatically?<br />
+              Just clicking on it!
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre id="salmon-center"><span id="salmon-all-number"><span id="salmon-number">1</span><br /></span><span id="salmon-all-code"><span id="salmon-code"><span id="salmon-comment">// Click anywhere on the text!</span></span></span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <footer>
+      <table id="little-box">
+        <tbody>
+          <tr>
+            <th id="title" colspan="5">Socialise</th>
+          </tr>
+          <tr>
+            <td>
+              <div id="div-container"><img class="social-icon" id="facebook-icon" src="Images/Facebook.png" alt="Facebook" height="50" width="50" onMouseOver="this.src='Images/FacebookBlur.png';document.getElementById('facebook-count').style.display='block';"><span class="social-count" id="facebook-count" onMouseOut="document.getElementById('facebook-icon').src='Images/Facebook.png';this.style.display='none';" onClick="window.open('http://www.facebook.com/sharer.php?u=https://colorizor.github.io','_blank');"></span></div>
+            </td>
+            <td>
+              <div id="div-container"><img class="social-icon" id="twitter-icon" src="Images/Twitter.png" alt="Twitter" height="50" width="50" onMouseOver="this.src='Images/TwitterBlur.png';document.getElementById('twitter-count').style.display='block';"><span class="social-count" id="twitter-count" onMouseOut="document.getElementById('twitter-icon').src='Images/Twitter.png';this.style.display='none';" onClick="window.open('http://twitter.com/share?text=Colorizor, what an amazing way to colour your code!&url=https://colorizor.github.io&hashtags=colorizor,syntax,highlight,code','_blank');"></span></div>
+            </td>
+            <td>
+              <div id="div-container"><img class="social-icon" id="googleplus-icon" src="Images/GooglePlus.png" alt="GooglePlus" height="50" width="50" onMouseOver="this.src='Images/GooglePlusBlur.png';document.getElementById('googleplus-count').style.display='block';"><span class="social-count" id="googleplus-count" onMouseOut="document.getElementById('googleplus-icon').src='Images/GooglePlus.png';this.style.display='none';" onClick="window.open('https://plus.google.com/share?url=https://colorizor.github.io','_blank');">Share</span></div>
+            </td>
+            <td>
+              <div id="div-container"><img class="social-icon" id="pinterest-icon" src="Images/Pinterest.png" alt="Pinterest" height="50" width="50" onMouseOver="this.src='Images/PinterestBlur.png';document.getElementById('pinterest-count').style.display='block';"><span class="social-count" id="pinterest-count" onMouseOut="document.getElementById('pinterest-icon').src='Images/Pinterest.png';this.style.display='none';" onClick="window.open('https://pinterest.com/pin/create/link/?url=https://colorizor.github.io&media=https://colorizor.github.io/Images/Colorizor.png&description=Colorizor, what an amazing way to colour your code!','_blank');"></span></div>
+            </td>
+            <td>
+              <div id="div-container"><img class="social-icon" id="linkedin-icon" src="Images/LinkedIn.png" alt="LinkedIn" height="50" width="50" onMouseOver="this.src='Images/LinkedInBlur.png';document.getElementById('linkedin-count').style.display='block';"><span class="social-count" id="linkedin-count" onMouseOut="document.getElementById('linkedin-icon').src='Images/LinkedIn.png';this.style.display='none';" onClick="window.open('https://www.linkedin.com/shareArticle?url=https://colorizor.github.io&mini=true&title=Colorizor - Syntax Code Highlighter&summary=Colorizor, what an amazing way to colour your code!&source=Colorizor','_blank');"></span></div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5">
+              <br />
+              <a id="mail-link" href="mailto:colorizor@gmail.com">Email Me</a>
+            </td>
+          </tr>
+          <tr>
+            <td id="copyright" colspan="5">
+              <br />
+              Proudly: South African
+              <br />
+              © 2015 by Alexander Hovy for <a id="copyright" href="http://colorizor.github.io">Colorizor</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </footer>
+  </body>
+</html></pre>
     </main>
   </body>
 </html>
