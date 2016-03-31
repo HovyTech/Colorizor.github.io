@@ -38,7 +38,7 @@
     ['<span id="value">$&</span>', /(\'|\")([\s\S]*?)(\'|\")/igm],
     ['<span id="reserved">$&</span>', /([\w\d\.\#].+)(?=\{)/igm],
     ['<span id="selector">$&</span>', /([\w\d\-\[\]\(\)]+)(?!.*?(\{))(?=\:)/igm],
-    ['<span id="attribute">$&</span>', /(?<=\:)([\w]+)(?=(\;|\,))/igm],//([\w\_\-].+)(?=\:(.*?)(\;|([\s\S])\}))
+    ['<span id="attribute">$&</span>', /(?:[^\:\W\d])([\w]+)(?=(\;|\,))/igm],//([\w\_\-].+)(?=\:(.*?)(\;|([\s\S])\}))
     ['<span id="digit">$&</span>', /(?!(.*?)\<colouring\>)(([^\D])(([\d\.]*?))(em|ex|\\\%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|([\d\.]+)(?=\W))/igm],
     ['<span id="character">$&</span>', /(?!(.*?)\<colouring\>)(\\[^\w\s\n\'\"\&\_\-\;\<\>\/\@\*])+/igm]
   ];
