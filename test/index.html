@@ -6,72 +6,31 @@
   </head>
   <body>
     <main>
-      <pre language="swift">//
-//  Variables.swift
-//  InternetSpeed
-//
-//  Created by Alexander Hovy on 11/02/2016.
-//  Copyright © 2016 HovyTech. All rights reserved.
-//
-
-import UIKit
-
-public class Variables: UIViewController, SimplePingDelegate {
-
-    var Speed: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-
-    let downloadURL: NSURL = NSURL(string: "ftp://speedtest.tele2.net/20MB.zip")!
-    let uploadURL: NSURL = NSURL(string: "ftp://speedtest.tele2.net/upload/20MB.zip")!
-    let path: String = NSBundle.mainBundle().pathForResource("20MB", ofType: "zip")!
-
-    let height: CGFloat = UIScreen.mainScreen().bounds.height
-    let width: CGFloat = UIScreen.mainScreen().bounds.width
-
-    var speedString: String!
-    var speedText: NSMutableAttributedString!
-    let formatter = NSNumberFormatter()
-
-    var ping: Int = 0
-
-    var pingStart: Double = 0
-    var pingEnd: Double = 0
-
-    var pingSum: Int = 0
-    var pingAvg: Int = 0
-
-    var simplePing = SimplePing()
-    var canStartPinging: Bool = false
-
-    var update = CADisplayLink()
-
-    var count: Int = 0
-
-    var halfSecondStart: Double = 0
-    var halfSecondEnd: Double = 0
-
-    var secondStart: Double = 0
-    var secondEnd: Double = 0
-
-    var timeoutStart: Double = 0
-    var timeoutEnd: Double = 0
-
-    var kbps1: Float = 0
-    var kbps2: Float = 0
-    var kbps3: Float = 0
-
-    var mbps1: Float = 0
-    var mbps2: Float = 0
-    var mbps3: Float = 0
-
-    var kbpsSum: Float = 0
-    var mbpsSum: Float = 0
-
-    var kbpsAvg: Float = 0
-    var mbpsAvg: Float = 0
-
-    var values = [Int]()
-
-}</pre>
+      <pre language="css">/*----------------------------------------Dark----------------------------------------*/
+pre {
+  background-color:rgb(88, 88, 88);
+  color:rgb(232, 200, 178);
+  font-family:"Lucida Console", Monaco, monospace;
+  font-size:14px;
+  font-style:bold;
+  height:auto;margin:5px;
+  overflow:auto; padding:10px;
+  text-align:left;
+  -webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;
+}
+#text{background-color:rgb(255, 248, 207);color:rgb(232, 200, 178);font-family:"Lucida Console", Monaco, monospace;font-size:12px;font-style:bold;height:auto;width:auto;z-index:100;}
+#all-number{border-right:1px solid rgb(232, 200, 178);display:inline-block;float:left;margin-right:8px;text-align:right;}
+#all-code{display:inline-block;float:top;margin-left:8px;text-align:left;}
+#number{color:rgb(232, 200, 178);float:top;padding-right:4px;}
+#code{float:top;}
+#link{color:rgb(150, 150, 150);font-style:underline;}
+#regx{color:rgb(150, 150, 150);}
+#units{color:rgb(150, 150, 150);}
+#comment{color:rgb(205, 255, 214);font-style:italic;}
+#selector{color:rgb(255, 248, 207);}
+#attribute{color:rgb(173, 176, 232);}
+#value{color:rgb(193, 222, 255);}
+#parameter{color:rgb(232, 200, 178);}</pre>
     </main>
   </body>
 </html>
