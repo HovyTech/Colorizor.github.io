@@ -15,13 +15,6 @@
   $.each($('pre[language="text"]'), function() {
     //--------------------------------------------------FETCH
     var str = $(this).html();
-    //--------------------------------------------------SIZING
-    $(this).css({
-      'height': 'auto',
-      'left': '0px',
-      'right': '0px',
-      'width': 'auto'
-    });
     //--------------------------------------------------FIND
     for (a = 0; a < regex.length; a++) {
       str = str.replace(regex[a][1], regex[a][0]);
